@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="686" viewBox="0 0 1600 686">
+<rect width="1600" height="686" fill="#fafaf8"/>
+<g stroke="#e8e8e5" stroke-width="1">
+<line x1="0" y1="343" x2="1600" y2="343"/><line x1="800" y1="0" x2="800" y2="686"/>
+<line x1="0" y1="171" x2="1600" y2="171"/><line x1="0" y1="514" x2="1600" y2="514"/>
+</g>
+<g stroke="#0a0a0a" stroke-width="1.5" fill="none">
+<rect x="90" y="70" width="240" height="180"/><rect x="1270" y="70" width="240" height="180"/>
+<rect x="90" y="436" width="240" height="180"/><rect x="1270" y="436" width="240" height="180"/>
+</g>
+<g stroke="#0a0a0a" stroke-width="2" fill="none">
+<circle cx="210" cy="160" r="38"/><circle cx="210" cy="160" r="12" fill="#0a0a0a"/>
+<line x1="150" y1="220" x2="270" y2="220"/>
+<circle cx="1390" cy="160" r="38"/><circle cx="1390" cy="160" r="12" fill="#0a0a0a"/>
+<line x1="1330" y1="220" x2="1450" y2="220"/>
+<circle cx="210" cy="526" r="38"/><circle cx="210" cy="526" r="12" fill="#0a0a0a"/>
+<line x1="150" y1="586" x2="270" y2="586"/>
+<circle cx="1390" cy="526" r="38"/><circle cx="1390" cy="526" r="12" fill="#0a0a0a"/>
+<line x1="1330" y1="586" x2="1450" y2="586"/>
+</g>
+<g stroke="#d4d4d2" stroke-width="1">
+<line x1="800" y1="343" x2="330" y2="90"/><line x1="800" y1="343" x2="1270" y2="90"/>
+<line x1="800" y1="343" x2="330" y2="596"/><line x1="800" y1="343" x2="1270" y2="596"/>
+<line x1="800" y1="343" x2="90" y2="343"/><line x1="800" y1="343" x2="1510" y2="343"/>
+</g>
+<g fill="none" stroke-width="2">
+<rect x="660" y="203" width="280" height="280" fill="#660874"/>
+<circle cx="800" cy="343" r="86" stroke="#fafaf8"/>
+<circle cx="800" cy="343" r="26" fill="#fafaf8"/>
+<line x1="714" y1="343" x2="886" y2="343" stroke="#fafaf8"/>
+<line x1="800" y1="257" x2="800" y2="429" stroke="#fafaf8"/>
+<line x1="800" y1="343" x2="1510" y2="343" stroke="#660874"/>
+<line x1="800" y1="343" x2="90" y2="343" stroke="#660874"/>
+</g>
+<g stroke="#0a0a0a" stroke-width="1.2" fill="none">
+<circle cx="516" cy="343" r="16"/><circle cx="1084" cy="343" r="16"/>
+<circle cx="800" cy="160" r="16"/><circle cx="800" cy="526" r="16"/>
+</g>
+<text x="60" y="46" font-family="JetBrains Mono,monospace" font-size="20" letter-spacing="6" fill="#737373">POLYCAMERA · SCENE RECONSTRUCTION</text>
+<text x="60" y="648" font-family="JetBrains Mono,monospace" font-size="18" letter-spacing="4" fill="#a3a3a3">12 VIEWPOINTS · 4 HZ · SELF-CALIBRATED</text>
+</svg>

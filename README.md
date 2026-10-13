@@ -80,6 +80,8 @@ RGB-D 三维定位/位姿扩展
 - `02_datasets_and_prior_work.md`：数据集、代表性论文、代码地址和可复现性判断。
 - `03_one_month_plan.md`：一个月调研、复现和开题准备计划。
 - `04_hardware_and_data_collection.md`：相机选型、标定、数据采集和计算资源规划。
+- `05_polarization_camera_physical_models.md`：从 Stokes/Mueller 测量方程到 DoFP、标定、Fresnel/SfP 和应用链路的物理模型报告。
+- `demo/polarization-camera-models/index.html`：基于清华紫模板的公式推导型 HTML PPT，含 presenter/notes/观众屏同步。
 - `literature_matrix_template.csv`：后续逐篇阅读时使用的文献矩阵模板。
 
 ## 5. 目前的决策原则
