@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Large datasets and generated experiment artifacts
+data/
+depth_research/data/
+depth_research/outputs/
+depth_research/results/
+depth_research/.cache/
+*.zip
+*.pt
+*.pth
+*.ckpt

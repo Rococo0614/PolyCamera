@@ -1,0 +1,12 @@
+scene,trajectory,frame,official_role,selection_reason,status
+scene10,traj1_1,000000,train,"training scene; trajectory start",downloaded
+scene10,traj1_1,000150,train,"training scene; temporally separated midpoint",planned
+scene10,traj1_1,000300,train,"training scene; trajectory end",planned
+scene12,traj1_1,000000,test,"official test scene; trajectory start",downloaded
+scene12,traj1_1,000120,test,"official test scene; separated viewpoint",planned
+scene13,traj1_1,000000,test,"download pipeline and metric smoke test",downloaded
+scene13,traj1_1,000120,test,"test scene; separated viewpoint",downloaded
+scene13,traj1_1,000240,test,"test scene; separated viewpoint",planned
+scene14,traj1_1,000000,test,"different test scene and lighting",planned
+scene14,traj1_1,000120,test,"different test scene and lighting",planned
+scene14,traj1_1,000240,test,"different test scene and lighting",planned

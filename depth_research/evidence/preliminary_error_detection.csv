@@ -1,0 +1,13 @@
+trajectory,frame,sensor,error_definition,score,evaluated_pixels,positive_fraction,auroc,average_precision,evidence_status
+scene10_traj1_1,000000,d435,"valid raw depth with absolute error >= 50 mm",dolp,785587,0.066166,0.673101,0.139548,"single frame; material and position confounds not controlled"
+scene10_traj1_1,000000,l515,"valid raw depth with absolute error >= 50 mm",dolp,725156,0.177067,0.913586,0.675965,"single frame; material and position confounds not controlled"
+scene10_traj1_1,000000,itof,"valid raw depth with absolute error >= 50 mm",dolp,383959,0.270591,0.912362,0.736859,"single frame; material and position confounds not controlled"
+scene13_traj1_1,000000,d435,"valid raw depth with absolute error >= 50 mm",dolp,664638,0.071430,0.657594,0.160260,"test scene frame; not an independent dataset conclusion"
+scene13_traj1_1,000000,l515,"valid raw depth with absolute error >= 50 mm",dolp,721396,0.152834,0.787481,0.455141,"test scene frame; not an independent dataset conclusion"
+scene13_traj1_1,000000,itof,"valid raw depth with absolute error >= 50 mm",dolp,383955,0.265049,0.779759,0.542024,"test scene frame; not an independent dataset conclusion"
+scene13_traj1_1,000120,d435,"valid raw depth with absolute error >= 50 mm",dolp,709916,0.057249,0.685805,0.132622,"same trajectory as scene13 frame 000000"
+scene13_traj1_1,000120,l515,"valid raw depth with absolute error >= 50 mm",dolp,733640,0.104366,0.739143,0.310884,"same trajectory as scene13 frame 000000"
+scene13_traj1_1,000120,itof,"valid raw depth with absolute error >= 50 mm",dolp,382251,0.144918,0.696545,0.248958,"same trajectory as scene13 frame 000000"
+scene12_traj1_1,000000,d435,"valid raw depth with absolute error >= 50 mm",dolp,738970,0.275703,0.525598,0.365507,"low-DoLP counterexample; second independent test scene"
+scene12_traj1_1,000000,l515,"valid raw depth with absolute error >= 50 mm",dolp,750290,0.045836,0.692221,0.141002,"low-DoLP counterexample; second independent test scene"
+scene12_traj1_1,000000,itof,"valid raw depth with absolute error >= 50 mm",dolp,371723,0.088996,0.640034,0.177277,"low-DoLP counterexample; second independent test scene"

@@ -1,9 +1,43 @@
 # 偏振相机硕士课题调研
 
-**建立日期：** 2026-09-21  
-**当前工作目录：** `/home/vivo/polarization_thesis_research`
+**建立日期：** 2026-09-21
+**方向更新：** 2026-10-23
+**当前工作目录：** `/home/jiangrui/PolyCamera`
 
-## 1. 当前暂定方向
+## 0. 当前主线（2026-10-23 更新）
+
+经过对偏振辅助三维视觉、公开数据和近期工作的初步核查，当前优先主线调整为：
+
+> **面向复杂材质与异构深度传感器的偏振辅助鲁棒深度增强**
+
+第一轮跨场景审计后，优先验证的具体问题已收窄为：
+
+> **透明/反光场景中“有值但错误”的深度异常检测，以及在未见真实传感器上的受控修正。**
+
+当前阶段不预设某个网络模块，而是先完成以下问题闭环：
+
+```text
+商品级主动双目 / D-ToF / I-ToF 的系统误差
+        ↓
+偏振信息是否在这些失效区域提供非冗余几何线索
+        ↓
+已有融合方法是否过拟合已见传感器或理想偏振输入
+        ↓
+面向未知传感器与退化偏振的可靠性建模和深度增强
+        ↓
+有设备后进行跨设备实物验证
+```
+
+主数据集暂定为 `HAMMER`，主评测协议为按材质分层、留一场景和留一传感器测试。完整研究章程见：
+
+- `06_depth_enhancement_research_architecture.md`
+- `07_depth_enhancement_execution_plan.md`
+- `08_depth_landscape_and_gap.md`
+- `depth_research/README.md`
+
+此前的透明目标分割路线不删除，作为低风险兜底和可选前端任务保留。
+
+## 1. 早期方案（现作为兜底路线）
 
 ### 宽方向
 
@@ -47,7 +81,7 @@ RGB-D 三维定位/位姿扩展
 - 课题组最终更偏向分割、三维重建、位姿估计还是应用展示。
 - 是否有 RGB-D 相机、转台、标定板、受控光源或可借用的实验设备。
 
-## 3. 当前推荐的硕士课题结构
+## 3. 透明分割兜底方案结构
 
 ### 主任务：偏振辅助透明目标分割
 
@@ -81,6 +115,14 @@ RGB-D 三维定位/位姿扩展
 - `03_one_month_plan.md`：一个月调研、复现和开题准备计划。
 - `04_hardware_and_data_collection.md`：相机选型、标定、数据采集和计算资源规划。
 - `05_polarization_camera_physical_models.md`：从 Stokes/Mueller 测量方程到 DoFP、标定、Fresnel/SfP 和应用链路的物理模型报告。
+- `06_depth_enhancement_research_architecture.md`：新主线的目标、研究问题、系统架构、评价协议和成功标准。
+- `07_depth_enhancement_execution_plan.md`：按证据、数据、基线、方法和实物验证拆分的执行计划。
+- `08_depth_landscape_and_gap.md`：产品技术、近期论文、公开数据及候选研究缺口。
+- `09_execution_log.md`：按日期记录实际执行、数据结果、失败与下一步，不把计划当结果。
+- `10_advisor_one_page.md`：可直接用于和导师沟通的题目、问题、路线、初步证据和风险摘要。
+- `depth_research/`：公开数据分析、指标计算、选择性下载和后续实验代码。
+
+基线代码的实际可复现性审计见 `depth_research/evidence/reproduction_audit.md`。
 - `demo/polarization-camera-models/index.html`：基于清华紫模板的公式推导型 HTML PPT，含 presenter/notes/观众屏同步。
 - `literature_matrix_template.csv`：后续逐篇阅读时使用的文献矩阵模板。
 

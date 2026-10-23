@@ -1,0 +1,62 @@
+{
+  "study_version": "0.1",
+  "frozen_on": "2026-10-23",
+  "primary_dataset": "HAMMER",
+  "dataset_url": "https://www.campar.in.tum.de/public_datasets/2022_arxiv_jung/_dataset_processed.zip",
+  "research_questions": [
+    "sensor_failure_taxonomy",
+    "polarization_complementarity",
+    "valid_but_wrong_depth_detection",
+    "leave_one_sensor_out_generalization",
+    "dual_modality_reliability"
+  ],
+  "sensor_domains": ["d435_active_stereo", "l515_dtof", "helios_itof"],
+  "primary_metric": "rmse_mm",
+  "required_metrics": [
+    "mae_mm",
+    "rmse_mm",
+    "abs_rel",
+    "delta_1",
+    "coverage",
+    "p95_abs_error_mm",
+    "silent_error_auroc",
+    "silent_error_auprc"
+  ],
+  "silent_error_thresholds_mm": [25, 50, 100],
+  "required_slices": [
+    "full",
+    "background",
+    "objects",
+    "textured",
+    "reflective",
+    "transparent",
+    "depth_boundary"
+  ],
+  "evaluation_protocols": [
+    "official_scene_split",
+    "leave_one_scene_out",
+    "leave_one_sensor_out",
+    "polarization_corruption",
+    "depth_corruption"
+  ],
+  "baselines": [
+    "raw_depth",
+    "material_mask_only_error_detector",
+    "naive_fusion",
+    "completionformer",
+    "ppft"
+  ],
+  "resource_limits": {
+    "minimum_free_disk_gib": 10,
+    "current_machine_max_selective_audit_frames": 12,
+    "recommended_external_data_disk_gib": 400,
+    "require_separate_gpu_budget_before_training": true
+  },
+  "decision_rule": {
+    "develop_new_model_only_after_gap_is_reproduced": true,
+    "forbid_test_tuning": true,
+    "forbid_random_frame_split_within_trajectory": true,
+    "require_material_slice_improvement": true,
+    "require_cross_sensor_report": true
+  }
+}

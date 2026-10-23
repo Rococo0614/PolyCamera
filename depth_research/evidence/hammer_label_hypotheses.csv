@@ -1,0 +1,7 @@
+scene,label_id,provisional_group,evidence,status
+scene13,140,reflective,"RGB-mask overlays at frames 000000 and 000120 cover metal stand/spoon and other reflective pieces",repeated_visual_check_author_mapping_pending
+scene13,160,transparent,"RGB-mask overlays at frames 000000 and 000120 cover clear water bottle and glass vessels",repeated_visual_check_author_mapping_pending
+scene10,140,reflective,"RGB-mask overlay covers a metallic fork",cross_scene_visual_check_author_mapping_pending
+scene10,160,transparent,"RGB-mask overlay covers a transparent cup",cross_scene_visual_check_author_mapping_pending
+scene12,140,reflective,"RGB-mask overlay covers metallic spoon/cutlery",cross_scene_visual_check_author_mapping_pending
+scene12,160,transparent,"RGB-mask overlay covers a transparent bottle",cross_scene_visual_check_author_mapping_pending

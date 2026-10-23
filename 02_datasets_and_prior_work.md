@@ -1,5 +1,7 @@
 # 数据集与前人工作
 
+> **状态说明（2026-10-23）：** 本文是早期分割/位姿数据调研。当前偏振辅助深度主线及 HAMMER、PPFT、Depth Prompting、ReCAP2、CDPR、Poppy、PolarDepth 的调研见 `08_depth_landscape_and_gap.md`。
+
 ## 1. 偏振透明目标分割
 
 ### RGBP-Glass / PGSNet

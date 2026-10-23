@@ -1,0 +1,6 @@
+hypothesis,status,current_evidence,minimum_next_evidence
+H1_sensor_specific_systematic_error,preliminary_supported_cross_scene,"3 geometry scenes / 4 views; material and FoV slices show different coverage-error modes","12-frame audit with fixed support masks and scene-level uncertainty"
+H2_polarization_nonredundant_value,mixed_preliminary,"Full-image DoLP AUROC ranges roughly 0.53-0.91 and drops near random within several material slices; low-DoLP scene12 is a counterexample","RGB/depth/material-mask controls and proof of within-material incremental value"
+H3_unseen_real_sensor_generalization_gap,not_tested,"PPFT trains on all real sensor types; only synthetic unseen LiDAR pattern reported","modernized baseline and strict leave-one-real-sensor-out"
+H4_dual_reliability_improves_fusion,not_tested,"simple polar confidence is not consistent across sensors","calibrated depth-only/polar-only/dual-reliability ablation"
+H5_silent_error_detection_is_valuable,preliminary_supported_cross_scene,"Across 3 scenes ToF can return high material-region coverage with roughly 75-290 mm RMSE; sensor ranking changes by scene/boundary","author-verified material mapping; 12-frame threshold study; learned baselines"

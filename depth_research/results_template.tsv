@@ -1,0 +1,1 @@
+experiment_id	date	commit	protocol_version	stage	heldout_sensor	seed	method	primary_rmse_mm	full_rmse_mm	transparent_rmse_mm	reflective_rmse_mm	silent_error_auroc	silent_error_auprc	coverage	latency_ms	peak_vram_gb	status	description
