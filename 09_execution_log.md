@@ -263,3 +263,178 @@ scene12 的 PPFT 象限配对残差仍最低（`0.0556`），但与其他配对�
 4. 联系/核查 HAMMER 偏振角度约定；
 5. 单独创建兼容 PyTorch 的模型环境，优先跑 PPFT 作者权重而不是直接全量训练；
 6. 在获得额外数据盘之前不下载完整 HAMMER。
+
+## 2026-10-26：RTX 5080 训练端启动并完成 PPFT 真实小样本推理
+
+### 训练端实测与部署修正
+
+- 本节记录的是另一台训练端，不覆盖上文 5090 控制端的历史预检；
+- CPU：AMD Ryzen 9 9950X3D，32 个逻辑 CPU；RAM：44 GiB；
+- GPU：RTX 5080 16 GiB；复用 `depthbench` 的 Python 3.10、PyTorch
+  2.11.0+cu128、torchvision 0.26.0+cu128，已确认包含 `sm_120` 并能实际执行
+  CUDA FP16 矩阵乘；
+- ext4 根分区开始时约有 343 GiB 可用。大容量 NTFS 分区首次写入长时间阻塞，
+  因而完整 ZIP、选择集和 cache 均先放 ext4；ZIP 校验提取后再释放；
+- 完整 HAMMER ZIP 已在 tmux 中可续传下载，记录本节时约为
+  `16 GiB / 158 GiB`；完整结果尚未产生。
+
+### PPFT 现代推理兼容层
+
+1. 固定上游 commit `9b1145d87e50895fd17068fad9cec1199092f67a`；
+2. 保留作者模型定义和 checkpoint，以 `torchvision.ops.deform_conv2d` 替代旧
+   DCN 前向，并只声明单卡推理兼容，不声明 Apex/DDP 训练已复现；
+3. 新增零 offset/mask=1 时与标准卷积一致的测试；当前共 14 项测试通过；
+4. checkpoint 必须 `strict=True` 加载，且运行参数会与 checkpoint 中的
+   `prop_time/prop_kernel/affinity/conf_prop/pol_rep` 等行为参数核对；
+5. 新增 batch=1、模型只加载一次、每个 frame-sensor 原子落盘的可续传 split
+   评测入口。四帧重跑时 12 个 record 全部跳过，文件 mtime 未改变；
+6. raw 偏振路径已逐值对照作者 `process_hammer.py`：保持 float64 至最终七通道
+   tensor 转 float32，`I==0`、`Q==0` 的替换和输出完全一致；
+7. 指标同时输出本项目 coverage-aware 协议和作者 `cfmetric.py` 协议，后者保留
+   zero prediction，并按每帧算术平均，以便直接比较论文 Table 2。
+
+### 作者 checkpoint 与样本完整性
+
+- checkpoint 最终大小：`1,083,919,501` bytes；
+- SHA-256：`551ee4fcdbb17f11f6ff3a886ad28469abce52f68cfbca9c0ed0108e3f7512fa`；
+- 内容：epoch 24，`net` 共 1663 keys；同时包含 optimizer、scheduler、Apex
+  AMP state 和训练参数；
+- 本机 PPFT 构造后严格加载 1663/1663 keys 成功；模型唯一参数量
+  90,823,661（checkpoint 因共享模块别名共保存 174,380,721 tensor elements）；
+- 四帧样本共 28 个文件全部逐项通过
+  `depth_research/evidence/hammer_sample_checksums.sha256`；
+- 四帧 raw audit 完成：4 frame × 3 sensor，共 12 条 frame 记录，无缺失模态。
+
+### 数值精度决策
+
+全模型 FP16 autocast 在真实作者权重上产生整幅 NaN（3 个传感器均为
+56,576/56,576 NaN），因此不得用于指标。FP32 输出全部有限，单帧三传感器
+峰值仅约 541.2 MiB，远低于 16 GiB；论文交叉验证改用 FP32。FP16 选项只保留
+作诊断，并在首个非有限输出处停止。
+
+### 真实帧结果（scene13_traj1_1/000000，作者指标口径，FP32）
+
+| Sensor | RMSE (mm) | MAE (mm) | delta1 | 推理时间（首个/稳态） |
+|---|---:|---:|---:|---:|
+| D435 | 22.0843 | 9.1008 | 0.995740 | 0.197 s（首个 CUDA 调用） |
+| L515 | 21.8089 | 10.5472 | 0.995263 | 0.0158 s |
+| I-ToF | 31.2048 | 19.7119 | 0.990172 | 0.0148 s |
+
+这些是单帧结果，只证明 checkpoint、数据预处理和现代推理链路可运行，不能和
+论文 946 帧汇总值直接等同。
+
+该帧的 provisional material slice 也保留了反例，而非只报告总体改善：三个
+传感器在透明 label 160 上 RMSE 均明显下降；但 L515 的反光 label 140 MAE 从
+`14.58 mm` 上升到 `16.72 mm`，腐蚀后内部区域也从 `12.11 mm` 上升到
+`13.32 mm`。这仍是单帧、临时 label 语义，提示后续必须汇总材质内部与边界，
+不能用全图均值替代 H2/H4 验证。
+
+### 四帧可续传冒烟结果（混合 train/val/test，非论文结果）
+
+| Sensor | mean RMSE (mm) | mean MAE (mm) | mean delta1 |
+|---|---:|---:|---:|
+| D435 | 24.7628 | 10.6326 | 0.996437 |
+| L515 | 22.0537 | 9.7565 | 0.996597 |
+| I-ToF | 31.9806 | 17.0341 | 0.991351 |
+| 三传感器平均 | 26.2657 | 12.4744 | 0.994795 |
+
+紧凑 downsample=4 float32 `[I, rho, phi]` cache 与 raw float64 作者路径在这 12
+条记录上的最大差异为 RMSE `0.002901 mm`、MAE `0.001597 mm`。该差异当前远小于
+论文报告精度，但全量报告仍须注明 cache 在 AoLP 周期编码前发生 float32 量化。
+
+### 当时尚未完成与下一步（后续状态见下一节）
+
+1. 等待完整 ZIP 下载完成，核对长度 `170,457,339,555`、ZIP CRC 和 inventory；
+2. 选择性提取约 62 GiB，构建约 4.6 GiB compact cache 和跨帧固定 support；
+3. 运行 946 帧官方 test split，并对照论文 Table 2：D435 `24.78/10.66`、
+   L515 `23.84/10.47`、I-ToF `37.27/21.37`、All `28.63/14.17`
+   （RMSE/MAE，mm）；
+4. 在 full split 结果交叉验证通过前，不把 torchvision DCN 迁移称为数值等价；
+5. AoLP 绝对角度仍待作者确认；DoLP 和 checkpoint 推理可以继续，但不宣称绝对
+   物理方向结论；
+6. Gate 3 仍未通过，不启动自动改网络和方法训练。
+
+## 2026-10-26：PPFT 官方 946 帧 test split 独立复现完成
+
+### 数据完整性与固定 support
+
+- 按作者 `data_paths/hammer_test.txt` 提取 scene13/14 的 946 帧、7 个模态，最终
+  恰好 `6,622` 个 PNG；每模态 946 个，无缺失、无额外文件、无 `.part`；
+- 逐文件 SHA-256 清单：
+  `/home/chocbrownie0524/poldepth/manifests/hammer_test_remote.sha256`，清单自身
+  SHA-256 为 `ac6d119afac6d84ffdf8d3c17068f2264af92437c3fc5e157f7c74d513f2a16b`；
+- inventory 共 `8,449,894,843` bytes；RGB/depth/GT/instance 均为
+  `1088x832`，polar composite 均为 `2176x1664`，格式和 bit depth 全部一致；
+- 946 帧 compact cache 完成：`208x272x3 float32`，946 个 NPY，合计
+  `642,371,840` bytes，无临时文件；
+- 以“至少 1% 帧出现正深度”构建固定 support：D435 `0.996572`、L515
+  `0.882963`、I-ToF `0.456698`。这是 test 数据驱动的诊断近似，不冒充标定 FoV。
+
+### Table 2 主结果：raw float64 作者预处理、FP32、batch=1
+
+作者 test loader 将 946 帧扩展为 2,838 条 sensor-frame 记录。全部记录均原子
+落盘且输出有限；峰值显存 `541.21 MiB`，本次评测循环约 `122.6 s`。作者指标
+按源码对每条记录先算指标、再做算术平均：
+
+| Sensor | 本次 RMSE (mm) | 论文 | 差值 | 本次 MAE (mm) | 论文 | 差值 |
+|---|---:|---:|---:|---:|---:|---:|
+| D435 | 24.78884 | 24.78 | +0.00884 | 10.65956 | 10.66 | -0.00044 |
+| L515 | 23.84283 | 23.84 | +0.00283 | 10.46670 | 10.47 | -0.00330 |
+| I-ToF | 37.27167 | 37.27 | +0.00167 | 21.37325 | 21.37 | +0.00325 |
+| All | 28.63444 | 28.63 | +0.00444 | 14.16650 | 14.17 | -0.00350 |
+
+delta1 同样一致：D435 `0.995036`、L515 `0.994976`、I-ToF `0.987296`、All
+`0.992436`。所有 RMSE/MAE 与论文表值的绝对差分别不超过 `0.0089 mm` 和
+`0.0035 mm`。因此，**现代 torchvision DCN 推理路径已通过 Table 2 结果级
+交叉验证**；这不等同于证明新旧 DCN 对任意输入逐算子/逐 bit 等价。
+
+主报告：
+`/home/chocbrownie0524/poldepth/runs/ppft_hammer_test_fp32_raw/report.json`，
+SHA-256 `e536bab6e48e7c73b1c05cf6f8d1b73fe57591144a870051158c6d4a4f0bc5ca`。
+报告同时固化 checkpoint、数据清单、split、view direction 和三个本地执行模块的
+SHA-256，防止续传时混用不同代码或数据。
+可提交的小型复现摘要见
+`depth_research/evidence/ppft_hammer_test_reproduction.json`。
+
+### compact cache 全量交叉验证
+
+相同 2,838 条记录用 compact float32 cache 重跑完成，循环约 `85.4 s`。与 raw
+作者路径相比：
+
+- All mean RMSE 差 `+0.0000143 mm`，mean MAE 差 `+0.00000036 mm`；
+- 单条记录最大 RMSE 差 `0.010543 mm`，最大 MAE 差 `0.004088 mm`；
+- 论文两位小数结论完全不变。
+
+因此 compact cache 可用于后续大规模实验，但主复现数字仍引用 raw 路径。
+对照文件：
+`/home/chocbrownie0524/poldepth/runs/ppft_hammer_test_raw_vs_cache.json`。
+
+### coverage-aware pooled 诊断（不同于论文算术平均口径）
+
+按有效预测像素池化后，raw sensor 到 PPFT 的全图结果为：
+
+| Sensor | raw coverage | raw RMSE/MAE (mm) | PPFT coverage | PPFT RMSE/MAE (mm) |
+|---|---:|---:|---:|---:|
+| D435 | 0.7322 | 48.31 / 23.61 | 1.0000 | 25.57 / 10.65 |
+| L515 | 0.8210 | 80.79 / 32.74 | 1.0000 | 24.35 / 10.46 |
+| I-ToF | 0.4243 | 77.48 / 35.35 | 1.0000 | 39.33 / 21.36 |
+| All | 0.6591 | 69.73 / 29.92 | 1.0000 | 30.52 / 14.16 |
+
+这里的 pooled RMSE 不能和论文“每帧 RMSE 的算术平均”混用。provisional label
+140/160 和 20 mm GT boundary 的全量切片也已汇总。单帧 L515 label 140 反例在
+全量池化后不再是整体退化（MAE `25.19 -> 15.42 mm`，内部
+`21.65 -> 12.61 mm`），但仍证明逐帧收益不保证单调，后续应报告退化帧比例，
+而不只报告 pooled 均值。汇总文件：
+`/home/chocbrownie0524/poldepth/runs/ppft_hammer_test_coverage_slices.json`。
+
+### 当前状态与下一步
+
+1. PPFT 作者 checkpoint 的官方 test split 复现已完成；Phase 3 中该项通过；
+2. 完整 `158 GiB` ZIP 已从约 `19 GiB` 断点恢复下载；代理 TLS 出错后改为直连，
+   aria2 继续读取原 `.aria2` 位图，不重复已有块；
+3. 完整 ZIP 到齐后仍须验证长度 `170,457,339,555`、ZIP CRC、inventory，并提取
+   7,207 帧约 62 GiB 选择集；
+4. 继续运行全部 raw audit、CompletionFormer/其他 baseline、输入消融、偏振/深度
+   压力测试和 leave-one-real-sensor-out；这些未完成前 Gate 3 仍不通过；
+5. AoLP 绝对角度约定仍待作者确认，不宣称绝对物理方向已验证；
+6. 旧 Apex/DDP 训练与 DCN backward 尚未迁移，不把推理复现外推成训练复现。

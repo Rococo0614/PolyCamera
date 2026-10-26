@@ -1,0 +1,211 @@
+{
+  "status": "completed",
+  "date": "2026-10-26",
+  "experiment": "PPFT author checkpoint on official HAMMER test split",
+  "protocol": {
+    "frames": 946,
+    "sensor_frame_records": 2838,
+    "batch_size": 1,
+    "precision": "FP32",
+    "polar_preprocessing": "author-compatible raw float64 until final seven-channel float32 tensor",
+    "aggregation": "arithmetic mean of per-frame author-protocol metrics",
+    "metric": "upstream metric/cfmetric.py",
+    "downsample": 4
+  },
+  "provenance": {
+    "upstream_commit": "9b1145d87e50895fd17068fad9cec1199092f67a",
+    "checkpoint_sha256": "551ee4fcdbb17f11f6ff3a886ad28469abce52f68cfbca9c0ed0108e3f7512fa",
+    "data_manifest_sha256": "ac6d119afac6d84ffdf8d3c17068f2264af92437c3fc5e157f7c74d513f2a16b",
+    "data_inventory_sha256": "d4b9dc4995a21c5da4da1aff7db93e7fb8f7cd476dfea048e04685f2718efe73",
+    "split_sha256": "bf16e16d906fdef108ce255eb094a3d56c55a0ab037b5154e604f1b7685c5c7c",
+    "view_directions_sha256": "30524cc6de9f8cc2f41c59a00258eaaaab15bf22172ad2ba96bfd6610aa9c4b7",
+    "runner_sha256": "c5c0eae82992ed2a1aa54d21b8bf92ee3fc74eec9215e2a53d66c0e859b229c3",
+    "sample_runner_sha256": "4a42f65a5c91c759176eb22efb2de477f5c966a23df69c20182708f3d36be6ab",
+    "compatibility_sha256": "ad508e8a23685b243da7f51c6a68104e1601beda626158b56a3161a408075789"
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "python": "3.10.20",
+    "peak_vram_mib": 541.208984375
+  },
+  "author_protocol_results": {
+    "d435": {
+      "measured": {
+        "rmse_mm": 24.7888407339985,
+        "mae_mm": 10.659555518123232,
+        "delta_1": 0.9950355609352265,
+        "delta_2": 0.9997572696895481,
+        "delta_3": 0.9999539084962064
+      },
+      "paper": {
+        "rmse_mm": 24.78,
+        "mae_mm": 10.66,
+        "delta_1": 0.995,
+        "delta_2": 0.999,
+        "delta_3": 1.0
+      },
+      "measured_minus_paper": {
+        "rmse_mm": 0.008840733998500383,
+        "mae_mm": -0.00044448187676771056,
+        "delta_1": 3.556093522649739e-05,
+        "delta_2": 0.0007572696895481457,
+        "delta_3": -4.6091503793643795e-05
+      }
+    },
+    "l515": {
+      "measured": {
+        "rmse_mm": 23.842826067251647,
+        "mae_mm": 10.46669886481214,
+        "delta_1": 0.9949759888568555,
+        "delta_2": 0.9996705138297276,
+        "delta_3": 0.9999794089066103
+      },
+      "paper": {
+        "rmse_mm": 23.84,
+        "mae_mm": 10.47,
+        "delta_1": 0.995,
+        "delta_2": 0.999,
+        "delta_3": 1.0
+      },
+      "measured_minus_paper": {
+        "rmse_mm": 0.002826067251646691,
+        "mae_mm": -0.003301135187861348,
+        "delta_1": -2.4011143144542224e-05,
+        "delta_2": 0.0006705138297276036,
+        "delta_3": -2.059109338969911e-05
+      }
+    },
+    "itof": {
+      "measured": {
+        "rmse_mm": 37.271666801716506,
+        "mae_mm": 21.37324971836649,
+        "delta_1": 0.987295804600699,
+        "delta_2": 0.998945813887838,
+        "delta_3": 0.9999622625454522
+      },
+      "paper": {
+        "rmse_mm": 37.27,
+        "mae_mm": 21.37,
+        "delta_1": 0.987,
+        "delta_2": 0.999,
+        "delta_3": 1.0
+      },
+      "measured_minus_paper": {
+        "rmse_mm": 0.0016668017165031301,
+        "mae_mm": 0.0032497183664901286,
+        "delta_1": 0.00029580460069900116,
+        "delta_2": -5.418611216201352e-05,
+        "delta_3": -3.7737454547825955e-05
+      }
+    },
+    "all": {
+      "measured": {
+        "rmse_mm": 28.634444534322213,
+        "mae_mm": 14.166501367100622,
+        "delta_1": 0.9924357847975938,
+        "delta_2": 0.9994578658023713,
+        "delta_3": 0.9999651933160897
+      },
+      "paper": {
+        "rmse_mm": 28.63,
+        "mae_mm": 14.17,
+        "delta_1": 0.992,
+        "delta_2": 0.999,
+        "delta_3": 1.0
+      },
+      "measured_minus_paper": {
+        "rmse_mm": 0.004444534322214366,
+        "mae_mm": -0.003498632899377796,
+        "delta_1": 0.00043578479759376343,
+        "delta_2": 0.00045786580237128227,
+        "delta_3": -3.4806683910315606e-05
+      }
+    }
+  },
+  "compact_cache_cross_check": {
+    "frames": 946,
+    "records": 2838,
+    "all_mean_rmse_cache_minus_raw_mm": 1.4276728030893082e-05,
+    "all_mean_mae_cache_minus_raw_mm": 3.622148856408103e-07,
+    "max_per_record_rmse_absolute_difference_mm": 0.010543120816379314,
+    "max_per_record_mae_absolute_difference_mm": 0.004087843957496062
+  },
+  "coverage_aware_pooled_full": {
+    "d435": {
+      "raw": {
+        "coverage": 0.7321751809175366,
+        "rmse_mm": 48.31004188168373,
+        "mae_mm": 23.614313494678566
+      },
+      "ppft": {
+        "coverage": 1.0,
+        "rmse_mm": 25.565617292150645,
+        "mae_mm": 10.652224810728766
+      }
+    },
+    "l515": {
+      "raw": {
+        "coverage": 0.8210137275607181,
+        "rmse_mm": 80.79247520204645,
+        "mae_mm": 32.738763129169
+      },
+      "ppft": {
+        "coverage": 1.0,
+        "rmse_mm": 24.348422581461183,
+        "mae_mm": 10.463685922301053
+      }
+    },
+    "itof": {
+      "raw": {
+        "coverage": 0.42425929965213777,
+        "rmse_mm": 77.47906443360336,
+        "mae_mm": 35.34541171482819
+      },
+      "ppft": {
+        "coverage": 1.0,
+        "rmse_mm": 39.33381885366862,
+        "mae_mm": 21.358408720946862
+      }
+    },
+    "all": {
+      "raw": {
+        "coverage": 0.6591494027101308,
+        "rmse_mm": 69.72940991206455,
+        "mae_mm": 29.919573915720125
+      },
+      "ppft": {
+        "coverage": 1.0,
+        "rmse_mm": 30.515546722653447,
+        "mae_mm": 14.158106484658921
+      }
+    }
+  },
+  "artifacts": {
+    "raw_report": {
+      "path": "/home/chocbrownie0524/poldepth/runs/ppft_hammer_test_fp32_raw/report.json",
+      "sha256": "e536bab6e48e7c73b1c05cf6f8d1b73fe57591144a870051158c6d4a4f0bc5ca"
+    },
+    "cache_report": {
+      "path": "/home/chocbrownie0524/poldepth/runs/ppft_hammer_test_fp32_cache/report.json",
+      "sha256": "7d6c0644f38d20e34fe7d474253232a6f886df82f198b0d4f63bdcf5abadca00"
+    },
+    "raw_vs_cache": {
+      "path": "/home/chocbrownie0524/poldepth/runs/ppft_hammer_test_raw_vs_cache.json",
+      "sha256": "8176609bf9ca6df35b79dbcf96c70c3fcd83d150755839ef283320306d8f8a01"
+    },
+    "coverage_slices": {
+      "path": "/home/chocbrownie0524/poldepth/runs/ppft_hammer_test_coverage_slices.json",
+      "sha256": "7bbfdeea223f71c8facadaa1a026c16f52644a7e9a03dcc8864b1b4c81a281eb"
+    }
+  },
+  "claims": {
+    "supported": "Table 2 result-level compatibility for this checkpoint, split, and inference path",
+    "not_supported": [
+      "bitwise/operator-level equivalence of legacy and torchvision DCN",
+      "Apex/DDP training reproduction",
+      "absolute AoLP direction convention"
+    ]
+  }
+}

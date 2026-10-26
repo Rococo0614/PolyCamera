@@ -11,9 +11,11 @@ from __future__ import annotations
 import argparse
 import fnmatch
 import hashlib
+import http.client
 import io
 import os
 import shutil
+import time
 import urllib.request
 import zipfile
 from collections import OrderedDict
@@ -29,12 +31,14 @@ class HTTPRangeReader(io.RawIOBase):
         block_size: int = 8 * 1024 * 1024,
         cache_blocks: int = 8,
         timeout: float = 60.0,
+        retries: int = 5,
         disk_cache: Path | None = None,
     ) -> None:
         self.url = url
         self.block_size = block_size
         self.cache_blocks = cache_blocks
         self.timeout = timeout
+        self.retries = retries
         self.position = 0
         self._cache: OrderedDict[int, bytes] = OrderedDict()
         self.disk_cache = disk_cache
@@ -55,11 +59,18 @@ class HTTPRangeReader(io.RawIOBase):
         return urllib.request.urlopen(request, timeout=self.timeout)
 
     def _discover_size(self) -> int:
-        with self._request(method="HEAD") as response:
-            length = response.headers.get("Content-Length")
-            if length is None:
-                raise OSError("Remote server did not provide Content-Length")
-            return int(length)
+        for attempt in range(self.retries + 1):
+            try:
+                with self._request(method="HEAD") as response:
+                    length = response.headers.get("Content-Length")
+                    if length is None:
+                        raise OSError("Remote server did not provide Content-Length")
+                    return int(length)
+            except (OSError, TimeoutError, http.client.HTTPException):
+                if attempt >= self.retries:
+                    raise
+                time.sleep(min(2**attempt, 10))
+        raise AssertionError("unreachable")
 
     def _get_block(self, block_index: int) -> bytes:
         if block_index in self._cache:
@@ -84,17 +95,35 @@ class HTTPRangeReader(io.RawIOBase):
                 return data
             cache_path.unlink()
 
-        with self._request(headers={"Range": f"bytes={start}-{end}"}) as response:
-            if response.status != 206:
-                raise OSError(f"Server ignored Range request (HTTP {response.status})")
-            data = response.read()
-        if len(data) != expected:
-            raise OSError(f"Short Range response: expected {expected}, got {len(data)}")
-
+        data = None
+        for attempt in range(self.retries + 1):
+            try:
+                with self._request(headers={"Range": f"bytes={start}-{end}"}) as response:
+                    if response.status != 206:
+                        raise OSError(
+                            f"Server ignored Range request (HTTP {response.status})"
+                        )
+                    data = response.read()
+                    if len(data) != expected:
+                        raise OSError(
+                            f"Short Range response: expected {expected}, got {len(data)}"
+                        )
+                break
+            except (OSError, TimeoutError, http.client.HTTPException):
+                if attempt >= self.retries:
+                    raise
+                time.sleep(min(2**attempt, 10))
+        if data is None:
+            raise AssertionError("Range retry loop produced no data")
         if cache_path is not None:
-            temporary = cache_path.with_suffix(".tmp")
-            temporary.write_bytes(data)
-            temporary.replace(cache_path)
+            # A PID-specific temporary name allows independent trajectory
+            # extractors to share the persistent block cache safely.
+            temporary = cache_path.with_name(f"{cache_path.name}.tmp.{os.getpid()}")
+            try:
+                temporary.write_bytes(data)
+                temporary.replace(cache_path)
+            finally:
+                temporary.unlink(missing_ok=True)
 
         self._cache[block_index] = data
         while len(self._cache) > self.cache_blocks:
@@ -171,6 +200,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", required=True)
     parser.add_argument("--block-size-mib", type=int, default=8)
+    parser.add_argument("--timeout", type=float, default=60.0)
+    parser.add_argument("--retries", type=int, default=5)
     parser.add_argument(
         "--cache-dir",
         default=str(Path(__file__).resolve().parents[1] / ".cache" / "remote_zip"),
@@ -207,6 +238,8 @@ def main() -> None:
     reader = HTTPRangeReader(
         args.url,
         block_size=args.block_size_mib * 1024 * 1024,
+        timeout=args.timeout,
+        retries=args.retries,
         disk_cache=Path(args.cache_dir) if args.cache_dir else None,
     )
     with zipfile.ZipFile(reader) as archive:

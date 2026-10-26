@@ -2,6 +2,10 @@
 
 **更新日期：** 2026-10-26
 
+> **执行状态更新：** RTX 5080 训练端现已上线并完成预检、现代 PyTorch 环境
+> 验证、PPFT 作者权重严格加载和官方 946 帧 test split 推理。下文“当前机器”仍指 5090 控制端；
+> 训练端实测修正见第 4、5 节和 `09_execution_log.md`。
+
 ## 1. 结论
 
 当前机器应作为**控制端、开发端和结果分析端**；另一台 RTX 5080 + 约 1 TB 存储机器应作为**数据端和训练端**。
@@ -54,7 +58,8 @@
 
 公开脚本把每帧完整分辨率 `I/rho/phi` 保存成 float64 `.npy`，7,207 帧预计约 **145.8 GiB**；训练时又只读取 `[::4, ::4]`。
 
-本项目的 `build_ppft_polar_cache.py` 在逐点计算前等价地下采样，并保存 float32：
+本项目的 `build_ppft_polar_cache.py` 在逐点计算前取相同空间采样，并保存
+float32。它会在 AoLP 周期编码前引入浮点量化，不是 bit-level 等价：
 
 | cache | 预计容量 |
 |---|---:|
@@ -63,11 +68,16 @@
 | downsample=4 float32（推荐） | **4.56 GiB** |
 | downsample=4 float16 | 2.28 GiB，但不优先用于首轮复现 |
 
-当前 4 帧测试已确认推荐 cache 的输出为 `208 x 272 x 3 float32`，每帧约 679 KiB。
+当前 946 帧 test split 已确认推荐 cache 的输出为 `208 x 272 x 3 float32`，合计
+`642,371,840` bytes。全量 raw/cache 交叉验证的 All mean RMSE 仅差
+`0.0000143 mm`，但主复现结果仍引用 raw float64 作者预处理路径。
 
 ## 4. 1 TB 训练机推荐目录与预算
 
-已于 2026-10-26 确认：远端为寝室个人电脑，提供约 1 TB 持久磁盘，可通过 SSH 操作，可以联网并长期后台运行。尚待预检确认实际挂载路径、剩余容量、RAM、驱动和准确显存。
+2026-10-26 训练端预检已完成：AMD Ryzen 9 9950X3D、44 GiB RAM、RTX
+5080 16 GiB，可联网并长期运行 tmux。Linux ext4 分区约 489 GiB、任务开始时
+约 343 GiB 可用；另有大容量 NTFS，但首次写入出现长时间阻塞，因此不作为
+唯一实验副本。实际工作根目录为 `/home/chocbrownie0524/poldepth`。
 
 ```text
 /data/poldepth/
@@ -103,7 +113,7 @@
 
 ## 5. 远端部署步骤
 
-### Stage A：机器预检
+### Stage A：机器预检（已完成）
 
 将仓库中的 `depth_research/tools/remote_preflight.sh` 复制到训练机执行，把输出发回。需要确认：
 
@@ -137,7 +147,7 @@
 
 不推荐在远端直接通过 HTTP Range 抽取 57,689 个文件：当前样本实验表明随机 Range 请求较慢。训练机空间足够时，顺序下载一次再本地选择性解压更稳定。
 
-### Stage D：模型环境
+### Stage D：模型环境（推理部分已完成）
 
 RTX 5080 属于新架构，不使用论文原始 PyTorch 1.9/1.10 + CUDA 11.x 环境。流程为：
 
@@ -145,19 +155,20 @@ RTX 5080 属于新架构，不使用论文原始 PyTorch 1.9/1.10 + CUDA 11.x �
 2. Python 优先 3.10/3.11；
 3. 单独环境，不污染系统 Python；
 4. 先移除 PPFT 推理路径对 Apex/DDP 的强制依赖；
-5. 用 `torch.amp` 代替 Apex AMP；
+5. 评估 `torch.amp` 替代 Apex AMP 的数值稳定性；
 6. 处理旧 mmcv checkpoint loader 和 deformable convolution；
 7. 先加载作者 checkpoint 跑 1 帧、1 batch；
 8. 再运行 4 帧审计子集；
-9. 最后才运行完整 test/train。
+9. 官方 946 帧 test 已完成并复现 Table 2；完整 train/val 与训练迁移仍待完成。
 
 ### Stage E：5080 显存策略
 
 按常见 RTX 5080 16 GiB 显存保守设计，实际以预检为准：
 
-- 推理 batch size 从 1 开始；
+- 推理固定 batch size 1；
 - 训练 batch size 从 2 开始；
-- BF16/FP16 AMP；
+- 作者 checkpoint 的全模型 FP16 autocast 已实测产生 NaN；基线推理使用 FP32，
+  峰值约 541 MiB。训练时 BF16/FP16 必须分别做 finite/梯度稳定性检查后才能启用；
 - gradient accumulation 模拟较大 batch；
 - 固定 208 x 272 或论文实际网络输入，不先提分辨率；
 - 必要时 gradient checkpointing；

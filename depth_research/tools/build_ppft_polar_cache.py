@@ -5,8 +5,9 @@ The public PPFT preprocessor saves full-resolution float64 ``[I, rho, phi]``
 arrays and the loader then subsamples by four. That cache is about 146 GiB for
 7,207 frames. This tool subsamples before the pointwise computation and stores
 float32 by default, reducing the cache to about 4.6 GiB while preserving the
-network input samples. The PPFT loader must be told not to subsample this cache
-again.
+same spatial samples. Float32 quantization before periodic AoLP encoding can
+change final inputs at roundoff scale; use raw preprocessing for a bit-level
+author-path check. The PPFT loader must not subsample this cache again.
 """
 
 from __future__ import annotations
@@ -52,13 +53,15 @@ def process_one(task: tuple[str, str, int, str, str]) -> tuple[str, int, str]:
     intensity = 0.5 * (i0 + i45 + i90 + i135)
     q = i0 - i90
     u = i45 - i135
-    q_safe = np.where(q == 0, 1e-10, q)
-    intensity_safe = np.where(intensity == 0, 1e-10, intensity)
-    rho = np.clip(np.sqrt(np.square(q) + np.square(u)) / intensity_safe, 0, 1)
+    # Match the public script's in-place substitutions exactly.  Substituted Q
+    # participates in rho as well as phi, and substituted I is saved to disk.
+    q[q == 0] = 1e-10
+    intensity[intensity == 0] = 1e-10
+    rho = np.clip(np.sqrt(np.square(q) + np.square(u)) / intensity, 0, 1)
 
     # Match the public PPFT preprocessing convention rather than changing the
     # checkpoint's expected representation.
-    phi = 0.5 * np.arctan(u / q_safe)
+    phi = 0.5 * np.arctan(u / q)
     phi[np.cos(2 * phi) * q < 0] += math.pi / 2
     phi = np.mod(phi + math.pi, math.pi)
 

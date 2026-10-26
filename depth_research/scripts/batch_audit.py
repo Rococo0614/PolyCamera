@@ -52,11 +52,25 @@ def prefixed_metrics(metrics: dict[str, float | int], prefix: str = "") -> dict[
     return {f"{prefix}{key}": value for key, value in metrics.items()}
 
 
+def discover_ground_truth(root: Path) -> tuple[list[Path], str]:
+    archive_layout = sorted(root.glob("*/polarization/_gt/*.png"))
+    selected_layout = sorted(root.glob("*/_gt/*.png"))
+    if archive_layout and selected_layout:
+        raise RuntimeError(f"Mixed selected/archive layouts under {root}")
+    if archive_layout:
+        return archive_layout, "archive"
+    return selected_layout, "selected"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", required=True, help="Root containing extracted ZIP paths")
     parser.add_argument("--output", required=True)
     parser.add_argument("--polar-order", default="0,45,90,135")
+    parser.add_argument(
+        "--support-root",
+        help="Optional directory containing fixed d435/l515/itof.npy masks",
+    )
     args = parser.parse_args()
 
     root = Path(args.root)
@@ -71,13 +85,24 @@ def main() -> None:
     incomplete_rows: list[dict[str, object]] = []
     error_detection_rows: list[dict[str, object]] = []
 
-    ground_truth_files = sorted(root.glob("*/polarization/_gt/*.png"))
+    ground_truth_files, layout = discover_ground_truth(root)
     if not ground_truth_files:
-        raise SystemExit(f"No samples found under {root}/*/polarization/_gt")
+        raise SystemExit(
+            f"No samples found under {root}/*/_gt or {root}/*/polarization/_gt"
+        )
+
+    fixed_support: dict[str, np.ndarray] = {}
+    if args.support_root:
+        support_root = Path(args.support_root)
+        for sensor in SENSOR_FOLDERS:
+            support_path = support_root / f"{sensor}.npy"
+            if not support_path.is_file():
+                raise SystemExit(f"Missing fixed support mask: {support_path}")
+            fixed_support[sensor] = np.load(support_path, allow_pickle=False).astype(bool)
 
     for gt_path in ground_truth_files:
         sample_root = gt_path.parent.parent
-        trajectory = sample_root.parent.name
+        trajectory = sample_root.parent.name if layout == "archive" else sample_root.name
         frame = gt_path.stem
         required_paths = {
             "polar": sample_root / "pol" / gt_path.name,
@@ -138,13 +163,25 @@ def main() -> None:
                 continue
             prediction = load(depth_path).astype(np.float64).squeeze()
             metrics = depth_metrics(prediction, gt)
-            support_mask, support_bbox = observed_support_bbox_mask(prediction)
+            if sensor in fixed_support:
+                support_mask = fixed_support[sensor]
+                if support_mask.shape != prediction.shape:
+                    raise ValueError(
+                        f"Support {sensor} shape {support_mask.shape} does not match "
+                        f"depth {prediction.shape}"
+                    )
+                _, support_bbox = observed_support_bbox_mask(support_mask)
+                support_source = "fixed_cross_frame"
+            else:
+                support_mask, support_bbox = observed_support_bbox_mask(prediction)
+                support_source = "per_frame_observed_bbox"
             support_metrics = depth_metrics(prediction, gt, mask=support_mask)
             frame_rows.append(
                 {
                     "trajectory": trajectory,
                     "frame": frame,
                     "sensor": sensor,
+                    "support_source": support_source,
                     "observed_support_bbox_xyxy": "/".join(map(str, support_bbox))
                     if support_bbox
                     else "",
