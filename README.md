@@ -120,6 +120,7 @@ RGB-D 三维定位/位姿扩展
 - `08_depth_landscape_and_gap.md`：产品技术、近期论文、公开数据及候选研究缺口。
 - `09_execution_log.md`：按日期记录实际执行、数据结果、失败与下一步，不把计划当结果。
 - `10_advisor_one_page.md`：可直接用于和导师沟通的题目、问题、路线、初步证据和风险摘要。
+- `11_compute_and_data_deployment_plan.md`：当前机与 RTX 5080/1 TB 训练机的数据、环境、训练和同步分工。
 - `depth_research/`：公开数据分析、指标计算、选择性下载和后续实验代码。
 
 基线代码的实际可复现性审计见 `depth_research/evidence/reproduction_audit.md`。

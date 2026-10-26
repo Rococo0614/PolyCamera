@@ -209,6 +209,43 @@ scene12 的 PPFT 象限配对残差仍最低（`0.0556`），但与其他配对�
 5. 在现代 PyTorch 单 GPU 环境迁移 PPFT 作者权重，先做一帧推理；
 6. 固定基线后执行 leave-one-real-sensor-out，只有缺口复现才进入方法阶段。
 
+## 2026-10-26：双机器部署规划
+
+### 当前机资源复核
+
+- CPU：Core Ultra 9 285K，24 个在线逻辑 CPU；
+- RAM：125 GiB、约 68 GiB available；
+- swap：约 9.2/9 GiB 已使用，存在其他负载；
+- GPU：RTX 5090 D 24 GiB，但检查时只剩约 13 GiB，属于共享资源；
+- 根盘：仅剩约 6.6 GiB、98% 使用率，已低于 10 GiB 安全线；
+- 本项目约 669 MiB，不擅自删除其他用户/系统文件。
+
+决定：当前机停止继续下载、重环境安装和训练，只承担代码、文档、轻量测试及远端结果分析。
+
+### HAMMER 容量核算
+
+通过远程 ZIP 中央目录统计，而非估算：
+
+- 完整 ZIP：158.66 GiB；完整解压：171.07 GiB；
+- 项目实际需要的非 naked polarization 视角数据：62.00 GiB；
+- 公开 PPFT full-resolution float64 cache 预计 145.8 GiB；
+- 本项目 downsample=4 float32 cache 预计 4.56 GiB。
+
+因此 1 TB 训练盘足够，但不应采用“完整解压 + 再复制 + 官方 float64 cache”的浪费路径。
+
+### 已增加并验证的远端工具
+
+- `remote_preflight.sh`：只读机器/网络预检，shell 语法检查通过；
+- `inventory_hammer.py`：生成精确存储清单；
+- `prepare_hammer_selected.py`：本地 ZIP 中选择性、原子、可续提取 62 GiB 数据，并生成 CRC manifest；已用微型 ZIP 验证路径过滤、naked 排除和 PPFT 目录转换；
+- `build_ppft_polar_cache.py`：紧凑偏振 cache；已在 4 个真实 HAMMER 样本上验证，输出 `208x272x3 float32`，约 679 KiB/帧。
+
+完整分工和远端步骤见 `11_compute_and_data_deployment_plan.md`。下一步必须先取得 RTX 5080 机器的预检输出，再决定精确 PyTorch 安装命令。
+
+### 用户确认的训练端条件
+
+2026-10-26 已确认远端为寝室个人电脑：RTX 5080、约 1 TB 持久磁盘、可 SSH、可联网、允许长期后台任务。训练端基本条件满足；待提供 SSH 入口后执行只读预检。
+
 ### 本轮发现的工程问题
 
 1. 完整 HAMMER 无法存入当前磁盘；

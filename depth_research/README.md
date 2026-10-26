@@ -10,6 +10,10 @@ evidence/                文献与产品证据矩阵
 src/poldepth/            偏振表示、质量图和深度指标
 scripts/                 数据审计入口
 tools/remote_zip.py      HTTP Range 选择性读取大型 ZIP
+tools/inventory_hammer.py  不解压统计完整归档容量
+tools/prepare_hammer_selected.py  训练机选择性提取约 62 GiB 所需数据
+tools/build_ppft_polar_cache.py   构建约 4.6 GiB 的紧凑偏振 cache
+tools/remote_preflight.sh         训练机只读资源/联网预检
 tests/                   物理公式和指标单元测试
 data/                    数据（忽略，不提交）
 results/                 生成结果（忽略，不提交）
@@ -47,6 +51,33 @@ python -m venv .venv
 ```
 
 `--pattern` 可以重复传入，从而只解析一次中央目录并同时选择多个帧。
+
+## 训练机数据准备
+
+完整步骤与容量预算见 `../11_compute_and_data_deployment_plan.md`。核心 dry-run 命令：
+
+```bash
+.venv/bin/python depth_research/tools/inventory_hammer.py \
+  --archive /data/poldepth/archives/hammer.zip \
+  --output depth_research/results/hammer_inventory_remote.csv
+
+.venv/bin/python depth_research/tools/prepare_hammer_selected.py \
+  --archive /data/poldepth/archives/hammer.zip \
+  --output /data/poldepth/datasets/hammer_selected \
+  --manifest /data/poldepth/manifests/hammer_selected.csv \
+  --dry-run
+```
+
+确认 dry-run 后去掉 `--dry-run`。随后构建紧凑 cache：
+
+```bash
+.venv/bin/python depth_research/tools/build_ppft_polar_cache.py \
+  --data-root /data/poldepth/datasets/hammer_selected \
+  --output-root /data/poldepth/cache/polar_float32_ds4 \
+  --downsample 4 --dtype float32 --grayscale opencv --workers 8
+```
+
+公开 PPFT loader 必须相应设置为不再二次 `[::4]`。
 
 下载前先用 `list` 确认真实归档路径；完整文件约 159 GiB，禁止在当前根分区直接整包下载。
 
