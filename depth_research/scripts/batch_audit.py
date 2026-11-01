@@ -12,6 +12,7 @@ from PIL import Image
 
 from poldepth.metrics import (
     silent_error_detection_metrics,
+    silent_error_detection_metrics_many,
     depth_boundary_mask,
     depth_metrics,
     erode_mask,
@@ -250,7 +251,14 @@ def main() -> None:
                         labels, (140, 160)
                     ).astype(np.float64)
                 for score_name, anomaly_score in anomaly_scores.items():
-                    for threshold in SILENT_ERROR_THRESHOLDS_MM:
+                    threshold_metrics = silent_error_detection_metrics_many(
+                        prediction,
+                        gt,
+                        anomaly_score,
+                        error_thresholds=SILENT_ERROR_THRESHOLDS_MM,
+                        mask=features["valid"],
+                    )
+                    for metrics in threshold_metrics:
                         error_detection_rows.append(
                             {
                                 "trajectory": trajectory,
@@ -258,13 +266,7 @@ def main() -> None:
                                 "sensor": sensor,
                                 "region": "full_valid_polar",
                                 "score": score_name,
-                                **silent_error_detection_metrics(
-                                    prediction,
-                                    gt,
-                                    anomaly_score,
-                                    error_threshold=threshold,
-                                    mask=features["valid"],
-                                ),
+                                **metrics,
                             }
                         )
                 if labels is not None:

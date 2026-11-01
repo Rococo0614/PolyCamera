@@ -10,14 +10,25 @@ import numpy as np
 def _binary_ranking_metrics(
     target: np.ndarray, score: np.ndarray
 ) -> tuple[float, float]:
-    labels = np.asarray(target, dtype=bool).ravel()
+    return _binary_ranking_metrics_many((target,), score)[0]
+
+
+def _binary_ranking_metrics_many(
+    targets: tuple[np.ndarray, ...], score: np.ndarray
+) -> list[tuple[float, float]]:
+    """Evaluate several binary targets while sorting shared scores once."""
+
     scores = np.asarray(score, dtype=np.float64).ravel()
     valid = np.isfinite(scores)
-    labels, scores = labels[valid], scores[valid]
-    positives = int(labels.sum())
-    negatives = int((~labels).sum())
-    if positives == 0:
-        return math.nan, math.nan
+    labels_many = []
+    for target in targets:
+        labels = np.asarray(target, dtype=bool).ravel()
+        if labels.shape != scores.shape:
+            raise ValueError("target and score must contain the same number of values")
+        labels_many.append(labels[valid])
+    scores = scores[valid]
+    if not scores.size:
+        return [(math.nan, math.nan) for _ in labels_many]
 
     order = np.argsort(scores, kind="mergesort")
     sorted_scores = scores[order]
@@ -28,24 +39,33 @@ def _binary_ranking_metrics(
         sorted_ranks[start:end] = 0.5 * (start + end + 1)
     ranks = np.empty_like(sorted_ranks)
     ranks[order] = sorted_ranks
-    if negatives:
-        statistic = ranks[labels].sum() - positives * (positives + 1) / 2
-        auroc = float(statistic / (positives * negatives))
-    else:
-        auroc = math.nan
-
     descending_order = order[::-1]
-    descending_labels = labels[descending_order]
     descending_scores = scores[descending_order]
-    cumulative_tp = np.cumsum(descending_labels)
     group_ends = np.r_[np.flatnonzero(np.diff(descending_scores)), len(scores) - 1]
-    tp = cumulative_tp[group_ends]
     predicted = group_ends + 1
-    precision = tp / predicted
-    recall = tp / positives
-    previous_recall = np.r_[0.0, recall[:-1]]
-    average_precision = float(np.sum((recall - previous_recall) * precision))
-    return auroc, average_precision
+
+    results = []
+    for labels in labels_many:
+        positives = int(labels.sum())
+        negatives = int((~labels).sum())
+        if positives == 0:
+            results.append((math.nan, math.nan))
+            continue
+        if negatives:
+            statistic = ranks[labels].sum() - positives * (positives + 1) / 2
+            auroc = float(statistic / (positives * negatives))
+        else:
+            auroc = math.nan
+
+        descending_labels = labels[descending_order]
+        cumulative_tp = np.cumsum(descending_labels)
+        tp = cumulative_tp[group_ends]
+        precision = tp / predicted
+        recall = tp / positives
+        previous_recall = np.r_[0.0, recall[:-1]]
+        average_precision = float(np.sum((recall - previous_recall) * precision))
+        results.append((auroc, average_precision))
+    return results
 
 
 def binary_auroc(target: np.ndarray, score: np.ndarray) -> float:
@@ -70,6 +90,25 @@ def silent_error_detection_metrics(
 ) -> dict[str, float | int]:
     """Evaluate detection of valid-but-wrong sensor depth pixels."""
 
+    return silent_error_detection_metrics_many(
+        prediction,
+        ground_truth,
+        anomaly_score,
+        error_thresholds=(error_threshold,),
+        mask=mask,
+    )[0]
+
+
+def silent_error_detection_metrics_many(
+    prediction: np.ndarray,
+    ground_truth: np.ndarray,
+    anomaly_score: np.ndarray,
+    *,
+    error_thresholds: tuple[float, ...],
+    mask: np.ndarray | None = None,
+) -> list[dict[str, float | int]]:
+    """Evaluate multiple error thresholds with one anomaly-score sort."""
+
     pred = np.asarray(prediction, dtype=np.float64).squeeze()
     gt = np.asarray(ground_truth, dtype=np.float64).squeeze()
     score = np.asarray(anomaly_score, dtype=np.float64).squeeze()
@@ -78,17 +117,23 @@ def silent_error_detection_metrics(
     valid = np.isfinite(pred) & (pred > 0) & np.isfinite(gt) & (gt > 0) & np.isfinite(score)
     if mask is not None:
         valid &= np.asarray(mask, dtype=bool).squeeze()
-    target = np.abs(pred[valid] - gt[valid]) >= error_threshold
+    absolute_error = np.abs(pred[valid] - gt[valid])
     selected_score = score[valid]
-    auroc, average_precision = _binary_ranking_metrics(target, selected_score)
-    return {
-        "evaluated_pixels": int(valid.sum()),
-        "error_threshold": float(error_threshold),
-        "positive_pixels": int(target.sum()),
-        "positive_fraction": float(np.mean(target)) if target.size else math.nan,
-        "auroc": auroc,
-        "average_precision": average_precision,
-    }
+    targets = tuple(absolute_error >= threshold for threshold in error_thresholds)
+    rankings = _binary_ranking_metrics_many(targets, selected_score)
+    return [
+        {
+            "evaluated_pixels": int(valid.sum()),
+            "error_threshold": float(threshold),
+            "positive_pixels": int(target.sum()),
+            "positive_fraction": float(np.mean(target)) if target.size else math.nan,
+            "auroc": auroc,
+            "average_precision": average_precision,
+        }
+        for threshold, target, (auroc, average_precision) in zip(
+            error_thresholds, targets, rankings, strict=True
+        )
+    ]
 
 
 def erode_mask(mask: np.ndarray, radius: int) -> np.ndarray:

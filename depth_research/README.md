@@ -8,6 +8,7 @@
 configs/                 固定研究协议和实验配置
 evidence/                文献与产品证据矩阵
 evidence/ppft_hammer_test_reproduction.json  官方 946 帧复现摘要与指纹
+evidence/ppft_hammer_full_evaluation.json     7,207 帧全量评测摘要与指纹
 src/poldepth/            偏振表示、质量图和深度指标
 scripts/                 数据审计入口
 tools/remote_zip.py      HTTP Range 选择性读取大型 ZIP
@@ -24,10 +25,10 @@ results_template.tsv     实验登记表模板
 
 ## 当前执行顺序
 
-1. 四帧审计和 PPFT 官方 946 帧 test split 已完成；Table 2 结果级交叉验证通过；
-2. 等待完整 HAMMER ZIP 可续传下载并做长度/CRC/inventory 校验；
-3. 选择性提取全部 7,207 帧约 62 GiB，生成全数据 compact cache 和固定 support；
-4. 运行全量 raw audit、其他 baseline、消融、压力测试和 leave-one-sensor-out；
+1. HAMMER 7,207 帧选择集、compact cache、固定 support 和全量 raw audit 已完成；
+2. PPFT 官方 Table 2 与 train/val/test 共 21,621 条推理已完成；
+3. 下一步运行 CompletionFormer/其他 baseline、输入消融和偏振/深度压力测试；
+4. 复现训练 backward 后再执行严格 leave-one-real-sensor-out；
 5. 继续联系作者核实偏振四象限的绝对角度；该问题不阻塞 checkpoint 推理，
    但阻塞绝对 AoLP 物理方向结论；
 6. Gate 3 通过前不启动方法网络和自动实验。
@@ -118,7 +119,7 @@ float32；这是约 4.6 GiB 存储方案的显式取舍。论文数值交叉验�
   --output depth_research/results/sample_audit/000000_overview.png
 ```
 
-批量汇总所有已选择性下载的样本：
+批量汇总少量样本：
 
 ```bash
 .venv/bin/python depth_research/scripts/batch_audit.py \
@@ -136,15 +137,21 @@ float32；这是约 4.6 GiB 存储方案的显式取舍。论文数值交叉验�
   --root /data/poldepth/datasets/hammer_selected \
   --output /data/poldepth/cache/support_masks
 
-.venv/bin/python depth_research/scripts/batch_audit.py \
+.venv/bin/python depth_research/scripts/run_batch_audit_sharded.py \
   --root /data/poldepth/datasets/hammer_selected \
+  --data-manifest /data/poldepth/manifests/hammer_selected.csv \
   --support-root /data/poldepth/cache/support_masks \
-  --output depth_research/results/full_raw_audit
+  --output depth_research/results/full_raw_audit \
+  --workers 24
 ```
 
 默认 support 要求一个像素在至少 1% 帧中有正深度；输出同时记录跨帧 union
 和阈值化 support 的比例及外接框。它仍是数据驱动近似，最终实物实验应优先
 使用标定/warp 的精确有效域。
+
+分片入口按 trajectory 原子落盘并可续传，最后合并 CSV。silent-error 的多个误差
+阈值共享一次 score 排序；四帧回归测试与旧实现的全部 CSV 逐字节一致。7,207
+帧、32 trajectory、24 workers 实测约 62 分钟。
 
 核查 label ID 对应的物体/材质：
 
@@ -197,7 +204,7 @@ PYTHONPATH=depth_research/src python depth_research/scripts/run_ppft_split.py \
   --upstream-root /path/to/Polarization-Prompt-Fusion-Tuning \
   --checkpoint /path/to/ppft_fin.pt \
   --data-root /data/poldepth/datasets/hammer_selected \
-  --data-manifest /data/poldepth/manifests/hammer_test.sha256 \
+  --data-manifest /data/poldepth/manifests/hammer_selected.csv \
   --split-file /path/to/PPFT/data_paths/hammer_test.txt \
   --view-directions /path/to/PPFT/utils/vd.npy \
   --output-dir depth_research/results/ppft_test_fp32 \
@@ -208,6 +215,16 @@ PYTHONPATH=depth_research/src python depth_research/scripts/run_ppft_split.py \
 同时保留本项目 coverage-aware 全图、材质和边界切片。可先加 `--limit 4` 做
 冒烟测试，默认不保存约 0.6 GiB 的逐帧预测；需要时使用
 `--save-predictions`。
+
+使用 compact cache 做全 split 评测时增加：
+
+```bash
+  --polar-cache-root /data/poldepth/cache/polar_float32_ds4 \
+  --polar-cache-manifest /data/poldepth/manifests/polar_float32_ds4.sha256
+```
+
+run config 同时固化 runner、共享预处理、兼容层、指标模块、数据清单和 cache
+清单的 SHA-256；配置变化时拒绝混用已有原子记录。
 
 官方 raw float64 预处理结果（946 帧、2,838 条 sensor-frame）为：D435
 `24.78884/10.65956`、L515 `23.84283/10.46670`、I-ToF

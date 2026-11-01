@@ -1,15 +1,15 @@
 # 偏振辅助深度增强：执行方案
 
 **版本：** v0.1
-**日期：** 2026-10-23
+**日期：** 2026-11-01
 
 ## 当前进度
 
 ```text
 Phase 0 研究协议       完成
 Phase 1 证据与可用性   第一版完成（22 篇论文、12 类产品；若干开放性待核实）
-Phase 2 小样本证明     进行中（scene10/12/13 共四个视角；H1/H5 跨场景初步成立，H2 有弱偏振反例）
-Phase 3 基线复现       PPFT 官方 946 帧 Table 2 已独立复现；其余 baseline/压力测试待完成
+Phase 2 问题证明       7,207 帧 raw audit 完成；H1/H5 获全量支持，H2 仍为混合证据
+Phase 3 基线复现       PPFT Table 2 及 train/val/test 21,621 条推理完成；其余 baseline/压力测试待完成
 Phase 4 方法实验       未启动，Gate 3 前禁止启动
 Phase 5 实物验证       未启动，无设备
 ```
@@ -25,20 +25,20 @@ Phase 5 实物验证       未启动，无设备
 
 ## 2. 当前资源与约束
 
-截至 2026-10-26 已启用双机器分工：
+截至 2026-11-01 已启用双机器分工：
 
 - 控制端：RTX 5090 D 24 GiB，但根分区曾只剩约 6.6 GiB；继续承担文档、代码和
   轻量分析，不在该盘下载完整数据；
 - 训练端：RTX 5080 16 GiB、44 GiB RAM、ext4 开始时约 343 GiB 可用；复用
   Python 3.10 + PyTorch 2.11.0+cu128，已实测支持 `sm_120`；
-- HAMMER 完整 ZIP：170,457,339,555 bytes，约 159 GiB，训练端正以可续传方式
-  下载；校验并选择性提取后释放 ZIP；
+- HAMMER 完整 ZIP 已完成长度、SHA-256、全 ZIP CRC 和 inventory 校验；已选择性
+  提取 57,689 文件/7,207 帧，验证后释放 ZIP；
 - PPFT 旧 Apex/mmcv/DCN 训练环境仍未复现；现代兼容层已完成作者 checkpoint
   的严格加载、单卡推理和 946 帧 Table 2 结果级交叉验证。全模型 FP16 会产生
   NaN，FP32 峰值仅约 541 MiB，因而基线交叉验证使用 FP32。
 
-双机器详细分工见 `11_compute_and_data_deployment_plan.md`。训练端保留至少
-100 GiB 空闲安全线；完整选择集和 cache 建成前不启动训练。
+双机器详细分工见 `11_compute_and_data_deployment_plan.md`。训练端现保留约
+263 GiB 空闲；旧训练栈和 DCN backward 未验证前不启动训练复现。
 
 ## 3. 工作分解
 

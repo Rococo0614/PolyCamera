@@ -251,6 +251,11 @@ def main() -> None:
     parser.add_argument("--view-directions", type=Path, required=True)
     parser.add_argument("--polar-cache-root", type=Path)
     parser.add_argument(
+        "--polar-cache-manifest",
+        type=Path,
+        help="Optional cache integrity manifest recorded and hashed in the run configuration",
+    )
+    parser.add_argument(
         "--sensor",
         action="append",
         choices=tuple(SENSOR_FOLDERS),
@@ -269,6 +274,8 @@ def main() -> None:
 
     if args.downsample < 1:
         raise SystemExit("--downsample must be positive")
+    if args.polar_cache_manifest and not args.polar_cache_root:
+        raise SystemExit("--polar-cache-manifest requires --polar-cache-root")
     if args.device.startswith("cuda") and not torch.cuda.is_available():
         raise SystemExit("CUDA was requested but is unavailable")
     sensors = args.sensor or list(SENSOR_FOLDERS)
@@ -293,11 +300,13 @@ def main() -> None:
     runner_path = Path(__file__).resolve()
     sample_runner_path = runner_path.with_name("run_ppft_sample.py")
     compatibility_path = runner_path.parents[1] / "src" / "poldepth" / "ppft_compat.py"
+    metrics_path = runner_path.parents[1] / "src" / "poldepth" / "metrics.py"
     run_config = {
-        "evaluation_version": 2,
+        "evaluation_version": 3,
         "runner_sha256": sha256(runner_path),
         "sample_runner_sha256": sha256(sample_runner_path),
         "compatibility_sha256": sha256(compatibility_path),
+        "metrics_sha256": sha256(metrics_path),
         "upstream_commit": UPSTREAM_COMMIT,
         "upstream_root": str(args.upstream_root.resolve()),
         "checkpoint": str(args.checkpoint.resolve()),
@@ -314,6 +323,12 @@ def main() -> None:
         else None,
         "polar_cache_root": str(args.polar_cache_root.resolve())
         if args.polar_cache_root
+        else None,
+        "polar_cache_manifest": str(args.polar_cache_manifest.resolve())
+        if args.polar_cache_manifest
+        else None,
+        "polar_cache_manifest_sha256": sha256(args.polar_cache_manifest)
+        if args.polar_cache_manifest
         else None,
         "split_file": str(args.split_file.resolve()),
         "split_sha256": split_digest,
@@ -515,6 +530,10 @@ def main() -> None:
         "split_sha256": split_digest,
         "data_manifest": run_config["data_manifest"],
         "data_manifest_sha256": run_config["data_manifest_sha256"],
+        "polar_cache_manifest": run_config["polar_cache_manifest"],
+        "polar_cache_manifest_sha256": run_config[
+            "polar_cache_manifest_sha256"
+        ],
         "view_directions_sha256": viewing_direction_digest,
         "frames": len(entries),
         "sensors": sensors,

@@ -19,12 +19,34 @@ SENSOR_FOLDERS = {
 }
 
 
-def depth_files(root: Path, folder: str) -> list[Path]:
+def depth_files(root: Path, folder: str) -> tuple[list[Path], list[Path]]:
     selected_layout = sorted(root.glob(f"*/{folder}/*.png"))
     archive_layout = sorted(root.glob(f"*/polarization/{folder}/*.png"))
     if selected_layout and archive_layout:
         raise RuntimeError(f"Mixed selected/archive layouts under {root}")
-    return selected_layout or archive_layout
+    candidates = selected_layout or archive_layout
+
+    # Anchor support estimation to frames that have GT.  HAMMER contains one
+    # malformed literal ``depth_d435/{06d}.png`` member with no matching frame;
+    # silently counting such archive artifacts changes the observation
+    # denominator and can contaminate the union mask.
+    selected_gt = sorted(root.glob("*/_gt/*.png"))
+    archive_gt = sorted(root.glob("*/polarization/_gt/*.png"))
+    if selected_gt and archive_gt:
+        raise RuntimeError(f"Mixed selected/archive GT layouts under {root}")
+    ground_truth = selected_gt or archive_gt
+    if not ground_truth:
+        return candidates, []
+
+    paired = [path.parent.parent / folder / path.name for path in ground_truth]
+    missing = [path for path in paired if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(
+            f"Missing {len(missing)} {folder} files paired with GT; first: {missing[0]}"
+        )
+    paired_set = set(paired)
+    ignored = [path for path in candidates if path not in paired_set]
+    return paired, ignored
 
 
 def bbox(mask: np.ndarray) -> list[int] | None:
@@ -60,7 +82,7 @@ def main() -> None:
         "sensors": {},
     }
     for sensor, folder in SENSOR_FOLDERS.items():
-        files = depth_files(args.root, folder)
+        files, ignored = depth_files(args.root, folder)
         if not files:
             raise SystemExit(f"No {folder} PNGs under {args.root}")
         counts = None
@@ -91,6 +113,8 @@ def main() -> None:
         )
         report["sensors"][sensor] = {
             "frames": len(files),
+            "ignored_unpaired_depth_files": len(ignored),
+            "ignored_unpaired_examples": [str(path) for path in ignored[:10]],
             "shape": list(counts.shape),
             "minimum_observed_count": minimum_count,
             "union_fraction": float(np.mean(union)),

@@ -438,3 +438,89 @@ SHA-256，防止续传时混用不同代码或数据。
    压力测试和 leave-one-real-sensor-out；这些未完成前 Gate 3 仍不通过；
 5. AoLP 绝对角度约定仍待作者确认，不宣称绝对物理方向已验证；
 6. 旧 Apex/DDP 训练与 DCN backward 尚未迁移，不把推理复现外推成训练复现。
+
+## 2026-11-01：完整 HAMMER 数据与全量评测完成
+
+### 完整归档闭环
+
+- 完整 ZIP 长度严格等于 `170,457,339,555` bytes；
+- SHA-256：`af57d2d51e6308e501e40bb6f5909b58c60bc708662ba73c23bdf4de096615af`；
+- `unzip -tqq` 对 432,596 个文件完成全量解压/CRC 检查，退出码 0；
+- 本地 inventory 与仓库 `hammer_storage_inventory.csv` 逐字节一致；
+- 选择性提取 57,689 文件、`66,574,983,990` bytes，共 32 trajectories；manifest
+  中所有 size 与磁盘文件一致，无缺失、额外文件或 `.part`；
+- 作者 train/val/test 列表合计 7,207 个唯一帧，7 个核心模态共 50,449 文件全部
+  存在；先前 6,622 个 test PNG 的 SHA-256 也与本地提取逐项一致；
+- 归档通过以上验证后已删除，释放约 159 GiB；当前选择集约 63 GiB。
+
+### 全数据 cache 与固定 support
+
+- 7,207 个 compact NPY 全部为 `208x272x3 float32`，总计
+  `4,893,841,280` bytes，无临时文件；cache manifest SHA-256 为
+  `a3cb0c5780bcadfe3728aebc0a1b02737ee29e5e0047ec2af73698440aed0cfd`；
+- 全数据固定 support：D435 `0.998790`、L515 `0.925798`、I-ToF `0.468031`；
+- HAMMER 含一个无配对 GT/RGB 的字面文件
+  `scene2_traj2_1/depth_d435/{06d}.png`。support builder 现以 GT 帧为锚，明确记录
+  并排除该归档伪影；三种传感器分母统一为 7,207 帧。
+
+### 7,207 帧 full-resolution raw audit
+
+将 silent-error 的三个阈值改为共享一次 score 排序，并按 32 trajectory 分片、
+24 workers 原子执行；四帧回归的六类 CSV 与旧实现逐字节一致。全量耗时约
+`1:01:50`，输出：
+
+- 21,621 frame rows；
+- 193,233 label rows；
+- 7,207 polarization rows；
+- 108,105 DoLP-bin rows；
+- 21,621 depth-boundary rows；
+- 302,694 silent-error detection rows。
+
+全分辨率、coverage-aware、按像素池化结果：
+
+| Split | Sensor | Coverage | RMSE / MAE (mm) |
+|---|---|---:|---:|
+| All | D435 | 0.8268 | 70.33 / 33.58 |
+| All | L515 | 0.8213 | 68.12 / 22.26 |
+| All | I-ToF | 0.4207 | 80.76 / 33.59 |
+| All | 三传感器 | 0.6896 | 71.73 / 29.09 |
+| Test | D435 | 0.7331 | 49.71 / 23.58 |
+| Test | L515 | 0.8214 | 80.74 / 32.72 |
+| Test | I-ToF | 0.4243 | 77.66 / 35.35 |
+
+固定 support 内 I-ToF coverage 从全图 `0.4207` 提升到 `0.8969`，确认其大量零值
+来自较小 FoV；但 support 内 RMSE 仍为 `79.73 mm`，说明视场差异不能解释全部
+误差。20 mm GT boundary 上三传感器 pooled RMSE 均很高（D435 `150.90`、
+L515 `129.46`、I-ToF `147.10 mm`）。provisional label 160 的总体 RMSE/MAE
+为 `197.34/130.76 mm`，明显高于 label 140 的 `89.03/40.91 mm`。
+
+50 mm silent-error 的逐帧平均 AUROC/AP：DoLP `0.641/0.266`，
+one-minus-confidence `0.599/0.220`，pair residual `0.531/0.172`，临时材质 oracle
+`0.611/0.274`。因此 H5 获得全量支持，但 DoLP 只能提供中等、场景依赖的排序
+信号，不能单独作为通用错误检测器。
+
+### PPFT 全 7,207 帧推理
+
+compact cache、FP32、batch=1 共完成 21,621 条有限输出，无 `.part`：
+
+| Split | Frames / records | D435 RMSE/MAE | L515 RMSE/MAE | I-ToF RMSE/MAE | All RMSE/MAE |
+|---|---:|---:|---:|---:|---:|
+| Train | 5,253 / 15,759 | 11.04/4.15 | 10.02/2.83 | 12.45/5.64 | 11.17/4.21 |
+| Val | 1,008 / 3,024 | 50.29/22.56 | 38.67/13.84 | 56.30/27.54 | 48.42/21.31 |
+| Test | 946 / 2,838 | 24.79/10.66 | 23.84/10.47 | 37.27/21.37 | 28.63/14.17 |
+
+这里仍采用作者“逐 sensor-frame 指标算术平均”的口径；train 是训练内描述，不能
+当泛化结果。另按同一 4x 网格池化 coverage-aware 指标后，PPFT 在三 split 均给出
+1.0 coverage。Val 的 L515 在 raw 有效像素上的 RMSE/MAE 为 `37.65/12.29 mm`，
+PPFT 全域为 `41.12/13.85 mm`；由于 coverage 从 `0.833` 增至 `1.0`，两者不是
+同一像素集合，但这是后续 common-support/paired-pixel 消融必须保留的潜在反例。
+
+### 复现状态
+
+作者 checkpoint 的数据准备、严格加载、官方 Table 2、完整 train/val/test 推理、
+全量 raw/material/boundary/DoLP/silent-error 评测均已完成。可提交摘要见
+`depth_research/evidence/ppft_hammer_full_evaluation.json`。
+
+仍不纳入“已复现”的部分：旧 DCN 逐算子等价、Apex/DDP 训练 backward、绝对
+AoLP 角度约定，以及 CompletionFormer/其他 baseline 与 leave-one-sensor-out。
+这些属于下一阶段对照和方法缺口验证，不影响本次作者 checkpoint 推理复现结论。

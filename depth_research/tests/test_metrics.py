@@ -10,6 +10,7 @@ from poldepth.metrics import (
     erode_mask,
     observed_support_bbox_mask,
     silent_error_detection_metrics,
+    silent_error_detection_metrics_many,
 )
 
 
@@ -80,6 +81,20 @@ class DepthMetricTests(unittest.TestCase):
         )
         self.assertEqual(result["positive_pixels"], 2)
         self.assertEqual(result["auroc"], 1.0)
+
+        batched = silent_error_detection_metrics_many(
+            prediction,
+            gt,
+            score,
+            error_thresholds=(5, 50, 250),
+        )
+        individual = [
+            silent_error_detection_metrics(
+                prediction, gt, score, error_threshold=threshold
+            )
+            for threshold in (5, 50, 250)
+        ]
+        self.assertEqual(batched, individual)
 
 
 if __name__ == "__main__":

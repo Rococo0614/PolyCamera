@@ -1,9 +1,10 @@
 # 双机器计算与数据部署方案
 
-**更新日期：** 2026-10-26
+**更新日期：** 2026-11-01
 
 > **执行状态更新：** RTX 5080 训练端现已上线并完成预检、现代 PyTorch 环境
-> 验证、PPFT 作者权重严格加载和官方 946 帧 test split 推理。下文“当前机器”仍指 5090 控制端；
+> 验证、完整数据准备、7,207 帧 raw audit，以及 PPFT train/val/test 全量推理。
+> 下文“当前机器”仍指 5090 控制端；
 > 训练端实测修正见第 4、5 节和 `09_execution_log.md`。
 
 ## 1. 结论
@@ -71,6 +72,9 @@ float32。它会在 AoLP 周期编码前引入浮点量化，不是 bit-level �
 当前 946 帧 test split 已确认推荐 cache 的输出为 `208 x 272 x 3 float32`，合计
 `642,371,840` bytes。全量 raw/cache 交叉验证的 All mean RMSE 仅差
 `0.0000143 mm`，但主复现结果仍引用 raw float64 作者预处理路径。
+
+7,207 帧正式 cache 已完成，共 `4,893,841,280` bytes；逐文件清单自身
+SHA-256 为 `a3cb0c5780bcadfe3728aebc0a1b02737ee29e5e0047ec2af73698440aed0cfd`。
 
 ## 4. 1 TB 训练机推荐目录与预算
 
@@ -159,7 +163,8 @@ RTX 5080 属于新架构，不使用论文原始 PyTorch 1.9/1.10 + CUDA 11.x �
 6. 处理旧 mmcv checkpoint loader 和 deformable convolution；
 7. 先加载作者 checkpoint 跑 1 帧、1 batch；
 8. 再运行 4 帧审计子集；
-9. 官方 946 帧 test 已完成并复现 Table 2；完整 train/val 与训练迁移仍待完成。
+9. 官方 test 已复现 Table 2，train/val/test 共 21,621 条推理也已完成；训练迁移
+   仍待 DCN backward 和优化器/AMP 数值验证。
 
 ### Stage E：5080 显存策略
 
