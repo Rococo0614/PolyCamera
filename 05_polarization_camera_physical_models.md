@@ -2,7 +2,7 @@
 
 **文档性质：** 偏振相机物理模型调研报告
 
-**面向课题：** 偏振辅助透明/高反光目标分割，并向 RGB-D 三维感知扩展
+**面向课题：** 变化反射条件下工业标识可靠识读；早期透明分割/深度内容作为技术背景保留
 
 **建立日期：** 2026-10-09
 
@@ -42,7 +42,7 @@
 
 5. **Fresnel 模型解释了偏振为何能提供材料和表面几何线索，但并不意味着“DoLP 越高就是目标”。** 镜面反射、漫反射、透射、背景穿透、多界面反射和光源偏振可能同时存在；透明物体尤其需要结合 RGB、强度、空间上下文和可靠性图，而不是用单一 DoLP 阈值分割。
 
-6. **对当前课题，最稳妥的物理基线是：** 保存原始偏振阵列，完成暗场/平场/通道配准，计算 `S0/S1/S2/DoLP/AoLP`，使用 `sin(2AoLP)`、`cos(2AoLP)` 处理角度周期性，再以 `S0`、饱和度和噪声估计偏振可靠性，最后和 RGB 或 RGB-D 融合。
+6. **对当前课题，最稳妥的物理基线是：** 保存原始偏振阵列，完成暗场/平场/通道配准，计算 `S0/S1/S2/DoLP/AoLP` 和虚拟检偏方向图，以 `S0`、饱和度、噪声和方向一致性估计偏振质量，再比较固定方向、全局自适应方向和局部自适应表示对工业字符识读的影响。
 
 ---
 
@@ -379,7 +379,7 @@ y  [ 0°    45° ]
 | 旋转偏振片/液晶 | 否或准同时 | 每状态可用整幅传感器 | 物理直观、可扩展完整 Stokes | 运动伪影、速度和同步 | 静态实验、公式验证、标定 |
 | 分振幅/多相机 | 是 | 通道较完整 | 同时性、高精度 | 体积、成本、配准 | 高精度动态测量 |
 | 分孔径 | 是 | 子孔径采样 | 快照、可专门设计 | 视差、配准、光能利用率 | 专用光学系统 |
-| DoFP 微偏振阵列 | 是 | 四方向子采样 | 紧凑、工业化、实时 | 分辨率损失、去马赛克 | 视频、透明分割、RGB-D 前端 |
+| DoFP 微偏振阵列 | 是 | 四方向子采样 | 紧凑、工业化、实时 | 分辨率损失、去马赛克 | 固定工位喷码/标识单曝光自适应识读 |
 | 偏振线扫描 | 依赖扫描运动 | 线方向专用 | 适合连续材料检测 | 受运动和扫描标定约束 | 表面缺陷、工业产线 |
 
 ---
@@ -786,21 +786,25 @@ SfP 的主要风险不是公式不会写，而是模型假设很强：反射类�
 
 大气散射会使天空光和远景光具有特定偏振结构。旋转偏振片、多通道偏振相机或遥感偏振仪可以利用偏振与强度联合估计散射成分。此类系统通常重视仪器矩阵、辐射定标和光谱响应，和普通 DoFP 视觉相机的 raw 处理流程相似，但标定精度和物理误差预算要求更高。
 
-### 8.5 目标检测、材质识别和下游三维
+### 8.5 工业标识检测与识读
 
-偏振可以作为材料属性和反射属性的补充输入：
+偏振在当前课题中的作用不是直接给出字符类别，而是为反射变化下的识读器生成更稳定的前端表示：
 
 ```text
-RGB-only mask -> RGB-D 目标三维定位
-RGB+polarization mask -> RGB-D 目标三维定位
+RAW DoFP
+  -> 标定后的 I0/I45/I90/I135 与 Stokes
+  -> 固定方向 / 虚拟检偏角 / 局部权重表示
+  -> 字符检测与 OCR / 条码解码
+  -> 识读置信度、回退或拒绝
 ```
 
-这个设计适合当前项目，因为它可以把偏振收益拆分为两层：
+该链路把偏振收益拆成三层：
 
-1. 偏振是否改善透明/高反光目标边界和 mask？
-2. 更好的 mask 是否进一步减少深度空洞、提高点云完整率和三维中心/姿态精度？
+1. 不同方向是否在字符 ROI 中保留互补笔画？
+2. 自适应表示是否优于训练集最佳固定方向？
+3. 改善是否传递到 exact-read、误读率和 worst-group，而不只是局部对比度？
 
-这样可以避免把“偏振直接恢复完整三维”作为必须完成的单一目标。
+对于静态标定样本，还可用旋转偏振片或每图最佳方向作为上界；实际部署仍要求 DoFP 单次曝光。
 
 ---
 
@@ -817,34 +821,35 @@ RGB+polarization mask -> RGB-D 目标三维定位
 - SDK 是否已经做黑电平、白平衡、颜色变换、伽马或自动曝光；
 - 是否能固定曝光、模拟增益、白平衡和 ISP；
 - 是否提供每个偏振方向的标定文件或响应矩阵；
-- 是否支持外触发、时间戳和与 RGB-D 相机同步；
+- 是否支持外触发、时间戳和与传送带/光电触发器同步；
 - 镜头视场、畸变、接口和 Linux 支持是否满足采集环境。
 
 ### 9.2 最小可行物理基线
 
-建议先完成以下不依赖深度网络的基线：
+建议先完成以下不依赖大型恢复/识读网络的基线：
 
 1. 读取 raw 并绘制四个方向图。
 2. 在均匀漫射板和线偏振片前验证四个方向的强度正弦曲线。
 3. 完成黑电平、增益和平场校正。
 4. 输出 `S0/S1/S2/DoLP/AoLP`，检查物理范围和直方图。
 5. 比较超像素分辨率和全分辨率去马赛克结果。
-6. 在静态玻璃、透明塑料、金属和黑色高反光物体上记录可重复场景。
+6. 在金属、光泽塑料、覆膜包装和曲面喷码对象上记录可重复场景。
 7. 保存曝光、增益、镜头、光源、相机温度和标定参数。
 
-### 9.3 建议的输入消融
+### 9.3 建议的识读输入消融
 
 ```text
-1. RGB
-2. RGB + I0/I45/I90/I135
-3. RGB + S0/S1/S2
-4. RGB + DoLP/AoLP
-5. RGB + S1/S0 + S2/S0
-6. RGB + S1/S0 + S2/S0 + confidence
-7. RGB + 学习到的 raw mosaic/偏振融合分支
+1. 普通 RGB/灰度
+2. S0
+3. I0 / I45 / I90 / I135 分别识读
+4. 训练集最佳固定方向
+5. min / max / median 手工融合
+6. S0 + S1/S0 + S2/S0 或 DoLP/AoLP 周期编码
+7. 全局虚拟检偏角/四方向权重
+8. 局部自适应表示 + confidence 回退
 ```
 
-第 5、6 组通常比直接输入 AoLP 更容易解释，因为它们避开了角度绕回问题，并能显式研究低光/过曝区域的可靠性。
+第一阶段固定同一个 OCR/解码器，只改变前端表示。第 6 组可避免直接 AoLP 绕回问题；第 7、8 组必须相对最佳固定方向而不是最差方向证明增量。
 
 ### 9.4 建议的 confidence 设计
 
@@ -859,20 +864,21 @@ confidence = valid(S0)
 
 其中 `channel_consistency` 可以由 `I0+I90` 与 `I45+I135` 的一致性、邻域残差或标定模型残差构造。它不是普适真值，应在验证集上检查是否真的和 DoLP/AoLP 误差相关。
 
-### 9.5 与现有数据集的衔接
+### 9.5 与现有研究资产的衔接
 
-当前仓库已有的研究路线可以按下列顺序落地：
+当前仓库的 Stokes、DoLP/AoLP、周期编码和质量图代码可以复用，但公开透明分割与 HAMMER 深度结果不能直接当作识读证据。新主线应按下列顺序落地：
 
 ```text
-RGBP-Glass / PGSNet
-  -> 复现 RGB、AoLP、DoLP baseline
-  -> 明确数据中偏振量是否为 raw 反演结果
-  -> 加入 S1/S2 周期编码和 reliability-aware fusion
-  -> 用自有 DoFP 相机做跨相机外部测试
-  -> 与 RGB-D 配准，测 mask 对三维定位/深度完整率的影响
+自采工业喷码 RAW DoFP
+  -> 固定 OCR 下比较 RGB/S0/四固定方向
+  -> 证明最优方向随材质、姿态和光照变化
+  -> 全局虚拟检偏角/权重选择
+  -> 必要时加入局部表示与 confidence 回退
+  -> 跨材质/光照/SKU 测试
+  -> 二维码或车辆标识外部验证（二选一）
 ```
 
-如果最终使用单色 DoFP 加 RGB-D，不能把它和三色偏振数据集直接视作同一输入域；需要明确颜色缺失、视场差异、曝光不同和外参配准的影响。
+DoFP 四子像元并非四张完整分辨率图。字符笔画和二维码模块包含高频边缘，因此去马赛克、空间错位和锐度差异必须作为识读误差来源单独消融。
 
 ---
 
@@ -928,8 +934,14 @@ RGBP-Glass / PGSNet
 10. K. Atkinson, E. R. Hancock, “Shape from Polarization,” *Proceedings of the IEEE International Conference on Computer Vision*, 2005. 讨论由 AoLP/DoLP 推断表面形状、反射类型和歧义。
 11. “Deep Shape from Polarization,” ECCV 2020，项目页：<https://github.com/UCLA-VMG/DeepSfP>。将 Fresnel 物理先验与深度模型结合，适合了解现代 SfP 的数据和网络处理方式。
 12. “Deep Polarization Cues for Transparent Object Segmentation,” CVPR 2020。适合了解偏振特征在透明目标分割中的早期系统应用。
-13. “Glass Segmentation using Intensity and Spectral Polarization Cues,” CVPR 2022，项目页：<https://mhaiyang.github.io/CVPR2022_PGSNet/index.html>。与本项目的 RGB、AoLP、DoLP 和透明分割路线直接相关。
+13. “Glass Segmentation using Intensity and Spectral Polarization Cues,” CVPR 2022，项目页：<https://mhaiyang.github.io/CVPR2022_PGSNet/index.html>。属于早期透明分割资产，可参考偏振表示但不是当前识读基线。
 14. “Polarimetric Pose Prediction,” ECCV 2022，项目页：<https://daoyig.github.io/PPPNet/>。适合后续研究偏振辅助高反光/透明物体实例级 6D 姿态。
+15. C. Lei et al., “Polarized Reflection Removal With Perfect Alignment in the Wild,” CVPR 2020，<https://openaccess.thecvf.com/content_CVPR_2020/html/Lei_Polarized_Reflection_Removal_With_Perfect_Alignment_in_the_Wild_CVPR_2020_paper.html>。提供偏振反射去除数据和方法。
+16. S. Wen, Y. Zheng, F. Lu, “Polarization Guided Specular Reflection Separation,” TIP 2021，DOI: <https://doi.org/10.1109/TIP.2021.3104188>。提供偏振引导镜面/漫反射分离模型。
+17. S. Qiu et al., “Linear Polarization Demosaicking for Monochrome and Colour Polarization Focal Plane Arrays,” CGF 2021，<https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.14204>。与 DoFP 去马赛克和虚拟偏振片直接相关。
+18. J. Leong et al., “SHDocs,” NeurIPS 2024 Datasets and Benchmarks，<https://github.com/JovinLeong/SHDocs>。把高光去除与 OCR 指标关联。
+19. Z. Jiang et al., “Hierarchical Adaptive Filtering Network for Text Image Specular Highlight Removal,” CVPR 2025。研究文本图像大面积高光恢复。
+20. M. Yao et al., “PolarFree: Polarization-based Reflection-Free Imaging,” CVPR 2025，<https://mdyao.github.io/PolarFree>。提供大规模偏振反射去除数据和强学习基线。
 
 ### 11.4 引用和复现注意
 
@@ -970,7 +982,8 @@ DoLP/AoLP != 目标标签
 先拿到 raw 和标定
   -> 验证四方向测量模型
   -> 稳定输出 S0/S1/S2/DoLP/AoLP
-  -> 做 AoLP 周期编码和 confidence
-  -> 复现 RGBP-Glass/PGSNet
-  -> 再做自有相机与 RGB-D 的外部验证
+  -> 固定 OCR 比较四方向和最佳固定方向
+  -> 证明反射变化下的方向互补性
+  -> 做全局自适应表示和 confidence
+  -> 证据支持后再做局部表示与外部识读验证
 ```

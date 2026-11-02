@@ -1,6 +1,51 @@
 # 双机器计算与数据部署方案
 
-**更新日期：** 2026-11-01
+**更新日期：** 2026-11-02
+
+> **方向说明（2026-11-02）：** 本文继续用于管理已完成的 HAMMER/PPFT 深度资产和双机器环境。当前工业标识识读主线的初期数据规模较小，应先在控制端完成采集、固定方向基线与轻量前端实验，不默认启动大模型训练。
+
+## 0. 当前工业识读主线的部署原则
+
+### 控制端优先完成
+
+- 相机 SDK、触发和 RAW 采集；
+- 暗场/平场/四方向标定；
+- Stokes、虚拟偏振片和质量图；
+- 数据 manifest、字符串真值和 split；
+- 固定 OCR 与 B0–B7 基线；
+- E0–E5 的轻量实验和结果审查。
+
+### 训练端只在 Gate 1 后启用
+
+- 全局/局部学习式表示；
+- 大规模去马赛克或恢复模型；
+- HAFNet/PolarFree 等重基线；
+- 大规模跨条件训练和自动实验。
+
+### 存储预算按实测计算
+
+先采集 100 帧，记录：
+
+```text
+raw bytes/frame
+derived bytes/frame
+metadata bytes/frame
+frames/condition
+conditions
+repeats
+```
+
+再估算 D1/D2 总量。RAW 是唯一必须长期保存的数据；`I0/I45/I90/I135`、Stokes 和虚拟角度图应可按 pipeline version 重建，避免无版本地重复存储大量派生图。
+
+### 双机器同步
+
+- Git 只保存代码、配置、manifest、标定摘要和小型结果；
+- 原始图像放数据盘，不进入 Git；
+- 每批数据生成 SHA-256/文件大小清单；
+- split 以 `print_id/object_id` 为组，不按文件随机划分；
+- 模型与结果记录 `commit + config_hash + calibration_id + split_version`。
+
+## 已完成深度资产状态
 
 > **执行状态更新：** RTX 5080 训练端现已上线并完成预检、现代 PyTorch 环境
 > 验证、完整数据准备、7,207 帧 raw audit，以及 PPFT train/val/test 全量推理。

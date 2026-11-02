@@ -1,1 +1,1 @@
-paper,year,venue,task,sensor,raw_input,polar_representation,dataset,dataset_size,labels,baseline,method_core,metrics,code,weights,data_access,license,compute,reproduction_status,limitation,possible_extension,notes
+paper,year,venue,task,sensor,single_shot,source_polarization,raw_input,polar_representation,text_or_code_task,industrial_setting,dataset,dataset_size,labels,baseline,method_core,image_metrics,recognition_metrics,latency,code,weights,data_access,license,compute,reproduction_status,limitation,possible_extension,notes

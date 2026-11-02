@@ -1,0 +1,1 @@
+capture_id,timestamp,object_id,sku_id,print_id,true_text,material,coating,print_method,font,char_height_mm,yaw_deg,pitch_deg,roll_deg,distance_mm,light_type,light_angle_deg,light_power,source_polarizer_deg,exposure_us,gain_db,aperture,camera_temperature_c,speed_mps,trigger_id,calibration_id,pipeline_version,raw_path,notes

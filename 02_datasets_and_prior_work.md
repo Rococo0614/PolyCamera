@@ -1,131 +1,203 @@
-# 数据集与前人工作
+# 数据、前人工作与候选缺口
 
-> **状态说明（2026-10-23）：** 本文是早期分割/位姿数据调研。当前偏振辅助深度主线及 HAMMER、PPFT、Depth Prompting、ReCAP2、CDPR、Poppy、PolarDepth 的调研见 `08_depth_landscape_and_gap.md`。
+**更新日期：** 2026-11-02
+**检索状态：** 工业标识识读新主线第一轮；以下区分论文证据、公开数据、工业实践和待验证判断
 
-## 1. 偏振透明目标分割
+## 1. 工业实践已经解决了什么
 
-### RGBP-Glass / PGSNet
+### 固定照明与偏振是成熟方案
 
-- 项目页：<https://mhaiyang.github.io/CVPR2022_PGSNet/index.html>
-- 代码：<https://github.com/Mhaiyang/CVPR2022_PGSNet>
-- 论文：*Glass Segmentation using Intensity and Spectral Polarization Cues*, CVPR 2022。
-- 规模：4511 张图像。
-- 输入：RGB、三色 AoLP、三色 DoLP。
-- 标注：像素级玻璃 mask、bounding box；部分训练辅助数据含 reflection 和 edge map。
-- 传感器：LUCID PHX050S 三色偏振阵列相机。
-- 代表方法：PGSNet，使用多分支和动态多模态融合。
-- 适用性：当前最适合作为第一条复现主线。
-- 注意：数据下载入口可能需要申请，需先确认实际下载可用性和许可证。
+工业视觉通常先通过光源几何和滤光提高对比度：同轴光、穹顶光、暗场、漫射罩、带通滤光和交叉偏振都已广泛使用。IDS 的偏振相机技术说明明确把反光抑制、细结构对比增强和单帧偏振获取列为工业用途，同时指出金属表面仅靠接收端偏振片未必能消除反射，往往还需要在照明端加偏振片。
 
-### Deep Polarization Cues
+来源：
 
-- 论文：*Deep Polarization Cues for Transparent Object Segmentation*, CVPR 2020。
-- 任务：偏振辅助透明物体分割。
-- 意义：较早系统验证偏振信息对透明目标分割的价值。
-- 适用性：适合作为早期 baseline 和相关工作起点。
-- 注意：代码和数据获取路径相对分散，复现优先级低于 RGBP-Glass。
+- IDS, *Polarisation camera / Using a polarisation filter*：<https://en.ids-imaging.com/techtipp-details/items/techtip-on-camera-polarization.html>
+- Vision Systems Design, *Uses for polarization imaging in machine and computer vision*：<https://www.vision-systems.com/home/article/14068739/uses-for-polarization-imaging-in-machine-and-computer-vision>
 
-### ZJU-RGB-P / EAFNet
+因此，本课题不能把“偏振片可以压反光”写成创新，必须比较固定交叉偏振强基线。
 
-- 论文：*Polarization-driven Semantic Segmentation via Efficient Attention-bridged Fusion*。
-- 数据：394 张像素对齐 RGB-Polarization 图像，9 类语义分割。
-- 训练/验证：论文中使用 344/50 的划分。
-- 特点：面向户外场景和轻量实时语义分割；讨论 AoLP、DoLP 和 RGB 融合。
-- 适用性：适合研究轻量模型、端侧部署和户外场景。
-- 注意：数据量较小，不适合作为唯一数据集。
+### 工业 OCR/OCV 的核心是过程窗口
 
-## 2. 偏振三维重建与法向估计
+KEYENCE、Cognex 等工业产品资料均强调：生产日期、批次号、条码和包装标识识读依赖稳定成像、触发、预处理、格式验证和拒绝策略。光泽、褶皱、曲面和 SKU 变化是明确的工程困难。
 
-### DeepSfP
+来源：
 
-- 项目页：<https://visual.ee.ucla.edu/deepsfp.htm/>
-- 代码：<https://github.com/UCLA-VMG/DeepSfP>
-- 论文：*Deep Shape from Polarization*, ECCV 2020。
-- 数据：338 个样本，27 个物体、4 个方向、3 种光照；包含四方向偏振图、mask、surface normal 和物理先验。
-- 方法：将 Fresnel 物理先验与深度网络结合。
-- 适用性：适合偏振三维/表面法向方向；物理含义强，但风险高。
+- KEYENCE OCR/1D/2D verification：<https://www.keyence.com/products/vision/applications/ocr-verification-and-character-inspection.jsp>
+- Cognex flexible packaging OCR：<https://www.cognex.com/en/applications/optical-character-recognition/ocr-text-verification-on-flexible-packaging>
 
-### P2D
+这些资料能证明需求存在，但属于产品/应用证据，不能代替学术方法对比。
 
-- 论文：*P2D: A Self-Supervised Method for Depth Estimation from Polarimetry*。
-- 方向：使用偏振信息进行自监督单目深度估计。
-- 适用性：可作为偏振深度方向的补充文献，不建议作为第一个复现项目。
+### 车牌不是天然适合偏振的同一任务
 
-## 3. 偏振 6D 位姿估计
+Axis 2024 的车牌采集白皮书指出，正确对齐的偏振片可减弱挡风玻璃或道路反射，但会阻挡约 50% 入射光，对车牌可见度改善有限，因此不推荐将偏振片作为车牌采集的通用方案。车牌还涉及逆反射材料、红外补光、车灯、速度和户外环境。
 
-### Polarimetric Pose Prediction / PPP
+来源：<https://whitepapers.axis.com/en-us/license-plate-capture>
 
-- 项目页：<https://daoyig.github.io/PPPNet/>
-- 代码：<https://github.com/DaoyiG/polarimetric-pose-prediction>
-- 数据说明：<https://www.campar.in.tum.de/public_datasets/2022_eccv_ruhkamp/README.html>
-- 论文：*Polarimetric Pose Prediction*, ECCV 2022。
-- 任务：instance-level 6D object pose。
-- 特点：结合偏振物理先验和数据驱动模型，关注高反光、透明物体。
-- 数据许可证：项目页说明为 CC-BY-NC，需注意非商业限制。
-- 适用性：如果后续确定要做偏振 6D pose，可以作为专门 baseline。
+因此，车辆号牌只能作为后期外部验证，不能直接把工业喷码结论泛化到车牌。
 
-## 4. 透明物体 RGB-D 三维感知
+## 2. 与本课题最接近的公开数据与工作
 
-### ClearPose
+### 2.1 SHDocs（NeurIPS 2024 Datasets and Benchmarks）
 
-- 代码：<https://github.com/opipari/ClearPose>
-- 论文：*ClearPose: Large-scale Transparent Object Dataset and Benchmark*, ECCV 2022。
-- 规模：约 35 万 RGB-D 帧，63 个透明物体，超过 500 万 instance 标注。
-- 标注：raw depth、ground-truth depth、surface normal、mask、6D object pose。
-- 困难场景：重遮挡、半透明遮挡物、不透明干扰物、液体、非平面摆放。
-- 局限：没有偏振数据，不能直接用于偏振联合训练。
-- 适用性：适合研究透明物体的 depth completion、RGB-D pose 和下游三维基线。
+- 任务：真实文档高光去除与 OCR 下游评价；
+- 数据：基于 FUNSD 文档，公开仓库说明包含 3,184 个场景、19,104 张图像；
+- 采集：打印文档放入不同透明文件袋，构造多种高光条件和对齐的去高光反事实；
+- 评价：同时报告图像增强和 OCR；
+- 代码/数据：公开，仓库标注 MIT；OpenReview 页面标注 CC BY 4.0 论文许可；
+- 价值：直接证明“高光去除应以 OCR 结果评价”，并提供数据构建参考；
+- 局限：对象是平面文档/文件袋，不是工业喷码、曲面和 DoFP 自适应表示。
 
-### ClearGrasp
+链接：
 
-- 数据页：<https://sites.google.com/view/cleargrasp/data>
-- 代码：<https://github.com/Shreeyak/cleargrasp>
-- 数据：5 万多张合成图像，286 张真实测试图像。
-- 标注：透明物体 mask、边缘、surface normal、depth。
-- 适用性：适合透明深度补全和三维感知 baseline。
+- 论文：<https://proceedings.neurips.cc/paper_files/paper/2024/hash/af9199ef7d5ff267451a667170124c04-Abstract-Datasets_and_Benchmarks_Track.html>
+- 代码与数据：<https://github.com/JovinLeong/SHDocs>
 
-### Trans10K
+### 2.2 DocHR14K / L2HRNet（2025）
 
-- 项目页：<https://xieenze.github.io/projects/TransLAB/TransLAB.html>
-- 规模：10,428 张真实 RGB 图像。
-- 标注：透明目标像素级 mask。
-- 局限：没有偏振、深度和 6D pose。
-- 适用性：适合普通 RGB 透明分割对照。
+- 任务：单幅文档图像高光去除；
+- 数据：14,902 对高分辨率真实图像，覆盖 6 类文档和 9 种照明条件；平均分辨率约 2319×1553；
+- 方法：Highlight Location Prior + Laplacian pyramid + diffusion detail restoration；
+- 报告：在 DocHR14K 上相对既有方法提高 PSNR、降低 RMSE；
+- 价值：说明高分辨率文本和多光照需要专门数据；其交叉偏振采集方案可借鉴为干净参考；
+- 局限：核心是单图恢复，不以四方向偏振作为部署输入，也不是工业 exact-read 任务。
 
-## 5. 当前数据集之间的关系
+链接：<https://arxiv.org/abs/2504.14238>
+
+### 2.3 HAFNet / LSH（CVPR 2025）
+
+- 任务：大面积文本图像镜面高光去除；
+- 数据：使用 Unity3D/PBR 构造包含卡片、证件和海报的 LSH 文本高光数据；
+- 方法：在深层特征和重建层进行自适应过滤；
+- 主要指标：PSNR、SSIM；
+- 价值：证明文本图像的大面积高光与自然图像小高光不同，需保留字符语义和细节；
+- 局限：以合成恢复为主，没有单曝光四方向偏振输入，也未把工业字符串 exact-read 设为主目标。
+
+链接：<https://openaccess.thecvf.com/content/CVPR2025/papers/Jiang_Hierarchical_Adaptive_Filtering_Network_for_Text_Image_Specular_Highlight_Removal_CVPR_2025_paper.pdf>
+
+### 2.4 Polarized Reflection Removal（CVPR 2020）
+
+- 任务：使用偏振图像进行玻璃反射层去除；
+- 数据：公开仓库说明为 807 对，覆盖 100 多种玻璃；
+- 方法：两阶段偏振反射去除，强调训练对的完美对齐；
+- 价值：证明多方向偏振对反射/透射分离有明显价值，并提供公开代码；
+- 局限：主要处理隔着玻璃的反射层，不是表面喷码和工业 OCR；旧 TensorFlow 环境复现成本较高。
+
+链接：
+
+- 论文：<https://openaccess.thecvf.com/content_CVPR_2020/html/Lei_Polarized_Reflection_Removal_With_Perfect_Alignment_in_the_Wild_CVPR_2020_paper.html>
+- 代码：<https://github.com/ChenyangLEI/polarization-reflection-removal>
+
+### 2.5 Polarization Guided Specular Reflection Separation（TIP 2021）
+
+- 任务：RGB + 偏振引导的镜面/漫反射分离；
+- 方法：偏振色度和 ADMM 优化，缓解照明颜色接近表面颜色时的不稳定；
+- 价值：可作为物理/优化类反光分离基线；
+- 局限：优化目标是反射分离质量，不是识读任务，也未针对 DoFP 速度与字符高频边缘。
+
+DOI：<https://doi.org/10.1109/TIP.2021.3104188>
+
+### 2.6 PolarFree / PolaRGB（CVPR 2025）
+
+- 任务：偏振引导的真实场景反射去除；
+- 数据：论文报告 6,500 组对齐样本，覆盖室内外和多种照明；项目提供代码与 Hugging Face 数据；
+- 方法：使用 diffusion 生成 reflection-free cues；
+- 价值：是当前偏振反射去除的强学习基线和数据来源；
+- 局限：模型重、目标是一般反射层去除，不是工业单曝光低延迟识读；公开数据规模/命名在项目页与托管页面间需下载后再核对 inventory。
+
+链接：
+
+- 论文/项目：<https://mdyao.github.io/PolarFree>
+- 代码：<https://github.com/mdyao/PolarFree>
+- 数据：<https://huggingface.co/datasets/Mingde/PolaRGB>
+
+### 2.7 DoFP 去马赛克与虚拟偏振片
+
+Qiu 等在 *Linear Polarization Demosaicking for Monochrome and Colour Polarization Focal Plane Arrays*（Computer Graphics Forum 2021）中明确讨论 DoFP 去马赛克和 virtual polarizer，可由完整线偏振信息合成任意分析角度图像。
+
+价值：直接支持本课题“采集后虚拟选角”的物理实现；同时提醒 DoLP/AoLP 和虚拟角度精度受 DoFP 空间采样与去马赛克影响。
+
+链接：<https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.14204>
+
+## 3. 当前候选缺口
+
+第一轮检索已经找到三类强邻近工作：
+
+1. 工业照明与固定偏振；
+2. 文本/文档高光去除并用 OCR 评价；
+3. 偏振反射去除与虚拟偏振片。
+
+但尚未找到一个被广泛采用的公开基准同时满足：
 
 ```text
-RGBP-Glass：有偏振 + 透明分割，没有深度/位姿
-PPP：有偏振 + 6D pose，场景和物体更专用
-DeepSfP：有偏振 + 表面法向，偏物理三维
-ClearPose：有 RGB-D + 透明物体 pose，没有偏振
-ClearGrasp：有 RGB-D/深度补全，没有偏振
-Trans10K：有 RGB + 透明 mask，没有偏振和三维
+单曝光 DoFP 原始四方向
++ 工业喷码/标识字符串 ground truth
++ 系统变化的材质、姿态与光照
++ 最佳固定方向强基线
++ 自适应偏振表示
++ exact-read / worst-group / latency
 ```
 
-本轮检索暂未发现一个大规模、同时包含以下全部信息的公开数据集：
+因此当前候选缺口不是“首次用偏振去高光”，而是：
+
+> **将单曝光多方向偏振从一般图像恢复线索，转化为面向工业识读的任务驱动、自适应且可拒绝的表示，并以最佳固定光学配置和跨条件可靠性为主要对照。**
+
+这仍是待进一步检索和实验验证的候选缺口，开题前不能使用“首次”表述。
+
+## 4. 公共数据如何使用
+
+| 数据/工作 | 可承担 | 不能承担 |
+|---|---|---|
+| SHDocs | 高光影响 OCR 的公开证据；OCR 评价代码；数据构建参考 | 工业喷码主结果、DoFP 自适应结论 |
+| DocHR14K | 高分辨率文本恢复预训练/压力测试 | 单曝光偏振部署评价 |
+| LSH/HAFNet | 大面积文字高光恢复基线 | 真实工业跨材质结论 |
+| Polarized RR / PolarFree | 偏振反射去除预训练或强基线 | 工业 exact-read 和低延迟证明 |
+| 自采数据 | 主实验、固定方向必要性、跨条件与节拍 | 大规模通用场景结论（除非规模足够） |
+
+公开文档数据只能做辅助预训练、方法 sanity check 或相关工作对照。论文主结论必须来自自采工业工位，因为研究问题包含材质、姿态、照明、触发和节拍。
+
+## 5. 新数据集最小设计
+
+### 必备输入
 
 ```text
-偏振原始数据 + RGB + RGB-D + 透明物体 mask + 6D pose
+raw mosaic
+I0 / I45 / I90 / I135（注明重建方式）
+S0 / S1 / S2 / DoLP / AoLP
+曝光、增益、光圈、光源和触发元数据
+字符 ROI 与真实字符串
+材质、姿态、光照、SKU、批次标签
 ```
 
-因此，如果论文要做偏振-RGB-D 三维感知，需要自己采集小规模配对验证集。
+### 建议参考
 
-## 6. 推荐复现顺序
+- 每个条件保存普通 RGB/灰度或 `S0`；
+- 静态子集保存旋转偏振片密集角度扫描，作为角度插值与 DoFP 误差上界；
+- 可行时保存固定交叉偏振和 HDR/多曝光结果；
+- 记录每次是否可读、OCR 输出和置信度，而不只保存图片。
 
-1. RGBP-Glass + PGSNet：确认偏振分割主线可运行。
-2. RGB-only / AoLP / DoLP / AoLP+DoLP 消融。
-3. EAFNet 或轻量分割 baseline：确认端侧/实时方向。
-4. PPP：如果确定做偏振 6D pose，再单独复现。
-5. ClearPose：作为透明 RGB-D 三维感知和 pose 的对照，不强求完整训练。
-6. DeepSfP：如果导师明确支持偏振三维物理，再深入。
+### 划分原则
 
-## 7. 可能的改进点
+- 同一物理喷码实例和相邻帧不得跨 split；
+- 按材质、SKU/批次和采集日期分组；
+- 最终保留未见光照或姿态区间；
+- 外部二维码/车牌数据完全独立，不用于主模型选择。
 
-- AoLP 使用 `sin(2*AoLP)` 和 `cos(2*AoLP)` 周期编码；
-- 使用 `S0`、DoLP、饱和度和噪声构造偏振可靠性图；
-- reliability-aware RGB/偏振自适应融合；
-- 透明边界 head 和 boundary-aware loss；
-- 公开相机到自购相机的少样本 domain adaptation；
-- 偏振提升的分割 mask 是否改善 RGB-D 三维中心、尺寸和 pose；
-- 端侧模型轻量化、量化和实时性评测。
+## 6. 复现与阅读优先级
+
+1. **SHDocs：** 先跑数据与 OCR benchmark，验证 exact-read/CER 管线；
+2. **DoFP virtual polarizer：** 实现标定后任意角度合成和角度扫描；
+3. **简单高光基线：** `S0`、固定方向、min/median、交叉偏振；
+4. **Polarization-guided separation：** 选择轻量可复现方法，不一开始迁移 diffusion；
+5. **HAFNet/DocHR14K/PolarFree：** 作为强恢复基线或预训练候选，在主工位成立后再投入。
+
+## 7. 仍需补检索
+
+- 直接面向工业 OCR/OCV 的偏振学术论文；
+- 工业 DPM（laser/inkjet/dot-peen）在光泽表面的公开数据；
+- 任务驱动图像增强与 recognizer-aware restoration；
+- 动态场景 DoFP 偏振去马赛克及瞬时视场误差；
+- 固定/可调交叉偏振照明的工业对照；
+- 多帧 HDR、多光源与偏振在相同节拍下的公平比较；
+- 识读置信度校准与 selective OCR。
+
+旧的透明分割、偏振深度与 HAMMER 文献继续保留在 `08_depth_landscape_and_gap.md` 和 `depth_research/evidence/`，但不再作为新主线的主要 related work。

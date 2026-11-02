@@ -1,5 +1,46 @@
 # 执行记录
 
+## 2026-11-02：主线转向变化反射条件下的工业标识可靠识读
+
+### 决策
+
+将课题叙事和优先实验从“偏振辅助异构深度增强”调整为：
+
+> **面向变化反射条件工业标识可靠识读的单曝光偏振自适应表示方法研究。**
+
+主任务先锁定固定工位工业喷码字符识读。二维码或物流车辆号牌只选择一项作为后续外部验证，不与喷码并列为三个主任务。
+
+### 原因
+
+1. 制造与物流已有清晰的追溯、分拣和出入口识读需求；
+2. 光泽、覆膜和姿态变化会移动高光，使固定成像/偏振配置不能始终最优；
+3. 调光、调角度和固定偏振已经成熟，真正待验证的是变化条件下的自适应；
+4. DoFP 提供单次曝光四方向信息，适合研究无电机切换、低附加机械复杂度的表示选择；
+5. 喷码字符串 ground truth 易获得，课题可用 exact-read、误读率、worst-group 和节拍形成可重复评价闭环。
+
+### 证据边界
+
+- 既有 HAMMER 7,207 帧审计、PPFT 复现和深度结果全部保留；
+- 它们证明偏振具有场景/质量依赖性，也提供数据处理与可靠性分析基础；
+- 它们**不能证明**偏振会提高工业字符识读，不能作为新主线的结果图直接移用；
+- 新主线尚未完成喷码工位采集、固定方向基线或自适应方法实验。
+
+### 下一步 Gate 1
+
+在至少两类光泽/覆膜材质、多个姿态与光照条件下采集 `RGB/S0/I0/I45/I90/I135`，固定成熟 OCR，比较四个固定方向与训练集最佳固定方向。只有观察到最优方向随条件稳定切换且四方向存在识读互补性，才进入自适应表示方法开发。
+
+完整故事与实验边界见 `12_industrial_reading_research_story.md`；实验编号与 Gate 见 `13_industrial_reading_experiment_plan.md`。
+
+### 文档与实验协议更新
+
+- 重写 `01_topic_and_research_questions.md`：RQ1–RQ6、否证条件和停止 Gate；
+- 重写 `02_datasets_and_prior_work.md`：SHDocs、DocHR14K、HAFNet、Polarized RR、PolarFree、DoFP virtual polarizer 与工业实践；
+- 重写 `03_one_month_plan.md`：首月从清晰 OCR 上限、标定、pilot 到 Gate 1/2；
+- 重写 `04_hardware_and_data_collection.md`：相机/镜头/照明/工位/标定/manifest/划分/成本；
+- 更新 `05_polarization_camera_physical_models.md` 的工业识读链路；
+- 新增 `13_industrial_reading_experiment_plan.md`：E0–E13、B0–B7、U0–U2、M1–M6 以及统计协议；
+- 新增采集 manifest 和实验结果 TSV 模板。
+
 ## 2026-10-23：Phase 0 完成，Phase 1/2 启动
 
 ### 已完成
