@@ -1,0 +1,41 @@
+{
+  "experiment": "offline-shdocs-polarization-audit",
+  "date": "2026-11-03",
+  "proxy_only": true,
+  "claim_boundary": "Computed from aligned 8-bit SHDocs SDK exports. Values diagnose dataset consistency but do not calibrate the FLIR camera or establish an absolute AoLP convention.",
+  "dataset": {
+    "archive_sha256": "49457a4afae50fc750328399af708c12570a08c613b1ccfe7f552c6f8acb05c7",
+    "captures": 800,
+    "documents": 50,
+    "conditions": 16,
+    "representations_per_capture": 6
+  },
+  "arithmetic_capture_mean": {
+    "pair_residual": 0.02361468571664912,
+    "nonphysical_dolp_fraction": 0.0,
+    "saturation_fraction": 0.0001620829260117091,
+    "low_signal_fraction": 0.013895549595865675,
+    "mean_dolp_valid_signal": 0.03386783413897958,
+    "computed_s0_vs_sdk_s0_norm_correlation": 0.9990791831271052
+  },
+  "selected_condition_diagnostics": {
+    "camera_mean_dolp": 0.02892438958217348,
+    "highest_condition_mean_dolp": {
+      "condition": "k",
+      "value": 0.038996359004485864
+    },
+    "highest_condition_saturation_fraction": {
+      "condition": "o",
+      "value": 0.0007374759482434778
+    }
+  },
+  "interpretation": [
+    "The orthogonal-pair residual is low enough to proceed with result-level four-direction proxy experiments.",
+    "The mean DoLP is weak, so OCR complementarity cannot be assumed and must be measured directly.",
+    "SDK s0_norm is almost perfectly correlated with the project-computed S0 but may use a different normalization scale."
+  ],
+  "full_artifact": {
+    "path": "/home/chocbrownie0524/poldepth/runs/industrial_reading/shdocs_polarization_audit.json",
+    "sha256": "8cfbe0787c055a7db46abfd8151a69b0aa81954d4ccbfc34e1138d5d91563b81"
+  }
+}

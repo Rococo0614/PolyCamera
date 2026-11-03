@@ -1,5 +1,194 @@
 # 执行记录
 
+## 2026-11-03：开题 PPT 重构为 10 页结果导向版本
+
+### 结构与叙事
+
+- 删除独立目录、基础公式推导、重复方案页和独立参考文献页；
+- 理论、工业背景、失效机理和单曝光物理合并为第 2 页，全文仅此一页承担背景介绍；
+- 第 3 页统一给出系统、冻结协议和核心可证伪量；
+- 第 4–8 页连续报告已完成工作量、E0、E1、E2 跨后端统计和机制/基线；
+- 第 9 页集中给出 Gate 与下一轮冻结交付物，第 10 页按“已支持 / 未支持”收束；
+- 所有公开代理和 HAMMER/PPFT 数字均保留任务域边界；`all-four-fail` 明确不等于
+  系统拒绝率。
+
+### 版式与演示功能
+
+- 页面总数由 20 页压缩为 10 页，正文使用更大的结果数字、铺满式数据行和高密度
+  表格，避免依靠缩小字号堆叠；
+- speaker notes 与 10 个 `data-slide-id` 一一对应，计划总时长 `11.7 min`；
+- 演讲者视图、下一页预览、计时、观众屏同步和批注功能继续保留；
+- 重新生成 `slide-01.png`–`slide-10.png`、`overview.png` 和 `grid-all.png`，删除过期的
+  `slide-11.png`–`slide-20.png`。
+
+### 验证
+
+- 1600×900 presenter validator 为 `0 errors / 0 warnings`：无页面、内容区或子元素
+  越界，5/5 图片资源与字体加载成功；
+- 演讲者视图实测可显示第 7 页、下一页预览和对应讲稿；
+- 工业识读 `14/14` 项、深度研究 `15/15` 项测试通过，共 `29/29` 项。
+
+## 2026-11-03：PDD Offline E1 首轮公开基准完成
+
+### 数据闭环
+
+- PDD 2025 归档长度 `12,171,672,476` bytes；
+- SHA-256 `01f20ebc8b3b8940f1460ebafb981eb0942bcbb5cc4b5af7bf3ab27b46e98008`；
+- `unzip -tqq` 全量 CRC 通过；归档共 1,209 entries；
+- 只提取 Python 实验需要的 960 个 PNG（约 1.1 GB），不重复提取约 11.1 GB MAT；
+- 覆盖 40 场景 × Low/Mid/High 三档噪声，共 120 个条件。
+
+### 简单重建基线
+
+使用绿色通道和公开 MPFA 排列 `[[90,45],[135,0]]`，比较 noisy full-channel
+诊断上界、最近邻和项目内可审计的 3×3 normalized bilinear：
+
+| Noise | Method | PSNR dB ↑ | DoLP MAE ↓ | AoLP MAE ° ↓ |
+|---|---|---:|---:|---:|
+| Low | nearest / bilinear | 32.80 / 38.32 | 0.0313 / 0.0187 | 25.26 / 15.14 |
+| Mid | nearest / bilinear | 31.20 / 35.53 | 0.0645 / 0.0424 | 29.77 / 21.24 |
+| High | nearest / bilinear | 29.02 / 32.37 | 0.0818 / 0.0564 | 31.81 / 23.69 |
+
+120 个条件产生 360 条记录。双线性在各噪声级均优于最近邻，但 AoLP 对噪声和
+空间插值仍明显敏感；后续细字符 OCR 必须把重建方法作为显式消融。该实验不是
+官方 PDD 方法复现，也不是未来相机的标定。完整 artifact SHA-256：
+`3a4eaa7c71352125f8b39517a24b4ff1305c269611a90a5a26e241c37108bb4f`。
+
+### SHDocs processed 数据与偏振预审计
+
+- processed archive 长度 `1,715,393,730` bytes，SHA-256
+  `49457a4afae50fc750328399af708c12570a08c613b1ccfe7f552c6f8acb05c7`，全 ZIP CRC
+  通过；
+- 50 个 FUNSD 文档、16 种 capture condition，共 800 captures；每个 capture 均有
+  `i0/i45/i90/i135/s0_norm/deglared`，共 4,800 图像；
+- 对齐标注包含 2,270 个唯一文本区域，跨 16 条件展开为 36,320 个 ROI；
+- 发现 17 个 ROI-condition 的标注框轻微超出处理后图像边界，已冻结排除清单，
+  避免把截断裁剪误计为反射/OCR 失败；
+- 文档级冻结 split 为 train/val/test `35/8/7`，assignment SHA-256
+  `3f1868c879df1112ce145eb711e33e7f441c8a5c8f6a31254b5c23419af74343`；
+- 800 captures 的平均正交 pair residual `0.02361`，平均 DoLP `0.03387`，计算 S0
+  与 SDK `s0_norm` 相关系数 `0.99908`；平均饱和比例仅 `0.000162`。
+
+这些数值来自 8-bit SDK 导出，只允许支持结果级代理实验；不能解释为 FLIR 相机
+已经完成物理标定。平均 DoLP 较弱，四方向 OCR 互补性必须由字符串结果直接检验，
+不能根据偏振幅值预设成立。完整 audit SHA-256：
+`8cfbe0787c055a7db46abfd8151a69b0aa81954d4ccbfc34e1138d5d91563b81`。
+
+SHDocs raw archive 也已完成长度 `10,277,187,768` bytes、SHA-256
+`fff85bdb2acb2e4fedf60937f96352f796a6b4b7b3acb5e7e005886b574f746a` 和全 ZIP CRC
+校验。其 inventory 为 9,600 training + 4,800 testing 图像文件；该归档级数量与公开
+README 的 3,184 scenes 口径仍需核对，因此当前不宣称完成 SHDocs 全数据统计，也不
+重复解压 raw archive。
+
+### E0 清晰合成代码 sanity set
+
+使用 100 个唯一字符串、3 种开放等宽字体和 24/32/48 px 三档字号生成 900 张
+无反光清晰图；固定 `A–Z/0–9/-/space` allowlist，不使用字典或期望值纠错：
+
+| Backend | Overall exact | Macro CER | EXP exact | SN exact | Mean latency |
+|---|---:|---:|---:|---:|---:|
+| EasyOCR 1.7.2 | 60.78% | 0.0420 | 95.11% | 36.00% | 3.43 ms |
+| Tesseract 5.5.3 PSM7 | 79.44% | 0.0183 | 99.56% | 64.00% | 38.01 ms |
+
+该实验只验证软件/OCR 上限，不代表相机或真实喷码。它证明 E0 必须先锁定主字符
+体系：固定日期格式已经可用，而任意字母数字序列号仍需专用 OCR/训练数据，不能
+与日期码合并报告。
+
+### SHDocs EasyOCR E0/E2 第一轮
+
+采用文档级 `35/8/7` split，每文档确定性抽取 10 个 region；根据 `camera` 验证集
+冻结 `4× bicubic、无 autocontrast`。测试结果：
+
+| Slice | Train-best fixed | Fixed exact | Four-angle oracle | Gap |
+|---|---|---:|---:|---:|
+| camera E0，全标签 | I90 | 13.04% | 18.84% | +5.80 pp |
+| a–o E2，全标签 | I0 | 11.32% | 13.83% | +2.51 pp |
+| a–o E2，question/header | I0 | 14.51% | 17.42% | +2.90 pp |
+
+E2 全标签的文档聚类 bootstrap 95% CI 为 `+1.50–+3.52 pp`；1,034 个测试 ROI 中
+36 个只有一个方向成功，且 I0/I45/I90/I135 分别成为唯一成功方向
+`21/4/3/8` 次。说明四方向存在可重复互补信号。
+
+但当前结论仍不能通过 Gate P2：camera E0 的绝对 exact 很低，86.17% 的 E2 ROI
+四方向均失败；OCR-confidence 选择器 exact `11.03%`，反而低于 train-best I0，
+未捕获 oracle 空间。下一步必须用第二 OCR 后端复核，并先解决任务字符体系和
+识读器上限，再研究自适应选择器。
+
+### SHDocs Tesseract 独立后端复核与 Gate 判定
+
+根据 camera validation 将 Tesseract 也冻结为 `4× bicubic`。同一 1,034 个 a–o
+测试 ROI 上：
+
+- train-best fixed I0：exact `26.31%`，macro CER `0.4005`；
+- four-angle oracle：exact `32.88%`，macro CER `0.2768`；
+- oracle gap `+6.58 pp`，按 7 个测试文档聚类 bootstrap 95% CI
+  `+4.13–+8.86 pp`；
+- 117 个样本只有一个方向成功，I0/I45/I90/I135 唯一成功次数分别为
+  `74/14/13/16`；
+- confidence selector exact `27.56%`，只比 fixed 高 `1.26 pp`，且四次 OCR
+  顺序执行均值约 `162.15 ms`；
+- question/header 子集 fixed/oracle 为 `31.49%/38.61%`，gap `+7.11 pp`
+  （CI `+3.90–+10.83 pp`）。
+
+因此四方向互补性已跨两个 OCR 后端重复，不是 EasyOCR 特例；但 deployable selector
+只捕获少量 oracle 空间，SHDocs camera E0 也只有 EasyOCR/Tesseract
+`13.04%/33.33%`。Offline Gate P 判定为：P0 条件性、P1 软件代理通过、P2 机制
+支持但部署未通过；总状态保持 open，正式工业 Gate 1 关闭。详见
+`14_offline_gate_p_results.md`。
+
+### PPT 更新（历史 19 页中间版本）
+
+- 清华风 HTML PPT 从 18 页更新为 19 页；
+- 新增 HAMMER/PPFT“前期探索与证据迁移”页，明确深度任务只提供可靠性方法论，
+  不作为工业 OCR 增益证据；
+- 19 页/19 条 speaker notes 通过 presenter validator，计划时长 16.5 分钟，
+  `0 errors / 0 warnings`；逐页 1600×900 截图与总览已重新生成。
+
+### PPT Offline Gate P 结果更新（历史 20 页中间版本，已由本日日志顶部 10 页版替代）
+
+- 以两页结果替换原“新增实验”计划页：第 16 页报告 E0 清晰代码与 PDD E1，
+  第 17 页报告 SHDocs 双后端 E2、可靠性边界与 Gate 判定；
+- 明确区分 `Offline Gate P = open` 与 `formal industrial Gate 1 = closed`，并在
+  正式 Gate 1 页标注“尚未执行”，避免公开代理结果被误读为工业验证；
+- E2 页同时报告 fixed / confidence selector / oracle exact、macro CER、worst
+  condition、all-four-fail、顺序 OCR 延迟和文档聚类 CI；接受阈值未冻结，因此不把
+  all-four-fail 冒充 false-read 或 rejection；
+- 更新近期里程碑为“冻结日期/批次码 → 密集虚拟角基线 → 硬件标定与 pilot →
+  正式 Gate 1”，并明确在真实 E0/E1/E2 前不训练最终自适应融合；
+- 该中间版本为 20 页/20 条 speaker notes，计划时长仍为 16.5 分钟，presenter
+  validator 为 `0 errors / 0 warnings`；20 张 1600×900 截图及两张总览已重生成。
+
+## 2026-11-02：Offline E0–E2 前置实验启动
+
+### 决策与边界
+
+- 在偏振相机尚未到位时，先使用 SHDocs、PDD/PIDSR 和现有 HAMMER 资产运行
+  Offline Gate P；
+- SHDocs 代理结果只用于平面文档高光域的软件/机制验证，不写成工业喷码结论；
+- HAMMER 选择集、compact cache、PPFT 结果和历史代码全部保留，不重新下载或删除；
+- 开题 PPT 将 HAMMER/PPFT 单列为“前期探索与方法论迁移”，明确不是 OCR 实验。
+
+### 已完成
+
+1. 新增 `industrial_reading/` 独立实验包与 `offline-gate-p-v1` 配置；
+2. 实现字符串规范化、raw/normalized exact-read、CER/WER；
+3. 实现四方向 Stokes、虚拟检偏角、min/median/mean 表示；
+4. 实现仿射仪器矩阵估计、分组 split、train-best、oracle 和分组 bootstrap；
+5. 实现 SHDocs 只读 inventory、FUNSD ROI 发现和可续传 EasyOCR JSONL 入口；
+6. 14 项新单元测试通过，Python 编译与 JSON 校验通过；
+7. 独立 EasyOCR 1.7.2 环境完成 RTX 5080 冒烟；另固定 Tesseract 5.5.3
+   作为第二后端，两者均在合成 `LOT A12B9` 上完成执行冒烟；
+8. Offline E1 合成实验中，加入角度/增益/偏置误差后，仿射标定将 Stokes RMSE
+   从 `0.0114719` 降至 `0.00260309`。该结果只验证软件链；
+9. 固定公开仓库版本：SHDocs `5d4e26b`、PolarDenDem `136cc20`、PIDSR
+   `ed7e9a3`。
+
+### 数据状态
+
+- SHDocs raw Google Drive 首次连接中断，已保留断点并重试；
+- PDD/PIDSR 数据在 SHDocs inventory 后按优先级接入；
+- 大数据继续放在 `/home/chocbrownie0524/poldepth/datasets/industrial_reading`，不进入 Git。
+
 ## 2026-11-02：主线转向变化反射条件下的工业标识可靠识读
 
 ### 决策

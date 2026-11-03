@@ -1,0 +1,36 @@
+{
+  "protocol_version": "offline-gate-p-v1",
+  "status": "proxy-only",
+  "dataset_priority": [
+    "SHDocs",
+    "PDD-2025",
+    "PIDSR",
+    "HAMMER-existing-assets"
+  ],
+  "e0": {
+    "primary_metrics": ["normalized_exact_read", "cer", "wer"],
+    "minimum_backends": 2,
+    "report_gt_roi_and_end_to_end_separately": true
+  },
+  "e1": {
+    "canonical_angles_deg": [0, 45, 90, 135],
+    "virtual_angle_step_deg": 5,
+    "synthetic_degradations": [
+      "gain",
+      "offset",
+      "angle_zero",
+      "gaussian_noise",
+      "saturation"
+    ],
+    "camera_specific_calibration_claim_allowed": false
+  },
+  "e2": {
+    "fixed_candidates": ["i0", "i45", "i90", "i135"],
+    "simple_fusions": ["s0", "min", "median", "mean"],
+    "strong_public_baseline": "sdk_deglared",
+    "oracles": ["four_angle_oracle", "virtual_angle_oracle"],
+    "split_group": "document_id",
+    "allow_formal_industrial_gate1": false
+  },
+  "evidence_boundary": "Public proxy experiments can validate software and mechanism feasibility but cannot establish industrial spray-code effectiveness."
+}

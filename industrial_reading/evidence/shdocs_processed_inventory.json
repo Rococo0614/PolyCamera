@@ -1,0 +1,42 @@
+{
+  "dataset": "SHDocs processed testing captures",
+  "date_verified": "2026-11-03",
+  "proxy_only": true,
+  "source_repository_commit": "5d4e26ba8cde9ab59d6bcf55c3d338c7c307e9c5",
+  "archive": {
+    "filename": "processed_captures.zip",
+    "bytes": 1715393730,
+    "sha256": "49457a4afae50fc750328399af708c12570a08c613b1ccfe7f552c6f8acb05c7",
+    "zip_crc_test": "pass",
+    "entries": 4859,
+    "uncompressed_bytes": 1718319577
+  },
+  "raw_archive_separately_verified": {
+    "bytes": 10277187768,
+    "sha256": "fff85bdb2acb2e4fedf60937f96352f796a6b4b7b3acb5e7e005886b574f746a",
+    "zip_crc_test": "pass",
+    "entries": 14415,
+    "uncompressed_bytes": 10272495422,
+    "testing_image_files": 4800,
+    "training_image_files": 9600,
+    "sensor_mosaic_available": false,
+    "content_note": "The archive named raw_captures contains six reconstructed PNG representations per capture, not Polarized8 sensor mosaic, dark frames, or flat fields.",
+    "extraction_status": "not extracted; processed aligned testing data is sufficient for current E0/E2 proxy",
+    "inventory_note": "The archive-level capture count needs reconciliation with the 3,184-scene figure in the public README before making a full-dataset claim."
+  },
+  "inventory": {
+    "annotation_json": 50,
+    "documents": 50,
+    "capture_conditions_per_document": 16,
+    "captures": 800,
+    "representations": ["i0", "i45", "i90", "i135", "s0_norm", "deglared"],
+    "images_per_representation": 800,
+    "image_files": 4800,
+    "aligned_text_rois_all_conditions": 36320,
+    "out_of_bounds_roi_conditions_excluded": 17,
+    "evaluatable_text_rois_after_bounds_filter": 36303,
+    "unique_text_regions_across_documents": 2270,
+    "conditions": ["camera", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o"]
+  },
+  "evidence_boundary": "Flat FUNSD documents under SHDocs highlight conditions; not industrial spray codes, curved packaging, or a dynamic production line."
+}

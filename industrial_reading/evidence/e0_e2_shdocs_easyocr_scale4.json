@@ -1,0 +1,82 @@
+{
+  "experiment": "offline-shdocs-e0-e2-easyocr-scale4",
+  "date": "2026-11-03",
+  "proxy_only": true,
+  "claim_boundary": "SHDocs flat FUNSD document proxy using GT text boxes and EasyOCR. This is not an industrial spray-code Gate 1 result.",
+  "protocol": {
+    "dataset_archive_sha256": "49457a4afae50fc750328399af708c12570a08c613b1ccfe7f552c6f8acb05c7",
+    "split_version": "shdocs-document-v1",
+    "split_assignment_sha256": "3f1868c879df1112ce145eb711e33e7f441c8a5c8f6a31254b5c23419af74343",
+    "split_documents": {"train": 35, "val": 8, "test": 7},
+    "regions_per_document": 10,
+    "excluded_out_of_bounds_roi_conditions": 17,
+    "ocr_backend": "EasyOCR 1.7.2 GT-ROI recognition",
+    "preprocessing": "4x bicubic, no autocontrast",
+    "preprocessing_selection": "Selected on camera validation: 2x and 4x tied at 12.5% exact; 4x had lower macro CER (0.4779). Test was not used for the selection rule.",
+    "fixed_candidates": ["i0", "i45", "i90", "i135"],
+    "other_methods": ["s0_norm", "deglared", "min", "median"],
+    "normalization": "NFKC + uppercase + collapsed whitespace; no dictionary/OCV correction"
+  },
+  "e0_camera_test": {
+    "samples": 69,
+    "train_best_fixed": "i90",
+    "train_best_exact": 0.13043478260869565,
+    "train_best_macro_cer": 0.36454633002502473,
+    "four_angle_oracle_exact": 0.18840579710144928,
+    "decision": "E0 not passed on mixed FUNSD fields; the recognizer/domain remains a limiting factor."
+  },
+  "e2_highlight_test_all_labels": {
+    "samples": 1034,
+    "train_best_fixed": "i0",
+    "method_exact": {
+      "i0": 0.11315280464216634,
+      "i45": 0.0851063829787234,
+      "i90": 0.07736943907156673,
+      "i135": 0.10444874274661509,
+      "s0_norm": 0.09284332688588008,
+      "deglared": 0.10058027079303675,
+      "min": 0.10638297872340426,
+      "median": 0.09187620889748549
+    },
+    "train_best_macro_cer": 0.41610874944457515,
+    "four_angle_oracle_exact": 0.13829787234042554,
+    "four_angle_oracle_macro_cer": 0.37085594693640045,
+    "oracle_minus_fixed_exact": 0.025145067698259187,
+    "cluster_bootstrap_ci95": [0.014970059880239521, 0.035238095238095235],
+    "bootstrap_groups": 7,
+    "oracle_only_successes": 26,
+    "all_four_fail_rate": 0.8617021276595744,
+    "exactly_one_direction_success_rate": 0.03481624758220503,
+    "unique_winner_counts": {"i0": 21, "i45": 4, "i90": 3, "i135": 8},
+    "confidence_selector_exact": 0.1102514506769826,
+    "confidence_selector_sequential_latency_ms": 18.86565783564775,
+    "worst_condition": {"condition": "h", "fixed_exact": 0.057971014492753624}
+  },
+  "e2_highlight_test_printed_question_header": {
+    "samples": 689,
+    "train_best_fixed": "i0",
+    "train_best_exact": 0.14513788098693758,
+    "train_best_macro_cer": 0.37481891184589783,
+    "four_angle_oracle_exact": 0.1741654571843251,
+    "oracle_minus_fixed_exact": 0.02902757619738752,
+    "cluster_bootstrap_ci95": [0.014284190205242837, 0.044058744993324434],
+    "confidence_selector_exact": 0.13933236574746008
+  },
+  "interpretation": [
+    "A repeatable four-direction oracle gap exists in the SHDocs proxy and all four directions uniquely recover some samples.",
+    "The deployable OCR-confidence selector does not capture the oracle headroom and can underperform the train-best fixed direction.",
+    "Absolute exact-read is too low to close Offline Gate P2; improve/freeze E0 and confirm with the second OCR backend before method development."
+  ],
+  "artifacts": {
+    "e0_summary_sha256": "d795b5f1189d3613dd08c64281da3a3fbaa5fcaa43b951981fc7a31f66d9a8f9",
+    "e0_printed_summary_sha256": "a00d7588c0a5593ddbc7d6385c4ef08936b544c9e6b6e4133716e1facf2955be",
+    "e2_records_sha256": "e803dfae03da076cdfc4c470dddb1c2d482078d01fd81e02a70e1bc355336055",
+    "e2_metadata_sha256": "ba9762b43385ca6dee42179ef80cda76f70410f0c6837cf2bde052427e092d62",
+    "e2_summary_sha256": "c3a0b05da0063edc69836513fcda83d10bd3fd62bccfbbc61ffd30ddb15eef44",
+    "e2_printed_summary_sha256": "f394c8c1d7ff6ac911b3386d1e626b1af4146c47a0f195b5854d1688286575b7",
+    "unique_direction_figure": {
+      "path": "/home/chocbrownie0524/poldepth/runs/industrial_reading/shdocs_easyocr_unique_direction_examples.png",
+      "sha256": "7f040a7e65b7183f121e2c11c70d40bbe899128bc4c308fffebda1fe44edf18f"
+    }
+  }
+}

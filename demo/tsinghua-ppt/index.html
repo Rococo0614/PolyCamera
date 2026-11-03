@@ -275,6 +275,292 @@
   .metric-notes{display:grid;gap:.9vh;align-content:start}
   .metric-note{padding:1vh .9vw;background:var(--paper-soft);font:500 clamp(13px,.82vw,16px)/1.4 var(--sans);color:var(--ink-soft)}
 
+  /* THU14B · Offline Gate P 公开代理结果 */
+  .proxy-audit-layout{height:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) auto;gap:1.25vh 1.35vw}
+  .audit-panel{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:1.05vh;padding:1.35vh 1.1vw;border:1px solid var(--line);background:#fff}
+  .audit-panel-head{display:flex;align-items:start;justify-content:space-between;gap:1vw;padding-bottom:.9vh;border-bottom:1px solid var(--line)}
+  .audit-panel-title{font:700 clamp(17px,1.15vw,22px)/1.28 var(--sans);color:var(--ink)}
+  .audit-panel-copy{margin-top:.42vh;font:400 clamp(12px,.76vw,15px)/1.4 var(--sans);color:var(--muted)}
+  .audit-meta{flex:0 0 auto;color:var(--accent);font:700 clamp(11px,.7vw,13px)/1.2 var(--mono);letter-spacing:.06em;text-align:right}
+  .audit-table{align-self:center}
+  .audit-table th,.audit-table td{padding:.78vh .62vw}
+  .audit-table th:not(:first-child),.audit-table td:not(:first-child){text-align:center}
+  .audit-table td strong{color:var(--ink);font-weight:700}
+  .audit-table .good{color:var(--success);font-weight:700}.audit-table .bad{color:var(--danger);font-weight:700}
+  .audit-status{display:grid;grid-template-columns:auto 1fr;gap:.8vw;align-items:center;padding:1.05vh .9vw;background:var(--paper-soft);border-left:4px solid var(--accent)}
+  .audit-status.success{border-left-color:var(--success);background:var(--success-soft)}
+  .audit-status .status-name{font:700 clamp(12px,.78vw,15px)/1.2 var(--mono);color:var(--accent);white-space:nowrap}
+  .audit-status.success .status-name{color:var(--success)}
+  .audit-status p{font:500 clamp(12px,.78vw,15px)/1.4 var(--sans);color:var(--ink-soft)}
+  .recon-legend{display:flex;justify-content:flex-end;gap:1vw;color:var(--muted);font:600 clamp(10px,.66vw,12px)/1 var(--sans)}
+  .recon-legend span{display:flex;align-items:center;gap:.35vw}.recon-legend i{width:1.15vw;height:4px;background:var(--line-strong)}.recon-legend .bilinear i{background:var(--accent)}
+  .recon-grid{display:grid;gap:1.05vh;align-content:center}
+  .recon-group{display:grid;grid-template-columns:3.4em 1fr;gap:.65vw;align-items:center}
+  .recon-noise{color:var(--ink);font:700 clamp(12px,.78vw,15px)/1.15 var(--mono)}
+  .recon-bars{display:grid;gap:.48vh}
+  .recon-row{display:grid;grid-template-columns:4.6em 1fr 4.1em;gap:.5vw;align-items:center;color:var(--muted);font:500 clamp(10px,.68vw,13px)/1 var(--sans)}
+  .recon-track{height:1.05vh;min-height:8px;overflow:hidden;background:#eee9ef}
+  .recon-fill{display:block;height:100%;background:var(--line-strong)}.recon-fill.bilinear{background:var(--accent)}
+  .recon-value{text-align:right;color:var(--ink-soft);font:600 clamp(10px,.68vw,13px)/1 var(--mono)}
+  .proxy-boundary{grid-column:1/-1;display:grid;grid-template-columns:auto repeat(3,1fr);gap:.8vw;align-items:center;padding:1.05vh 1vw;background:var(--accent-pale);border-top:2px solid var(--accent)}
+  .proxy-boundary strong{color:var(--accent);font:700 clamp(12px,.78vw,15px)/1.2 var(--mono);letter-spacing:.07em}
+  .proxy-boundary span{padding-left:.75vw;border-left:1px solid var(--line);font:500 clamp(11px,.72vw,14px)/1.35 var(--sans);color:var(--ink-soft)}
+  .e2-layout{height:100%;display:grid;grid-template-columns:57% 1fr;gap:1.6vw}
+  .e2-visual{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:.85vh}
+  .e2-kpis{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:#fff}
+  .e2-kpis div{padding:.9vh .8vw;border-left:1px solid var(--line)}.e2-kpis div:first-child{border-left:0}
+  .e2-kpis strong{display:block;color:var(--accent);font:700 clamp(19px,1.35vw,26px)/1 var(--sans-latin)}
+  .e2-kpis span{display:block;margin-top:.35vh;color:var(--muted);font:500 clamp(10px,.65vw,12px)/1.25 var(--sans)}
+  .e2-figure{min-height:0;overflow:hidden;border:1px solid var(--line);background:#f8f6f8}
+  .e2-figure img{width:100%;height:100%;display:block;object-fit:contain}
+  .e2-caption{font:500 clamp(11px,.7vw,13px)/1.35 var(--sans);color:var(--muted)}
+  .e2-summary{min-height:0;display:grid;grid-template-rows:auto auto 1fr auto;gap:.85vh}
+  .backend-card{padding:1.05vh .9vw;border:1px solid var(--line);background:#fff}
+  .backend-head{display:flex;align-items:center;justify-content:space-between;gap:.8vw}
+  .backend-head strong{font:700 clamp(14px,.92vw,18px)/1.2 var(--sans)}
+  .gap-pill{padding:.38vh .48vw;background:var(--accent-soft);color:var(--accent);font:700 clamp(11px,.7vw,13px)/1 var(--mono)}
+  .score-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.45vw;align-items:end;margin-top:.72vh}
+  .score-block span{display:block;color:var(--muted);font:600 clamp(9px,.61vw,12px)/1.15 var(--sans)}
+  .score-block strong{display:block;margin-top:.25vh;color:var(--ink);font:700 clamp(20px,1.48vw,28px)/1 var(--sans-latin)}
+  .score-block.oracle strong{color:var(--accent)}
+  .score-arrow{padding-bottom:.2vh;color:var(--line-strong);font:700 clamp(15px,1vw,19px)/1 var(--sans)}
+  .backend-detail{display:grid;grid-template-columns:repeat(5,1fr);gap:.4vw;margin-top:.72vh;padding-top:.62vh;border-top:1px solid var(--line)}
+  .backend-detail span{font:500 clamp(9px,.61vw,12px)/1.3 var(--sans);color:var(--muted)}
+  .backend-detail strong{display:block;color:var(--ink-soft);font:700 clamp(10px,.67vw,13px)/1.2 var(--mono)}
+  .gate-card{min-height:0;display:grid;grid-template-rows:auto auto 1fr auto;gap:.7vh;padding:1.0vh .9vw;background:var(--paper-soft);border-left:4px solid var(--accent)}
+  .gate-head{display:flex;align-items:center;justify-content:space-between;gap:.8vw}
+  .gate-head strong{font:700 clamp(14px,.94vw,18px)/1.2 var(--sans)}
+  .gate-open{padding:.42vh .55vw;background:#fff2d9;color:#855700;font:800 clamp(11px,.72vw,14px)/1 var(--mono);letter-spacing:.06em}
+  .gate-evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:.45vw}
+  .gate-evidence span{padding:.65vh .55vw;background:#fff;border-top:2px solid var(--accent);font:500 clamp(9px,.61vw,12px)/1.32 var(--sans);color:var(--muted)}
+  .gate-evidence strong{display:block;margin-bottom:.2vh;color:var(--ink);font:700 clamp(10px,.67vw,13px)/1.2 var(--sans)}
+  .gate-list{display:grid;align-content:center}
+  .gate-row{display:grid;grid-template-columns:2.2em 1fr auto;gap:.55vw;align-items:center;padding:.55vh 0;border-bottom:1px solid var(--line);font:500 clamp(11px,.71vw,14px)/1.25 var(--sans);color:var(--ink-soft)}
+  .gate-row:last-child{border-bottom:0}.gate-row .gate-id{color:var(--accent);font:700 clamp(11px,.7vw,13px)/1 var(--mono)}
+  .gate-state{font-weight:700;color:var(--ink)}.gate-state.success{color:var(--success)}.gate-state.conditional{color:#855700}
+  .formal-gate{display:flex;align-items:center;justify-content:space-between;gap:.8vw;padding:.72vh .7vw;background:var(--danger-soft);color:var(--danger);font:700 clamp(11px,.72vw,14px)/1.25 var(--sans)}
+  .gate-next{padding:1.0vh .9vw;background:var(--accent);color:#fff;font:600 clamp(12px,.78vw,15px)/1.42 var(--sans)}
+  .gate-next strong{color:#fff}
+
+  /* THU-COMPACT · 十页结果导向汇报 */
+  .thu-content.compact{padding-top:1.8vh;padding-bottom:1.45vh}
+  .dense-panel{min-height:0;padding:1.25vh 1vw;border:1px solid var(--line);background:#fff}
+  .dense-panel.soft{background:var(--paper-soft)}
+  .dense-panel.accented{border-top:4px solid var(--accent)}
+  .dense-panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1vw;margin-bottom:.85vh;padding-bottom:.72vh;border-bottom:1px solid var(--line)}
+  .dense-panel-head h2{font:700 clamp(17px,1.12vw,22px)/1.24 var(--sans);color:var(--ink)}
+  .dense-panel-head p{margin-top:.35vh;font:500 clamp(12px,.76vw,15px)/1.4 var(--sans);color:var(--muted)}
+  .dense-meta{color:var(--accent);font:700 clamp(10px,.68vw,13px)/1.25 var(--mono);letter-spacing:.06em;text-align:right;white-space:nowrap}
+  .dense-kpis{display:grid;border:1px solid var(--line);background:#fff}
+  .dense-kpi{padding:1.05vh .9vw;border-left:1px solid var(--line)}
+  .dense-kpi:first-child{border-left:0}
+  .dense-kpi strong{display:block;color:var(--accent);font:750 clamp(24px,1.85vw,36px)/1 var(--sans-latin);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+  .dense-kpi span{display:block;margin-top:.38vh;color:var(--muted);font:600 clamp(10px,.68vw,13px)/1.28 var(--sans)}
+  .evidence-boundary{padding:.85vh .8vw;border-left:4px solid var(--danger);background:var(--danger-soft);font:600 clamp(12px,.78vw,15px)/1.42 var(--sans);color:var(--ink-soft)}
+  .result-source{color:var(--muted);font:500 clamp(10px,.65vw,12px)/1.35 var(--sans)}
+  .status-chip{display:inline-flex;align-items:center;width:max-content;padding:.38vh .52vw;background:var(--accent-soft);color:var(--accent);font:800 clamp(10px,.68vw,13px)/1 var(--mono);letter-spacing:.06em}
+  .status-chip.success{background:var(--success-soft);color:var(--success)}
+  .status-chip.warn{background:#fff2d9;color:#855700}
+  .status-chip.closed{background:var(--danger-soft);color:var(--danger)}
+
+  /* 02 · 一页背景与物理 */
+  .intro-layout{height:100%;display:grid;grid-template-columns:44% 1fr;gap:1.5vw}
+  .intro-scenes{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.8vh .65vw;min-height:0}
+  .intro-scenes figure{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:.42vh}
+  .intro-scenes img{width:100%;height:100%;display:block;object-fit:cover}
+  .intro-scenes figcaption{display:flex;justify-content:space-between;gap:.5vw;color:var(--muted);font:600 clamp(10px,.67vw,13px)/1.25 var(--sans)}
+  .intro-scenes figcaption strong{color:var(--ink)}
+  .intro-logic{min-height:0;display:grid;grid-template-rows:auto auto 1fr auto;gap:1.0vh}
+  .problem-chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.55vw;align-items:stretch}
+  .problem-step{display:grid;align-content:center;padding:1.0vh .75vw;background:var(--paper-soft);border-top:3px solid var(--accent)}
+  .problem-step strong{font:700 clamp(15px,.96vw,19px)/1.25 var(--sans)}
+  .problem-step span{margin-top:.35vh;color:var(--muted);font:500 clamp(11px,.72vw,14px)/1.35 var(--sans)}
+  .problem-arrow{display:grid;place-items:center;color:var(--accent);font:700 clamp(18px,1.2vw,23px)/1 var(--sans)}
+  .physics-compact{display:grid;grid-template-columns:1.25fr .75fr;gap:.8vw;min-height:0}
+  .physics-equation{display:grid;align-content:center;padding:1.1vh 1vw;background:var(--accent-pale);border-left:4px solid var(--accent)}
+  .physics-equation .math{font-size:clamp(23px,1.7vw,33px);color:var(--ink)}
+  .physics-equation p{margin-top:.6vh;color:var(--ink-soft);font:600 clamp(12px,.78vw,15px)/1.42 var(--sans)}
+  .direction-box{display:grid;grid-template-columns:repeat(2,1fr);gap:.5vh .45vw;align-content:center;padding:.9vh .7vw;border:1px solid var(--line)}
+  .direction-box span{padding:.7vh .35vw;background:var(--accent-soft);color:var(--accent);text-align:center;font:800 clamp(14px,.9vw,17px)/1 var(--mono)}
+  .hypothesis-band{display:grid;grid-template-columns:auto 1fr;gap:.8vw;align-items:center;padding:1.0vh .9vw;background:var(--accent);color:#fff}
+  .hypothesis-band strong{font:800 clamp(13px,.84vw,16px)/1.2 var(--mono);letter-spacing:.06em}
+  .hypothesis-band span{font:650 clamp(14px,.9vw,17px)/1.42 var(--sans)}
+
+  /* 03 · 系统、协议与 Gate */
+  .protocol-layout{height:100%;display:grid;grid-template-rows:auto 1fr;gap:1.15vh}
+  .compact-flow{display:grid;grid-template-columns:1fr auto 1.1fr auto 1.1fr auto 1fr;gap:.55vw;align-items:stretch}
+  .compact-flow-card{padding:1.0vh .8vw;border:1px solid var(--line);background:var(--paper-soft);border-top:4px solid var(--accent)}
+  .compact-flow-card:nth-of-type(1){border-top-color:var(--info)}.compact-flow-card:nth-of-type(3){border-top-color:var(--success)}.compact-flow-card:nth-of-type(4){border-top-color:var(--ink)}
+  .compact-flow-card small{display:block;color:var(--muted);font:700 clamp(9px,.62vw,12px)/1 var(--mono);letter-spacing:.07em}
+  .compact-flow-card strong{display:block;margin-top:.45vh;font:700 clamp(16px,1.02vw,20px)/1.22 var(--sans)}
+  .compact-flow-card p{margin-top:.38vh;color:var(--ink-soft);font:500 clamp(11px,.72vw,14px)/1.35 var(--sans)}
+  .compact-flow-arrow{display:grid;place-items:center;color:var(--accent);font:800 clamp(18px,1.25vw,24px)/1 var(--sans)}
+  .protocol-bottom{min-height:0;display:grid;grid-template-columns:39% 31% 1fr;gap:1vw}
+  .rig-compact{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.55vw;align-items:center;height:100%;padding:1.2vh 1vw;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:2.2vw 2.2vw}
+  .rig-node{display:grid;place-items:center;min-height:11vh;padding:.8vh .55vw;border:2px solid var(--accent);background:#fff;text-align:center;color:var(--accent);font:700 clamp(13px,.84vw,16px)/1.35 var(--sans)}
+  .rig-node.target{border-color:var(--ink);color:var(--ink)}.rig-node.camera{border-color:var(--info);color:var(--info)}
+  .rig-arrow{color:var(--accent);font:800 clamp(20px,1.4vw,27px)/1 var(--sans)}
+  .protocol-list{display:grid;align-content:start}
+  .protocol-line{display:grid;grid-template-columns:5.7em 1fr;gap:.65vw;padding:.78vh 0;border-bottom:1px solid var(--line);font:500 clamp(12px,.78vw,15px)/1.35 var(--sans)}
+  .protocol-line strong{color:var(--accent);font-family:var(--mono)}
+  .gate-criterion{height:100%;display:grid;grid-template-rows:auto 1fr auto;gap:.8vh}
+  .gate-delta{display:grid;place-items:center;background:var(--accent);color:#fff;text-align:center;padding:1vh .8vw}
+  .gate-delta strong{font:800 clamp(34px,3vw,58px)/.95 var(--sans-latin);letter-spacing:-.04em}
+  .gate-delta span{margin-top:.5vh;font:650 clamp(12px,.78vw,15px)/1.35 var(--sans)}
+  .metric-cloud{display:grid;grid-template-columns:1fr 1fr;gap:.5vh .45vw}
+  .metric-cloud span{padding:.6vh .55vw;background:var(--paper-soft);font:650 clamp(11px,.72vw,14px)/1.25 var(--sans);color:var(--ink-soft)}
+
+  /* 04 · 工作量总览 */
+  .workload-layout{height:100%;display:grid;grid-template-rows:auto 1fr auto;gap:1.0vh}
+  .workload-kpis{grid-template-columns:repeat(5,1fr)}
+  .workload-cards{min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.9vw}
+  .workload-card{min-height:0;display:grid;grid-template-rows:auto auto 1fr auto;gap:.65vh;padding:1.15vh .9vw;border:1px solid var(--line);border-top:4px solid var(--accent);background:#fff}
+  .workload-card:nth-child(2){border-top-color:var(--info)}.workload-card:nth-child(3){border-top-color:var(--success)}
+  .workload-card h2{font:750 clamp(18px,1.2vw,23px)/1.22 var(--sans)}
+  .workload-card .sub{color:var(--muted);font:600 clamp(11px,.72vw,14px)/1.3 var(--sans)}
+  .workload-list{display:grid;grid-template-rows:repeat(5,minmax(0,1fr));align-content:stretch}
+  .workload-list div{display:flex;align-items:center;justify-content:space-between;gap:.8vw;padding:.55vh 0;border-bottom:1px solid var(--line);font:500 clamp(11px,.72vw,14px)/1.3 var(--sans);color:var(--ink-soft)}
+  .workload-list strong{color:var(--ink);font-family:var(--mono);text-align:right}
+  .workload-result{padding:.75vh .65vw;background:var(--accent-pale);color:var(--accent);font:700 clamp(11px,.72vw,14px)/1.35 var(--sans)}
+  .repro-strip{display:grid;grid-template-columns:auto repeat(4,1fr);gap:.55vw;align-items:center;padding:.8vh .8vw;background:var(--paper-soft);border-left:4px solid var(--accent)}
+  .repro-strip>strong{color:var(--accent);font:800 clamp(11px,.72vw,14px)/1 var(--mono)}
+  .repro-strip span{padding-left:.55vw;border-left:1px solid var(--line);font:600 clamp(10px,.67vw,13px)/1.3 var(--sans);color:var(--ink-soft)}
+
+  /* 05 · E0 */
+  .e0-result-layout{height:100%;display:grid;grid-template-columns:61% 1fr;gap:1.2vw}
+  .format-bars{display:grid;grid-template-rows:repeat(4,minmax(0,1fr));gap:.55vh;align-content:stretch}
+  .format-group{display:grid;grid-template-columns:6.2em 1fr;gap:.65vw;align-items:center;padding:.65vh .6vw;background:var(--paper-soft);border-left:3px solid var(--line-strong)}
+  .format-group:first-child{border-left-color:var(--success);background:var(--success-soft)}
+  .format-name{font:750 clamp(13px,.84vw,16px)/1.15 var(--mono);color:var(--ink)}
+  .format-pair{display:grid;gap:.42vh}
+  .format-row{display:grid;grid-template-columns:5.5em 1fr 4.4em;gap:.5vw;align-items:center;color:var(--muted);font:600 clamp(10px,.68vw,13px)/1 var(--sans)}
+  .format-track{height:1.25vh;min-height:9px;background:#eee9ef;overflow:hidden}
+  .format-fill{display:block;height:100%;background:var(--info)}.format-fill.tess{background:var(--accent)}
+  .format-value{text-align:right;color:var(--ink);font:750 clamp(11px,.72vw,14px)/1 var(--mono)}
+  .e0-side{min-height:0;display:grid;grid-template-rows:auto auto auto auto 1fr;gap:.85vh}
+  .ceiling-card{display:grid;grid-template-columns:1fr 1fr;gap:.65vw}
+  .ceiling-metric{padding:1.0vh .8vw;background:var(--accent);color:#fff}
+  .ceiling-metric:nth-child(2){background:var(--info)}
+  .ceiling-metric strong{display:block;font:800 clamp(30px,2.5vw,48px)/1 var(--sans-latin)}
+  .ceiling-metric span{display:block;margin-top:.4vh;font:650 clamp(11px,.72vw,14px)/1.3 var(--sans)}
+  .e0-summary-table th,.e0-summary-table td{padding:.66vh .55vw}
+  .e0-summary-table th:not(:first-child),.e0-summary-table td:not(:first-child){text-align:center}
+  .e0-insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55vw}
+  .e0-insight{padding:.8vh .7vw;background:var(--paper-soft);border-top:3px solid var(--accent)}
+  .e0-insight strong{display:block;color:var(--accent);font:800 clamp(21px,1.55vw,30px)/1 var(--sans-latin)}
+  .e0-insight span{display:block;margin-top:.35vh;color:var(--muted);font:650 clamp(10px,.67vw,13px)/1.28 var(--sans)}
+  .e0-decision-panel{min-height:0;display:grid;grid-template-rows:auto 1fr;padding:1.0vh .8vw;background:var(--danger-soft);border-left:4px solid var(--danger)}
+  .e0-decision-panel>strong{color:var(--danger);font:800 clamp(12px,.78vw,15px)/1.2 var(--mono)}
+  .e0-decision-list{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));margin-top:.5vh}
+  .e0-decision-list div{display:grid;grid-template-columns:5.2em 1fr;gap:.6vw;align-items:center;border-top:1px solid rgba(183,53,61,.18);font:600 clamp(11px,.72vw,14px)/1.35 var(--sans);color:var(--ink-soft)}
+  .e0-decision-list b{color:var(--danger);font-family:var(--mono)}
+  .domain-contrast{display:grid;grid-template-columns:auto 1fr;gap:.7vw;align-items:center;padding:.8vh .7vw;background:var(--danger-soft);border-left:4px solid var(--danger)}
+  .domain-contrast strong{color:var(--danger);font:800 clamp(12px,.78vw,15px)/1.2 var(--mono)}
+  .domain-contrast span{font:600 clamp(11px,.72vw,14px)/1.35 var(--sans);color:var(--ink-soft)}
+
+  /* 06 · E1 */
+  .e1-result-layout{height:100%;display:grid;grid-template-rows:36% 1fr;gap:1.0vh}
+  .calib-row{display:grid;grid-template-columns:38% 1fr;gap:1vw;min-height:0}
+  .calib-kpis{display:grid;grid-template-columns:1fr 1fr;gap:.6vh .5vw}
+  .calib-kpi{padding:.85vh .7vw;background:var(--paper-soft);border-left:3px solid var(--accent)}
+  .calib-kpi strong{display:block;color:var(--accent);font:800 clamp(20px,1.6vw,31px)/1 var(--sans-latin)}
+  .calib-kpi span{display:block;margin-top:.3vh;color:var(--muted);font:600 clamp(10px,.67vw,13px)/1.3 var(--sans)}
+  .rmse-compare{display:grid;grid-template-columns:1fr auto 1fr;gap:.75vw;align-items:center;height:100%}
+  .rmse-box{padding:1.0vh .8vw;background:var(--paper-soft);text-align:center}
+  .rmse-box.after{background:var(--success-soft);border:2px solid var(--success)}
+  .rmse-box small{display:block;color:var(--muted);font:700 clamp(10px,.66vw,12px)/1 var(--mono)}
+  .rmse-box strong{display:block;margin-top:.45vh;font:800 clamp(28px,2.3vw,45px)/1 var(--sans-latin);color:var(--ink)}
+  .rmse-box.after strong{color:var(--success)}
+  .rmse-arrow{color:var(--accent);font:800 clamp(24px,1.8vw,35px)/1 var(--sans)}
+  .pdd-row{display:grid;grid-template-columns:57% 1fr;gap:1vw;min-height:0}
+  .pdd-bars{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:.55vh;align-content:stretch}
+  .pdd-group{display:grid;grid-template-columns:3.5em 1fr;gap:.55vw;align-items:center;padding:.55vh .5vw;background:var(--paper-soft);border-left:3px solid var(--line-strong)}
+  .pdd-group>strong{font:800 clamp(12px,.78vw,15px)/1 var(--mono)}
+  .pdd-pair{display:grid;gap:.34vh}.pdd-line{display:grid;grid-template-columns:4.8em 1fr 4em;gap:.45vw;align-items:center;color:var(--muted);font:600 clamp(10px,.66vw,12px)/1 var(--sans)}
+  .pdd-track{height:1.0vh;min-height:8px;background:#eee9ef}.pdd-fill{display:block;height:100%;background:var(--line-strong)}.pdd-fill.bilinear{background:var(--accent)}
+  .pdd-number{text-align:right;color:var(--ink);font:750 clamp(10px,.67vw,13px)/1 var(--mono)}
+  .pdd-table th,.pdd-table td{padding:.58vh .5vw;text-align:center}.pdd-table th:first-child,.pdd-table td:first-child{text-align:left}
+
+  /* 07 · E2 双后端统计 */
+  .e2-cross-layout{height:100%;display:grid;grid-template-rows:auto 1fr;gap:.9vh}
+  .e2-cross-kpis{grid-template-columns:repeat(4,1fr)}
+  .e2-cross-body{min-height:0;display:grid;grid-template-columns:43% 1fr;gap:1vw}
+  .backend-stack{display:grid;grid-template-rows:1fr 1fr;gap:.75vh;min-height:0}
+  .backend-large{display:grid;grid-template-rows:auto auto auto;align-content:space-between;gap:.7vh;padding:1.05vh .85vw;border:1px solid var(--line);border-top:4px solid var(--accent);background:#fff}
+  .backend-large.easy{border-top-color:var(--info)}
+  .backend-large-head{display:flex;justify-content:space-between;align-items:center;gap:.8vw}
+  .backend-large-head h2{font:750 clamp(17px,1.1vw,21px)/1.2 var(--sans)}
+  .backend-large-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.45vw;align-items:end}
+  .backend-large-flow div span{display:block;color:var(--muted);font:650 clamp(9px,.62vw,12px)/1.15 var(--sans)}
+  .backend-large-flow div strong{display:block;margin-top:.25vh;color:var(--ink);font:800 clamp(24px,1.9vw,37px)/1 var(--sans-latin)}
+  .backend-large-flow div:last-child strong{color:var(--accent)}
+  .backend-large-flow>span{padding-bottom:.25vh;color:var(--line-strong);font:800 clamp(15px,1vw,19px)/1 var(--sans)}
+  .backend-large-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:.45vh .45vw;align-self:end}
+  .backend-large-foot span{padding:.5vh .45vw;background:var(--paper-soft);color:var(--muted);font:600 clamp(9px,.62vw,12px)/1.25 var(--sans)}
+  .backend-large-foot strong{display:block;color:var(--ink);font:750 clamp(10px,.68vw,13px)/1.2 var(--mono)}
+  .e2-detail-table{height:100%}.e2-detail-table th,.e2-detail-table td{padding:.64vh .52vw;text-align:center}.e2-detail-table th:first-child,.e2-detail-table td:first-child{text-align:left}
+  .e2-detail-table tr.emphasis td{background:var(--accent-pale);font-weight:700;color:var(--ink)}
+
+  /* 08 · E2 机制与基线 */
+  .mechanism-layout{height:100%;display:grid;grid-template-columns:59% 1fr;gap:1vw}
+  .mechanism-figure{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:.55vh}
+  .mechanism-figure img{width:100%;height:100%;display:block;object-fit:contain;border:1px solid var(--line);background:#f8f6f8}
+  .mechanism-figure figcaption{font:600 clamp(10px,.67vw,13px)/1.35 var(--sans);color:var(--muted)}
+  .baseline-side{min-height:0;display:grid;grid-template-rows:1fr auto auto;gap:.65vh}
+  .baseline-table th,.baseline-table td{padding:.46vh .42vw;text-align:center}.baseline-table th:first-child,.baseline-table td:first-child{text-align:left}
+  .baseline-table tr.best td{background:var(--accent-pale);font-weight:750;color:var(--ink)}
+  .winner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.38vw}
+  .winner-grid div{padding:.6vh .45vw;background:var(--paper-soft);text-align:center}
+  .winner-grid strong{display:block;color:var(--accent);font:800 clamp(17px,1.18vw,23px)/1 var(--mono)}
+  .winner-grid span{display:block;margin-top:.22vh;color:var(--muted);font:600 clamp(9px,.62vw,12px)/1.2 var(--sans)}
+  .selector-strip{display:grid;grid-template-columns:1fr 1fr;gap:.5vw}
+  .selector-strip div{padding:.7vh .55vw;background:var(--danger-soft);border-left:3px solid var(--danger);font:600 clamp(10px,.67vw,13px)/1.3 var(--sans);color:var(--ink-soft)}
+  .selector-strip strong{color:var(--danger)}
+
+  /* 09 · 决策与下一步 */
+  .decision-layout{height:100%;display:grid;grid-template-columns:46% 1fr;gap:1.1vw}
+  .gate-matrix{min-height:0;display:grid;grid-template-rows:auto repeat(3,1fr) auto;gap:.65vh}
+  .gate-matrix-head{display:flex;align-items:center;justify-content:space-between;padding:1.0vh .8vw;background:var(--accent);color:#fff}
+  .gate-matrix-head strong{font:800 clamp(18px,1.2vw,23px)/1.2 var(--sans)}
+  .gate-matrix-head span{font:800 clamp(12px,.78vw,15px)/1 var(--mono);letter-spacing:.08em}
+  .gate-decision-row{display:grid;grid-template-columns:3.2em 1fr auto;gap:.7vw;align-items:center;padding:.8vh .7vw;border:1px solid var(--line);background:#fff}
+  .gate-decision-row .id{color:var(--accent);font:800 clamp(17px,1.15vw,22px)/1 var(--mono)}
+  .gate-decision-row strong{display:block;font:750 clamp(14px,.92vw,18px)/1.22 var(--sans)}
+  .gate-decision-row p{margin-top:.28vh;color:var(--muted);font:550 clamp(10px,.68vw,13px)/1.32 var(--sans)}
+  .formal-closed{display:flex;justify-content:space-between;align-items:center;padding:.8vh .75vw;background:var(--danger-soft);color:var(--danger);font:800 clamp(12px,.78vw,15px)/1.2 var(--sans)}
+  .next-experiments{min-height:0;display:grid;grid-template-rows:auto 1fr auto;gap:.7vh}
+  .next-path{display:grid;grid-template-rows:repeat(5,1fr);gap:.5vh;min-height:0}
+  .next-step{display:grid;grid-template-columns:2.4em 1fr auto;gap:.7vw;align-items:center;padding:.65vh .7vw;border-left:4px solid var(--accent);background:var(--paper-soft)}
+  .next-step .no{color:var(--accent);font:800 clamp(15px,1vw,19px)/1 var(--mono)}
+  .next-step strong{display:block;font:750 clamp(13px,.86vw,17px)/1.2 var(--sans)}
+  .next-step p{margin-top:.24vh;color:var(--muted);font:550 clamp(10px,.67vw,13px)/1.3 var(--sans)}
+  .next-step .deliverable{color:var(--accent);font:750 clamp(10px,.67vw,13px)/1.25 var(--sans);text-align:right}
+  .reporting-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:.35vw}
+  .reporting-strip span{padding:.55vh .35vw;background:var(--accent-soft);color:var(--accent);text-align:center;font:750 clamp(9px,.62vw,12px)/1.15 var(--sans)}
+
+  /* 10 · 结果式收束 */
+  .compact-closing{height:100%;display:grid;grid-template-columns:63% 1fr;background:var(--accent);color:#fff}
+  .compact-closing-main{display:grid;grid-template-rows:auto auto 1fr auto;gap:1.5vh;padding:5.2vh 4.4vw;position:relative;overflow:hidden}
+  .compact-closing-main::after{content:"10 / 10";position:absolute;right:2.2vw;bottom:2.2vh;color:rgba(255,255,255,.65);font:700 clamp(11px,.72vw,14px)/1 var(--mono);letter-spacing:.08em}
+  .compact-closing-kicker{color:rgba(255,255,255,.72);font:700 clamp(12px,.8vw,15px)/1 var(--sans-latin);letter-spacing:.15em;text-transform:uppercase}
+  .compact-closing-title{font:800 clamp(42px,4.1vw,78px)/1.05 var(--serif);letter-spacing:-.04em}
+  .conclusion-list{display:grid;grid-template-rows:repeat(3,1fr);gap:.8vh;min-height:0}
+  .conclusion-row{display:grid;grid-template-columns:3.2em 1fr;gap:.85vw;align-items:center;padding:1.0vh .9vw;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06)}
+  .conclusion-row .no{color:rgba(255,255,255,.68);font:800 clamp(20px,1.45vw,28px)/1 var(--mono)}
+  .conclusion-row strong{display:block;font:750 clamp(17px,1.12vw,22px)/1.2 var(--sans)}
+  .conclusion-row p{margin-top:.35vh;color:rgba(255,255,255,.8);font:550 clamp(12px,.78vw,15px)/1.38 var(--sans)}
+  .closing-number-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.32);border-bottom:1px solid rgba(255,255,255,.32)}
+  .closing-number-strip div{padding:1.0vh .7vw;border-left:1px solid rgba(255,255,255,.25)}.closing-number-strip div:first-child{border-left:0}
+  .closing-number-strip strong{display:block;font:800 clamp(23px,1.8vw,35px)/1 var(--sans-latin)}
+  .closing-number-strip span{display:block;margin-top:.35vh;color:rgba(255,255,255,.72);font:600 clamp(10px,.67vw,13px)/1.25 var(--sans)}
+  .compact-closing-side{display:grid;grid-template-rows:auto 1fr auto;gap:2vh;padding:5.2vh 3.2vw;background:#fff;color:var(--ink)}
+  .compact-brand{color:var(--accent)}.compact-brand strong{display:block;font:800 clamp(24px,1.8vw,35px)/1.2 var(--serif);letter-spacing:.07em}.compact-brand span{display:block;margin-top:.45vh;font:700 clamp(10px,.67vw,13px)/1.2 var(--sans-latin);letter-spacing:.1em}
+  .closing-status{display:grid;align-content:center;gap:.85vh}
+  .closing-status-row{padding:1.0vh .75vw;border-top:1px solid var(--line)}
+  .closing-status-row span{display:block;color:var(--muted);font:650 clamp(10px,.67vw,13px)/1.2 var(--sans)}
+  .closing-status-row strong{display:block;margin-top:.38vh;font:750 clamp(15px,.98vw,19px)/1.3 var(--sans)}
+  .compact-closing-foot{color:var(--muted);font:550 clamp(10px,.67vw,13px)/1.45 var(--sans)}
+
   /* THU15 · 总结展望 */
   .summary-layout{height:100%;display:grid;grid-template-columns:58% 1fr;gap:2.8vw}
   .contribution-list{display:grid;grid-template-rows:repeat(3,1fr);gap:1.05vh}
@@ -422,7 +708,7 @@
 <section class="slide" data-layout="THU01" data-animate="academic" data-slide-id="cover">
   <div class="thu-cover">
     <div class="cover-visual">
-      <div class="cover-visual-top"><span>RESEARCH PROPOSAL · 2026</span><span>01 / 18</span></div>
+      <div class="cover-visual-top"><span>RESEARCH PROPOSAL + RESULTS · 2026</span><span>01 / 10</span></div>
       <div class="instrument-stage" data-anim>
         <svg viewBox="0 0 800 420" aria-hidden="true">
           <defs><marker id="cover-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="rgba(255,255,255,.85)"/></marker></defs>
@@ -439,250 +725,159 @@
         </svg>
         <span class="device-label polar">固定照明</span><span class="device-label depth">单曝光 DoFP</span><span class="device-label target">光泽 / 覆膜标识</span><span class="device-label light">无电机偏振切换</span>
       </div>
-      <div class="cover-visual-foot"><span>INDUSTRIAL READING × POLARIZATION × RELIABILITY</span><span>研究方案 · 非实验结果</span></div>
+      <div class="cover-visual-foot"><span>INDUSTRIAL READING × POLARIZATION × RELIABILITY</span><span>结果导向版 · 代理证据不替代工业验证</span></div>
     </div>
     <div class="cover-sheet">
-      <div class="cover-kicker" data-anim>硕士课题方案汇报 / RESEARCH PROPOSAL</div>
+      <div class="cover-kicker" data-anim>硕士课题方案与前置实验结果 / RESEARCH UPDATE</div>
       <h1 class="cover-title" data-anim>面向变化反射条件工业标识可靠识读的<br>单曝光偏振自适应表示方法研究</h1>
       <p class="cover-subtitle" data-anim>从固定工位识读失效出发，以单相机、单次曝光和无机械切换扩大可靠工作区间</p>
-      <dl class="cover-meta" data-anim><dt>研究对象</dt><dd>工业喷码字符识读</dd><dt>技术手段</dt><dd>DoFP 多方向偏振成像</dd><dt>学科方向</dt><dd>仪器科学与技术</dd><dt>汇报阶段</dt><dd>开题前方案 · 2026.11</dd></dl>
+      <dl class="cover-meta" data-anim><dt>主任务</dt><dd>固定格式工业日期 / 批次喷码</dd><dt>已完成</dt><dd>E0 / E1 / E2 离线代理与双后端复核</dd><dt>当前判定</dt><dd>Offline Gate P = OPEN</dd><dt>证据边界</dt><dd>正式工业 Gate 1 = CLOSED</dd></dl>
       <div class="cover-brand" data-anim><strong>PolyCamera · 工业偏振视觉</strong><span>TSINGHUA ACADEMIC STYLE</span></div>
     </div>
   </div>
 </section>
 
-<section class="slide" data-layout="THU02" data-animate="academic" data-slide-id="agenda">
+<section class="slide" data-layout="THU-C02" data-animate="academic" data-slide-id="background-physics">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">汇报结构</div><h1 class="thu-title">目录 <span class="en">Contents</span></h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="agenda-layout">
-      <div class="agenda-intro" data-anim><div><div class="eyebrow">Problem-driven Story</div><p class="lead" style="margin-top:1.5vh">先证明固定工位为什么失效，再说明偏振相机为何是合适手段。</p></div><div class="agenda-word">目<br>录</div></div>
-      <div class="agenda-items" data-anim>
-        <article class="agenda-item"><span class="num">01</span><div><h3>工业需求与共同故障</h3><p>Demand & Failure</p></div></article>
-        <article class="agenda-item"><span class="num">02</span><div><h3>现有方案与研究缺口</h3><p>Practice & Gap</p></div></article>
-        <article class="agenda-item"><span class="num">03</span><div><h3>研究问题与物理基础</h3><p>Question & Physics</p></div></article>
-        <article class="agenda-item"><span class="num">04</span><div><h3>装置、数据与方法架构</h3><p>System & Method</p></div></article>
-        <article class="agenda-item"><span class="num">05</span><div><h3>实验协议与决策 Gate</h3><p>Experiments & Gates</p></div></article>
-        <article class="agenda-item"><span class="num">06</span><div><h3>贡献、风险与计划</h3><p>Contribution & Plan</p></div></article>
+    <header class="thu-header"><div><div class="thu-section">一、背景与物理依据（仅此一页）</div><h1 class="thu-title">变化反射移动高光；单曝光四方向提供可选择观测</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>问题定义</strong><span>Problem & Physics</span></div></div></header>
+    <main class="thu-content compact"><div class="intro-layout">
+      <div class="intro-scenes" data-anim>
+        <figure><img src="images/03-date-code.webp" alt="带日期码的光泽食品包装示意"><figcaption><strong>日期 / 批次追溯</strong><span>场景示意</span></figcaption></figure>
+        <figure><img src="images/04-metal-can.webp" alt="具有镜面反射的金属罐示意"><figcaption><strong>金属强反射</strong><span>场景示意</span></figcaption></figure>
+        <figure><img src="images/04-shrink-bottles.webp" alt="透明收缩膜包装示意"><figcaption><strong>覆膜反射层</strong><span>场景示意</span></figcaption></figure>
+        <figure><img src="images/04-standup-pouch.webp" alt="柔性包装褶皱与高光示意"><figcaption><strong>曲面 / 褶皱法向</strong><span>场景示意</span></figcaption></figure>
+      </div>
+      <div class="intro-logic" data-anim>
+        <p class="lead">固定工位真正需要的是<strong class="accent">完整、稳定、可置信的字符串</strong>；不是一般图像美化，也不是单次“去反光”。</p>
+        <div class="problem-chain"><div class="problem-step"><strong>材质 / 姿态变化</strong><span>高光位置与偏振状态改变</span></div><span class="problem-arrow">→</span><div class="problem-step"><strong>固定方向交替失效</strong><span>局部过曝、对比下降、笔画消失</span></div><span class="problem-arrow">→</span><div class="problem-step"><strong>识读风险</strong><span>误读、复拍与节拍冲突</span></div></div>
+        <div class="physics-compact"><div class="physics-equation"><div class="math">I(θ)=½(S₀+S₁cos2θ+S₂sin2θ)</div><p>DoFP 将 0° / 45° / 90° / 135° 空间复用在一次曝光中；标定后可合成虚拟检偏角。全方向饱和时不能“生成”缺失笔画，只能调光、复拍或拒绝。</p></div><div class="direction-box"><span>I₀</span><span>I₄₅</span><span>I₉₀</span><span>I₁₃₅</span></div></div>
+        <div class="hypothesis-band"><strong>HYPOTHESIS</strong><span>若最优方向随条件或区域切换，单曝光自适应表示应比训练集最佳固定方向扩大可靠识读区间。</span></div>
       </div>
     </div></main>
-    <footer class="thu-footer"><span>变化反射条件下工业标识可靠识读</span><span class="thu-footer-line"></span><span class="thu-page-no">02 / 18</span></footer>
+    <footer class="thu-footer"><span>资料：KEYENCE / Cognex 工业 OCR，IDS 偏振实践，Goldstein 偏振模型；图片许可见 images/SOURCES.md</span><span class="thu-footer-line"></span><span class="thu-page-no">02 / 10</span></footer>
   </div>
 </section>
 
-<section class="slide" data-layout="THU03" data-animate="academic" data-slide-id="industrial-demand">
+<section class="slide" data-layout="THU-C03" data-animate="academic" data-slide-id="system-protocol">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">一、工业需求与共同故障</div><h1 class="thu-title">稳定识读是追溯、分拣与出入管理的基础</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="background-layout">
-      <div class="scene-grid" data-anim>
-        <figure class="media"><div class="media-slot"><img src="images/03-date-code.webp" data-image-slot="thu03-date-code" alt="带有保质期喷码的光泽食品包装实拍"></div><figcaption><strong>生产日期 / 保质期</strong><span>Commons · CC BY-SA</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/03-barcode-scan.webp" data-image-slot="thu03-barcode-scan" alt="工作人员使用工业手持终端扫描包装条码"></div><figcaption><strong>批次与条码追溯</strong><span>IAEA · CC BY-SA</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/03-conveyor.webp" data-image-slot="thu03-conveyor" alt="物流分拣中心传送带上的包装箱实拍"></div><figcaption><strong>自动分拣与物流</strong><span>USDA · Public Domain</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/03-anpr.webp" data-image-slot="thu03-anpr" alt="道路出入口自动车牌识别相机实拍"></div><figcaption><strong>车辆出入口管理</strong><span>T. Webster · CC BY-SA</span></figcaption></figure>
+    <header class="thu-header"><div><div class="thu-section">二、系统与验证协议</div><h1 class="thu-title">以固定协议比较“最佳固定方向—可部署选择—事后上界”</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验系统</strong><span>System & Protocol</span></div></div></header>
+    <main class="thu-content compact"><div class="protocol-layout">
+      <div class="compact-flow" data-anim>
+        <article class="compact-flow-card"><small>01 · ACQUISITION</small><strong>单曝光 RAW</strong><p>四方向 + 曝光 / 增益 / 标定 ID</p></article><span class="compact-flow-arrow">→</span>
+        <article class="compact-flow-card"><small>02 · CALIBRATION</small><strong>仪器矩阵与重建</strong><p>暗场 / 平场 / 方向响应 / Stokes</p></article><span class="compact-flow-arrow">→</span>
+        <article class="compact-flow-card"><small>03 · REPRESENTATION</small><strong>虚拟角与质量回退</strong><p>全局角优先，证据支持后再局部融合</p></article><span class="compact-flow-arrow">→</span>
+        <article class="compact-flow-card"><small>04 · READING</small><strong>OCR / OCV / 决策</strong><p>raw string 与 accept / retry / reject 分开</p></article>
       </div>
-      <div class="background-copy" data-anim>
-        <p class="lead">固定机位视觉系统真正关心的不是图像“更好看”，而是<strong class="accent">在生产节拍内完整、稳定、可置信地读出字符串</strong>。</p>
-        <div class="challenge-list">
-          <article class="challenge"><strong>追溯</strong><p>批次、日期和序列号必须与产品绑定。</p></article>
-          <article class="challenge"><strong>分拣</strong><p>条码与字符决定物流路径和库存记录。</p></article>
-          <article class="challenge"><strong>质量</strong><p>OCR 与 OCV 分别负责读取和格式/内容验证。</p></article>
-          <article class="challenge"><strong>节拍</strong><p>采集、处理和拒绝策略必须满足产线速度。</p></article>
+      <div class="protocol-bottom" data-anim>
+        <article class="dense-panel accented" style="display:grid;grid-template-rows:auto 1fr"><div class="dense-panel-head"><div><h2>正式工业工位（待搭建）</h2><p>先静态 pilot，再扩展触发与传送带</p></div><span class="status-chip closed">HARDWARE PENDING</span></div><div class="rig-compact"><div class="rig-node">固定 LED<br>+ 可拆入射偏振</div><span class="rig-arrow">→</span><div class="rig-node target">喷码工件<br>yaw / pitch 可控</div><span class="rig-arrow">→</span><div class="rig-node camera">RAW DoFP<br>单次曝光</div></div></article>
+        <article class="dense-panel"><div class="dense-panel-head"><div><h2>冻结协议</h2><p>避免样本泄漏与测试集选参</p></div></div><div class="protocol-list"><div class="protocol-line"><strong>UNIT</strong><span>print / object；相邻帧不跨 split</span></div><div class="protocol-line"><strong>SPLIT</strong><span>材质 / SKU / 日期 / 光照分组</span></div><div class="protocol-line"><strong>FIXED</strong><span>OCR、ROI、曝光、标定、预处理</span></div><div class="protocol-line"><strong>REPORT</strong><span>Exact、CER、worst-group、延迟</span></div><div class="protocol-line"><strong>RISK</strong><span>false-read 与 reject 单独定义阈值</span></div></div></article>
+        <article class="dense-panel"><div class="gate-criterion"><div class="dense-panel-head"><div><h2>核心可证伪量</h2><p>Oracle 仅是事后上界，不是部署方法</p></div></div><div class="gate-delta"><div><strong>Δadapt</strong><span>Acc(oracle) − Acc(train-best fixed)</span></div></div><div class="metric-cloud"><span>固定四方向</span><span>密集固定虚拟角</span><span>简单融合</span><span>置信选择器</span><span>交叉偏振</span><span>HDR / 多光源上界</span></div></div></article>
+      </div>
+    </div></main>
+    <footer class="thu-footer"><span>Gate 原则：前一级未通过，不训练最终自适应融合；正式主表必须计入全链路采集时间</span><span class="thu-footer-line"></span><span class="thu-page-no">03 / 10</span></footer>
+  </div>
+</section>
+
+<section class="slide soft" data-layout="THU-C04" data-animate="academic" data-slide-id="workload-audit">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">三、已完成工作量与可复现资产</div><h1 class="thu-title">三条证据链已落盘：OCR 代理、偏振重建、前期深度探索</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>完成工作</strong><span>Workload Audit</span></div></div></header>
+    <main class="thu-content compact"><div class="workload-layout">
+      <div class="dense-kpis workload-kpis" data-anim><div class="dense-kpi"><strong>36,320</strong><span>SHDocs ROI-condition 记录</span></div><div class="dense-kpi"><strong>960</strong><span>PDD 已处理 PNG</span></div><div class="dense-kpi"><strong>7,207</strong><span>HAMMER 全量评测帧</span></div><div class="dense-kpi"><strong>21,621</strong><span>PPFT 传感器结果记录</span></div><div class="dense-kpi"><strong>29 / 29</strong><span>仓库自动测试通过</span></div></div>
+      <div class="workload-cards" data-anim>
+        <article class="workload-card"><h2>SHDocs · OCR 机制代理</h2><p class="sub">平面文档 / GT ROI / 非工业喷码</p><div class="workload-list"><div><span>文档 / captures / 图像</span><strong>50 / 800 / 4,800</strong></div><div><span>唯一文本区域</span><strong>2,270</strong></div><div><span>文档级 split</span><strong>35 / 8 / 7</strong></div><div><span>处理 / raw 归档核验</span><strong>1.72 / 10.28 GB</strong></div><div><span>OCR 后端</span><strong>EasyOCR + Tess.</strong></div></div><div class="workload-result">产出：四方向、S₀、deglared、min、median、selector 与 oracle 的冻结结果。</div></article>
+        <article class="workload-card"><h2>PDD + 合成仪器恢复</h2><p class="sub">公开 MPFA 重建 / 数值标定链</p><div class="workload-list"><div><span>PDD 归档</span><strong>12.17 GB · CRC PASS</strong></div><div><span>场景 × 噪声</span><strong>40 × 3 = 120</strong></div><div><span>简单基线记录</span><strong>360</strong></div><div><span>合成测量样本</span><strong>5,000</strong></div><div><span>标定样本</span><strong>2,500</strong></div></div><div class="workload-result">产出：nearest / bilinear 误差与延迟；仿射仪器矩阵恢复误差链。</div></article>
+        <article class="workload-card"><h2>HAMMER / PPFT · 前期探索</h2><p class="sub">方法论与工程资产；不作为 OCR 增益证据</p><div class="workload-list"><div><span>轨迹 / 文件</span><strong>32 / 57,689</strong></div><div><span>选择数据</span><strong>66.57 GB</strong></div><div><span>偏振 cache</span><strong>4.89 GB</strong></div><div><span>缺失 / 额外文件</span><strong>0 / 0</strong></div><div><span>Table 2 最大 RMSE 差</span><strong>&lt; 0.009 mm</strong></div></div><div class="workload-result">产出：全 split 推理、silent-error 分析、分组统计、清单与 SHA-256。</div></article>
+      </div>
+      <div class="repro-strip" data-anim><strong>REPRODUCIBILITY</strong><span>归档长度 + SHA-256 + ZIP CRC</span><span>文档级 split 与排除清单冻结</span><span>OCR / CUDA / 模型哈希固定</span><span>结果 JSON、manifest 与源代码哈希落盘</span></div>
+    </div></main>
+    <footer class="thu-footer"><span>来源：HAMMER (Jung et al., CVPR 2023)；PPFT (Ikemura et al., CVPR 2024)；冻结数字见 evidence/*</span><span class="thu-footer-line"></span><span class="thu-page-no">04 / 10</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-layout="THU-C05" data-animate="academic" data-slide-id="e0-clean-ocr">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">四、实验 E0 · 清晰字符软件上限</div><h1 class="thu-title">900 张清晰合成图表明：任务格式比“换 OCR”更先决定上限</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E0 · Clean OCR</span></div></div></header>
+    <main class="thu-content compact"><div class="e0-result-layout">
+      <article class="dense-panel accented" style="display:grid;grid-template-rows:auto 1fr auto" data-anim><div class="dense-panel-head"><div><h2>不同字符串格式的 Exact-read</h2><p>100 个字符串 × 3 字体 × 3 字号；allowlist only，无字典 / OCV 纠错</p></div><div class="dense-meta">EASYOCR / TESSERACT<br>HIGHER IS BETTER</div></div><div class="format-bars">
+        <div class="format-group"><span class="format-name">EXP 日期</span><div class="format-pair"><div class="format-row"><span>EasyOCR</span><span class="format-track"><i class="format-fill" style="width:95.11%"></i></span><span class="format-value">95.11%</span></div><div class="format-row"><span>Tesseract</span><span class="format-track"><i class="format-fill tess" style="width:99.56%"></i></span><span class="format-value">99.56%</span></div></div></div>
+        <div class="format-group"><span class="format-name">LOT</span><div class="format-pair"><div class="format-row"><span>EasyOCR</span><span class="format-track"><i class="format-fill" style="width:57.78%"></i></span><span class="format-value">57.78%</span></div><div class="format-row"><span>Tesseract</span><span class="format-track"><i class="format-fill tess" style="width:80%"></i></span><span class="format-value">80.00%</span></div></div></div>
+        <div class="format-group"><span class="format-name">BATCH</span><div class="format-pair"><div class="format-row"><span>EasyOCR</span><span class="format-track"><i class="format-fill" style="width:54.22%"></i></span><span class="format-value">54.22%</span></div><div class="format-row"><span>Tesseract</span><span class="format-track"><i class="format-fill tess" style="width:74.22%"></i></span><span class="format-value">74.22%</span></div></div></div>
+        <div class="format-group"><span class="format-name">随机 SN</span><div class="format-pair"><div class="format-row"><span>EasyOCR</span><span class="format-track"><i class="format-fill" style="width:36%"></i></span><span class="format-value">36.00%</span></div><div class="format-row"><span>Tesseract</span><span class="format-track"><i class="format-fill tess" style="width:64%"></i></span><span class="format-value">64.00%</span></div></div></div>
+      </div><p class="result-source">冻结证据：industrial_reading/evidence/e0_clean_code_sanity.json</p></article>
+      <aside class="e0-side" data-anim><div class="dense-panel-head"><div><h2>结果与任务决策</h2><p>固定格式接近可用；任意序列仍明显不足</p></div><span class="status-chip warn">P0 · CONDITIONAL</span></div><div class="ceiling-card"><div class="ceiling-metric"><strong>99.56%</strong><span>Tesseract · EXP exact 上限</span></div><div class="ceiling-metric"><strong>95.11%</strong><span>EasyOCR · EXP exact 上限</span></div></div><table class="e0-summary-table"><thead><tr><th>Backend</th><th>Overall exact</th><th>Macro CER ↓</th><th>Mean latency</th></tr></thead><tbody><tr><td>EasyOCR 1.7.2</td><td>60.78%</td><td>0.0420</td><td>3.43 ms</td></tr><tr><td>Tesseract 5.5.3</td><td>79.44%</td><td>0.0183</td><td>38.01 ms</td></tr></tbody></table><div class="e0-insight-grid"><div class="e0-insight"><strong>−59.11 pp</strong><span>EasyOCR：EXP → 随机 SN 格式惩罚</span></div><div class="e0-insight"><strong>−35.56 pp</strong><span>Tesseract：EXP → 随机 SN 格式惩罚</span></div></div><div class="e0-decision-panel"><strong>DECISION</strong><div class="e0-decision-list"><div><b>FREEZE</b><span>一种真实日期 / 批次码格式与喷码工艺</span></div><div><b>RETEST</b><span>镜头、像素、CIJ / 激光字形、曝光与运动</span></div><div><b>NO CLAIM</b><span>清晰软件 sanity 不等于工业 OCR 已解决</span></div></div></div></aside>
+    </div></main>
+    <footer class="thu-footer"><span>证据边界：开放字体的确定性软件 sanity；不是物理相机、真实喷码或动态产线结果</span><span class="thu-footer-line"></span><span class="thu-page-no">05 / 10</span></footer>
+  </div>
+</section>
+
+<section class="slide soft" data-layout="THU-C06" data-animate="academic" data-slide-id="e1-calibration-reconstruction">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">五、实验 E1 · 标定与 MPFA 重建</div><h1 class="thu-title">数值标定可恢复，但去马赛克仍显著控制 AoLP 误差</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E1 · Measurement</span></div></div></header>
+    <main class="thu-content compact"><div class="e1-result-layout">
+      <div class="calib-row" data-anim>
+        <article class="dense-panel accented"><div class="dense-panel-head"><div><h2>合成仿射仪器矩阵恢复</h2><p>已知方向 / gain / offset + σ=0.002 噪声</p></div><span class="status-chip success">SOFTWARE PASS</span></div><div class="calib-kpis"><div class="calib-kpi"><strong>5,000</strong><span>总测量样本</span></div><div class="calib-kpi"><strong>2,500</strong><span>标定样本</span></div><div class="calib-kpi"><strong>4.23e−4</strong><span>仪器矩阵最大绝对误差</span></div><div class="calib-kpi"><strong>2.78e−4</strong><span>offset 最大绝对误差</span></div></div></article>
+        <article class="dense-panel"><div class="dense-panel-head"><div><h2>Stokes RMSE</h2><p>相对理想角度假设下降 77.3%</p></div><div class="dense-meta">LOWER IS BETTER<br>SYNTHETIC ONLY</div></div><div class="rmse-compare"><div class="rmse-box"><small>IDEAL ASSUMPTION</small><strong>0.01147</strong></div><span class="rmse-arrow">→</span><div class="rmse-box after"><small>CALIBRATED</small><strong>0.00260</strong></div></div></article>
+      </div>
+      <div class="pdd-row" data-anim>
+        <article class="dense-panel accented" style="display:grid;grid-template-rows:auto 1fr auto"><div class="dense-panel-head"><div><h2>PDD · AoLP MAE（°）</h2><p>40 场景 × 3 噪声；绿色通道 MPFA 简单基线</p></div><div class="dense-meta">NEAREST / BILINEAR<br>120 CONDITIONS</div></div><div class="pdd-bars">
+          <div class="pdd-group"><strong>LOW</strong><div class="pdd-pair"><div class="pdd-line"><span>Nearest</span><span class="pdd-track"><i class="pdd-fill" style="width:78.9%"></i></span><span class="pdd-number">25.26°</span></div><div class="pdd-line"><span>Bilinear</span><span class="pdd-track"><i class="pdd-fill bilinear" style="width:47.3%"></i></span><span class="pdd-number">15.14°</span></div></div></div>
+          <div class="pdd-group"><strong>MID</strong><div class="pdd-pair"><div class="pdd-line"><span>Nearest</span><span class="pdd-track"><i class="pdd-fill" style="width:93%"></i></span><span class="pdd-number">29.77°</span></div><div class="pdd-line"><span>Bilinear</span><span class="pdd-track"><i class="pdd-fill bilinear" style="width:66.4%"></i></span><span class="pdd-number">21.24°</span></div></div></div>
+          <div class="pdd-group"><strong>HIGH</strong><div class="pdd-pair"><div class="pdd-line"><span>Nearest</span><span class="pdd-track"><i class="pdd-fill" style="width:99.4%"></i></span><span class="pdd-number">31.81°</span></div><div class="pdd-line"><span>Bilinear</span><span class="pdd-track"><i class="pdd-fill bilinear" style="width:74%"></i></span><span class="pdd-number">23.69°</span></div></div></div>
+        </div><p class="result-source">PDD archive 12.17 GB · 960 PNG · 360 baseline records · CRC / SHA-256 verified</p></article>
+        <article class="dense-panel" style="display:grid;grid-template-rows:auto auto 1fr"><div class="dense-panel-head"><div><h2>完整误差—延迟表</h2><p>双线性改善重建，但并非无误差预处理</p></div><span class="status-chip success">P1 · PROXY PASS</span></div><table class="pdd-table"><thead><tr><th>Noise</th><th>PSNR N / B</th><th>DoLP B ↓</th><th>AoLP N / B ↓</th><th>Latency N / B</th></tr></thead><tbody><tr><td>Low</td><td>32.80 / 38.32</td><td>0.0187</td><td>25.26° / 15.14°</td><td>5.78 / 52.53 ms</td></tr><tr><td>Mid</td><td>31.20 / 35.53</td><td>0.0424</td><td>29.77° / 21.24°</td><td>5.70 / 52.34 ms</td></tr><tr><td>High</td><td>29.02 / 32.37</td><td>0.0564</td><td>31.81° / 23.69°</td><td>5.91 / 52.71 ms</td></tr></tbody></table><div class="evidence-boundary" style="margin-top:.8vh;display:grid;align-content:center"><strong>边界：</strong>合成恢复不是未来相机物理标定；PDD 简单基线也不是官方方法复现。正式细字符 OCR 必须消融重建方法。</div></article>
+      </div>
+    </div></main>
+    <footer class="thu-footer"><span>来源：e1_synthetic_instrument_recovery.json；e1_pdd_simple_baselines.json；PDD (Okutomi Lab, 2025)</span><span class="thu-footer-line"></span><span class="thu-page-no">06 / 10</span></footer>
+  </div>
+</section>
+
+<section class="slide" data-layout="THU-C07" data-animate="academic" data-slide-id="e2-cross-backend">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">六、实验 E2 · 四方向必要性</div><h1 class="thu-title">Oracle gap 在两个 OCR 后端上重复，且文档聚类区间不跨 0</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E2 · Cross Backend</span></div></div></header>
+    <main class="thu-content compact"><div class="e2-cross-layout">
+      <div class="dense-kpis e2-cross-kpis" data-anim><div class="dense-kpi"><strong>1,034</strong><span>冻结 test ROI</span></div><div class="dense-kpi"><strong>7 docs</strong><span>文档聚类 bootstrap</span></div><div class="dense-kpi"><strong>15</strong><span>高光条件 a–o</span></div><div class="dense-kpi"><strong>4×</strong><span>仅由 validation 选定</span></div></div>
+      <div class="e2-cross-body" data-anim>
+        <div class="backend-stack">
+          <article class="backend-large easy"><div class="backend-large-head"><h2>EasyOCR 1.7.2</h2><span class="status-chip">Δ +2.51 pp</span></div><div class="backend-large-flow"><div><span>Train-best I₀</span><strong>11.32%</strong></div><span>→</span><div><span>Confidence selector</span><strong>11.03%</strong></div><span>→</span><div><span>Oracle</span><strong>13.83%</strong></div></div><div class="backend-large-foot"><span>Cluster 95% CI<strong>+1.50–+3.52 pp</strong></span><span>Macro CER<strong>.416 → .371</strong></span><span>4× sequential OCR<strong>18.87 ms</strong></span><span>Worst h · fixed<strong>5.80%</strong></span><span>Exactly-one-dir<strong>3.48%</strong></span><span>All-four-fail ≠ reject<strong>86.17%</strong></span></div></article>
+          <article class="backend-large"><div class="backend-large-head"><h2>Tesseract 5.5.3</h2><span class="status-chip">Δ +6.58 pp</span></div><div class="backend-large-flow"><div><span>Train-best I₀</span><strong>26.31%</strong></div><span>→</span><div><span>Confidence selector</span><strong>27.56%</strong></div><span>→</span><div><span>Oracle</span><strong>32.88%</strong></div></div><div class="backend-large-foot"><span>Cluster 95% CI<strong>+4.13–+8.86 pp</strong></span><span>Macro CER<strong>.400 → .277</strong></span><span>4× sequential OCR<strong>162.15 ms</strong></span><span>Worst h · fixed<strong>13.04%</strong></span><span>Exactly-one-dir<strong>11.32%</strong></span><span>All-four-fail ≠ reject<strong>67.12%</strong></span></div></article>
         </div>
-        <div class="callout">主任务锁定为<strong>工业喷码字符识读</strong>；二维码或车辆号牌只选择一项作为后期外部验证。[1][2]</div>
+        <article class="dense-panel" style="display:grid;grid-template-rows:auto 1fr auto"><div class="dense-panel-head"><div><h2>跨后端完整判断量</h2><p>SHDocs 平面文档 + GT ROI；Exact / CER 只按原始 OCR 计算</p></div><span class="status-chip warn">P2 · MECHANISM ONLY</span></div><table class="e2-detail-table"><thead><tr><th>Metric</th><th>EasyOCR</th><th>Tesseract</th></tr></thead><tbody><tr><td>Fixed exact</td><td>11.32%</td><td>26.31%</td></tr><tr class="emphasis"><td>Oracle exact</td><td>13.83%</td><td>32.88%</td></tr><tr><td>Oracle gap</td><td>+2.51 pp</td><td>+6.58 pp</td></tr><tr><td>Oracle-only successes</td><td>26</td><td>68</td></tr><tr><td>Worst condition h · fixed</td><td>5.80%</td><td>13.04%</td></tr><tr><td>Exactly-one-dir success</td><td>3.48%</td><td>11.32%</td></tr><tr><td>All-four-fail <strong>≠ reject</strong></td><td>86.17%</td><td>67.12%</td></tr></tbody></table><p class="result-source">冻结证据：e0_e2_shdocs_easyocr_scale4.json / e0_e2_shdocs_tesseract_scale4.json</p></article>
       </div>
     </div></main>
-    <footer class="thu-footer"><span>工业需求 · 识读结果而非图像美化</span><span class="thu-footer-line"></span><span class="thu-page-no">03 / 18</span></footer>
+    <footer class="thu-footer"><span>本轮未冻结接受阈值，故不伪报 false-read / reject；all-four-fail 只是四个原始方向均未 exact-read</span><span class="thu-footer-line"></span><span class="thu-page-no">07 / 10</span></footer>
   </div>
 </section>
 
-<section class="slide" data-layout="THU03" data-animate="academic" data-slide-id="reflection-failure">
+<section class="slide soft" data-layout="THU-C08" data-animate="academic" data-slide-id="e2-mechanism-baselines">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">一、工业需求与共同故障</div><h1 class="thu-title">变化反射使同一固定配置在不同工况下交替失效</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="background-layout">
-      <div class="scene-grid" data-anim>
-        <figure class="media"><div class="media-slot"><img src="images/04-metal-can.webp" data-image-slot="thu04-metal-can" alt="具有明显镜面反射的金属罐实拍"></div><figcaption><strong>金属表面强反射</strong><span>R. Zenz · CC BY-SA</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/04-plastic-bottles.webp" data-image-slot="thu04-plastic-bottles" alt="带标签的透明光泽塑料瓶实拍"></div><figcaption><strong>光泽塑料与曲面标签</strong><span>Cjp24 · CC BY-SA</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/04-shrink-bottles.webp" data-image-slot="thu04-shrink-bottles" alt="透明收缩膜包覆的瓶装产品实拍"></div><figcaption><strong>透明收缩膜反射层</strong><span>Rlsheehan · CC BY-SA</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/04-standup-pouch.webp" data-image-slot="thu04-standup-pouch" alt="具有褶皱和高光的柔性自立袋包装实拍"></div><figcaption><strong>柔性包装局部法向变化</strong><span>Pkgx · CC BY-SA</span></figcaption></figure>
-      </div>
-      <div class="background-copy" data-anim>
-        <p class="lead">材质、覆膜、姿态和光源变化会移动高光位置，导致字符笔画在时间和空间上<strong class="danger">不稳定地消失</strong>。</p>
-        <div class="challenge-list">
-          <article class="challenge"><strong>局部过曝</strong><p>光电响应截断后，笔画信息无法由软件恢复。</p></article>
-          <article class="challenge"><strong>对比下降</strong><p>字符与背景的灰度差随姿态和入射角变化。</p></article>
-          <article class="challenge"><strong>区域冲突</strong><p>同一帧不同字符区域可能偏好不同检偏方向。</p></article>
-          <article class="challenge"><strong>连续误读</strong><p>稳定但错误的字符串比明确拒绝风险更高。</p></article>
-        </div>
-        <div class="callout danger"><strong>共同问题：</strong>固定成像配置不能始终提供最有利于识读的观测。</div>
+    <header class="thu-header"><div><div class="thu-section">七、E2 机制证据与简单基线</div><h1 class="thu-title">四个方向都有独占成功样本；简单融合与置信选择尚未兑现上界</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E2 · Mechanism</span></div></div></header>
+    <main class="thu-content compact"><div class="mechanism-layout">
+      <figure class="mechanism-figure" data-anim><img src="images/17-shdocs-four-direction-examples.png" alt="SHDocs 四个偏振方向各自存在唯一识读成功样本的 EasyOCR 示例"><figcaption><strong>绿色框：</strong>该 ROI 只有当前方向 exact-read。图为冻结 EasyOCR test 记录；SHDocs 仅是平面文档机制代理，不是工业喷码。来源：Leong et al., SHDocs, 2024。</figcaption></figure>
+      <div class="baseline-side" data-anim>
+        <article class="dense-panel" style="overflow:hidden"><div class="dense-panel-head"><div><h2>所有简单表示的 Exact-read</h2><p>同一 test、同一 4× 预处理；单位 %</p></div><div class="dense-meta">EASY / TESS.<br>NO OCV</div></div><table class="baseline-table"><thead><tr><th>表示 / 方法</th><th>EasyOCR</th><th>Tesseract</th><th>部署含义</th></tr></thead><tbody><tr class="best"><td>Fixed I₀</td><td>11.32</td><td>26.31</td><td>train-best</td></tr><tr><td>I₄₅</td><td>8.51</td><td>17.79</td><td>固定方向</td></tr><tr><td>I₉₀</td><td>7.74</td><td>15.47</td><td>固定方向</td></tr><tr><td>I₁₃₅</td><td>10.44</td><td>20.21</td><td>固定方向</td></tr><tr><td>S₀</td><td>9.28</td><td>19.83</td><td>单次表示</td></tr><tr><td>SDK deglared</td><td>10.06</td><td>21.57</td><td>SDK 输出</td></tr><tr><td>Pixel min</td><td>10.64</td><td>20.50</td><td>简单融合</td></tr><tr><td>Pixel median</td><td>9.19</td><td>19.25</td><td>简单融合</td></tr><tr><td>Confidence selector</td><td>11.03</td><td>27.56</td><td>4 次 OCR</td></tr><tr class="best"><td>Per-image oracle</td><td>13.83</td><td>32.88</td><td>不可部署上界</td></tr></tbody></table></article>
+        <div class="winner-grid"><div><strong>21 / 74</strong><span>I₀ 独占成功 · Easy / Tess.</span></div><div><strong>4 / 14</strong><span>I₄₅ 独占成功</span></div><div><strong>3 / 13</strong><span>I₉₀ 独占成功</span></div><div><strong>8 / 16</strong><span>I₁₃₅ 独占成功</span></div></div>
+        <div class="selector-strip"><div><strong>Selector兑现不足：</strong>Easy −0.29 pp；Tesseract +1.26 pp，且需要四次顺序 OCR。</div><div><strong>风险口径：</strong>全方向失败率高，但没有接受阈值时不能把它命名为系统拒绝率。</div></div>
       </div>
     </div></main>
-    <footer class="thu-footer"><span>共同故障 · 变化反射导致识读工作区间收缩</span><span class="thu-footer-line"></span><span class="thu-page-no">04 / 18</span></footer>
+    <footer class="thu-footer"><span>结论：互补机制得到支持；密集固定虚拟角、任务专用选择器与真实工业 E0 尚未完成</span><span class="thu-footer-line"></span><span class="thu-page-no">08 / 10</span></footer>
   </div>
 </section>
 
-<section class="slide" data-layout="THU04" data-animate="academic" data-slide-id="existing-solutions">
+<section class="slide" data-layout="THU-C09" data-animate="academic" data-slide-id="gate-next">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">二、现有方案与研究缺口</div><h1 class="thu-title">成熟方案有效，但各自依赖固定条件或多次采集</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="research-map" data-anim>
-      <article class="research-lane"><div class="lane-head"><span>Optical Design</span><h3>光源与几何优化</h3></div><div class="lane-cue">同轴 / 穹顶 / 暗场 / 漫射</div><ul><li>工业应用成熟，优先级最高</li><li>对已知对象可获得宽过程窗口</li><li>换材质、曲率或姿态后需重新调试</li></ul><div class="lane-foot">工业实践基线 · KEYENCE / Cognex</div></article>
-      <article class="research-lane"><div class="lane-head"><span>Fixed Polarization</span><h3>固定交叉偏振</h3></div><div class="lane-cue">照明端 + 接收端固定滤片</div><ul><li>可显著抑制部分介质表面高光</li><li>金属表面常需照明端共同设计</li><li>固定角度不保证跨姿态始终最优</li></ul><div class="lane-foot">必须作为强基线 [3]</div></article>
-      <article class="research-lane"><div class="lane-head"><span>Multi-shot / Mechanical</span><h3>HDR、多光源与旋转偏振</h3></div><div class="lane-cue">多次曝光寻找可读观测</div><ul><li>静态条件可获得更强上界</li><li>增加采集时间、同步和运动错位</li><li>电机带来结构、维护与寿命成本</li></ul><div class="lane-foot">性能上界，节拍需单列</div></article>
+    <header class="thu-header"><div><div class="thu-section">八、Gate 判定与下一轮实验</div><h1 class="thu-title">保留自适应假设，但在任务、强固定角与硬件 E0 前停止加复杂度</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>研究决策</strong><span>Gate & Next</span></div></div></header>
+    <main class="thu-content compact"><div class="decision-layout">
+      <div class="gate-matrix" data-anim><div class="gate-matrix-head"><strong>Offline Gate P</strong><span>OPEN</span></div><article class="gate-decision-row"><span class="id">P0</span><div><strong>OCR 软件上限 · 条件性</strong><p>EXP 日期码 95.11% / 99.56%；任意 SN 仅 36% / 64%。</p></div><span class="status-chip warn">CONDITIONAL</span></article><article class="gate-decision-row"><span class="id">P1</span><div><strong>测量 / 重建链 · 代理通过</strong><p>Stokes RMSE 0.01147→0.00260；PDD 120 条件链可复现。</p></div><span class="status-chip success">PROXY PASS</span></article><article class="gate-decision-row"><span class="id">P2</span><div><strong>固定方向必要性 · 机制支持</strong><p>双后端 oracle gap 成立；可部署 selector 与绝对 exact 未通过。</p></div><span class="status-chip warn">DEPLOY FAIL</span></article><div class="formal-closed"><span>Formal Industrial Gate 1 · 无自采喷码 / 光学强基线 / 实物标定</span><span>CLOSED</span></div></div>
+      <div class="next-experiments" data-anim><div class="dense-panel-head"><div><h2>下一轮只做五件事</h2><p>每一步都有冻结产物；失败即可收缩或停止方法路线</p></div><span class="status-chip">NO FINAL FUSION YET</span></div><div class="next-path"><article class="next-step"><span class="no">01</span><div><strong>冻结真实目标格式</strong><p>日期 / 批次码、喷码工艺、字符集、最小字符像素。</p></div><span class="deliverable">E0 SPEC</span></article><article class="next-step"><span class="no">02</span><div><strong>补密集固定虚拟角强基线</strong><p>同一验证集选角，避免只与四个离散方向比较。</p></div><span class="deliverable">ANGLE SWEEP</span></article><article class="next-step"><span class="no">03</span><div><strong>解释 oracle-only 样本</strong><p>饱和、对比度、DoLP、笔画边缘与 OCR 置信特征。</p></div><span class="deliverable">ERROR TAXONOMY</span></article><article class="next-step"><span class="no">04</span><div><strong>硬件标定 + 600–1500 次 pilot</strong><p>两类材质、多姿态、非偏振 / 入射偏振照明。</p></div><span class="deliverable">FORMAL E0–E2</span></article><article class="next-step"><span class="no">05</span><div><strong>通过 Gate 1 后再训练</strong><p>先全局虚拟角；证据支持后再考虑局部 soft weights。</p></div><span class="deliverable">LEARNED METHOD</span></article></div><div class="reporting-strip"><span>Exact-read</span><span>CER</span><span>Worst-group</span><span>False-read</span><span>Reject / Coverage</span><span>P50 / P95 latency</span></div></div>
     </div></main>
-    <footer class="thu-footer"><span>现有方案 · 本课题不重新发明“偏振去反光”</span><span class="thu-footer-line"></span><span class="thu-page-no">05 / 18</span></footer>
+    <footer class="thu-footer"><span>权威状态：industrial_reading/evidence/offline_gate_p_status.json · 2026-11-03</span><span class="thu-footer-line"></span><span class="thu-page-no">09 / 10</span></footer>
   </div>
 </section>
 
-<section class="slide soft" data-layout="THU05" data-animate="academic" data-slide-id="research-gap">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">二、现有方案与研究缺口</div><h1 class="thu-title">缺口在于任务驱动的单曝光自适应，而不是一般高光去除</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="gap-layout">
-      <div class="gap-cards" data-anim>
-        <article class="gap-card"><span class="gap-no">01</span><h3>固定配置缺少条件自适应</h3><p>最优偏振方向可能随材质、姿态和局部区域变化，但工业方案通常在安装时固定。</p><div class="gap-result">待证明：train-best 与 per-image oracle 的差距</div></article>
-        <article class="gap-card"><span class="gap-no">02</span><h3>恢复质量不等于识读可靠</h3><p>SHDocs、HAFNet、DocHR14K 已研究文本高光恢复，但多数以图像质量为主，工业 exact-read、误读和节拍仍需独立评价。</p><div class="gap-result">主指标：字符串、拒绝与 worst-group [5][6][7]</div></article>
-        <article class="gap-card"><span class="gap-no">03</span><h3>偏振反射去除不等于工业工位</h3><p>Polarized RR、TIP 分离和 PolarFree 证明偏振有价值，但对象、算力和评价与固定喷码工位不同。</p><div class="gap-result">候选差异：单曝光、低延迟、可回退 [8][9][10]</div></article>
-      </div>
-      <div class="callout danger" data-anim><strong>研究问题：</strong>能否在不机械旋转偏振片的情况下，按帧或按区域自动获得有利于识读的偏振表示？</div>
-    </div></main>
-    <footer class="thu-footer"><span>研究缺口 · 开题前禁止使用“首次”表述</span><span class="thu-footer-line"></span><span class="thu-page-no">06 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU06" data-animate="academic" data-slide-id="objectives">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">三、研究问题与总体方案</div><h1 class="thu-title">从“固定看一次”转向“单曝光后自适应选择表示”</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="objective-layout">
-      <div class="objective-copy" data-anim><div class="objective-big">1× → A</div><p class="lead"><strong>One Shot → Adaptive Read</strong><br>单相机、单次曝光、无电机切换。</p><ol class="number-list"><li>证明固定方向的工作边界与四方向互补性</li><li>建立 DoFP 标定和虚拟偏振片表示</li><li>研究全局/局部自适应与质量回退</li><li>按识读可靠性、节拍和成本评价</li></ol></div>
-      <div class="route" data-anim><article class="route-stage"><span class="stage-no">01</span><strong>问题证明</strong><p>固定 OCR 比较四方向、train-best 与 oracle</p></article><span class="route-arrow">→</span><article class="route-stage"><span class="stage-no">02</span><strong>表示学习</strong><p>全局虚拟角度优先，证据支持后再局部融合</p></article><span class="route-arrow">→</span><article class="route-stage"><span class="stage-no">03</span><strong>可靠部署</strong><p>质量回退、跨条件、动态节拍与外部验证</p></article></div>
-    </div></main>
-    <footer class="thu-footer"><span>研究目标 · 方法复杂度由实验 Gate 决定</span><span class="thu-footer-line"></span><span class="thu-page-no">07 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU09" data-animate="academic" data-slide-id="physical-basis">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">三、研究问题与总体方案</div><h1 class="thu-title">单曝光四方向观测允许采集后合成虚拟检偏角</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="formula-layout">
-      <div class="derivation" data-anim>
-        <div class="derivation-step"><span class="step">01</span><div><div class="equation"><span class="math">I(θ) = ½(S₀ + S₁ cos 2θ + S₂ sin 2θ)</span><span class="no">(1)</span></div><p class="caption" style="margin-top:.5vh">线偏振分析器的理想强度模型。</p></div></div>
-        <div class="derivation-step"><span class="step">02</span><div><div class="equation"><span class="math">S₀ = I₀ + I₉₀, &nbsp; S₁ = I₀ − I₉₀, &nbsp; S₂ = I₄₅ − I₁₃₅</span><span class="no">(2)</span></div><p class="caption" style="margin-top:.5vh">DoFP 在一次曝光中空间复用四个分析方向。</p></div></div>
-        <div class="derivation-step"><span class="step">03</span><div><div class="equation"><span class="math">θ* = f(I₀,I₄₅,I₉₀,I₁₃₅,qₚ,ROI)</span><span class="no">(3)</span></div><p class="caption" style="margin-top:.5vh">按帧选择全局虚拟角；必要时再扩展为空间权重。</p></div></div>
-        <div class="callout danger"><strong>边界：</strong>四方向均饱和或反射近似非偏振时，算法不能创造缺失笔画，只能回退、复拍或拒绝。</div>
-      </div>
-      <div data-anim><span class="tag">测量与表示</span><div class="variable-list" style="margin-top:1vh"><div class="variable"><span class="symbol">Iθ</span><span>虚拟检偏方向强度</span></div><div class="variable"><span class="symbol">S₀</span><span>总强度基线</span></div><div class="variable"><span class="symbol">S₁,S₂</span><span>有符号线偏振差</span></div><div class="variable"><span class="symbol">qₚ</span><span>饱和、SNR、正交对一致性等质量</span></div><div class="variable"><span class="symbol">ROI</span><span>字符行或候选识读区域</span></div></div><div class="panel soft" style="margin-top:1.4vh"><div class="panel-title">DoFP 专属风险</div><p class="body-sm">四方向采样位于相邻子像元，字符高频边缘可能受空间错位与去马赛克影响，必须单独消融。[11]</p></div></div>
-    </div></main>
-    <footer class="thu-footer"><span>物理基础 · 相机在故事中是解决手段而非研究起点</span><span class="thu-footer-line"></span><span class="thu-page-no">08 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU11" data-animate="academic" data-slide-id="method-architecture">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">三、研究问题与总体方案</div><h1 class="thu-title">系统同时输出识读结果、表示质量与回退决策</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="architecture-layout">
-      <div class="architecture-flow" data-anim><article class="arch-block input"><span class="arch-id">ACQUISITION</span><h3>单曝光 RAW</h3><ul><li>0°/45°/90°/135°</li><li>曝光、增益、触发元数据</li><li>字符 ROI</li></ul></article><span class="arch-arrow">→</span><article class="arch-block fusion"><span class="arch-id">CALIBRATION</span><h3>标定与质量</h3><ul><li>暗场/平场/方向响应</li><li>Stokes 与虚拟角度</li><li>饱和、SNR、一致性 qₚ</li></ul></article><span class="arch-arrow">→</span><article class="arch-block decision"><span class="arch-id">REPRESENTATION</span><h3>自适应表示</h3><ul><li>全局角度 / soft weights</li><li>局部表示（可选）</li><li>低质量回退 S₀</li></ul></article><span class="arch-arrow">→</span><article class="arch-block output"><span class="arch-id">READING</span><h3>OCR / OCV</h3><ul><li>原始字符串与置信度</li><li>格式验证单独记录</li><li>accept / retry / reject</li></ul></article></div>
-      <div class="reliability-rail" data-anim><strong>可靠性轨</strong><span class="state">偏振互补充分 → 自适应表示</span><span class="arrow">|</span><span class="state">偏振增量不足 → S₀ / 固定强基线</span><span class="arrow">|</span><span class="state">全方向饱和或 OCR 低置信 → 复拍 / 报警 / 拒绝</span></div>
-    </div></main>
-    <footer class="thu-footer"><span>总体架构 · 不以生成“好看图片”为最终输出</span><span class="thu-footer-line"></span><span class="thu-page-no">09 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU07" data-animate="academic" data-slide-id="apparatus">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">四、装置、数据与方法架构</div><h1 class="thu-title">最小装置：固定照明、姿态可控工位与一台 RAW DoFP 相机</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="apparatus-layout">
-      <div class="apparatus-board" data-anim><div class="beam-line"></div><div class="apparatus-rig"><div class="device-box">固定 LED + 扩散结构<br><span class="caption">可拆卸入射偏振片</span></div><div class="device-box target">喷码 / 刻码工件<br><span class="caption">yaw / pitch 可控</span></div><div class="device-box depth">RAW DoFP 相机<br><span class="caption">单次曝光四方向</span></div><div class="device-box light">Phase A 静态夹具 → Gate 1 通过后再增加触发 / 传送带</div></div><div class="apparatus-note">方案示意：真实搭建后替换为实物照片、编号引线与尺寸</div></div>
-      <div class="spec-stack" data-anim><div><span class="tag">装置约束</span><p class="body-sm" style="margin-top:.8vh">先确定最小字符像素、视场、工作距离和节拍，再采购相机与镜头。</p></div><table><tbody><tr><td>采集</td><td>单相机 / 单曝光 / RAW</td></tr><tr><td>主对象</td><td>工业喷码字符</td></tr><tr><td>照明</td><td>非偏振与固定入射偏振均测试</td></tr><tr><td>姿态</td><td>yaw / pitch / roll 可重复</td></tr><tr><td>触发</td><td>静态先行，后扩展光电/编码器</td></tr><tr><td>参考</td><td>交叉偏振、HDR、旋转检偏片上界</td></tr></tbody></table><div class="callout success"><strong>仪器工作量：</strong>响应/零点/空间标定、光源与姿态控制、触发、重复性、节拍和成本。</div></div>
-    </div></main>
-    <footer class="thu-footer"><span>实物装置 · 先静态问题证明，再建设动态产线</span><span class="thu-footer-line"></span><span class="thu-page-no">10 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU08" data-animate="academic" data-slide-id="data-design">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">四、装置、数据与方法架构</div><h1 class="thu-title">数据同时记录四方向、字符串真值与完整工况元数据</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content tight"><div class="dataset-layout">
-      <div class="dataset-head" data-anim><p class="body">主划分按 <strong>print/object、材质、SKU/批次和日期</strong>分组；相邻帧不得随机跨 train/test。</p><div class="dataset-stats"><div><strong>D0–D4</strong><span>数据层级</span></div><div><strong>E0–E13</strong><span>实验编号</span></div><div><strong>4 Gate</strong><span>停止条件</span></div></div></div>
-      <div class="dataset-grid" data-anim>
-        <figure class="media"><div class="media-slot"><img src="images/11-polar-a.svg" data-image-slot="thu11-polar-a" alt="0度与45度偏振分析方向几何示意"></div><figcaption><strong>I₀ / I₄₅</strong><span>方向观测示意</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/11-polar-b.svg" data-image-slot="thu11-polar-b" alt="90度与135度偏振分析方向几何示意"></div><figcaption><strong>I₉₀ / I₁₃₅</strong><span>方向观测示意</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/11-stokes.svg" data-image-slot="thu11-stokes" alt="Stokes三个线偏振分量的柱状示意"></div><figcaption><strong>S₀ / S₁ / S₂</strong><span>物理表示示意</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/11-quality.svg" data-image-slot="thu11-quality" alt="偏振质量空间热图示意"></div><figcaption><strong>饱和 / SNR / 一致性</strong><span>质量示意</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/11-adaptive.svg" data-image-slot="thu11-adaptive" alt="四方向融合成自适应表示的流程示意"></div><figcaption><strong>虚拟角 / 自适应表示</strong><span>方法输出示意</span></figcaption></figure>
-        <figure class="media"><div class="media-slot"><img src="images/11-ocr.svg" data-image-slot="thu11-ocr" alt="字符区域检测与接受回退拒绝状态示意"></div><figcaption><strong>ROI + 字符串 + 置信度</strong><span>识读示意</span></figcaption></figure>
-      </div>
-    </div></main>
-    <footer class="thu-footer"><span>数据设计 · RAW 可重建，派生结果必须版本化</span><span class="thu-footer-line"></span><span class="thu-page-no">11 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU12" data-animate="academic" data-slide-id="experiment-protocol">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">五、实验协议与评价</div><h1 class="thu-title">实验按“问题证明—方法增量—可靠部署”逐级推进</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="experiment-layout">
-      <div class="loss-stack" data-anim><div><span class="tag">Experiment Gates</span><p class="body-sm" style="margin-top:.8vh">未通过前一 Gate，不启动后续复杂方法。</p></div><article class="loss-card"><strong>E0–E4</strong><p>清晰 OCR 上限、标定、固定方向必要性、笔画互补与入射偏振。</p></article><article class="loss-card"><strong>E5–E8</strong><p>全局/局部自适应、质量回退和跨材质/光照/SKU 泛化。</p></article><article class="loss-card"><strong>E9–E13</strong><p>去马赛克、OCR 后端、动态节拍、重复性成本与外部场景。</p></article></div>
-      <div class="config-stack" data-anim><div><span class="tag info">Fixed Protocol</span><p class="body-sm" style="margin-top:.8vh">同一轮消融固定 OCR、ROI、曝光协议、标定和 split。</p></div><div class="config-grid"><article class="config-card"><span class="key">SPLIT</span><div class="value">Leave-one-condition-out</div><p>材质 / 光照 / SKU / 日期。</p></article><article class="config-card"><span class="key">UNIT</span><div class="value">print / object</div><p>相邻帧不作为独立样本。</p></article><article class="config-card"><span class="key">PRIMARY</span><div class="value">Exact / CER</div><p>纯 OCR 与 OCV 后处理分开。</p></article><article class="config-card"><span class="key">SYSTEM</span><div class="value">Latency / FPS / BOM</div><p>完整采集时间，不只网络推理。</p></article></div></div>
-    </div></main>
-    <footer class="thu-footer"><span>实验协议 · 统计单位是字符串/工件，不是相邻视频帧</span><span class="thu-footer-line"></span><span class="thu-page-no">12 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU10" data-animate="academic" data-slide-id="gate-one">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">五、实验协议与评价</div><h1 class="thu-title">第一关键实验：量化最佳固定方向与每图 oracle 的差距</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="analysis-layout">
-      <div class="chart-card" data-anim><div class="chart-head"><div><div class="chart-title">计划输出：条件 × 固定方向识读矩阵（非实验结果）</div><div class="caption">固定同一 OCR、ROI 和曝光协议</div></div><span class="tag">GATE 1</span></div><div style="display:grid;align-content:center;gap:1.5vh;min-height:0"><table><thead><tr><th>条件组</th><th>I₀</th><th>I₄₅</th><th>I₉₀</th><th>I₁₃₅</th><th>Train-best</th><th>Oracle</th></tr></thead><tbody><tr><td>金属 × 姿态</td><td>测量</td><td>测量</td><td>测量</td><td>测量</td><td>训练集选择</td><td>事后上界</td></tr><tr><td>塑料 × 光照</td><td>测量</td><td>测量</td><td>测量</td><td>测量</td><td>训练集选择</td><td>事后上界</td></tr><tr><td>覆膜 × 褶皱</td><td>测量</td><td>测量</td><td>测量</td><td>测量</td><td>训练集选择</td><td>事后上界</td></tr></tbody></table><div class="equation"><span class="math">Δadapt = Acc(oracle) − Acc(train-best fixed)</span><span class="no">Gate 1</span></div></div><div class="caption">同时报告：最优方向切换率、四方向全部失败率、仅一个方向成功比例与条件组置信区间。</div></div>
-      <div class="insight-stack" data-anim><article class="insight"><span class="n">01</span><h3>必要性</h3><p>若 Δadapt 接近 0，复杂自适应缺少研究必要性。</p></article><article class="insight"><span class="n">02</span><h3>公平性</h3><p>必须排除曝光不公平和去马赛克锐度差异。</p></article><article class="insight"><span class="n">03</span><h3>停止条件</h3><p>固定交叉偏振已足够稳定时，转向光学配置优化。</p></article></div>
-    </div></main>
-    <footer class="thu-footer"><span>Gate 1 · 先证明自适应空间，再设计网络</span><span class="thu-footer-line"></span><span class="thu-page-no">13 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU14" data-animate="academic" data-slide-id="baselines-metrics">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">五、实验协议与评价</div><h1 class="thu-title">主对照必须包含最佳固定配置、工业强基线与不可部署上界</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="quant-layout">
-      <div class="metric-table" data-anim><div class="caption">基线登记表：实验完成后填入 Exact、CER、Worst-group、False-read、Reject 与全链路延迟</div><table><thead><tr><th>类别</th><th>代表方法</th><th>曝光次数</th><th>可部署</th><th>对照作用</th></tr></thead><tbody><tr><td>固定输入</td><td>RGB / S₀ / 四方向</td><td>1</td><td>是</td><td>基础性能</td></tr><tr><td>最强固定</td><td>Train-best / 交叉偏振</td><td>1</td><td>是</td><td>必须超过</td></tr><tr><td>简单融合</td><td>min / median / concat</td><td>1</td><td>是</td><td>排除普通融合收益</td></tr><tr class="highlight"><td>候选方法</td><td>全局角度 / soft weights / quality fallback</td><td>1</td><td>是</td><td>课题核心</td></tr><tr><td>上界</td><td>Per-image oracle / 密集角度扫描</td><td>1 / 多帧</td><td>否</td><td>估计可提升空间</td></tr><tr><td>工业强基线</td><td>HDR / 多光源序列</td><td>多帧</td><td>条件性</td><td>性能—节拍权衡</td></tr></tbody></table></div>
-      <aside class="metric-aside" data-anim><div><span class="tag">主判断量</span><p class="body-sm" style="margin-top:.8vh">不预填任何提升数值，先看是否存在稳定的自适应空间。</p></div><div class="hero-metric"><strong>Δadapt</strong><span>Oracle 与最佳固定方向差距<br>决定方法是否值得继续</span></div><div class="metric-notes"><div class="metric-note">主指标：Exact-read / CER</div><div class="metric-note">风险：误读、拒绝、risk-coverage</div><div class="metric-note">工程：曝光数、P95 延迟、FPS、BOM</div></div></aside>
-    </div></main>
-    <footer class="thu-footer"><span>评价协议 · OCR 原始输出与 OCV/字典纠错分开报告</span><span class="thu-footer-line"></span><span class="thu-page-no">14 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU12" data-animate="academic" data-slide-id="new-experiments">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">五、实验协议与评价</div><h1 class="thu-title">新课题必须补足旧深度路线没有覆盖的识读与系统实验</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="experiment-layout">
-      <div class="loss-stack" data-anim><div><span class="tag">New Evidence</span><p class="body-sm" style="margin-top:.8vh">所有实验均以字符串 ground truth 和固定 OCR 为起点。</p></div><article class="loss-card"><strong>识读</strong><p>清晰上限、exact/CER、笔画互补、第二 OCR 后端和 OCV 分离。</p></article><article class="loss-card"><strong>偏振</strong><p>虚拟角验证、入射偏振、去马赛克、全局/局部表示和质量回退。</p></article><article class="loss-card"><strong>系统</strong><p>动态触发、运动模糊、全链路节拍、跨日期拆装、BOM 与维护。</p></article></div>
-      <div class="config-stack" data-anim><div><span class="tag info">Four Evidence Blocks</span><p class="body-sm" style="margin-top:.8vh">结果页最终按四类证据组织，而不是堆叠单一平均准确率。</p></div><div class="config-grid"><article class="config-card"><span class="key">NECESSITY</span><div class="value">固定方向边界</div><p>Train-best vs oracle。</p></article><article class="config-card"><span class="key">MECHANISM</span><div class="value">笔画互补</div><p>饱和、边缘与字符错误位置。</p></article><article class="config-card"><span class="key">ROBUSTNESS</span><div class="value">跨条件与拒绝</div><p>材质/光照/SKU/date + risk-coverage。</p></article><article class="config-card"><span class="key">DEPLOYMENT</span><div class="value">动态与成本</div><p>速度、延迟、重复性和 Pareto。</p></article></div></div>
-    </div></main>
-    <footer class="thu-footer"><span>新增实验 · E0–E13 详见实验协议文档</span><span class="thu-footer-line"></span><span class="thu-page-no">15 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU15" data-animate="academic" data-slide-id="contributions-risks">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">六、贡献、风险与计划</div><h1 class="thu-title">预期贡献由问题、方法和装置三条证据链共同构成</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content"><div class="summary-layout">
-      <div class="contribution-list" data-anim><article class="contribution"><span class="no">01</span><div><h3>工业问题与评测协议</h3><p>量化固定偏振配置在变化反射下的工作边界和自适应空间。</p></div></article><article class="contribution"><span class="no">02</span><div><h3>单曝光自适应偏振表示</h3><p>优先全局虚拟角度/权重，证据支持后再扩展局部表示。</p></div></article><article class="contribution"><span class="no">03</span><div><h3>可靠输出与实物验证</h3><p>质量回退、选择性拒绝、DoFP 标定、动态节拍、重复性和成本。</p></div></article></div>
-      <div class="outlook" data-anim><div><span class="tag danger">Risk & Boundary</span><p class="body-sm" style="margin-top:.8vh">课题目标是扩大可靠工作区间，不是完全消除反射。</p></div><div class="outlook-path"><article class="outlook-item"><span class="dot"></span><div><strong>全方向同时饱和</strong><p>不能恢复已截断笔画，只能调曝光/照明或拒绝。</p></div></article><article class="outlook-item"><span class="dot"></span><div><strong>固定方向已经足够</strong><p>停止复杂融合，转向固定光学配置或收窄对象。</p></div></article><article class="outlook-item"><span class="dot"></span><div><strong>车牌不一定受益</strong><p>逆反射与红外机理不同，只做独立挑战性外测。[4]</p></div></article></div><div class="callout success"><strong>近期里程碑：</strong>清晰 OCR 上限 → DoFP 标定 → 600–1500 次 pilot → Gate 1。</div></div>
-    </div></main>
-    <footer class="thu-footer"><span>预期贡献 · 不把相机、注意力或“更好看”单独包装为创新</span><span class="thu-footer-line"></span><span class="thu-page-no">16 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide" data-layout="THU16" data-animate="academic" data-slide-id="references">
-  <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">参考文献与工业资料</div><h1 class="thu-title">主要参考来源 <span class="en">References</span></h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>课题方案</strong><span>Research Proposal</span></div></div></header>
-    <main class="thu-content tight"><div class="reference-layout" data-anim>
-      <div class="ref-col"><div class="ref-item"><span><strong>KEYENCE.</strong> Optical Character Reading and 1D/2D Code Verification. Industrial application guide.</span></div><div class="ref-item"><span><strong>Cognex.</strong> OCR Text Verification on Flexible Packaging. Application resource.</span></div><div class="ref-item"><span><strong>IDS Imaging.</strong> Polarisation Camera / Using a Polarisation Filter. Technical tip, 2020.</span></div><div class="ref-item"><span><strong>Axis Communications.</strong> License Plate Capture. White paper, Dec. 2024.</span></div><div class="ref-item"><span><strong>Leong J.</strong> et al. SHDocs: Real-world Specular Highlight Data and OCR Benchmark. NeurIPS D&B, 2024.</span></div><div class="ref-item"><span><strong>Jiang Z.</strong> et al. Hierarchical Adaptive Filtering Network for Text Image Specular Highlight Removal. CVPR, 2025.</span></div></div>
-      <div class="ref-col"><div class="ref-item"><span><strong>Pan L.</strong> et al. Single Document Image Highlight Removal via DocHR14K and L2HRNet. 2025.</span></div><div class="ref-item"><span><strong>Lei C.</strong> et al. Polarized Reflection Removal With Perfect Alignment in the Wild. CVPR, 2020.</span></div><div class="ref-item"><span><strong>Wen S.</strong>, Zheng Y., Lu F. Polarization Guided Specular Reflection Separation. TIP, 2021.</span></div><div class="ref-item"><span><strong>Yao M.</strong> et al. PolarFree: Polarization-based Reflection-Free Imaging. CVPR, 2025.</span></div><div class="ref-item"><span><strong>Qiu S.</strong> et al. Linear Polarization Demosaicking for Monochrome and Colour PFA. CGF, 2021.</span></div><div class="ref-item"><span><strong>Goldstein D. H.</strong> Polarized Light, 3rd ed. CRC Press, 2011.</span></div></div>
-    </div></main>
-    <footer class="thu-footer"><span>证据边界 · 图片来源与许可见 images/SOURCES.md</span><span class="thu-footer-line"></span><span class="thu-page-no">17 / 18</span></footer>
-  </div>
-</section>
-
-<section class="slide accent" data-layout="THU17" data-animate="academic" data-slide-id="closing">
-  <div class="thu-closing">
-    <div class="closing-main"><div class="closing-kicker" data-anim>Problem first · Sensor second</div><h1 class="closing-title" data-anim>工业问题先行</h1><p class="closing-copy" data-anim>先证明固定方向确实不足，再研究单曝光自适应偏振表示</p></div>
-    <aside class="closing-side"><div class="brand-block" data-anim><strong>PolyCamera</strong><span>INDUSTRIAL POLARIMETRIC READING</span></div><dl class="contact-list" data-anim><div><dt>主任务</dt><dd>工业喷码字符识读</dd></div><div><dt>第一 Gate</dt><dd>Train-best vs Oracle</dd></div><div><dt>系统目标</dt><dd>单相机 · 单曝光 · 无电机切换</dd></div></dl><div class="caption" data-anim>恳请各位老师批评指正 · Questions & Discussion</div></aside>
+<section class="slide accent" data-layout="THU-C10" data-animate="academic" data-slide-id="conclusion">
+  <div class="compact-closing">
+    <div class="compact-closing-main"><div class="compact-closing-kicker" data-anim>RESULTS FIRST · CLAIMS WITH BOUNDARIES</div><h1 class="compact-closing-title" data-anim>已完成的是证据链，<br>不是最终工业结论</h1><div class="conclusion-list" data-anim><article class="conclusion-row"><span class="no">01</span><div><strong>软件与测量链已跑通</strong><p>清晰 OCR、仪器恢复、MPFA 重建、数据审计和双后端评测均有冻结 artifact。</p></div></article><article class="conclusion-row"><span class="no">02</span><div><strong>四方向互补机制跨后端成立</strong><p>Oracle 相对最佳固定方向为 +2.51 / +6.58 pp；四个方向均有独占成功样本。</p></div></article><article class="conclusion-row"><span class="no">03</span><div><strong>部署方法与工业有效性仍待验证</strong><p>先冻结日期 / 批次码、补密集角强基线，再进入硬件标定与正式 Gate 1。</p></div></article></div><div class="closing-number-strip" data-anim><div><strong>99.56%</strong><span>受限 EXP 清晰上限</span></div><div><strong>77.3%</strong><span>合成 Stokes RMSE 降幅</span></div><div><strong>+2.51 / +6.58</strong><span>双后端 oracle gap · pp</span></div><div><strong>7,207</strong><span>保留的 HAMMER 前期帧</span></div></div></div>
+    <aside class="compact-closing-side"><div class="compact-brand" data-anim><strong>PolyCamera</strong><span>INDUSTRIAL POLARIMETRIC READING</span></div><div class="closing-status" data-anim><div class="closing-status-row"><span>研究假设</span><strong>自适应偏振表示 · 保留</strong></div><div class="closing-status-row"><span>Offline Gate P</span><strong class="accent">OPEN · 继续做强基线</strong></div><div class="closing-status-row"><span>Formal Industrial Gate 1</span><strong class="danger">CLOSED · 等待硬件与自采</strong></div><div class="closing-status-row"><span>下一项可交付物</span><strong>固定格式任务 + 密集虚拟角扫描</strong></div></div><div class="compact-closing-foot" data-anim>恳请各位老师重点评价：目标喷码工艺、正式工位设计与 Gate 阈值。<br><br><strong>Questions & Discussion</strong></div></aside>
   </div>
 </section>
 
@@ -690,24 +885,16 @@
 <div id="nav"></div>
 <script>
 const SPEAKER_NOTES = [
-  {id:'cover',title:'课题封面',section:'开场',minutes:0.6,purpose:'用一句话建立工业问题和课题边界',talk:['先说固定工位识读为何重要，不先介绍相机参数','强调主任务是工业喷码，偏振只是无机械切换的观测手段','本页所有内容是研究方案，不是已经得到的实验结果'],transition:'先从工业系统需要稳定读什么开始'},
-  {id:'agenda',title:'目录',section:'开场',minutes:0.4,purpose:'说明问题驱动的汇报顺序',talk:['前两部分只讲需求、故障和已有方案','到第三部分才介绍单曝光偏振物理','后半部分重点是装置、实验 Gate 和停止条件'],transition:'进入固定机位识读的工业需求'},
-  {id:'industrial-demand',title:'工业需求',section:'工业需求与共同故障',minutes:0.8,purpose:'界定工业标识识读的应用价值和主任务',talk:['区分 OCR 读取和 OCV 验证，两者结果必须分开报告','系统价值来自追溯、分拣和出入管理，不来自图像美观','主任务锁定喷码，避免同时承担二维码和车牌'],transition:'工业需求明确后，看共同的成像故障'},
-  {id:'reflection-failure',title:'变化反射故障',section:'工业需求与共同故障',minutes:0.9,purpose:'说明变化反射而非单次反光才是核心问题',talk:['同一工位随着材质、覆膜和姿态变化，高光位置会移动','局部饱和会直接截断笔画，软件不能无条件恢复','稳定误读比明确拒绝更危险'],transition:'接着梳理工业现场已经采用的成熟方案'},
-  {id:'existing-solutions',title:'现有工程方案',section:'现有方案与研究缺口',minutes:1.0,purpose:'承认成熟工程手段并限定本课题差异',talk:['光源几何和固定交叉偏振必须作为强基线','多曝光和机械旋转可作为性能上界，但节拍不同','课题不声称首次用偏振抑制反光'],transition:'在成熟方案之上进一步收敛研究缺口'},
-  {id:'research-gap',title:'研究缺口',section:'现有方案与研究缺口',minutes:1.0,purpose:'把邻近工作与当前候选缺口分开',talk:['文本高光恢复已经有人研究，偏振反射去除也已有强方法','缺少的是单曝光、任务驱动、跨条件、可回退的工业识读表示','开题前只能称候选缺口，不能称首次'],transition:'基于缺口给出目标与递进技术路线'},
-  {id:'objectives',title:'目标与路线',section:'研究问题与总体方案',minutes:0.9,purpose:'说明先问题证明再增加方法复杂度',talk:['第一阶段只比较固定方向和 oracle','全局虚拟角度优先于局部像素融合','每一层复杂度都有停止 Gate'],transition:'下面解释为何一次曝光可以在采集后选择方向'},
-  {id:'physical-basis',title:'单曝光物理基础',section:'研究问题与总体方案',minutes:1.1,purpose:'解释 DoFP 与虚拟偏振片的可行性和边界',talk:['四方向反演线偏振 Stokes 后可合成任意分析角度','DoFP 是空间复用，四方向不是四张独立全分辨率图','全方向饱和时必须回退或拒绝，不能生成猜测笔画'],transition:'把物理观测组织成完整的识读与可靠性架构'},
-  {id:'method-architecture',title:'方法总体架构',section:'研究问题与总体方案',minutes:1.0,purpose:'展示采集、标定、表示、识读与回退的完整链路',talk:['偏振质量和 OCR 置信度是两个不同变量','OCR 原始结果与 OCV 业务纠错分开保存','系统最终有接受、复拍和拒绝三种决策'],transition:'方法需要落到一套可重复的实物工位'},
-  {id:'apparatus',title:'实验装置',section:'装置、数据与方法架构',minutes:1.0,purpose:'说明最小实物系统与仪器专业工作量',talk:['Phase A 先做静态姿态工位，不急于上传送带','必须比较非偏振照明和照明端固定偏振','相机选型由字符像素、视场、工作距离和节拍决定'],transition:'装置确定后，说明需要保存哪些数据和元信息'},
-  {id:'data-design',title:'数据与标注',section:'装置、数据与方法架构',minutes:0.8,purpose:'说明数据可追溯性和防泄漏划分',talk:['RAW 是唯一长期事实源，派生图由版本化流水线重建','同一喷码实例和相邻帧不能跨训练测试','字符串真值、工况和标定 ID 必须自动绑定'],transition:'下面给出实验如何按 Gate 逐级展开'},
-  {id:'experiment-protocol',title:'实验协议',section:'实验协议与评价',minutes:1.0,purpose:'概括 E0–E13 和固定协议',talk:['E0–E4 先证明必要性和机制','E5–E8 才进入自适应和跨条件','E9–E13 补足 DoFP、OCR、动态、成本和外部验证'],transition:'其中最关键的是 Gate 1 的固定方向必要性实验'},
-  {id:'gate-one',title:'Gate 1 关键实验',section:'实验协议与评价',minutes:1.1,purpose:'用可证伪指标决定是否值得研究自适应',talk:['train-best 只能在训练集选角，不能看测试真值','per-image oracle 是不可部署上界，用来量化自适应空间','若差距接近零，应停止复杂融合'],transition:'在 Gate 1 基础上整理完整的基线与评价表'},
-  {id:'baselines-metrics',title:'基线与评价',section:'实验协议与评价',minutes:1.0,purpose:'确保对照公平且覆盖工程强基线',talk:['候选方法必须超过最佳固定方向和简单融合','多帧方法要计入完整采集时间','主结果使用原始 OCR，不把字典纠错混进视觉精度'],transition:'旧深度路线之外，还需要补哪些新实验'},
-  {id:'new-experiments',title:'新增实验',section:'实验协议与评价',minutes:1.0,purpose:'总结新课题相对旧路线新增的证据',talk:['识读维度增加 exact、CER、OCR 后端与 OCV 分离','偏振维度增加虚拟角验证、照明端偏振和 DoFP 去马赛克','系统维度增加动态触发、重复性、成本和连续运行'],transition:'最后把预期贡献与明确风险放在同一页'},
-  {id:'contributions-risks',title:'贡献与风险',section:'贡献、风险与计划',minutes:1.0,purpose:'说明课题可贡献什么以及何时应停止',talk:['贡献分别落在协议、表示和装置可靠性','全方向饱和是明确物理边界','近期只做清晰上限、标定、pilot 和 Gate 1'],transition:'给出支撑当前判断的主要来源'},
-  {id:'references',title:'主要参考来源',section:'贡献、风险与计划',minutes:0.5,purpose:'说明工业需求、文本高光和偏振方法的证据来源',talk:['工业产品资料只证明需求和工程实践','学术论文支撑数据、反射去除和 DoFP 物理','目前仍需继续检索直接面向工业 OCR 的偏振工作'],transition:'收束并进入讨论'},
-  {id:'closing',title:'工业问题先行',section:'收束',minutes:0.4,purpose:'用停止条件回扣整场故事',talk:['第一结论不是偏振一定有效，而是先验证固定方向是否不足','问题成立才进入自适应表示','邀请老师重点评价主对象、工位和 Gate 是否合理'],transition:'进入提问与讨论',cue:'停顿后邀请老师批评指正'}
+  {id:'cover',title:'课题与当前结论',section:'开场',minutes:0.5,purpose:'先交代主任务、已完成实验和证据边界',talk:['主任务是变化反射下的固定格式工业喷码识读，偏振相机只是观测手段','这版汇报把已完成结果放在主体：E0、E1、E2 和完整审计','当前 Offline Gate P 为 open，正式工业 Gate 1 仍 closed，不能把代理实验讲成工业结论'],transition:'理论和背景只用下一页交代，然后直接进入协议与结果'},
+  {id:'background-physics',title:'背景与物理依据',section:'问题与协议',minutes:1.2,purpose:'在一页内完成需求、失效机理、单曝光物理与研究假设',talk:['材质、覆膜和姿态改变高光位置，使固定方向在不同工况下交替失效','DoFP 在一次曝光中空间复用四个方向，标定后可合成虚拟检偏角','研究假设不是“偏振能去反光”，而是最优方向会切换，因此自适应表示可能扩大可靠区间','全方向饱和时没有算法能恢复被截断笔画，必须调光、复拍或拒绝'],transition:'下面把这个假设变成可证伪的系统与比较协议'},
+  {id:'system-protocol',title:'系统与验证协议',section:'问题与协议',minutes:1.2,purpose:'说明完整链路、正式工位和核心比较量',talk:['链路从 RAW、仪器标定、虚拟表示到 OCR 与系统决策；OCR 原始结果和 OCV 纠错分开','正式工位尚待搭建，当前页面是设备与协议设计，不是实物完成照片','train-best fixed 只能在训练集选角，per-image oracle 是不可部署上界','后续还必须补密集固定虚拟角、固定交叉偏振、HDR 和多光源强基线'],transition:'在报告单项结果前，先把已经完成的数据和工程工作量集中展示'},
+  {id:'workload-audit',title:'已完成工作量与可复现资产',section:'完成工作与结果',minutes:1.3,purpose:'用数量、数据体量和产物证明已完成工作量',talk:['SHDocs 已完成 50 文档、800 captures、四万量级 ROI-condition 的双后端评测与归档核验','PDD 处理 120 场景条件并生成 360 条简单基线；合成仪器恢复另有 5000 测量样本','HAMMER/PPFT 完成 7207 帧、21621 记录和 66.57 GB 选择数据的全量审计与推理','HAMMER 只证明前期工程能力和可靠性方法论，不能当作工业 OCR 增益证据'],transition:'第一项结果先回答：在没有反光时，OCR 软件本身能达到什么上限'},
+  {id:'e0-clean-ocr',title:'E0 · 清晰字符软件上限',section:'完成工作与结果',minutes:1.2,purpose:'报告 900 张清晰合成图结果并据此收窄任务',talk:['固定 EXP 日期格式达到 95.11% 和 99.56% exact，说明受限格式的软件链有可用上限','随机字母数字序列只有 36% 和 64%，所以问题不能泛化成任意序列号识别','总体 exact、CER 和延迟同时展示，两个后端的性能与速度取舍不同','这不是物理相机或真实喷码上限；决策是先冻结一种真实日期或批次码工艺'],transition:'第二项结果验证测量链：标定能否恢复，以及去马赛克会带来多大误差'},
+  {id:'e1-calibration-reconstruction',title:'E1 · 标定与 MPFA 重建',section:'完成工作与结果',minutes:1.4,purpose:'同时报告合成仪器恢复和 PDD 120 条件重建结果',talk:['合成仿射仪器恢复把 Stokes RMSE 从 0.01147 降至 0.00260，数值实现链通过','PDD 中 bilinear 在三个噪声档都优于 nearest，但低噪声 AoLP MAE 仍为 15.14 度','重建误差和延迟必须一起看：bilinear 约 52 毫秒，nearest 约 6 毫秒','这两个结果都只是软件代理；未来相机的暗场、平场、零点和温漂仍需物理标定'],transition:'测量链可运行后，关键问题是四个方向是否真的提供可重复互补信息'},
+  {id:'e2-cross-backend',title:'E2 · 跨 OCR 后端统计',section:'完成工作与结果',minutes:1.5,purpose:'报告固定、选择器、oracle、CER、worst-group 和延迟的跨后端结果',talk:['EasyOCR 的 fixed/oracle 为 11.32%/13.83%，gap 加 2.51 个百分点','Tesseract 为 26.31%/32.88%，gap 加 6.58 个百分点；两个文档聚类区间都不跨零','简单 confidence selector 对 EasyOCR 反而下降 0.29 个点，对 Tesseract 只提升 1.26 个点','all-four-fail 是四方向均未 exact-read，不是系统拒绝；本轮没有冻结接受阈值，因此不报告伪造的 false-read/reject'],transition:'下一页用具体样本和全部简单基线解释这个 gap 来自哪里、为什么还不能部署'},
+  {id:'e2-mechanism-baselines',title:'E2 · 机制与简单基线',section:'完成工作与结果',minutes:1.5,purpose:'展示四方向独占成功样本并排除简单融合解释',talk:['图中四个方向各有只有自己读对的样本，两个后端的 unique-winner 计数也覆盖所有方向','S0、SDK deglared、pixel min 和 median 都没有消除 oracle gap','置信选择器需要四次 OCR，顺序延迟为 18.87 或 162.15 毫秒，却只兑现很少 oracle 空间','因此结论是机制支持、部署未通过；还缺密集固定虚拟角和任务专用选择器'],transition:'把所有结果映射回 Gate，并明确下一轮只允许做哪些实验'},
+  {id:'gate-next',title:'Gate 判定与下一轮实验',section:'决策与收束',minutes:1.3,purpose:'给出 P0/P1/P2 状态、正式边界与五个冻结交付物',talk:['P0 条件性：固定日期格式可用，任意序列和真实喷码未过','P1 仅代理通过：软件测量链可复现，不代表相机物理标定完成','P2 机制支持但部署失败，所以 Offline Gate P 保持 open；正式工业 Gate 1 仍 closed','下一轮先冻结任务、补密集角、做 oracle-only 误差分类，再进行硬件标定和 600 到 1500 次 pilot','只有正式 Gate 1 通过后才训练最终自适应融合'],transition:'最后用三句话区分已经完成的结论与仍待验证的主张'},
+  {id:'conclusion',title:'结论与讨论',section:'决策与收束',minutes:0.6,purpose:'用结果、边界和下一交付物收束汇报',talk:['已经完成的是可复现的证据链：E0、E1、E2、审计、双后端与前期资产','已经支持的是四方向互补研究假设；尚未支持的是可部署选择器和工业有效性','下一项可交付物是固定格式任务定义和密集虚拟角扫描','请老师重点评价目标喷码工艺、正式工位和 Gate 阈值是否合理'],transition:'进入提问与讨论',cue:'停顿，指向右侧 OPEN / CLOSED 状态后邀请老师批评指正'}
 ];
 window.__SPEAKER_NOTES__=SPEAKER_NOTES;
 </script>

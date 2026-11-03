@@ -1,0 +1,24 @@
+{
+  "version": "shdocs-excluded-rois-v1",
+  "reason": "FUNSD annotation box extends beyond the aligned processed i0 image bounds; exclude rather than count a truncated crop as an OCR/reflection failure.",
+  "count": 17,
+  "sample_ids": [
+    "85540866_camera_3",
+    "85540866_a_3",
+    "85540866_b_3",
+    "85540866_c_3",
+    "85540866_d_3",
+    "85540866_d_10",
+    "85540866_e_3",
+    "85540866_f_3",
+    "85540866_g_3",
+    "85540866_h_3",
+    "85540866_i_3",
+    "85540866_j_3",
+    "85540866_k_3",
+    "85540866_l_3",
+    "85540866_m_3",
+    "85540866_n_3",
+    "85540866_o_3"
+  ]
+}

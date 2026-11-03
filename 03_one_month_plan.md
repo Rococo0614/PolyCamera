@@ -20,6 +20,20 @@
 - 文献矩阵与硬件/成本表；
 - 一份导师一页纸和开题 PPT 结构。
 
+## 硬件到位前：Offline Gate P（立即执行）
+
+不等待相机采购，先完成以下可复用基础：
+
+1. SHDocs `i0/i45/i90/i135/s0_norm/deglared` 清单与文档级 split；
+2. 至少两个 OCR 后端的 GT-ROI 与端到端评测接口；
+3. exact-read、CER/WER、train-best、per-image oracle 和分组 bootstrap；
+4. PDD/PIDSR 去噪与去马赛克基准；
+5. Stokes、虚拟角和仪器矩阵的合成误差恢复测试；
+6. 将 HAMMER/PPFT 作为偏振可靠性前期探索写入 PPT，同时标注任务域差异。
+
+Offline Gate P 的结果用于决定是否值得进入硬件 pilot，不能替代下文的真实工位
+Gate 1。
+
 ## 第 1 周：工业问题、文献与识读基线
 
 ### 任务 1：锁定主对象

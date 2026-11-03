@@ -1,0 +1,49 @@
+{
+  "experiment": "offline-e1-pdd-simple-baselines",
+  "date": "2026-11-03",
+  "proxy_only": true,
+  "claim_boundary": "This is a public PDD reconstruction benchmark with simple in-project baselines. It is not a reproduction of the official PDD method and not a calibration of the future project camera.",
+  "dataset": {
+    "archive_bytes": 12171672476,
+    "archive_sha256": "01f20ebc8b3b8940f1460ebafb981eb0942bcbb5cc4b5af7bf3ab27b46e98008",
+    "zip_crc_test": "pass",
+    "archive_entries": 1209,
+    "selected_png_files": 960,
+    "scene_conditions": 120,
+    "scenes_per_noise_level": 40,
+    "color_channel": "green"
+  },
+  "protocol": {
+    "mpfa_pattern": [["i90", "i45"], ["i135", "i0"]],
+    "methods": ["noisy_full", "nearest_mpfa", "bilinear_mpfa"],
+    "aggregation": "arithmetic mean over 40 scenes within each noise level",
+    "aolp_mask": "finite, unsaturated reference, physical reference DoLP, S0 > 0.02, reference DoLP > 0.05"
+  },
+  "aggregate": {
+    "Low": {
+      "noisy_full": {"intensity_psnr_db": 42.85067988533747, "dolp_mae": 0.01653408857213245, "aolp_mae_deg": 6.737555640485152},
+      "nearest_mpfa": {"intensity_psnr_db": 32.800236622415085, "dolp_mae": 0.03132586376039451, "aolp_mae_deg": 25.259929700062106, "latency_ms": 5.779293149953446},
+      "bilinear_mpfa": {"intensity_psnr_db": 38.32100130145723, "dolp_mae": 0.018711898156077347, "aolp_mae_deg": 15.143574290515584, "latency_ms": 52.53204417440429}
+    },
+    "Mid": {
+      "noisy_full": {"intensity_psnr_db": 35.71754674630455, "dolp_mae": 0.05230966802508865, "aolp_mae_deg": 17.306578754220855},
+      "nearest_mpfa": {"intensity_psnr_db": 31.196053541518506, "dolp_mae": 0.06448942901250668, "aolp_mae_deg": 29.765913095001746, "latency_ms": 5.70422505006718},
+      "bilinear_mpfa": {"intensity_psnr_db": 35.525520200141486, "dolp_mae": 0.042420386426532807, "aolp_mae_deg": 21.24345795753993, "latency_ms": 52.3398038751111}
+    },
+    "High": {
+      "noisy_full": {"intensity_psnr_db": 30.924713046277088, "dolp_mae": 0.07425676219699169, "aolp_mae_deg": 21.05687616046334},
+      "nearest_mpfa": {"intensity_psnr_db": 29.02171223254868, "dolp_mae": 0.08180588537539582, "aolp_mae_deg": 31.81215462003205, "latency_ms": 5.911831625144259},
+      "bilinear_mpfa": {"intensity_psnr_db": 32.36787675962172, "dolp_mae": 0.056362087960970954, "aolp_mae_deg": 23.68949106508821, "latency_ms": 52.70948427460098}
+    }
+  },
+  "interpretation": [
+    "Bilinear MPFA interpolation consistently improves over nearest-neighbor reconstruction.",
+    "Smoothing can improve intensity error under high noise while AoLP remains sensitive to spatial interpolation.",
+    "The downstream OCR study must report reconstruction choice and cannot treat DoFP demosaicking as a neutral preprocessing detail."
+  ],
+  "full_artifact": {
+    "path": "/home/chocbrownie0524/poldepth/runs/industrial_reading/pdd_simple_baselines.json",
+    "records": 360,
+    "sha256": "3a4eaa7c71352125f8b39517a24b4ff1305c269611a90a5a26e241c37108bb4f"
+  }
+}

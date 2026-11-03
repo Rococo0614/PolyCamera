@@ -6,6 +6,17 @@
 
 ## 0. 当前工业识读主线的部署原则
 
+### 无硬件阶段 Offline Gate P
+
+- 训练端当前为 RTX 5080 16 GB，实测约 15.3 GB 显存可用、磁盘约 263 GB 可用；
+- 已建立独立环境 `/home/chocbrownie0524/poldepth/envs/industrial-reading`；
+- EasyOCR 1.7.2 已在现代 PyTorch/CUDA 环境完成 GPU 冒烟；
+- SHDocs（约 10.3 GB raw archive）与 PDD（约 11.3 GB）适合本机；
+- 不下载 631 GB 的 MAFS-PMI raw，也不在 Gate P 前训练大型 PolarFree/diffusion；
+- 数据根目录固定为
+  `/home/chocbrownie0524/poldepth/datasets/industrial_reading`，运行结果固定为
+  `/home/chocbrownie0524/poldepth/runs/industrial_reading`。
+
 ### 控制端优先完成
 
 - 相机 SDK、触发和 RAW 采集；

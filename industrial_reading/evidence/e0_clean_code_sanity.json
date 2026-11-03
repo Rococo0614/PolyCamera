@@ -1,0 +1,45 @@
+{
+  "experiment": "offline-e0-synthetic-clean-code",
+  "date": "2026-11-03",
+  "proxy_only": true,
+  "claim_boundary": "Deterministic clean software sanity set rendered with ordinary open system fonts. It is not a physical CIJ, laser-mark, or camera-resolution result.",
+  "dataset": {
+    "version": "synthetic-clean-code-v1",
+    "unique_strings": 100,
+    "images": 900,
+    "fonts": {
+      "DejaVu Sans Mono": "a54dca07c76d6289e717e75e0a58c0128f6d7269ef3faf76417c9d7d3bba37ab",
+      "Liberation Mono": "d18235f1e874771f4eaec3ddd6ddb4db849d334bdc6930c5c2185d9344834e62",
+      "Noto Sans Mono": "6b692c4b6d15ccf59f1c1fe8d11cb8a92f51960f3e9f1f523781755a3af7e29f"
+    },
+    "font_sizes_px": [24, 32, 48],
+    "seed": 20261103,
+    "manifest_sha256": "9dd03e9b6b80ec3c699391f1bc07bed719bb01a00ee2910c3e2a2a7aad69dd3a",
+    "allowlist": "A-Z, 0-9, hyphen, space"
+  },
+  "easyocr_1_7_2": {
+    "overall_exact": 0.6077777777777778,
+    "overall_macro_cer": 0.04204119954119954,
+    "latency_mean_ms": 3.4288828933414255,
+    "prefix_exact": {
+      "EXP": 0.9511111111111111,
+      "LOT": 0.5777777777777777,
+      "BATCH": 0.5422222222222223,
+      "SN": 0.36
+    },
+    "summary_sha256": "01af9237829a211774e0ec3bbad55d989d7a8514982099770b12945908dd7122"
+  },
+  "tesseract_5_5_3_psm7": {
+    "overall_exact": 0.7944444444444444,
+    "overall_macro_cer": 0.0183000333000333,
+    "latency_mean_ms": 38.00807671664289,
+    "prefix_exact": {
+      "EXP": 0.9955555555555555,
+      "LOT": 0.8,
+      "BATCH": 0.7422222222222222,
+      "SN": 0.64
+    },
+    "summary_sha256": "8812fa2c5d26a0fc82ee1ef0a1f36e21b604aa1e0fe4a05cd286d4803e6e923d"
+  },
+  "decision": "The OCR pipeline can reach a clean upper bound for a constrained date-code format, but not for arbitrary alphanumeric serials. Freeze the real target charset and format before camera procurement and formal E0."
+}

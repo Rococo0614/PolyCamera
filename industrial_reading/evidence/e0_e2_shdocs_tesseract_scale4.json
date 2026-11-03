@@ -1,0 +1,81 @@
+{
+  "experiment": "offline-shdocs-e0-e2-tesseract-scale4",
+  "date": "2026-11-03",
+  "proxy_only": true,
+  "claim_boundary": "SHDocs flat FUNSD document proxy using GT text boxes and Tesseract. This is not an industrial spray-code Gate 1 result.",
+  "protocol": {
+    "dataset_archive_sha256": "49457a4afae50fc750328399af708c12570a08c613b1ccfe7f552c6f8acb05c7",
+    "split_version": "shdocs-document-v1",
+    "split_assignment_sha256": "3f1868c879df1112ce145eb711e33e7f441c8a5c8f6a31254b5c23419af74343",
+    "split_documents": {"train": 35, "val": 8, "test": 7},
+    "regions_per_document": 10,
+    "excluded_out_of_bounds_roi_conditions": 17,
+    "ocr_backend": "Tesseract 5.5.3 PSM7",
+    "preprocessing": "4x bicubic, no autocontrast",
+    "preprocessing_selection": "Selected on camera validation: 4x exact 25.0% versus native 21.25%; test was not used for selection.",
+    "fixed_candidates": ["i0", "i45", "i90", "i135"],
+    "other_methods": ["s0_norm", "deglared", "min", "median"],
+    "normalization": "NFKC + uppercase + collapsed whitespace; no dictionary/OCV correction"
+  },
+  "e0_camera_test": {
+    "samples": 69,
+    "train_best_fixed": "i90",
+    "train_best_exact": 0.3333333333333333,
+    "train_best_macro_cer": 0.3443423536668103,
+    "four_angle_oracle_exact": 0.4057971014492754,
+    "decision": "Higher than EasyOCR but still below a usable industrial E0 for mixed FUNSD fields."
+  },
+  "e2_highlight_test_all_labels": {
+    "samples": 1034,
+    "train_best_fixed": "i0",
+    "method_exact": {
+      "i0": 0.26305609284332687,
+      "i45": 0.17794970986460348,
+      "i90": 0.15473887814313347,
+      "i135": 0.20212765957446807,
+      "s0_norm": 0.19825918762088976,
+      "deglared": 0.21566731141199227,
+      "min": 0.20502901353965183,
+      "median": 0.19245647969052224
+    },
+    "train_best_macro_cer": 0.4004697195910233,
+    "four_angle_oracle_exact": 0.3288201160541586,
+    "four_angle_oracle_macro_cer": 0.2767813941417712,
+    "oracle_minus_fixed_exact": 0.06576402321083172,
+    "cluster_bootstrap_ci95": [0.0412573673870334, 0.08857142857142856],
+    "bootstrap_groups": 7,
+    "oracle_only_successes": 68,
+    "all_four_fail_rate": 0.6711798839458414,
+    "exactly_one_direction_success_rate": 0.11315280464216634,
+    "unique_winner_counts": {"i0": 74, "i45": 14, "i90": 13, "i135": 16},
+    "confidence_selector_exact": 0.27562862669245647,
+    "confidence_selector_sequential_latency_ms": 162.1502714524028,
+    "worst_condition": {"condition": "h", "fixed_exact": 0.13043478260869565}
+  },
+  "e2_highlight_test_printed_question_header": {
+    "samples": 689,
+    "train_best_fixed": "i0",
+    "train_best_exact": 0.3149492017416546,
+    "train_best_macro_cer": 0.3523036082541906,
+    "four_angle_oracle_exact": 0.386066763425254,
+    "oracle_minus_fixed_exact": 0.07111756168359942,
+    "cluster_bootstrap_ci95": [0.03899721448467967, 0.10833333333333334],
+    "confidence_selector_exact": 0.3265602322206096
+  },
+  "interpretation": [
+    "The four-direction oracle gap independently repeats with a second OCR backend and is larger than with EasyOCR.",
+    "Every canonical direction uniquely recovers some samples, so the signal is not explained by one globally dominant angle alone.",
+    "Confidence selection improves on the fixed angle but captures only a small fraction of the oracle gap while requiring four OCR calls.",
+    "Absolute E0 remains insufficient on mixed FUNSD fields; do not advance to a learned adaptive representation before the real target format and OCR are frozen."
+  ],
+  "artifacts": {
+    "e0_records_sha256": "57b559afeeba1aa2e36f0a1be920512762f4c2bce9376f9c6e7cc47615194608",
+    "e0_metadata_sha256": "cd0e42813813f72afb23d4662588b7f9d833d9326162b0bc2844fbd41bb1fa53",
+    "e0_summary_sha256": "8650c935fe560821353ebcf15f3239c9ce744ab6e5151732735800aefd070ed5",
+    "e0_printed_summary_sha256": "ca17a76075cbcbff9700393b7539dde3fdab2106e61c004e06ce21e9aeee6b94",
+    "e2_records_sha256": "9db3e25fabfd8f1d48cfed9309d165d2b64a4ab3861f1fc2f14c56115488d103",
+    "e2_metadata_sha256": "872d4371ee082c23b1adce5f8129995f647cf64abe54e58e6cc0ceee79a90126",
+    "e2_summary_sha256": "99baae554a46e2aa5745e62ecb34db0f2d9b795fd65b557454f2187ea0884f28",
+    "e2_printed_summary_sha256": "3dbba27b358c836a2bd0c6bd2ebe0246e06322c5e956a6b7b0a2db3b7d3093df"
+  }
+}

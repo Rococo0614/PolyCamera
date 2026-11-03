@@ -41,11 +41,17 @@ Axis 2024 的车牌采集白皮书指出，正确对齐的偏振片可减弱挡�
 
 - 任务：真实文档高光去除与 OCR 下游评价；
 - 数据：基于 FUNSD 文档，公开仓库说明包含 3,184 个场景、19,104 张图像；
+- 设备与输出：作者使用 FLIR Blackfly S BFS-U3-51S5P（Sony IMX250MZR DoFP），
+  每次采集公开 `i0/i45/i90/i135/s0_norm/deglared` 六种重建；
 - 采集：打印文档放入不同透明文件袋，构造多种高光条件和对齐的去高光反事实；
 - 评价：同时报告图像增强和 OCR；
 - 代码/数据：公开，仓库标注 MIT；OpenReview 页面标注 CC BY 4.0 论文许可；
 - 价值：直接证明“高光去除应以 OCR 结果评价”，并提供数据构建参考；
-- 局限：对象是平面文档/文件袋，不是工业喷码、曲面和 DoFP 自适应表示。
+- 新增用途：可在没有自有相机时运行 `S0/四固定方向/train-best/oracle/SDK
+  deglared` 的 Offline E0/E2 代理实验；
+- 局限：对象是平面文档/文件袋，不是工业喷码、曲面和动态工位；公开方向图是
+  SDK 导出的 8-bit 重建；名为 `raw_captures` 的公开归档同样只含六种重建 PNG，
+  不含 Polarized8 sensor mosaic、暗场或平场，不能替代未来相机标定。
 
 链接：
 
@@ -118,6 +124,20 @@ Qiu 等在 *Linear Polarization Demosaicking for Monochrome and Colour Polarizat
 
 链接：<https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.14204>
 
+### 2.8 PDD 2025 与 PIDSR（CVPR 2025）
+
+- PDD 包含 40 个真实场景、低/中/高三档噪声，提供 noisy polarization mosaic 与
+  noise-free 四方向完整图，公开数据约 11.3 GB；
+- PIDSR 公开 138 组四方向数据、代码和预训练模型，用于联合偏振去马赛克与超分；
+- 用途：在没有自有相机时验证 2×2 超像素、插值、去噪/去马赛克以及 DoLP/AoLP
+  误差传播；
+- 边界：二者不能给出未来相机的黑电平、方向增益、真实分析角、串扰或温漂参数。
+
+链接：
+
+- PDD：<http://www.ok.sc.e.titech.ac.jp/res/PolarDem/PDD.html>
+- PIDSR：<https://github.com/PRIS-CV/PIDSR>
+
 ## 3. 当前候选缺口
 
 第一轮检索已经找到三类强邻近工作：
@@ -189,6 +209,17 @@ S0 / S1 / S2 / DoLP / AoLP
 3. **简单高光基线：** `S0`、固定方向、min/median、交叉偏振；
 4. **Polarization-guided separation：** 选择轻量可复现方法，不一开始迁移 diffusion；
 5. **HAFNet/DocHR14K/PolarFree：** 作为强恢复基线或预训练候选，在主工位成立后再投入。
+
+## 6.1 无硬件阶段的 Offline Gate P
+
+```text
+P0  SHDocs/FUNSD 上冻结 OCR、字符串规范化、exact/CER/WER 和分组 split
+P1  PDD/PIDSR 上验证 Stokes、仪器矩阵、去噪/去马赛克与角度误差
+P2  SHDocs 上比较四方向、密集固定虚拟角、简单融合、SDK deglared 与 oracle
+```
+
+通过 P2 只说明公开文档高光域存在可利用的四方向互补性。正式 Gate 1 仍要求
+自采工业喷码、材质、姿态、照明端偏振和固定交叉偏振对照。
 
 ## 7. 仍需补检索
 

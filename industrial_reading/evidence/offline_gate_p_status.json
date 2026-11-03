@@ -1,0 +1,57 @@
+{
+  "protocol": "offline-gate-p-v1",
+  "date": "2026-11-03",
+  "overall_status": "open",
+  "formal_industrial_gate1": "closed",
+  "p0_ocr_upper_bound": {
+    "status": "conditional",
+    "supported": [
+      "OCR execution and exact/CER evaluation are reproducible with two pinned backends.",
+      "A constrained clean EXP date-code format reaches 95.11% EasyOCR and 99.56% Tesseract exact-read."
+    ],
+    "not_supported": [
+      "Arbitrary alphanumeric serial OCR upper bound.",
+      "Real industrial camera, lens, CIJ/laser font, or motion upper bound.",
+      "Mixed FUNSD camera-condition fields remain low: 13.04% EasyOCR and 33.33% Tesseract train-best exact."
+    ],
+    "decision": "Freeze one real target format before formal E0; current evidence favors a constrained date/batch-code task over arbitrary serial numbers."
+  },
+  "p1_measurement_pipeline": {
+    "status": "passed_for_offline_software_proxy",
+    "supported": [
+      "Synthetic affine instrument recovery reduced Stokes RMSE from 0.01147 to 0.00260.",
+      "PDD 120-condition audit demonstrated explicit MPFA reconstruction and AoLP sensitivity.",
+      "SHDocs 800-capture pair-sum and S0 consistency audit passed for result-level proxy use."
+    ],
+    "not_supported": [
+      "Physical calibration of the future project camera.",
+      "Absolute AoLP zero point, dark/flat response, extinction ratio, or temperature drift."
+    ]
+  },
+  "p2_fixed_direction_necessity": {
+    "status": "mechanism_supported_deployable_adaptation_not_passed",
+    "easyocr_scale4": {
+      "fixed_exact": 0.11315280464216634,
+      "oracle_exact": 0.13829787234042554,
+      "gap": 0.025145067698259187,
+      "cluster_ci95": [0.014970059880239521, 0.035238095238095235]
+    },
+    "tesseract_scale4": {
+      "fixed_exact": 0.26305609284332687,
+      "oracle_exact": 0.3288201160541586,
+      "gap": 0.06576402321083172,
+      "cluster_ci95": [0.0412573673870334, 0.08857142857142856]
+    },
+    "supported": [
+      "Four-direction complementarity repeats across two OCR backends.",
+      "All four canonical directions uniquely recover some test samples.",
+      "SDK deglared, min, median, and S0 do not remove the oracle gap."
+    ],
+    "not_supported": [
+      "A deployable selector that captures the oracle gap.",
+      "Dense continuous fixed-angle baseline.",
+      "Industrial spray-code, curved material, source-polarization, or dynamic-line generalization."
+    ],
+    "decision": "Retain adaptive polarization as a justified research hypothesis, but do not train a learned representation until task-specific E0 and the strongest dense fixed baseline are established."
+  }
+}

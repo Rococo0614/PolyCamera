@@ -39,6 +39,24 @@
 
 ## 3. 固定实验条件
 
+### 3.0 无硬件阶段：Offline Gate P
+
+正式 E0–E2 前先运行公开数据代理，但两套结论必须分开：
+
+| Offline ID | 数据 | 可完成 | 明确不能声称 |
+|---|---|---|---|
+| P0 | SHDocs/FUNSD | OCR 后端、GT ROI、exact/CER/WER、文档级 split | 工业喷码清晰上限 |
+| P1 | PDD/PIDSR/合成 | Stokes、仪器矩阵、去噪/去马赛克误差 | 自有相机已标定 |
+| P2 | SHDocs | 四固定方向、train-best、简单融合、SDK deglared、oracle | 正式工业 Gate 1 通过 |
+
+SHDocs 同一文档的十五种高光条件必须按 `document_id` 成组划分。虚拟角均由同一组
+四方向确定，不能当作独立采集样本。P2 无论结果正负，都必须在真实喷码工位重验。
+
+**2026-11-03 第一轮状态：** P1 软件代理通过；P2 的 four-angle oracle gap 在
+EasyOCR/Tesseract 上均稳定为正，但 E0 绝对上限和 deployable selector 不足，且
+连续固定虚拟角尚未完成，因此 Offline Gate P 保持 open，正式 Gate 1 关闭。完整
+结果见 `14_offline_gate_p_results.md`。
+
 在比较前锁定：
 
 - OCR 版本、权重和字符字典；

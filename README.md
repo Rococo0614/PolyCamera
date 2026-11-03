@@ -2,7 +2,7 @@
 
 **建立日期：** 2026-09-21
 **方向更新：** 2026-11-02
-**当前工作目录：** `/home/jiangrui/PolyCamera`
+**当前工作目录：** `/home/chocbrownie0524/PolyCamera`
 
 ## 0. 当前主线
 
@@ -18,7 +18,20 @@
 
 - `12_industrial_reading_research_story.md`
 - `13_industrial_reading_experiment_plan.md`
+- `14_offline_gate_p_results.md`
 - `10_advisor_one_page.md`
+
+### 当前执行状态（2026-11-03）
+
+- 已建立 `industrial_reading/` 离线代理实验包；
+- Offline E1 仪器矩阵合成恢复及 PDD 120 条件简单重建基线已完成；
+- SHDocs 50 文档双 OCR 后端 E0/E2 第一轮完成；四方向 oracle gap 跨后端重复；
+- **Offline Gate P 仍 open**：问题机制获支持，但任务字符体系、连续固定角和可部署
+  选择器尚未通过；正式工业 Gate 1 仍关闭；
+- 清晰合成 sanity 表明固定日期格式可达 99.56% exact，而任意字母数字序列仍不足，
+  因此下一步优先把主任务收窄为固定格式日期/批次码；
+- 已完成的 HAMMER/PPFT 数据、代码和证据全部保留，作为“偏振质量具有任务与场景
+  依赖性”的前期探索，不冒充工业识读实验。
 
 ## 1. 从工业需求到研究问题
 
@@ -74,6 +87,9 @@
 ## 4. 研究路径
 
 ```text
+Offline P  公开数据前置验证
+           SHDocs OCR + 四方向代理；PDD 去马赛克；HAMMER 可靠性探索
+             ↓
 Phase 0  工业问题证明
          RGB/S0/四固定方向在多材质、多姿态、多光照下的识读失效统计
             ↓
@@ -143,6 +159,10 @@ DoFP 相机本身未必比普通相机便宜。当前主张应写成：
 
 这些结果**不能直接证明偏振会提高工业字符识读率**。新主线必须重新采集识读数据并以字符串 ground truth 独立验证。
 
+在开题 PPT 中可将其单列为“前期探索与方法论迁移”：报告已经完成的数据审计、
+PPFT 结果级复现和弱偏振反例，并明确它只支持“偏振不能被无条件使用、必须评估
+质量与负迁移”这一研究方法，不作为工业 OCR 精度证据。
+
 历史深度路线文件：
 
 - `06_depth_enhancement_research_architecture.md`
@@ -156,6 +176,8 @@ DoFP 相机本身未必比普通相机便宜。当前主张应写成：
 - `10_advisor_one_page.md`：当前面向导师的一页式方向说明。
 - `12_industrial_reading_research_story.md`：当前主线的完整问题链、研究假设、装置、实验、指标和 PPT 故事。
 - `13_industrial_reading_experiment_plan.md`：E0–E13 实验、基线、统计、Gate、动态节拍与成本协议。
+- `14_offline_gate_p_results.md`：无硬件阶段 E0/E1/E2 公开代理结果、双后端对照和
+  当前 Gate 判定。
 - `01_topic_and_research_questions.md`：当前研究问题、可证伪假设、候选贡献和停止条件。
 - `02_datasets_and_prior_work.md`：工业 OCR、高光去除、偏振反射去除、公开数据与候选缺口。
 - `03_one_month_plan.md`：首月文献、工位、标定、pilot、Gate 1/2 和开题交付。
@@ -167,7 +189,10 @@ DoFP 相机本身未必比普通相机便宜。当前主张应写成：
 - `literature_matrix_template.csv`：含单曝光、入射偏振、工业场景和识读指标字段的文献矩阵。
 - `industrial_reading_capture_manifest_template.csv`：工业采集元数据模板。
 - `industrial_reading_results_template.tsv`：实验、泛化、可靠性、延迟和节拍登记模板。
-- `demo/tsinghua-ppt/index.html`：18 页清华学术风开题方案 HTML PPT，含备注、计时和观众屏。
+- `industrial_reading/`：Offline E0–E2/Gate P 的代码、协议、测试与小型证据；大数据和
+  运行结果保存在仓库外 `/home/chocbrownie0524/poldepth/`。
+- `demo/tsinghua-ppt/index.html`：10 页结果导向的清华学术风 HTML PPT；理论与背景合并为
+  1 页，第 4–8 页集中报告工作量及 E0/E1/E2 结果，并保留备注、计时和观众屏。
 - `demo/tsinghua-ppt/images/SOURCES.md`：网络实拍图作者、许可和本项目原创示意图说明。
 - `demo/tsinghua-ppt/shots/`：1600×900 逐页预览与总览图。
 - `demo/前人巨作/`：用户提供的参考答辩材料，未修改。

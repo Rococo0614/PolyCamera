@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-02",
+  "evidence_level": "software_smoke_only",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpu_memory_mib": 16303,
+    "compute_capability": "12.0"
+  },
+  "environment": {
+    "path": "/home/chocbrownie0524/poldepth/envs/industrial-reading",
+    "python": "3.10",
+    "easyocr": "1.7.2",
+    "numpy": "2.2.6",
+    "opencv": "5.0.0",
+    "pillow": "12.3.0",
+    "pytorch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "scipy": "1.15.3",
+    "scikit_image": "0.25.2"
+  },
+  "easyocr_models": {
+    "craft_mlt_25k.pth": {
+      "bytes": 83152330,
+      "sha256": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17"
+    },
+    "english_g2.pth": {
+      "bytes": 15143997,
+      "sha256": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8"
+    }
+  },
+  "tesseract": {
+    "version": "5.5.3",
+    "executable": {
+      "bytes": 65888,
+      "sha256": "4cb12efe9cfbcd5541fe8926ccfad71162cb22bb9cd5a6a5895e5878fe5fa007"
+    },
+    "eng_traineddata": {
+      "bytes": 4113088,
+      "sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+    }
+  },
+  "smoke_tests": {
+    "input_text": "LOT A12B9",
+    "easyocr": {
+      "prediction": "LOT A12B9",
+      "confidence": 0.7819881259430989
+    },
+    "tesseract_psm7": {
+      "prediction": "LOT A12B9",
+      "confidence": 0.88107111625
+    },
+    "purpose": "Verify that both OCR backends execute in the fixed environment. These are not accuracy results."
+  },
+  "upstream_repositories": {
+    "SHDocs": "5d4e26ba8cde9ab59d6bcf55c3d338c7c307e9c5",
+    "PolarDenDem": "136cc20937b968639e4ff0b98ba7ed9c642da903",
+    "PIDSR": "ed7e9a3aa6b2907cc3f8fd390d9a36f0f4ba7738"
+  }
+}
