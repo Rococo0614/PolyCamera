@@ -538,10 +538,19 @@
   .reporting-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:.35vw}
   .reporting-strip span{padding:.55vh .35vw;background:var(--accent-soft);color:var(--accent);text-align:center;font:750 clamp(9px,.62vw,12px)/1.15 var(--sans)}
 
+  /* 新增页 · 方向调整 / 设备条件与计划（复用上方版式，只补少量差异） */
+  .dense-kpi.pivot{background:var(--accent)}
+  .dense-kpi.pivot strong,.dense-kpi.pivot span{color:#fff}
+  .gate-matrix.rows6{grid-template-rows:auto repeat(6,1fr) auto}
+  .gate-matrix.rows6 .gate-decision-row .id{font-size:clamp(13px,.88vw,17px)}
+  .plan-caption{margin-bottom:.45vh;color:var(--muted);font:600 clamp(10px,.67vw,13px)/1.3 var(--sans)}
+  .next-path.months .next-step{grid-template-columns:4.3em 1fr auto}
+  .next-path.months .next-step .no{white-space:nowrap}
+
   /* 10 · 结果式收束 */
   .compact-closing{height:100%;display:grid;grid-template-columns:63% 1fr;background:var(--accent);color:#fff}
   .compact-closing-main{display:grid;grid-template-rows:auto auto 1fr auto;gap:1.5vh;padding:5.2vh 4.4vw;position:relative;overflow:hidden}
-  .compact-closing-main::after{content:"10 / 10";position:absolute;right:2.2vw;bottom:2.2vh;color:rgba(255,255,255,.65);font:700 clamp(11px,.72vw,14px)/1 var(--mono);letter-spacing:.08em}
+  .compact-closing-main::after{content:"12 / 12";position:absolute;right:2.2vw;bottom:2.2vh;color:rgba(255,255,255,.65);font:700 clamp(11px,.72vw,14px)/1 var(--mono);letter-spacing:.08em}
   .compact-closing-kicker{color:rgba(255,255,255,.72);font:700 clamp(12px,.8vw,15px)/1 var(--sans-latin);letter-spacing:.15em;text-transform:uppercase}
   .compact-closing-title{font:800 clamp(42px,4.1vw,78px)/1.05 var(--serif);letter-spacing:-.04em}
   .conclusion-list{display:grid;grid-template-rows:repeat(3,1fr);gap:.8vh;min-height:0}
@@ -708,7 +717,7 @@
 <section class="slide" data-layout="THU01" data-animate="academic" data-slide-id="cover">
   <div class="thu-cover">
     <div class="cover-visual">
-      <div class="cover-visual-top"><span>RESEARCH PROPOSAL + RESULTS · 2026</span><span>01 / 10</span></div>
+      <div class="cover-visual-top"><span>RESEARCH PROPOSAL + RESULTS · 2026</span><span>01 / 12</span></div>
       <div class="instrument-stage" data-anim>
         <svg viewBox="0 0 800 420" aria-hidden="true">
           <defs><marker id="cover-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="rgba(255,255,255,.85)"/></marker></defs>
@@ -737,9 +746,25 @@
   </div>
 </section>
 
+<section class="slide soft" data-layout="THU-C11" data-animate="academic" data-slide-id="direction-change">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">一、方向调整与前期工作</div><h1 class="thu-title">深度线完成复现；受设备预算约束，转向单相机可闭环的识读任务</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>方向调整</strong><span>Direction Change</span></div></div></header>
+    <main class="thu-content compact"><div class="workload-layout">
+      <div class="dense-kpis workload-kpis" data-anim><div class="dense-kpi"><strong>09-21</strong><span>透明物体分割与三维感知（宽方向）</span></div><div class="dense-kpi"><strong>10-23</strong><span>收窄为偏振辅助深度增强</span></div><div class="dense-kpi"><strong>11-01</strong><span>HAMMER 全量评测完成</span></div><div class="dense-kpi pivot"><strong>11-02</strong><span>转向：反光条件下的固定字符识读</span></div><div class="dense-kpi"><strong>11-03</strong><span>离线 E0–E2 首轮完成（公开数据代理）</span></div></div>
+      <div class="workload-cards" data-anim>
+        <article class="workload-card"><h2>深度线 · 做到哪里</h2><p class="sub">偏振辅助深度增强 · HAMMER · PPFT 作者权重推理复现（结果级，未复现训练）</p><div class="workload-list"><div><span>官方 test 946 帧 · 全传感器 RMSE</span><strong>28.63 mm（论文 28.63）</strong></div><div><span>全量评测帧 / 传感器记录</span><strong>7,207 / 21,621</strong></div><div><span>DoLP 检测 50 mm 有效但错误深度 · 逐帧平均 AUROC</span><strong>0.641（仅中等、依赖场景）</strong></div><div><span>弱偏振反例 · scene12 与 scene10/13 平均 DoLP</span><strong>≈0.071 vs ≈0.14–0.15</strong></div><div><span>未做：留一传感器 / 融合消融</span><strong>H3 / H4 未测</strong></div></div><div class="workload-result">产出：偏振收益依赖场景与质量；弱偏振场景不能被无条件使用。</div></article>
+        <article class="workload-card"><h2>为什么转向</h2><p class="sub">约束驱动的取舍；不是深度线被否证。以下为本人说明，原计划书面材料另有说明</p><div class="workload-list"><div><span>偏振相机</span><strong>1 台</strong></div><div><span>设备预算</span><strong>上限约 1000 元</strong></div><div><span>深度线自采验证（本人判断）</span><strong>需受控偏振照明与深度参考；预算内难以搭建</strong></div><div><span>原计划的处理（07 号文档）</span><strong>公开数据做主线；自采只作外部验证</strong></div><div><span>新任务条件</span><strong>单相机 · 普通照明 · 字符串真值易得</strong></div></div><div class="workload-result">专业要求含实物设计环节。深度线转为技术储备，H3 / H4 未测；不是被否证。</div></article>
+        <article class="workload-card"><h2>继承、衔接与边界</h2><p class="sub">深度线资产如何进入新任务</p><div class="workload-list"><div><span>继承</span><strong>Stokes / DoLP / AoLP 与质量评估代码</strong></div><div><span>继承</span><strong>SHA-256 清单 · 分组统计 · 冻结证据 JSON</strong></div><div><span>衔接</span><strong>偏振是否有用依赖场景 → 最优方向是否随条件切换</strong></div><div><span>新增</span><strong>字符串真值 · exact-read · worst-group · 拒绝</strong></div><div><span>不继承</span><strong>深度结果不作为 OCR 增益证据</strong></div></div><div class="workload-result">边界：深度线结果不与 OCR 数字混报，只作方法论与工程储备。</div></article>
+      </div>
+      <div class="repro-strip" style="grid-template-columns:auto repeat(5,1fr)" data-anim><strong>深度线假设</strong><span>H1 传感器各有系统性误差 · 全量支持</span><span>H2 偏振有非冗余价值 · 混合证据</span><span>H3 未见传感器泛化缺口 · 未测</span><span>H4 双可靠性融合有效 · 未测</span><span>H5 silent-error 检测有价值 · 全量支持</span></div>
+    </div></main>
+    <footer class="thu-footer"><span>来源：09_execution_log.md；07_depth_enhancement_execution_plan.md；depth_research/evidence/*；日期均为 2026 年</span><span class="thu-footer-line"></span><span class="thu-page-no">02 / 12</span></footer>
+  </div>
+</section>
+
 <section class="slide" data-layout="THU-C02" data-animate="academic" data-slide-id="background-physics">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">一、背景与物理依据（仅此一页）</div><h1 class="thu-title">变化反射移动高光；单曝光四方向提供可选择观测</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>问题定义</strong><span>Problem & Physics</span></div></div></header>
+    <header class="thu-header"><div><div class="thu-section">二、背景与物理依据（仅此一页）</div><h1 class="thu-title">变化反射移动高光；单曝光四方向提供可选择观测</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>问题定义</strong><span>Problem & Physics</span></div></div></header>
     <main class="thu-content compact"><div class="intro-layout">
       <div class="intro-scenes" data-anim>
         <figure><img src="images/03-date-code.webp" alt="带日期码的光泽食品包装示意"><figcaption><strong>日期 / 批次追溯</strong><span>场景示意</span></figcaption></figure>
@@ -754,33 +779,33 @@
         <div class="hypothesis-band"><strong>HYPOTHESIS</strong><span>若最优方向随条件或区域切换，单曝光自适应表示应比训练集最佳固定方向扩大可靠识读区间。</span></div>
       </div>
     </div></main>
-    <footer class="thu-footer"><span>资料：KEYENCE / Cognex 工业 OCR，IDS 偏振实践，Goldstein 偏振模型；图片许可见 images/SOURCES.md</span><span class="thu-footer-line"></span><span class="thu-page-no">02 / 10</span></footer>
+    <footer class="thu-footer"><span>资料：KEYENCE / Cognex 工业 OCR，IDS 偏振实践，Goldstein 偏振模型；图片许可见 images/SOURCES.md</span><span class="thu-footer-line"></span><span class="thu-page-no">03 / 12</span></footer>
   </div>
 </section>
 
 <section class="slide" data-layout="THU-C03" data-animate="academic" data-slide-id="system-protocol">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">二、系统与验证协议</div><h1 class="thu-title">以固定协议比较“最佳固定方向—可部署选择—事后上界”</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验系统</strong><span>System & Protocol</span></div></div></header>
+    <header class="thu-header"><div><div class="thu-section">三、系统与验证协议</div><h1 class="thu-title">以固定协议比较“最佳固定方向—可部署选择—事后上界”</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验系统</strong><span>System & Protocol</span></div></div></header>
     <main class="thu-content compact"><div class="protocol-layout">
       <div class="compact-flow" data-anim>
-        <article class="compact-flow-card"><small>01 · ACQUISITION</small><strong>单曝光 RAW</strong><p>四方向 + 曝光 / 增益 / 标定 ID</p></article><span class="compact-flow-arrow">→</span>
+        <article class="compact-flow-card"><small>01 · ACQUISITION</small><strong>单曝光采集</strong><p>RAW 与 SDK 四方向图同存（拟定）；曝光 / 增益 / 标定 ID</p></article><span class="compact-flow-arrow">→</span>
         <article class="compact-flow-card"><small>02 · CALIBRATION</small><strong>仪器矩阵与重建</strong><p>暗场 / 平场 / 方向响应 / Stokes</p></article><span class="compact-flow-arrow">→</span>
         <article class="compact-flow-card"><small>03 · REPRESENTATION</small><strong>虚拟角与质量回退</strong><p>全局角优先，证据支持后再局部融合</p></article><span class="compact-flow-arrow">→</span>
         <article class="compact-flow-card"><small>04 · READING</small><strong>OCR / OCV / 决策</strong><p>raw string 与 accept / retry / reject 分开</p></article>
       </div>
       <div class="protocol-bottom" data-anim>
-        <article class="dense-panel accented" style="display:grid;grid-template-rows:auto 1fr"><div class="dense-panel-head"><div><h2>正式工业工位（待搭建）</h2><p>先静态 pilot，再扩展触发与传送带</p></div><span class="status-chip closed">HARDWARE PENDING</span></div><div class="rig-compact"><div class="rig-node">固定 LED<br>+ 可拆入射偏振</div><span class="rig-arrow">→</span><div class="rig-node target">喷码工件<br>yaw / pitch 可控</div><span class="rig-arrow">→</span><div class="rig-node camera">RAW DoFP<br>单次曝光</div></div></article>
+        <article class="dense-panel accented" style="display:grid;grid-template-rows:auto 1fr"><div class="dense-panel-head"><div><h2>实验工位（待搭建）</h2><p>先静态 pilot；传送带、触发与脉冲光列为后续</p></div><span class="status-chip closed">HARDWARE PENDING</span></div><div class="rig-compact"><div class="rig-node">普通 LED（默认）<br>入射偏振片：后备</div><span class="rig-arrow">→</span><div class="rig-node target">喷码工件<br>yaw / pitch 可控</div><span class="rig-arrow">→</span><div class="rig-node camera">彩色 DoFP<br>单次曝光</div></div></article>
         <article class="dense-panel"><div class="dense-panel-head"><div><h2>冻结协议</h2><p>避免样本泄漏与测试集选参</p></div></div><div class="protocol-list"><div class="protocol-line"><strong>UNIT</strong><span>print / object；相邻帧不跨 split</span></div><div class="protocol-line"><strong>SPLIT</strong><span>材质 / SKU / 日期 / 光照分组</span></div><div class="protocol-line"><strong>FIXED</strong><span>OCR、ROI、曝光、标定、预处理</span></div><div class="protocol-line"><strong>REPORT</strong><span>Exact、CER、worst-group、延迟</span></div><div class="protocol-line"><strong>RISK</strong><span>false-read 与 reject 单独定义阈值</span></div></div></article>
-        <article class="dense-panel"><div class="gate-criterion"><div class="dense-panel-head"><div><h2>核心可证伪量</h2><p>Oracle 仅是事后上界，不是部署方法</p></div></div><div class="gate-delta"><div><strong>Δadapt</strong><span>Acc(oracle) − Acc(train-best fixed)</span></div></div><div class="metric-cloud"><span>固定四方向</span><span>密集固定虚拟角</span><span>简单融合</span><span>置信选择器</span><span>交叉偏振</span><span>HDR / 多光源上界</span></div></div></article>
+        <article class="dense-panel"><div class="gate-criterion"><div class="dense-panel-head"><div><h2>核心可证伪量</h2><p>Oracle 仅是事后上界，不是部署方法</p></div></div><div class="gate-delta"><div><strong>Δadapt</strong><span>Acc(oracle) − Acc(train-best fixed)</span></div></div><div class="metric-cloud"><span>固定四方向</span><span>密集固定虚拟角</span><span>简单融合</span><span>置信选择器</span><span>固定交叉偏振（金属组启用入射偏振后补）</span><span>HDR / 多光源上界（后续）</span></div></div></article>
       </div>
     </div></main>
-    <footer class="thu-footer"><span>Gate 原则：前一级未通过，不训练最终自适应融合；正式主表必须计入全链路采集时间</span><span class="thu-footer-line"></span><span class="thu-page-no">03 / 10</span></footer>
+    <footer class="thu-footer"><span>Gate 原则：前一级未通过，不训练最终自适应融合；正式主表必须计入全链路采集时间</span><span class="thu-footer-line"></span><span class="thu-page-no">04 / 12</span></footer>
   </div>
 </section>
 
 <section class="slide soft" data-layout="THU-C04" data-animate="academic" data-slide-id="workload-audit">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">三、已完成工作量与可复现资产</div><h1 class="thu-title">三条证据链已落盘：OCR 代理、偏振重建、前期深度探索</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>完成工作</strong><span>Workload Audit</span></div></div></header>
+    <header class="thu-header"><div><div class="thu-section">四、已完成工作量与可复现资产</div><h1 class="thu-title">三条证据链已落盘：OCR 代理、偏振重建、前期深度探索</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>完成工作</strong><span>Workload Audit</span></div></div></header>
     <main class="thu-content compact"><div class="workload-layout">
       <div class="dense-kpis workload-kpis" data-anim><div class="dense-kpi"><strong>36,320</strong><span>SHDocs ROI-condition 记录</span></div><div class="dense-kpi"><strong>960</strong><span>PDD 已处理 PNG</span></div><div class="dense-kpi"><strong>7,207</strong><span>HAMMER 全量评测帧</span></div><div class="dense-kpi"><strong>21,621</strong><span>PPFT 传感器结果记录</span></div><div class="dense-kpi"><strong>29 / 29</strong><span>仓库自动测试通过</span></div></div>
       <div class="workload-cards" data-anim>
@@ -790,13 +815,13 @@
       </div>
       <div class="repro-strip" data-anim><strong>REPRODUCIBILITY</strong><span>归档长度 + SHA-256 + ZIP CRC</span><span>文档级 split 与排除清单冻结</span><span>OCR / CUDA / 模型哈希固定</span><span>结果 JSON、manifest 与源代码哈希落盘</span></div>
     </div></main>
-    <footer class="thu-footer"><span>来源：HAMMER (Jung et al., CVPR 2023)；PPFT (Ikemura et al., CVPR 2024)；冻结数字见 evidence/*</span><span class="thu-footer-line"></span><span class="thu-page-no">04 / 10</span></footer>
+    <footer class="thu-footer"><span>来源：HAMMER (Jung et al., CVPR 2023)；PPFT (Ikemura et al., CVPR 2024)；冻结数字见 evidence/*</span><span class="thu-footer-line"></span><span class="thu-page-no">05 / 12</span></footer>
   </div>
 </section>
 
 <section class="slide" data-layout="THU-C05" data-animate="academic" data-slide-id="e0-clean-ocr">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">四、实验 E0 · 清晰字符软件上限</div><h1 class="thu-title">900 张清晰合成图表明：任务格式比“换 OCR”更先决定上限</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E0 · Clean OCR</span></div></div></header>
+    <header class="thu-header"><div><div class="thu-section">五、实验 E0 · 清晰字符软件上限</div><h1 class="thu-title">900 张清晰合成图表明：任务格式比“换 OCR”更先决定上限</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E0 · Clean OCR</span></div></div></header>
     <main class="thu-content compact"><div class="e0-result-layout">
       <article class="dense-panel accented" style="display:grid;grid-template-rows:auto 1fr auto" data-anim><div class="dense-panel-head"><div><h2>不同字符串格式的 Exact-read</h2><p>100 个字符串 × 3 字体 × 3 字号；allowlist only，无字典 / OCV 纠错</p></div><div class="dense-meta">EASYOCR / TESSERACT<br>HIGHER IS BETTER</div></div><div class="format-bars">
         <div class="format-group"><span class="format-name">EXP 日期</span><div class="format-pair"><div class="format-row"><span>EasyOCR</span><span class="format-track"><i class="format-fill" style="width:95.11%"></i></span><span class="format-value">95.11%</span></div><div class="format-row"><span>Tesseract</span><span class="format-track"><i class="format-fill tess" style="width:99.56%"></i></span><span class="format-value">99.56%</span></div></div></div>
@@ -806,13 +831,13 @@
       </div><p class="result-source">冻结证据：industrial_reading/evidence/e0_clean_code_sanity.json</p></article>
       <aside class="e0-side" data-anim><div class="dense-panel-head"><div><h2>结果与任务决策</h2><p>固定格式接近可用；任意序列仍明显不足</p></div><span class="status-chip warn">P0 · CONDITIONAL</span></div><div class="ceiling-card"><div class="ceiling-metric"><strong>99.56%</strong><span>Tesseract · EXP exact 上限</span></div><div class="ceiling-metric"><strong>95.11%</strong><span>EasyOCR · EXP exact 上限</span></div></div><table class="e0-summary-table"><thead><tr><th>Backend</th><th>Overall exact</th><th>Macro CER ↓</th><th>Mean latency</th></tr></thead><tbody><tr><td>EasyOCR 1.7.2</td><td>60.78%</td><td>0.0420</td><td>3.43 ms</td></tr><tr><td>Tesseract 5.5.3</td><td>79.44%</td><td>0.0183</td><td>38.01 ms</td></tr></tbody></table><div class="e0-insight-grid"><div class="e0-insight"><strong>−59.11 pp</strong><span>EasyOCR：EXP → 随机 SN 格式惩罚</span></div><div class="e0-insight"><strong>−35.56 pp</strong><span>Tesseract：EXP → 随机 SN 格式惩罚</span></div></div><div class="e0-decision-panel"><strong>DECISION</strong><div class="e0-decision-list"><div><b>FREEZE</b><span>一种真实日期 / 批次码格式与喷码工艺</span></div><div><b>RETEST</b><span>镜头、像素、CIJ / 激光字形、曝光与运动</span></div><div><b>NO CLAIM</b><span>清晰软件 sanity 不等于工业 OCR 已解决</span></div></div></div></aside>
     </div></main>
-    <footer class="thu-footer"><span>证据边界：开放字体的确定性软件 sanity；不是物理相机、真实喷码或动态产线结果</span><span class="thu-footer-line"></span><span class="thu-page-no">05 / 10</span></footer>
+    <footer class="thu-footer"><span>证据边界：开放字体的确定性软件 sanity；不是物理相机、真实喷码或动态产线结果</span><span class="thu-footer-line"></span><span class="thu-page-no">06 / 12</span></footer>
   </div>
 </section>
 
 <section class="slide soft" data-layout="THU-C06" data-animate="academic" data-slide-id="e1-calibration-reconstruction">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">五、实验 E1 · 标定与 MPFA 重建</div><h1 class="thu-title">数值标定可恢复，但去马赛克仍显著控制 AoLP 误差</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E1 · Measurement</span></div></div></header>
+    <header class="thu-header"><div><div class="thu-section">六、实验 E1 · 标定与 MPFA 重建</div><h1 class="thu-title">数值标定可恢复，但去马赛克仍显著控制 AoLP 误差</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E1 · Measurement</span></div></div></header>
     <main class="thu-content compact"><div class="e1-result-layout">
       <div class="calib-row" data-anim>
         <article class="dense-panel accented"><div class="dense-panel-head"><div><h2>合成仿射仪器矩阵恢复</h2><p>已知方向 / gain / offset + σ=0.002 噪声</p></div><span class="status-chip success">SOFTWARE PASS</span></div><div class="calib-kpis"><div class="calib-kpi"><strong>5,000</strong><span>总测量样本</span></div><div class="calib-kpi"><strong>2,500</strong><span>标定样本</span></div><div class="calib-kpi"><strong>4.23e−4</strong><span>仪器矩阵最大绝对误差</span></div><div class="calib-kpi"><strong>2.78e−4</strong><span>offset 最大绝对误差</span></div></div></article>
@@ -827,13 +852,13 @@
         <article class="dense-panel" style="display:grid;grid-template-rows:auto auto 1fr"><div class="dense-panel-head"><div><h2>完整误差—延迟表</h2><p>双线性改善重建，但并非无误差预处理</p></div><span class="status-chip success">P1 · PROXY PASS</span></div><table class="pdd-table"><thead><tr><th>Noise</th><th>PSNR N / B</th><th>DoLP B ↓</th><th>AoLP N / B ↓</th><th>Latency N / B</th></tr></thead><tbody><tr><td>Low</td><td>32.80 / 38.32</td><td>0.0187</td><td>25.26° / 15.14°</td><td>5.78 / 52.53 ms</td></tr><tr><td>Mid</td><td>31.20 / 35.53</td><td>0.0424</td><td>29.77° / 21.24°</td><td>5.70 / 52.34 ms</td></tr><tr><td>High</td><td>29.02 / 32.37</td><td>0.0564</td><td>31.81° / 23.69°</td><td>5.91 / 52.71 ms</td></tr></tbody></table><div class="evidence-boundary" style="margin-top:.8vh;display:grid;align-content:center"><strong>边界：</strong>合成恢复不是未来相机物理标定；PDD 简单基线也不是官方方法复现。正式细字符 OCR 必须消融重建方法。</div></article>
       </div>
     </div></main>
-    <footer class="thu-footer"><span>来源：e1_synthetic_instrument_recovery.json；e1_pdd_simple_baselines.json；PDD (Okutomi Lab, 2025)</span><span class="thu-footer-line"></span><span class="thu-page-no">06 / 10</span></footer>
+    <footer class="thu-footer"><span>来源：e1_synthetic_instrument_recovery.json；e1_pdd_simple_baselines.json；PDD (Okutomi Lab, 2025)</span><span class="thu-footer-line"></span><span class="thu-page-no">07 / 12</span></footer>
   </div>
 </section>
 
 <section class="slide" data-layout="THU-C07" data-animate="academic" data-slide-id="e2-cross-backend">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">六、实验 E2 · 四方向必要性</div><h1 class="thu-title">Oracle gap 在两个 OCR 后端上重复，且文档聚类区间不跨 0</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E2 · Cross Backend</span></div></div></header>
+    <header class="thu-header"><div><div class="thu-section">七、实验 E2 · 四方向必要性</div><h1 class="thu-title">Oracle gap 在两个 OCR 后端上重复，且文档聚类区间不跨 0</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E2 · Cross Backend</span></div></div></header>
     <main class="thu-content compact"><div class="e2-cross-layout">
       <div class="dense-kpis e2-cross-kpis" data-anim><div class="dense-kpi"><strong>1,034</strong><span>冻结 test ROI</span></div><div class="dense-kpi"><strong>7 docs</strong><span>文档聚类 bootstrap</span></div><div class="dense-kpi"><strong>15</strong><span>高光条件 a–o</span></div><div class="dense-kpi"><strong>4×</strong><span>仅由 validation 选定</span></div></div>
       <div class="e2-cross-body" data-anim>
@@ -844,13 +869,13 @@
         <article class="dense-panel" style="display:grid;grid-template-rows:auto 1fr auto"><div class="dense-panel-head"><div><h2>跨后端完整判断量</h2><p>SHDocs 平面文档 + GT ROI；Exact / CER 只按原始 OCR 计算</p></div><span class="status-chip warn">P2 · MECHANISM ONLY</span></div><table class="e2-detail-table"><thead><tr><th>Metric</th><th>EasyOCR</th><th>Tesseract</th></tr></thead><tbody><tr><td>Fixed exact</td><td>11.32%</td><td>26.31%</td></tr><tr class="emphasis"><td>Oracle exact</td><td>13.83%</td><td>32.88%</td></tr><tr><td>Oracle gap</td><td>+2.51 pp</td><td>+6.58 pp</td></tr><tr><td>Oracle-only successes</td><td>26</td><td>68</td></tr><tr><td>Worst condition h · fixed</td><td>5.80%</td><td>13.04%</td></tr><tr><td>Exactly-one-dir success</td><td>3.48%</td><td>11.32%</td></tr><tr><td>All-four-fail <strong>≠ reject</strong></td><td>86.17%</td><td>67.12%</td></tr></tbody></table><p class="result-source">冻结证据：e0_e2_shdocs_easyocr_scale4.json / e0_e2_shdocs_tesseract_scale4.json</p></article>
       </div>
     </div></main>
-    <footer class="thu-footer"><span>本轮未冻结接受阈值，故不伪报 false-read / reject；all-four-fail 只是四个原始方向均未 exact-read</span><span class="thu-footer-line"></span><span class="thu-page-no">07 / 10</span></footer>
+    <footer class="thu-footer"><span>本轮未冻结接受阈值，故不伪报 false-read / reject；all-four-fail 只是四个原始方向均未 exact-read</span><span class="thu-footer-line"></span><span class="thu-page-no">08 / 12</span></footer>
   </div>
 </section>
 
 <section class="slide soft" data-layout="THU-C08" data-animate="academic" data-slide-id="e2-mechanism-baselines">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">七、E2 机制证据与简单基线</div><h1 class="thu-title">四个方向都有独占成功样本；简单融合与置信选择尚未兑现上界</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E2 · Mechanism</span></div></div></header>
+    <header class="thu-header"><div><div class="thu-section">八、E2 互补迹象与简单基线</div><h1 class="thu-title">四个方向都有独占成功样本；简单融合与置信选择尚未兑现上界</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验结果</strong><span>E2 · Mechanism</span></div></div></header>
     <main class="thu-content compact"><div class="mechanism-layout">
       <figure class="mechanism-figure" data-anim><img src="images/17-shdocs-four-direction-examples.png" alt="SHDocs 四个偏振方向各自存在唯一识读成功样本的 EasyOCR 示例"><figcaption><strong>绿色框：</strong>该 ROI 只有当前方向 exact-read。图为冻结 EasyOCR test 记录；SHDocs 仅是平面文档机制代理，不是工业喷码。来源：Leong et al., SHDocs, 2024。</figcaption></figure>
       <div class="baseline-side" data-anim>
@@ -859,24 +884,50 @@
         <div class="selector-strip"><div><strong>Selector兑现不足：</strong>Easy −0.29 pp；Tesseract +1.26 pp，且需要四次顺序 OCR。</div><div><strong>风险口径：</strong>全方向失败率高，但没有接受阈值时不能把它命名为系统拒绝率。</div></div>
       </div>
     </div></main>
-    <footer class="thu-footer"><span>结论：互补机制得到支持；密集固定虚拟角、任务专用选择器与真实工业 E0 尚未完成</span><span class="thu-footer-line"></span><span class="thu-page-no">08 / 10</span></footer>
+    <footer class="thu-footer"><span>结论：出现互补迹象（oracle 为事后上界，尚无噪声零对照）；密集固定虚拟角、任务专用选择器与真实工业 E0 尚未完成</span><span class="thu-footer-line"></span><span class="thu-page-no">09 / 12</span></footer>
   </div>
 </section>
 
 <section class="slide" data-layout="THU-C09" data-animate="academic" data-slide-id="gate-next">
   <div class="thu-page">
-    <header class="thu-header"><div><div class="thu-section">八、Gate 判定与下一轮实验</div><h1 class="thu-title">保留自适应假设，但在任务、强固定角与硬件 E0 前停止加复杂度</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>研究决策</strong><span>Gate & Next</span></div></div></header>
+    <header class="thu-header"><div><div class="thu-section">九、Gate 判定与下一轮实验</div><h1 class="thu-title">保留自适应假设，但在任务、强固定角与硬件 E0 前停止加复杂度</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>研究决策</strong><span>Gate & Next</span></div></div></header>
     <main class="thu-content compact"><div class="decision-layout">
-      <div class="gate-matrix" data-anim><div class="gate-matrix-head"><strong>Offline Gate P</strong><span>OPEN</span></div><article class="gate-decision-row"><span class="id">P0</span><div><strong>OCR 软件上限 · 条件性</strong><p>EXP 日期码 95.11% / 99.56%；任意 SN 仅 36% / 64%。</p></div><span class="status-chip warn">CONDITIONAL</span></article><article class="gate-decision-row"><span class="id">P1</span><div><strong>测量 / 重建链 · 代理通过</strong><p>Stokes RMSE 0.01147→0.00260；PDD 120 条件链可复现。</p></div><span class="status-chip success">PROXY PASS</span></article><article class="gate-decision-row"><span class="id">P2</span><div><strong>固定方向必要性 · 机制支持</strong><p>双后端 oracle gap 成立；可部署 selector 与绝对 exact 未通过。</p></div><span class="status-chip warn">DEPLOY FAIL</span></article><div class="formal-closed"><span>Formal Industrial Gate 1 · 无自采喷码 / 光学强基线 / 实物标定</span><span>CLOSED</span></div></div>
-      <div class="next-experiments" data-anim><div class="dense-panel-head"><div><h2>下一轮只做五件事</h2><p>每一步都有冻结产物；失败即可收缩或停止方法路线</p></div><span class="status-chip">NO FINAL FUSION YET</span></div><div class="next-path"><article class="next-step"><span class="no">01</span><div><strong>冻结真实目标格式</strong><p>日期 / 批次码、喷码工艺、字符集、最小字符像素。</p></div><span class="deliverable">E0 SPEC</span></article><article class="next-step"><span class="no">02</span><div><strong>补密集固定虚拟角强基线</strong><p>同一验证集选角，避免只与四个离散方向比较。</p></div><span class="deliverable">ANGLE SWEEP</span></article><article class="next-step"><span class="no">03</span><div><strong>解释 oracle-only 样本</strong><p>饱和、对比度、DoLP、笔画边缘与 OCR 置信特征。</p></div><span class="deliverable">ERROR TAXONOMY</span></article><article class="next-step"><span class="no">04</span><div><strong>硬件标定 + 600–1500 次 pilot</strong><p>两类材质、多姿态、非偏振 / 入射偏振照明。</p></div><span class="deliverable">FORMAL E0–E2</span></article><article class="next-step"><span class="no">05</span><div><strong>通过 Gate 1 后再训练</strong><p>先全局虚拟角；证据支持后再考虑局部 soft weights。</p></div><span class="deliverable">LEARNED METHOD</span></article></div><div class="reporting-strip"><span>Exact-read</span><span>CER</span><span>Worst-group</span><span>False-read</span><span>Reject / Coverage</span><span>P50 / P95 latency</span></div></div>
+      <div class="gate-matrix" data-anim><div class="gate-matrix-head"><strong>Offline Gate P</strong><span>OPEN</span></div><article class="gate-decision-row"><span class="id">P0</span><div><strong>OCR 软件上限 · 条件性</strong><p>EXP 日期码 95.11% / 99.56%；任意 SN 仅 36% / 64%。</p></div><span class="status-chip warn">CONDITIONAL</span></article><article class="gate-decision-row"><span class="id">P1</span><div><strong>测量 / 重建链 · 代理通过</strong><p>Stokes RMSE 0.01147→0.00260；PDD 120 条件链可复现。</p></div><span class="status-chip success">PROXY PASS</span></article><article class="gate-decision-row"><span class="id">P2</span><div><strong>固定方向必要性 · 互补迹象</strong><p>双后端 oracle gap 为正；可部署 selector 与绝对 exact 未通过。</p></div><span class="status-chip warn">DEPLOY FAIL</span></article><div class="formal-closed"><span>Formal Industrial Gate 1 · 无自采喷码 / 光学强基线 / 实物标定</span><span>CLOSED</span></div></div>
+      <div class="next-experiments" data-anim><div class="dense-panel-head"><div><h2>下一轮只做五件事</h2><p>每一步都有冻结产物；失败即可收缩或停止方法路线</p></div><span class="status-chip">NO FINAL FUSION YET</span></div><div class="next-path"><article class="next-step"><span class="no">01</span><div><strong>冻结真实目标格式</strong><p>日期 / 批次码、喷码工艺、字符集、最小字符像素。</p></div><span class="deliverable">E0 SPEC</span></article><article class="next-step"><span class="no">02</span><div><strong>补密集固定虚拟角强基线</strong><p>同一验证集选角，避免只与四个离散方向比较。</p></div><span class="deliverable">ANGLE SWEEP</span></article><article class="next-step"><span class="no">03</span><div><strong>解释 oracle-only 样本</strong><p>饱和、对比度、DoLP、笔画边缘与 OCR 置信特征。</p></div><span class="deliverable">ERROR TAXONOMY</span></article><article class="next-step"><span class="no">04</span><div><strong>设备核对 + 标定 + 600–1500 次 pilot</strong><p>两类材质、多姿态；普通照明为主，金属组视结果启用入射偏振。</p></div><span class="deliverable">FORMAL E0–E2</span></article><article class="next-step"><span class="no">05</span><div><strong>通过 Gate 1 后再训练</strong><p>先全局虚拟角；证据支持后再考虑局部 soft weights。</p></div><span class="deliverable">LEARNED METHOD</span></article></div><div class="reporting-strip"><span>Exact-read</span><span>CER</span><span>Worst-group</span><span>False-read</span><span>Reject / Coverage</span><span>P50 / P95 latency</span></div></div>
     </div></main>
-    <footer class="thu-footer"><span>权威状态：industrial_reading/evidence/offline_gate_p_status.json · 2026-11-03</span><span class="thu-footer-line"></span><span class="thu-page-no">09 / 10</span></footer>
+    <footer class="thu-footer"><span>权威状态：industrial_reading/evidence/offline_gate_p_status.json · 2026-11-03</span><span class="thu-footer-line"></span><span class="thu-page-no">10 / 12</span></footer>
+  </div>
+</section>
+
+<section class="slide soft" data-layout="THU-C12" data-animate="academic" data-slide-id="device-plan">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">十、设备条件与一年计划</div><h1 class="thu-title">一台彩色偏振相机、约 1000 元预算：先核对设备，再按 Gate 推进</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>设备与计划</strong><span>Device & Plan</span></div></div></header>
+    <main class="thu-content compact"><div class="decision-layout">
+      <div class="gate-matrix rows6" data-anim><div class="gate-matrix-head"><strong>设备与条件</strong><span>NOT VERIFIED</span></div>
+        <article class="gate-decision-row"><span class="id">CAM</span><div><strong>彩色偏振相机 PHX050S1-QC（同 HAMMER 型号）</strong><p>本人口述，仓库仅记录 HAMMER 使用该型号；设备读数未定。</p></div><span class="status-chip warn">口头</span></article>
+        <article class="gate-decision-row"><span class="id">FMT</span><div><strong>像素格式 · 位深 · RAW 与四方向图能否同出</strong><p>此刻无设备、未安装采集软件。</p></div><span class="status-chip closed">未定</span></article>
+        <article class="gate-decision-row"><span class="id">LNS</span><div><strong>镜头：推断有（前人实验使用过）</strong><p>前人论文装置图可见镜头；焦距、接口与是否可用未核实。</p></div><span class="status-chip warn">推断</span></article>
+        <article class="gate-decision-row"><span class="id">LGT</span><div><strong>光源：普通 LED 为默认，入射偏振片为后备</strong><p>金属组四方向全失败比例居高不下时启用；阈值看数据前预设。</p></div><span class="status-chip">拟定</span></article>
+        <article class="gate-decision-row"><span class="id">RIG</span><div><strong>支架 · 姿态台 · 样片：未确认</strong><p>预算主要花在这里；上限约 1000 元，口头，未核价。</p></div><span class="status-chip closed">未定</span></article>
+        <article class="gate-decision-row"><span class="id">DAT</span><div><strong>RAW 数据链（含彩色偏振去马赛克）</strong><p>公开代理数据均非传感器 RAW（SHDocs 为 SDK 导出的 8-bit 图，PDD 取绿色通道，当前代码按灰度读入）；RAW 链为新增工作。</p></div><span class="status-chip">拟定</span></article>
+        <div class="formal-closed"><span>以上均不构成已验证的实验条件；设备到位后逐项核对</span><span>PENDING</span></div>
+      </div>
+      <div class="next-experiments" data-anim><div class="dense-panel-head"><div><h2>一年计划（拟定）</h2><p>月份自设备读数完成日起算；节点与阈值为本人拟定，非既有规定</p></div><span class="status-chip warn">DRAFT</span></div><div class="next-path months" style="grid-template-rows:repeat(6,1fr)">
+        <article class="next-step"><span class="no">M0–1</span><div><strong>设备核对 · 冻结目标格式</strong><p>读取型号与像素格式；确定一种日期 / 批次码与喷码工艺。</p></div><span class="deliverable">设备清单</span></article>
+        <article class="next-step"><span class="no">M1–3</span><div><strong>工位 + RAW 链 v1 + 标定 / E1</strong><p>RAW 链 6 周验收（第 3 周中检），先定与 SDK 图一致性判据；未达标则 RAW 降为对照。</p></div><span class="deliverable">标定链</span></article>
+        <article class="next-step"><span class="no">M3–5</span><div><strong>pilot 600–1500 次 · 正式 E0–E2</strong><p>RAW 与 SDK 图同存；补噪声零对照、密集固定虚拟角。</p></div><span class="deliverable">GATE 1</span></article>
+        <article class="next-step"><span class="no">M5–9</span><div><strong>Gate 1 通过：全局自适应 E5、E3 / E4</strong><p>未通过：收窄为固定偏振配置的优化与评测。</p></div><span class="deliverable">GATE 2</span></article>
+        <article class="next-step"><span class="no">M9–11</span><div><strong>跨条件 E8 · 重建消融 E9 · 成本 E12</strong><p>E9：自研 RAW 链与 SDK 的重建对比。</p></div><span class="deliverable">数据齐备</span></article>
+        <article class="next-step"><span class="no">M11–12</span><div><strong>整理与答辩准备</strong><p>动态产线、外部场景与局部自适应列为后续。</p></div><span class="deliverable">答辩</span></article>
+      </div><div class="reporting-strip"><span>Exact-read</span><span>CER</span><span>Worst-group</span><span>False-read</span><span>Reject / Coverage</span><span>P50 / P95 latency</span></div></div>
+    </div></main>
+    <footer class="thu-footer"><span>来源：04_hardware_and_data_collection.md；13_industrial_reading_experiment_plan.md；前人论文装置图；「口头 / 推断 / 拟定 / 未定」为本人标注</span><span class="thu-footer-line"></span><span class="thu-page-no">11 / 12</span></footer>
   </div>
 </section>
 
 <section class="slide accent" data-layout="THU-C10" data-animate="academic" data-slide-id="conclusion">
   <div class="compact-closing">
-    <div class="compact-closing-main"><div class="compact-closing-kicker" data-anim>RESULTS FIRST · CLAIMS WITH BOUNDARIES</div><h1 class="compact-closing-title" data-anim>已完成的是证据链，<br>不是最终工业结论</h1><div class="conclusion-list" data-anim><article class="conclusion-row"><span class="no">01</span><div><strong>软件与测量链已跑通</strong><p>清晰 OCR、仪器恢复、MPFA 重建、数据审计和双后端评测均有冻结 artifact。</p></div></article><article class="conclusion-row"><span class="no">02</span><div><strong>四方向互补机制跨后端成立</strong><p>Oracle 相对最佳固定方向为 +2.51 / +6.58 pp；四个方向均有独占成功样本。</p></div></article><article class="conclusion-row"><span class="no">03</span><div><strong>部署方法与工业有效性仍待验证</strong><p>先冻结日期 / 批次码、补密集角强基线，再进入硬件标定与正式 Gate 1。</p></div></article></div><div class="closing-number-strip" data-anim><div><strong>99.56%</strong><span>受限 EXP 清晰上限</span></div><div><strong>77.3%</strong><span>合成 Stokes RMSE 降幅</span></div><div><strong>+2.51 / +6.58</strong><span>双后端 oracle gap · pp</span></div><div><strong>7,207</strong><span>保留的 HAMMER 前期帧</span></div></div></div>
+    <div class="compact-closing-main"><div class="compact-closing-kicker" data-anim>RESULTS FIRST · CLAIMS WITH BOUNDARIES</div><h1 class="compact-closing-title" data-anim>已完成的是证据链，<br>不是最终工业结论</h1><div class="conclusion-list" data-anim><article class="conclusion-row"><span class="no">01</span><div><strong>软件与测量链已跑通</strong><p>清晰 OCR、仪器恢复、MPFA 重建、数据审计和双后端评测均有冻结 artifact。</p></div></article><article class="conclusion-row"><span class="no">02</span><div><strong>四方向互补迹象跨后端出现</strong><p>Oracle 相对最佳固定方向为 +2.51 / +6.58 pp（事后四选一的上界；尚无噪声匹配零对照）；四个方向均有独占成功样本。</p></div></article><article class="conclusion-row"><span class="no">03</span><div><strong>部署方法与工业有效性仍待验证</strong><p>先冻结日期 / 批次码、补密集角强基线，再进入硬件标定与正式 Gate 1。</p></div></article></div><div class="closing-number-strip" data-anim><div><strong>99.56%</strong><span>合成清晰日期码 · OCR 软件上限</span></div><div><strong>77.3%</strong><span>合成 Stokes RMSE 降幅</span></div><div><strong>+2.51 / +6.58</strong><span>双后端 oracle gap · pp</span></div><div><strong>7,207</strong><span>保留的 HAMMER 前期帧</span></div></div></div>
     <aside class="compact-closing-side"><div class="compact-brand" data-anim><strong>PolyCamera</strong><span>INDUSTRIAL POLARIMETRIC READING</span></div><div class="closing-status" data-anim><div class="closing-status-row"><span>研究假设</span><strong>自适应偏振表示 · 保留</strong></div><div class="closing-status-row"><span>Offline Gate P</span><strong class="accent">OPEN · 继续做强基线</strong></div><div class="closing-status-row"><span>Formal Industrial Gate 1</span><strong class="danger">CLOSED · 等待硬件与自采</strong></div><div class="closing-status-row"><span>下一项可交付物</span><strong>固定格式任务 + 密集虚拟角扫描</strong></div></div><div class="compact-closing-foot" data-anim>恳请各位老师重点评价：目标喷码工艺、正式工位设计与 Gate 阈值。<br><br><strong>Questions & Discussion</strong></div></aside>
   </div>
 </section>
@@ -885,16 +936,18 @@
 <div id="nav"></div>
 <script>
 const SPEAKER_NOTES = [
-  {id:'cover',title:'课题与当前结论',section:'开场',minutes:0.5,purpose:'先交代主任务、已完成实验和证据边界',talk:['主任务是变化反射下的固定格式工业喷码识读，偏振相机只是观测手段','这版汇报把已完成结果放在主体：E0、E1、E2 和完整审计','当前 Offline Gate P 为 open，正式工业 Gate 1 仍 closed，不能把代理实验讲成工业结论'],transition:'理论和背景只用下一页交代，然后直接进入协议与结果'},
+  {id:'cover',title:'课题与当前结论',section:'开场',minutes:0.5,purpose:'先交代主任务、已完成实验和证据边界',talk:['主任务是变化反射下的固定格式工业喷码识读，偏振相机只是观测手段','这版汇报先交代方向调整，再报告已完成结果：E0、E1、E2 和完整审计','当前 Offline Gate P 为 open，正式工业 Gate 1 仍 closed，不能把代理实验讲成工业结论'],transition:'先用一页说明方向为什么调整，以及深度线做到了哪里'},
+  {id:'direction-change',title:'方向调整与前期工作',section:'开场',minutes:1.5,purpose:'说明深度线做了什么、为什么转向、哪些资产被继承；不让老师把转向听成放弃',talk:['（草稿，口径请本人确认）09-21 到 10-23 是从透明物体三维感知收窄到偏振辅助深度增强；11-02 才是真正换任务','深度线完成了 HAMMER 官方 test 946 帧上的作者权重推理复现，全传感器 RMSE 28.63 mm，与论文一致；这是结果级复现，没有复现训练','全量 7,207 帧审计显示偏振收益依赖场景：DoLP 检测 50 mm 有效但错误深度的平均 AUROC 只有 0.641，scene12 平均 DoLP 约 0.071 是反例','H3 留一传感器泛化与 H4 双可靠性融合没有测，所以这条线是转为技术储备，不是被否证','转向原因是约束：只有一台偏振相机，设备预算上限约 1000 元，深度线的自采验证需要受控偏振照明和深度参考，预算内搭不起来；专业要求也含实物设计','新任务只靠这一台相机、普通照明就能做出实物环节，字符串真值容易获得；深度线的结论正好接上：偏振是否有用依赖场景，所以要检验最优方向是否随条件切换'],transition:'下一页用一页交代新任务的背景和物理依据',cue:'如被问「为什么不继续做深度」：答预算与设备约束，并说明 H3/H4 未测，不要说成被否证',fallback:'若被追问「偏振光源为什么难设计」：本页写的是预算约束下难以搭建受控照明和深度参考，这是本人判断，书面材料里没有这条技术论证'},
   {id:'background-physics',title:'背景与物理依据',section:'问题与协议',minutes:1.2,purpose:'在一页内完成需求、失效机理、单曝光物理与研究假设',talk:['材质、覆膜和姿态改变高光位置，使固定方向在不同工况下交替失效','DoFP 在一次曝光中空间复用四个方向，标定后可合成虚拟检偏角','研究假设不是“偏振能去反光”，而是最优方向会切换，因此自适应表示可能扩大可靠区间','全方向饱和时没有算法能恢复被截断笔画，必须调光、复拍或拒绝'],transition:'下面把这个假设变成可证伪的系统与比较协议'},
-  {id:'system-protocol',title:'系统与验证协议',section:'问题与协议',minutes:1.2,purpose:'说明完整链路、正式工位和核心比较量',talk:['链路从 RAW、仪器标定、虚拟表示到 OCR 与系统决策；OCR 原始结果和 OCV 纠错分开','正式工位尚待搭建，当前页面是设备与协议设计，不是实物完成照片','train-best fixed 只能在训练集选角，per-image oracle 是不可部署上界','后续还必须补密集固定虚拟角、固定交叉偏振、HDR 和多光源强基线'],transition:'在报告单项结果前，先把已经完成的数据和工程工作量集中展示'},
+  {id:'system-protocol',title:'系统与验证协议',section:'问题与协议',minutes:1.2,purpose:'说明完整链路、正式工位和核心比较量',talk:['链路从 RAW、仪器标定、虚拟表示到 OCR 与系统决策；OCR 原始结果和 OCV 纠错分开','实验工位尚待搭建，当前页面是设备与协议设计，不是实物完成照片；默认普通 LED，入射偏振片只作后备','train-best fixed 只能在训练集选角，per-image oracle 是不可部署上界','后续还必须补密集固定虚拟角、固定交叉偏振、HDR 和多光源强基线'],transition:'在报告单项结果前，先把已经完成的数据和工程工作量集中展示'},
   {id:'workload-audit',title:'已完成工作量与可复现资产',section:'完成工作与结果',minutes:1.3,purpose:'用数量、数据体量和产物证明已完成工作量',talk:['SHDocs 已完成 50 文档、800 captures、四万量级 ROI-condition 的双后端评测与归档核验','PDD 处理 120 场景条件并生成 360 条简单基线；合成仪器恢复另有 5000 测量样本','HAMMER/PPFT 完成 7207 帧、21621 记录和 66.57 GB 选择数据的全量审计与推理','HAMMER 只证明前期工程能力和可靠性方法论，不能当作工业 OCR 增益证据'],transition:'第一项结果先回答：在没有反光时，OCR 软件本身能达到什么上限'},
   {id:'e0-clean-ocr',title:'E0 · 清晰字符软件上限',section:'完成工作与结果',minutes:1.2,purpose:'报告 900 张清晰合成图结果并据此收窄任务',talk:['固定 EXP 日期格式达到 95.11% 和 99.56% exact，说明受限格式的软件链有可用上限','随机字母数字序列只有 36% 和 64%，所以问题不能泛化成任意序列号识别','总体 exact、CER 和延迟同时展示，两个后端的性能与速度取舍不同','这不是物理相机或真实喷码上限；决策是先冻结一种真实日期或批次码工艺'],transition:'第二项结果验证测量链：标定能否恢复，以及去马赛克会带来多大误差'},
   {id:'e1-calibration-reconstruction',title:'E1 · 标定与 MPFA 重建',section:'完成工作与结果',minutes:1.4,purpose:'同时报告合成仪器恢复和 PDD 120 条件重建结果',talk:['合成仿射仪器恢复把 Stokes RMSE 从 0.01147 降至 0.00260，数值实现链通过','PDD 中 bilinear 在三个噪声档都优于 nearest，但低噪声 AoLP MAE 仍为 15.14 度','重建误差和延迟必须一起看：bilinear 约 52 毫秒，nearest 约 6 毫秒','这两个结果都只是软件代理；未来相机的暗场、平场、零点和温漂仍需物理标定'],transition:'测量链可运行后，关键问题是四个方向是否真的提供可重复互补信息'},
   {id:'e2-cross-backend',title:'E2 · 跨 OCR 后端统计',section:'完成工作与结果',minutes:1.5,purpose:'报告固定、选择器、oracle、CER、worst-group 和延迟的跨后端结果',talk:['EasyOCR 的 fixed/oracle 为 11.32%/13.83%，gap 加 2.51 个百分点','Tesseract 为 26.31%/32.88%，gap 加 6.58 个百分点；两个文档聚类区间都不跨零','简单 confidence selector 对 EasyOCR 反而下降 0.29 个点，对 Tesseract 只提升 1.26 个点','all-four-fail 是四方向均未 exact-read，不是系统拒绝；本轮没有冻结接受阈值，因此不报告伪造的 false-read/reject'],transition:'下一页用具体样本和全部简单基线解释这个 gap 来自哪里、为什么还不能部署'},
-  {id:'e2-mechanism-baselines',title:'E2 · 机制与简单基线',section:'完成工作与结果',minutes:1.5,purpose:'展示四方向独占成功样本并排除简单融合解释',talk:['图中四个方向各有只有自己读对的样本，两个后端的 unique-winner 计数也覆盖所有方向','S0、SDK deglared、pixel min 和 median 都没有消除 oracle gap','置信选择器需要四次 OCR，顺序延迟为 18.87 或 162.15 毫秒，却只兑现很少 oracle 空间','因此结论是机制支持、部署未通过；还缺密集固定虚拟角和任务专用选择器'],transition:'把所有结果映射回 Gate，并明确下一轮只允许做哪些实验'},
-  {id:'gate-next',title:'Gate 判定与下一轮实验',section:'决策与收束',minutes:1.3,purpose:'给出 P0/P1/P2 状态、正式边界与五个冻结交付物',talk:['P0 条件性：固定日期格式可用，任意序列和真实喷码未过','P1 仅代理通过：软件测量链可复现，不代表相机物理标定完成','P2 机制支持但部署失败，所以 Offline Gate P 保持 open；正式工业 Gate 1 仍 closed','下一轮先冻结任务、补密集角、做 oracle-only 误差分类，再进行硬件标定和 600 到 1500 次 pilot','只有正式 Gate 1 通过后才训练最终自适应融合'],transition:'最后用三句话区分已经完成的结论与仍待验证的主张'},
-  {id:'conclusion',title:'结论与讨论',section:'决策与收束',minutes:0.6,purpose:'用结果、边界和下一交付物收束汇报',talk:['已经完成的是可复现的证据链：E0、E1、E2、审计、双后端与前期资产','已经支持的是四方向互补研究假设；尚未支持的是可部署选择器和工业有效性','下一项可交付物是固定格式任务定义和密集虚拟角扫描','请老师重点评价目标喷码工艺、正式工位和 Gate 阈值是否合理'],transition:'进入提问与讨论',cue:'停顿，指向右侧 OPEN / CLOSED 状态后邀请老师批评指正'}
+  {id:'e2-mechanism-baselines',title:'E2 · 机制与简单基线',section:'完成工作与结果',minutes:1.5,purpose:'展示四方向独占成功样本并排除简单融合解释',talk:['图中四个方向各有只有自己读对的样本，两个后端的 unique-winner 计数也覆盖所有方向','S0、SDK deglared、pixel min 和 median 都没有消除 oracle gap','置信选择器需要四次 OCR，顺序延迟为 18.87 或 162.15 毫秒，却只兑现很少 oracle 空间','因此结论是出现互补迹象、部署未通过；oracle 是事后四选一的上界，还没有噪声匹配的零对照，也缺密集固定虚拟角和任务专用选择器'],transition:'把所有结果映射回 Gate，并明确下一轮只允许做哪些实验'},
+  {id:'gate-next',title:'Gate 判定与下一轮实验',section:'决策与收束',minutes:1.3,purpose:'给出 P0/P1/P2 状态、正式边界与五个冻结交付物',talk:['P0 条件性：固定日期格式可用，任意序列和真实喷码未过','P1 仅代理通过：软件测量链可复现，不代表相机物理标定完成','P2 出现互补迹象但部署失败，所以 Offline Gate P 保持 open；正式工业 Gate 1 仍 closed','下一轮先冻结任务、补密集角、做 oracle-only 误差分类，再进行设备核对、标定和 600 到 1500 次 pilot','只有正式 Gate 1 通过后才训练最终自适应融合'],transition:'最后用三句话区分已经完成的结论与仍待验证的主张'},
+  {id:'device-plan',title:'设备条件与一年计划',section:'决策与收束',minutes:1.5,purpose:'如实交代设备现状：哪些已知、哪些是口述、哪些没确定；给出可检验的一年节点',talk:['（草稿，口径请本人确认）手上有一台彩色偏振相机，型号按本人口述为 PHX050S1-QC，和 HAMMER 使用的型号一致；设备读数还没做，所以像素格式、位深、RAW 与四方向图能否同出都是未定','镜头是推断有：前人实验用过，论文装置图里能看到镜头，但焦距、接口、能不能用都没核实','光源默认用普通 LED；只有金属组在普通照明下四方向全失败的比例居高不下，才加入射偏振片，阈值在看数据前先定','这意味着默认情况下没有固定交叉偏振这条工业强基线，汇报里写明是后补，不留空','公开代理数据都不是传感器 RAW：SHDocs 是 SDK 导出的 8-bit 图，PDD 取绿色通道，现有代码按灰度读入；RAW 数据链和彩色偏振去马赛克是新增工作，6 周验收、第 3 周中检，未达标就让 RAW 降为对照，E0 和 E2 先用 SDK 图','一年计划是拟定的：设备核对、RAW 与标定、pilot 到 Gate 1、按 Gate 分支、跨条件与成本、整理答辩；Gate 1 未通过就收窄为固定偏振配置的优化与评测','预算约 1000 元，主要花在支架、姿态台、样片；镜头是否要买是最大不确定项，未核价'],transition:'最后用三句话区分已经完成的结论与仍待验证的主张',cue:'逐行指向右侧标签：口头、推断、拟定、未定，明确哪些是已验证的',fallback:'如被问「彩色相机为什么不是更难」：确实更难，4×4 周期与每方向每色采样更稀；所以设了止损点，且 Gate 1 不等 RAW'},
+  {id:'conclusion',title:'结论与讨论',section:'决策与收束',minutes:0.6,purpose:'用结果、边界和下一交付物收束汇报',talk:['已经完成的是可复现的证据链：E0、E1、E2、审计、双后端与前期资产','已经看到的是四方向互补迹象；尚未支持的是可部署选择器和工业有效性','下一项可交付物是固定格式任务定义和密集虚拟角扫描','请老师重点评价目标喷码工艺、正式工位和 Gate 阈值是否合理'],transition:'进入提问与讨论',cue:'停顿，指向右侧 OPEN / CLOSED 状态后邀请老师批评指正'}
 ];
 window.__SPEAKER_NOTES__=SPEAKER_NOTES;
 </script>
