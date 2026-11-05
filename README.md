@@ -191,8 +191,8 @@ PPFT 结果级复现和弱偏振反例，并明确它只支持“偏振不能被
 - `industrial_reading_results_template.tsv`：实验、泛化、可靠性、延迟和节拍登记模板。
 - `industrial_reading/`：Offline E0–E2/Gate P 的代码、协议、测试与小型证据；大数据和
   运行结果保存在仓库外 `/home/chocbrownie0524/poldepth/`。
-- `demo/tsinghua-ppt/index.html`：10 页结果导向的清华学术风 HTML PPT；理论与背景合并为
-  1 页，第 4–8 页集中报告工作量及 E0/E1/E2 结果，并保留备注、计时和观众屏。
+- `demo/tsinghua-ppt/index.html`：12 页结果导向的清华学术风 HTML PPT；理论与背景合并为
+  1 页，第 5–9 页集中报告工作量及 E0/E1/E2 结果，并保留备注、计时和观众屏。
 - `demo/tsinghua-ppt/images/SOURCES.md`：网络实拍图作者、许可和本项目原创示意图说明。
 - `demo/tsinghua-ppt/shots/`：1600×900 逐页预览与总览图。
 - `demo/前人巨作/`：用户提供的参考答辩材料，未修改。
