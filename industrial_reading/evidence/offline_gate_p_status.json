@@ -1,6 +1,7 @@
 {
   "protocol": "offline-gate-p-v1",
-  "date": "2026-11-03",
+  "date": "2026-11-09",
+  "first_round_date": "2026-11-03",
   "overall_status": "open",
   "formal_industrial_gate1": "closed",
   "p0_ocr_upper_bound": {
@@ -29,7 +30,14 @@
     ]
   },
   "p2_fixed_direction_necessity": {
-    "status": "mechanism_supported_deployable_adaptation_not_passed",
+    "status": "not_established_not_refuted_deployable_adaptation_not_passed",
+    "status_history": [
+      {
+        "date": "2026-11-03",
+        "status": "mechanism_supported_deployable_adaptation_not_passed",
+        "superseded_because": "A noise-only null reproduces a large share of the oracle gap, so the gap alone does not show complementary polarization content (see extension_controls)."
+      }
+    ],
     "easyocr_scale4": {
       "fixed_exact": 0.11315280464216634,
       "oracle_exact": 0.13829787234042554,
@@ -42,16 +50,47 @@
       "gap": 0.06576402321083172,
       "cluster_ci95": [0.0412573673870334, 0.08857142857142856]
     },
+    "extension_controls": {
+      "date": "2026-11-09",
+      "evidence_file": "offline_extension_controls.json",
+      "replication": "The new pipeline reproduces the first-round raw-channel E2 numbers above with zero absolute difference (both backends).",
+      "dense_fixed_angle": {
+        "result": "36 synthesized virtual angles do not beat raw I0 as a fixed input (Tesseract -0.97 pp, EasyOCR -0.39 pp; intervals include 0), so the fixed baseline was not underestimated.",
+        "caveat": "Best-of-36 oracle gap grows to +14.41 pp (Tesseract) and +5.71 pp (EasyOCR); gap rises with the number of candidates and a narrow 5-degree window already gives 67% / 47% of the 45-degree-spacing gain, so gap alone cannot separate more content from more draws.",
+        "per_condition_best_angle": "No evidence that the best angle switches with condition: per-condition minus global fixed is -0.19 pp [-1.05, +0.76] (Tesseract), +0.58 pp [-0.48, +1.55] (EasyOCR)."
+      },
+      "e3_intensity_matching": {
+        "result": "Histogram matching keeps 85% (Tesseract) of the raw oracle gap and enlarges it on EasyOCR (+3.87 vs +2.51 pp, because the fixed baseline falls); mean/std matching leaves it unchanged. Global brightness/contrast is not the main source.",
+        "caveat": "Excludes only a brightness/contrast explanation; it cannot separate spatially different glare structure from OCR instability under small perturbations."
+      },
+      "noise_only_null": {
+        "definition": "Clean I0 plus three noisy re-draws of the same content (4 independent realizations per dose, PDD-High-calibrated heteroscedastic noise); best-of gain versus clean I0, same form as the real fixed gain.",
+        "result_test_split": {
+          "pixel_distance_anchor": {
+            "tesseract": {"null_share_of_real_gap": 0.36, "real_minus_null_pp": 4.21, "ci95_pp": [2.05, 6.19]},
+            "easyocr": {"null_share_of_real_gap": 0.72, "real_minus_null_pp": 0.70, "ci95_pp": [-0.41, 1.95]}
+          },
+          "alternative_readability_anchor_post_hoc": {
+            "tesseract": {"null_share_of_real_gap": [0.78, 0.88], "real_minus_null_pp": [0.80, 1.43], "ci95_includes_zero": [true, true]},
+            "easyocr": {"null_share_of_real_gap": [1.00, 1.26], "real_minus_null_pp": [-0.65, 0.00], "ci95_includes_zero": [true, true]}
+          }
+        },
+        "interpretation": "The oracle gap is not, by itself, evidence of complementary polarization content. Anchored on pixel distance, Tesseract's real gap exceeds the null with a CI that excludes 0 (also on all 50 documents), which is compatible with some real content effect; EasyOCR's does not on the test split. Anchored on alternative-input readability the null explains most of the gap on the test split. The two anchors disagree, so neither 'fully explained' nor 'not explained' is supported.",
+        "data_quality": "285 of 336,780 Tesseract calls (0.085%) crashed with SIGFPE, deterministically on retry and concentrated at large noise; scored as failed reads, with a drop-crashed-samples sensitivity analysis that leaves the conclusion unchanged (EasyOCR: none)."
+      }
+    },
     "supported": [
-      "Four-direction complementarity repeats across two OCR backends.",
-      "All four canonical directions uniquely recover some test samples.",
-      "SDK deglared, min, median, and S0 do not remove the oracle gap."
+      "The raw four-direction oracle gap repeats across two OCR backends with document-cluster CIs above zero.",
+      "All four canonical directions uniquely recover some test samples (a pattern a noise-only null can also produce).",
+      "SDK deglared, min, median, and S0 do not remove the oracle gap.",
+      "Continuous fixed virtual angles do not beat raw I0; no evidence that the best fixed angle switches with condition."
     ],
     "not_supported": [
+      "That the oracle gap shows complementary polarization content: a same-content noise-only null reproduces about 36-72% (pixel-distance anchor) to 78-126% (post-hoc readability anchor) of it on the test split.",
       "A deployable selector that captures the oracle gap.",
-      "Dense continuous fixed-angle baseline.",
+      "Real repeated-exposure null (needs hardware); the injected-noise null cannot model correlated sensor noise or re-capture variability.",
       "Industrial spray-code, curved material, source-polarization, or dynamic-line generalization."
     ],
-    "decision": "Retain adaptive polarization as a justified research hypothesis, but do not train a learned representation until task-specific E0 and the strongest dense fixed baseline are established."
+    "decision": "Retain adaptive polarization as a research hypothesis that is neither established nor refuted. Replace the oracle gap by a real repeated-exposure null (same scene, polarization unchanged) as the discriminating experiment once hardware is available; do not train a learned representation until task-specific E0 and that control are in hand."
   }
 }

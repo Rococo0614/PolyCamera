@@ -21,13 +21,17 @@
 - `14_offline_gate_p_results.md`
 - `10_advisor_one_page.md`
 
-### 当前执行状态（2026-11-03）
+### 当前执行状态（2026-11-09 更新；其余为 2026-11-03）
 
 - 已建立 `industrial_reading/` 离线代理实验包；
 - Offline E1 仪器矩阵合成恢复及 PDD 120 条件简单重建基线已完成；
 - SHDocs 50 文档双 OCR 后端 E0/E2 第一轮完成；四方向 oracle gap 跨后端重复；
-- **Offline Gate P 仍 open**：问题机制获支持，但任务字符体系、连续固定角和可部署
-  选择器尚未通过；正式工业 Gate 1 仍关闭；
+- 2026-11-09 补充三项不需硬件的对照：连续固定虚拟角**没有**优于 raw I0；强度匹配**没有**
+  消除 oracle gap；但同内容噪声零对照**复现了 gap 的相当大一部分**（测试集上按像素距离锚定
+  Tesseract 约 36%、EasyOCR 约 72%；事后按可读性锚定约 78–126%），因此 oracle gap 不能
+  单独证明偏振互补内容（`14_offline_gate_p_results.md` 第 8 节）；
+- **Offline Gate P 仍 open**：P2 为"未成立也未被否定"，任务字符体系和可部署选择器尚未
+  通过；正式工业 Gate 1 仍关闭；
 - 清晰合成 sanity 表明固定日期格式可达 99.56% exact，而任意字母数字序列仍不足，
   因此下一步优先把主任务收窄为固定格式日期/批次码；
 - 已完成的 HAMMER/PPFT 数据、代码和证据全部保留，作为“偏振质量具有任务与场景
@@ -176,8 +180,8 @@ PPFT 结果级复现和弱偏振反例，并明确它只支持“偏振不能被
 - `10_advisor_one_page.md`：当前面向导师的一页式方向说明。
 - `12_industrial_reading_research_story.md`：当前主线的完整问题链、研究假设、装置、实验、指标和 PPT 故事。
 - `13_industrial_reading_experiment_plan.md`：E0–E13 实验、基线、统计、Gate、动态节拍与成本协议。
-- `14_offline_gate_p_results.md`：无硬件阶段 E0/E1/E2 公开代理结果、双后端对照和
-  当前 Gate 判定。
+- `14_offline_gate_p_results.md`：无硬件阶段 E0/E1/E2 公开代理结果、双后端对照、
+  2026-11-09 补充对照（密集固定角、强度匹配、噪声零对照）和当前 Gate 判定。
 - `01_topic_and_research_questions.md`：当前研究问题、可证伪假设、候选贡献和停止条件。
 - `02_datasets_and_prior_work.md`：工业 OCR、高光去除、偏振反射去除、公开数据与候选缺口。
 - `03_one_month_plan.md`：首月文献、工位、标定、pilot、Gate 1/2 和开题交付。
@@ -189,8 +193,10 @@ PPFT 结果级复现和弱偏振反例，并明确它只支持“偏振不能被
 - `literature_matrix_template.csv`：含单曝光、入射偏振、工业场景和识读指标字段的文献矩阵。
 - `industrial_reading_capture_manifest_template.csv`：工业采集元数据模板。
 - `industrial_reading_results_template.tsv`：实验、泛化、可靠性、延迟和节拍登记模板。
-- `industrial_reading/`：Offline E0–E2/Gate P 的代码、协议、测试与小型证据；大数据和
-  运行结果保存在仓库外 `/home/chocbrownie0524/poldepth/`。
+- `industrial_reading/`：Offline E0–E2/Gate P 的代码、协议、测试与小型证据（补充对照见
+  `evidence/offline_extension_controls.json`，其中钉有各 JSONL 与源码的 SHA-256）；大数据和
+  运行结果保存在仓库外 `/home/chocbrownie0524/poldepth/`，2026-11-09 的补充实验在本机
+  `/mnt/ssd/polycamera_offline/`（根盘空间不足）。
 - `demo/tsinghua-ppt/index.html`：12 页结果导向的清华学术风 HTML PPT；理论与背景合并为
   1 页，第 5–9 页集中报告工作量及 E0/E1/E2 结果，并保留备注、计时和观众屏。
 - `demo/tsinghua-ppt/images/SOURCES.md`：网络实拍图作者、许可和本项目原创示意图说明。

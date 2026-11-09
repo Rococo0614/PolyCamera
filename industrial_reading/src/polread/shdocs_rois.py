@@ -100,6 +100,12 @@ def _load_fixed_channels(capture_dir: Path) -> dict[str, np.ndarray]:
     }
 
 
+def load_capture_channels(capture_dir: Path) -> dict[str, np.ndarray]:
+    """Public loader for the four uint8 analyzer channels of one capture."""
+
+    return _load_fixed_channels(Path(capture_dir))
+
+
 def load_representation(capture_dir: Path, method_id: str) -> np.ndarray:
     """Load or deterministically derive one SHDocs representation."""
 

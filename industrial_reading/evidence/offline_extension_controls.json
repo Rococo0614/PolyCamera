@@ -1,0 +1,3832 @@
+{
+  "artifacts": {
+    "pixel_distance_sha256": {
+      "view_difference_rms_all.json": "1443cd705159b6e7395d984b8a46635cd4bf4acc8531484cc868b5e6073d5f9d",
+      "view_difference_rms_test.json": "48fb6411507966bf6b6f6f0e8ed8128b6ccabd84538f12553c9901fff0a0a269"
+    },
+    "records": {
+      "dense/easy": {
+        "rows": 287388,
+        "sha256_per_shard": {
+          "easy_shard0.jsonl": "d50034df799c7947710cd87ca756b94b150b9053a7b314eff27e4a9617a07c5e",
+          "easy_shard1.jsonl": "d3bf5ec0034573d1f11b7a95fcf81e2f19ff21f1e1537d5ee0ccf64c9aecbd81",
+          "easy_shard2.jsonl": "41ddce71c9e918e20aa5e36edfd964952c64de1ba76b685019cda090b565a634",
+          "easy_shard3.jsonl": "aaf772167bcc0646190b2516d78e33a62d1c5486c0f8c535af10e0dcddb39f06",
+          "easy_shard4.jsonl": "d755e6781dc74fe2d4af83489e6b27ae0dae35ff49f95472fb374fdc99532ea3",
+          "easy_shard5.jsonl": "f8ef727047d76dd94012c376fa5677a6646009067b0ef6d06a13e1c11bda608a"
+        },
+        "shards": 6
+      },
+      "dense/tess": {
+        "rows": 287388,
+        "sha256_per_shard": {
+          "tess_shard0.jsonl": "ac0fc866695241f142bb811cc2210960fa1f483a82d3b0c638601672aee60998",
+          "tess_shard1.jsonl": "1dbe30eb68a49bf758758797f3cb0edc5b1b67b09f707d9bc75f239ca539a2bf",
+          "tess_shard10.jsonl": "55fed8eed3f9bad83762addad947d5150bb37efe7e95dc136678c64382ee06a1",
+          "tess_shard11.jsonl": "410f27953a4c893da4b5e190f739242411d9e99a209217fbe1b2471248d24006",
+          "tess_shard2.jsonl": "d31c3175bc2914032dc8c89ffbdcbac15c0110dd0a78fa17d27a512026a13780",
+          "tess_shard3.jsonl": "db1abb77d8814551a41223bb98e6888d3ffaed3df09324fcafb7e5a21e9ab4b5",
+          "tess_shard4.jsonl": "dae070dfd2e61767760c6c01b8e1d82f1e5e6e6ae1f7731b0f9321086d0229bc",
+          "tess_shard5.jsonl": "8f0cacfc6ce13c38f8d004d7b58d77d03c57bfcdd85ef24e1af8b5f3431f8d12",
+          "tess_shard6.jsonl": "5e1c1ffddee9dcf4c02e8b37ed4dc21f7c80092f2585e5ed88a224339664e46f",
+          "tess_shard7.jsonl": "239c62a64d5abd5fb2b7f64193e9786fbfc9c90114490de67e853c4386cb53f0",
+          "tess_shard8.jsonl": "cd2d14f1549a76bda45f8a8cf49deed09574ab930086f1e0807543e757547237",
+          "tess_shard9.jsonl": "0cfcb54eb827051b87c3e6588edd5109ffab14db462dda5d9dec4d60dc811dd5"
+        },
+        "shards": 12
+      },
+      "e3/easy": {
+        "rows": 59872,
+        "sha256_per_shard": {
+          "easy_shard0.jsonl": "c4cc078026668510fa7383f78c76fb3988420b5c2b918bcfef1b95f55c18b12d",
+          "easy_shard1.jsonl": "71c8236e45b1fa0ac93069590c1e4ce04562949ec3511aa00a0d86e1e53a0778",
+          "easy_shard2.jsonl": "893c59d79e0b27f2bf52e4f350bfd31758364f5f393fdf0dca79b89073995a91"
+        },
+        "shards": 3
+      },
+      "e3/tess": {
+        "rows": 59872,
+        "sha256_per_shard": {
+          "tess_shard0.jsonl": "e467724b99ea05b5af3453fc0f15c5d1957f0dff4e9459d114351ad254e56317",
+          "tess_shard1.jsonl": "e9f3275d29590a6037d7645bbeae703fa7b14b2f699ef98b9283e3f2c1dcf727",
+          "tess_shard2.jsonl": "d1ed2c017ea6ce93e1de5575eb394727a76a24e05c100b239fb3888e9339ffc6",
+          "tess_shard3.jsonl": "ade8e2ec2f439480d7653de23fc14647f45a56068f559a15af689930fce95607",
+          "tess_shard4.jsonl": "3ea4ec243a36ddc370f32496e4baedea54088a026cd683be985aaf8cd1ad5376",
+          "tess_shard5.jsonl": "869a5e0faef600a133ca8c77381e4fa93c364f1273221b6a58c9f00fe0cca00e",
+          "tess_shard6.jsonl": "5866416a62f90e846d6b4991e114379ec2729ac899d3af79bbff02172ab7d210",
+          "tess_shard7.jsonl": "c14dae0e52ba22ba3e03906e3a7da7d29a78f5660479dc0f30e0079f76e9c7a1"
+        },
+        "shards": 8
+      },
+      "null/easy": {
+        "rows": 217036,
+        "sha256_per_shard": {
+          "easy_shard0.jsonl": "6b9b25a81a805bfba0f05f4d5b1b284bd60e03c9ae18ddf05ee1c36d7b01fbd6",
+          "easy_shard1.jsonl": "abbf167ab2fa60cf8d86fb6870317cef2f721c53dfac4fe6f3e0bf2f6e197303",
+          "easy_shard2.jsonl": "055612a7aeb43d68fb447371c3963f8f8a67eba1576110fd5270c2ddeb79e11d",
+          "easy_shard3.jsonl": "afc3f82acf4184648037a40725ff388c9d165c9c18098b52642af3e9dd769333",
+          "easy_shard4.jsonl": "9eb6e18bb1a9c6a145a91819eb8aa0ca2a186cd3733b8b71601cffd159723cbb",
+          "easy_shard5.jsonl": "5f4568d95e2f6477e76579fc855bffb70c601938a3ee3ba681a141858f6df527"
+        },
+        "shards": 6
+      },
+      "null/tess": {
+        "rows": 217036,
+        "sha256_per_shard": {
+          "tess_shard0.jsonl": "a85ae07ae9f7d856baadccf969252acb0a60ccc1a4bf27c97f18ce925890eb01",
+          "tess_shard1.jsonl": "fb4d8db530d34b04d8308e329d9e73e66650672da275d6601ecde5f697815e01",
+          "tess_shard10.jsonl": "70f5595852cebbcbf92252597afae328139187e56d67b80963d45d3c2905fc8b",
+          "tess_shard11.jsonl": "87844a7bb1d1e62136ca90f4592b90dd33d790fa45a9d45998228b8cf5cc8997",
+          "tess_shard2.jsonl": "99b134f10c63b6f9f537abfdca5d3108ed673d817b59664aa884bbbaa0754b18",
+          "tess_shard3.jsonl": "0c77636e70c25f4d7d5904d5afb17c4774042a8b3447b8dbca9bbac00460cc0e",
+          "tess_shard4.jsonl": "69dad8c8c7babc263c36bf45267d568fcf7b64c96b673a47910518329d22fa47",
+          "tess_shard5.jsonl": "c6bee84e08281fa9bad6efe4354cc804e8ce556cd550f2b165b571b847904079",
+          "tess_shard6.jsonl": "ef0d13cd6fa1d26659df40b352e2685e169fe2d61b2b74423d5ab4082ff444b6",
+          "tess_shard7.jsonl": "a657bd30999491d9aa84281bcd82aec529932a8eb67a8ba779aff3373976be54",
+          "tess_shard8.jsonl": "e89ff8e741b0650f93ffbc48884700a4591d34b756e9d06e01833f163b055631",
+          "tess_shard9.jsonl": "bfd4193b044c0a56be97a4c718e4570843640845ff80724e5cfe61a25b7fb884"
+        },
+        "shards": 12
+      },
+      "null_i0_fine/easy": {
+        "rows": 89808,
+        "sha256_per_shard": {
+          "easy_shard0.jsonl": "47f9b48d2cd061f0259f1e666fcdbcaed4c0f548ceb3e88dcd504b4880262f07",
+          "easy_shard1.jsonl": "2b4d99debe607ba2bca297c638c6a518fe42f59d5450bc6a4d8d7ac0090be812",
+          "easy_shard2.jsonl": "efd4e40d64fe49c1e760053f7b20d76160e025b33b72cce70bca6f73f2a8c1f4",
+          "easy_shard3.jsonl": "128a5ac9c08dfb6829235969731d97061bfeff4aa73c61d8ee966c649e6bb86a",
+          "easy_shard4.jsonl": "d623667b1ff674fbd99f36853caff3d9d8dbf9a84648dc8b9262d6ec76854e92",
+          "easy_shard5.jsonl": "3d576de4365850ff1ea37d50b770a01fd396351aed2380a9c92e1ba589e10f9c"
+        },
+        "shards": 6
+      },
+      "null_i0_fine/tess": {
+        "rows": 89808,
+        "sha256_per_shard": {
+          "tess_shard0.jsonl": "4acc001b703c07945d15293ea864d02f645504a5e03486436176f41d98ba72c8",
+          "tess_shard1.jsonl": "ce43dad219968d4378cc5404b4643aa88ce1cec337c23451495fab74ac6028d7",
+          "tess_shard10.jsonl": "cf3f89d20ad22139277058962650c72d031507994bc153ffefbb7a015e8858d9",
+          "tess_shard11.jsonl": "09323828115200acbabd296e9c3c99e2828d958a34fe4f3c17e769b662c92338",
+          "tess_shard2.jsonl": "43d631a81fca50f1c4b2342376168b7e8189309ee84cec5752e59b8bc6db1c66",
+          "tess_shard3.jsonl": "7a588246f53daf63d2ec2b83b5b76695060edbd8e22b89d48075833682491570",
+          "tess_shard4.jsonl": "fe5844b5dc5a6e43cca06dbf58db529400612710139f3edc38729e4474b47895",
+          "tess_shard5.jsonl": "aa25a3a92664333b003c4910093511def5f9032ea929537e2ec8a5200f90e43a",
+          "tess_shard6.jsonl": "db7e1ae5abe03b0fa57276742761d782dbf9315e25e40b67b1b2d626366b0e8a",
+          "tess_shard7.jsonl": "0597f4aced217cb2ff3b57684288b35669ec5a644f303632373fa1b31579986d",
+          "tess_shard8.jsonl": "4e873e90b0733631364cbe1fa86e53f0e9fbdaacf115aa27c3ee7e2d365bad6d",
+          "tess_shard9.jsonl": "9181dd6fb31616b4fefa2de1203ae0677ee38c06b61f1782c4a59346ba759b87"
+        },
+        "shards": 12
+      }
+    },
+    "source_sha256": {
+      "industrial_reading/scripts/analyze_dense_decomposition.py": "e1f3c31dc7ce59a1c1213923d8689b079142f5705835d12b66fd47ce12b1f7db",
+      "industrial_reading/scripts/calibrate_noise_pdd.py": "508845a6ae4013f2d1e3370eb57d22cf8e364e95efa21e27b4c5f1b2ed2ad69f",
+      "industrial_reading/scripts/measure_view_differences.py": "5f3499660726968599c348f684e9b23fc5559183cf3cee213756f6c634c281f6",
+      "industrial_reading/scripts/run_shdocs_views_ocr.py": "1e25ce4eb1a837ec4ebe2717abae0feecc82eafe9fa2d6f26ba43248172932fd",
+      "industrial_reading/scripts/summarize_dense_sweep.py": "d6ba65b7b9394f7e6a45ca91f70c34ea34cc9e02f1f35862dc2587aedcd52093",
+      "industrial_reading/scripts/summarize_e3_matching.py": "9c31988a2f8bcdb5ad795242a200548e83a4fd6267605a5a13c45f7cf6fb686a",
+      "industrial_reading/scripts/summarize_noise_null.py": "3f3ac0e5addf3e4ca603affd5cc9ab9f3df10b637dc136518c28dee9e3356f15",
+      "industrial_reading/src/polread/analysis.py": "b5ef092328674b11f8c6305c77b30f9f7d1eb1c114594191e841af2f5ce927ae",
+      "industrial_reading/src/polread/headroom.py": "83cb4ea7378a4308dc2093b92afc950585f1395b40075920f59e784a1f24cb2e",
+      "industrial_reading/src/polread/noise.py": "f6338a10d5e1625d566a4792594868424ad8e24418e0d8a8535af849660461b6",
+      "industrial_reading/src/polread/protocol.py": "8a1d090d16fc7abbb056ed76f2c5e300f8a1f2ee869223e00db3111dd734d93b",
+      "industrial_reading/src/polread/views.py": "f74f823752189e09ad05788d27c4350f1fd9f28501d5f99230a3c953b8dc5764"
+    },
+    "summaries_sha256": {
+      "decomposition_easyocr.json": "e269ec7008fafc159af899a7e3480239044759e2b647109a3b68ccb7f7314352",
+      "decomposition_tesseract.json": "fb577b73d744b5935c2a6c9236b1a35237c155f632d517b9889f180b0f1fe586",
+      "dense_sweep_easyocr.json": "e122a921c491568c358c6d13c47d1579d8de42ba88507a66c3574b7d4b3258f6",
+      "dense_sweep_tesseract.json": "930335f88b41d5299903a47980dc934f23073fc915148aab5b905c28b64ff456",
+      "e3_matching_easyocr.json": "f50283a58ad905f5be687a710787e574ded2c408fbf9c5adb546d4bf27da06f1",
+      "e3_matching_easyocr_all_documents.json": "e80306741f1f0ed432dca7db90c5523518c4020dbe0018dcf3978939cbc88902",
+      "e3_matching_tesseract.json": "17ff9975d145d3ee6da9347361f1d0af2e985f575e80bf1eaf741e2f84d927fe",
+      "e3_matching_tesseract_all_documents.json": "ef5e037865e4f43889deccefc001cecff4492598ea0ee635a20be37db4fb354f",
+      "noise_calibration.json": "92ed83226282977a346b0d3b48dcb0548247a190f99c86b6a31234cabb48a7ec",
+      "noise_null_easyocr.json": "79f35b92a2bb9d49b5bae40363fe53b51addbf65fcdbc12c7fb479474546a665",
+      "noise_null_easyocr_all_documents.json": "5ef6d5fa6583506bdae899a1754e39849ca1d67d541d5b58e8419ebb7cd202ef",
+      "noise_null_tesseract.json": "d2b8e74c5be33f550a67005f4fe01d48c58300e1fb044298d305a106c2d385f5",
+      "noise_null_tesseract_all_documents.json": "d09709d5840e5c90a38cea62fee0ec28f6c4cf7fc24ee40b8ececaf946288d4f",
+      "noise_null_tesseract_drop_sensitivity.json": "2d02614c65ad026b38bd7040345020e07f57bc368e7de97ca08633f43abec83e"
+    }
+  },
+  "claim_boundary": "SHDocs flat FUNSD documents with ground-truth text boxes and 8-bit SDK channel exports; virtual angles are synthesized from the four exported channels, noise is injected, not recorded. Nothing here is an industrial spray-code, curved-surface, polarized-source or dynamic-line result, and none of it opens the formal Gate 1.",
+  "date": "2026-11-09",
+  "dense_sweep_and_decomposition": {
+    "easyocr": {
+      "dense36": {
+        "fixed_exact": 0.109284332688588,
+        "headroom": 0.05705996131528046,
+        "headroom_ci95": [
+          0.04291417165668662,
+          0.07047619047619047
+        ],
+        "oracle_exact": 0.16634429400386846,
+        "train_best": "virtual_175"
+      },
+      "dense_fixed_vs_raw_fixed": {
+        "a": "virtual_175",
+        "b": "i0",
+        "ci95": [
+          -0.010476190476190472,
+          0.0009671179883945918
+        ],
+        "delta_exact_a_minus_b": -0.0038684719535783396
+      },
+      "distinct_train_best_angles": [
+        0,
+        5,
+        15,
+        20,
+        155,
+        165,
+        170,
+        175
+      ],
+      "oracle4_vs_dense_fixed": {
+        "ci95": [
+          0.018664047151277015,
+          0.04000000000000001
+        ],
+        "dense_fixed_angle": "virtual_175",
+        "dense_fixed_exact": 0.109284332688588,
+        "headroom": 0.029013539651837533,
+        "oracle_raw4_exact": 0.13829787234042554
+      },
+      "per_condition_fixed_minus_global_fixed": {
+        "ci95_document_cluster": [
+          -0.0048355899419729315,
+          0.015473887814313358
+        ],
+        "delta": 0.005802707930367509,
+        "note": "Condition label is known at selection time (an upper bound on a deployable condition-aware rule)."
+      },
+      "raw4": {
+        "fixed_exact": 0.11315280464216634,
+        "headroom": 0.025145067698259194,
+        "headroom_ci95": [
+          0.014970059880239528,
+          0.03523809523809525
+        ],
+        "oracle_exact": 0.13829787234042554,
+        "train_best": "i0"
+      },
+      "selection_ladder_headroom": {
+        "1": {
+          "headroom": 0.0,
+          "oracle_exact": 0.1102514506769826
+        },
+        "12": {
+          "headroom": 0.046421663442940034,
+          "oracle_exact": 0.15667311411992263
+        },
+        "18": {
+          "headroom": 0.049323017408123795,
+          "oracle_exact": 0.1595744680851064
+        },
+        "2": {
+          "headroom": 0.010638297872340427,
+          "oracle_exact": 0.12088974854932302
+        },
+        "3": {
+          "headroom": 0.022243713733075418,
+          "oracle_exact": 0.13249516441005801
+        },
+        "36": {
+          "headroom": 0.05705996131528046,
+          "oracle_exact": 0.16634429400386846
+        },
+        "4": {
+          "headroom": 0.024177949709864602,
+          "oracle_exact": 0.1344294003868472
+        },
+        "6": {
+          "headroom": 0.03578336557059962,
+          "oracle_exact": 0.14603481624758222
+        },
+        "9": {
+          "headroom": 0.04738878143133461,
+          "oracle_exact": 0.1576402321083172
+        }
+      },
+      "spacing_control_headroom_mean": {
+        "10": 0.018026004728132386,
+        "15": 0.022915323447238338,
+        "20": 0.02611218568665377,
+        "25": 0.0284762518805072,
+        "30": 0.028503116269073717,
+        "35": 0.02879862454330539,
+        "40": 0.028986675263271002,
+        "45": 0.02761659144637867,
+        "5": 0.01286804212336127
+      },
+      "virtual4_same_pipeline": {
+        "fixed_exact": 0.1102514506769826,
+        "headroom": 0.024177949709864602,
+        "headroom_ci95": [
+          0.0119760479041916,
+          0.03523809523809525
+        ],
+        "oracle_exact": 0.1344294003868472,
+        "train_best": "virtual_0"
+      }
+    },
+    "tesseract": {
+      "dense36": {
+        "fixed_exact": 0.25338491295938104,
+        "headroom": 0.14410058027079303,
+        "headroom_ci95": [
+          0.103448275862069,
+          0.17988394584139267
+        ],
+        "oracle_exact": 0.39748549323017407,
+        "train_best": "virtual_0"
+      },
+      "dense_fixed_vs_raw_fixed": {
+        "a": "virtual_0",
+        "b": "i0",
+        "ci95": [
+          -0.024761904761904763,
+          0.002857142857142836
+        ],
+        "delta_exact_a_minus_b": -0.009671179883945835
+      },
+      "distinct_train_best_angles": [
+        0,
+        5,
+        150,
+        155,
+        160,
+        165,
+        170,
+        175
+      ],
+      "oracle4_vs_dense_fixed": {
+        "ci95": [
+          0.0520628683693517,
+          0.09809523809523812
+        ],
+        "dense_fixed_angle": "virtual_0",
+        "dense_fixed_exact": 0.25338491295938104,
+        "headroom": 0.07543520309477758,
+        "oracle_raw4_exact": 0.3288201160541586
+      },
+      "per_condition_fixed_minus_global_fixed": {
+        "ci95_document_cluster": [
+          -0.010476190476190472,
+          0.007619047619047609
+        ],
+        "delta": -0.001934235976789156,
+        "note": "Condition label is known at selection time (an upper bound on a deployable condition-aware rule)."
+      },
+      "raw4": {
+        "fixed_exact": 0.26305609284332687,
+        "headroom": 0.06576402321083175,
+        "headroom_ci95": [
+          0.04125736738703337,
+          0.08857142857142858
+        ],
+        "oracle_exact": 0.3288201160541586,
+        "train_best": "i0"
+      },
+      "selection_ladder_headroom": {
+        "1": {
+          "headroom": 0.0,
+          "oracle_exact": 0.25338491295938104
+        },
+        "12": {
+          "headroom": 0.109284332688588,
+          "oracle_exact": 0.36266924564796904
+        },
+        "18": {
+          "headroom": 0.12862669245647967,
+          "oracle_exact": 0.3820116054158607
+        },
+        "2": {
+          "headroom": 0.022243713733075432,
+          "oracle_exact": 0.27562862669245647
+        },
+        "3": {
+          "headroom": 0.05319148936170215,
+          "oracle_exact": 0.3065764023210832
+        },
+        "36": {
+          "headroom": 0.14410058027079303,
+          "oracle_exact": 0.39748549323017407
+        },
+        "4": {
+          "headroom": 0.06576402321083175,
+          "oracle_exact": 0.3191489361702128
+        },
+        "6": {
+          "headroom": 0.08220502901353965,
+          "oracle_exact": 0.3355899419729207
+        },
+        "9": {
+          "headroom": 0.11121856866537716,
+          "oracle_exact": 0.3646034816247582
+        }
+      },
+      "spacing_control_headroom_mean": {
+        "10": 0.054266064904362775,
+        "15": 0.060149366000429826,
+        "20": 0.06439393939393938,
+        "25": 0.06764453041048786,
+        "30": 0.07092198581560286,
+        "35": 0.07113690092413498,
+        "40": 0.07205029013539653,
+        "45": 0.07006232538147432,
+        "5": 0.04698581560283687
+      },
+      "virtual4_same_pipeline": {
+        "fixed_exact": 0.25338491295938104,
+        "headroom": 0.06576402321083175,
+        "headroom_ci95": [
+          0.04911591355599215,
+          0.08000000000000002
+        ],
+        "oracle_exact": 0.3191489361702128,
+        "train_best": "virtual_0"
+      }
+    }
+  },
+  "e3_intensity_matching": {
+    "all_documents": {
+      "easyocr": {
+        "candidate_sets": {
+          "hm4": {
+            "gain": 0.04489577765900588,
+            "gain_ci95": [
+              0.035065603864734306,
+              0.05532135221806516
+            ],
+            "oracle_exact": 0.1306787814003207,
+            "single_exact": 0.08578300374131481,
+            "train_best": "hm_i0"
+          },
+          "ms4": {
+            "gain": 0.03500801710315339,
+            "gain_ci95": [
+              0.027391354911949575,
+              0.0432923570283271
+            ],
+            "oracle_exact": 0.1373597006948156,
+            "single_exact": 0.10235168359166222,
+            "train_best": "ms_i0"
+          },
+          "raw4": {
+            "gain": 0.036344200962052375,
+            "gain_ci95": [
+              0.02839969469737547,
+              0.045030327810440036
+            ],
+            "oracle_exact": 0.1373597006948156,
+            "single_exact": 0.10101549973276323,
+            "train_best": "i0"
+          }
+        },
+        "documents_evaluated": 50,
+        "fixed_i0_matched_minus_raw": {
+          "hm_i0_minus_i0": {
+            "ci95": [
+              -0.022266666666666667,
+              -0.008951954391590956
+            ],
+            "delta": -0.015232495991448424
+          },
+          "ms_i0_minus_i0": {
+            "ci95": [
+              -0.0010712372790573112,
+              0.003883235136582753
+            ],
+            "delta": 0.0013361838588989846
+          }
+        },
+        "headroom_difference_vs_raw4": {
+          "hm4": {
+            "ci95": [
+              0.00322061191626409,
+              0.014029930518439338
+            ],
+            "delta": 0.0085515766969535
+          },
+          "ms4": {
+            "ci95": [
+              -0.0036,
+              0.0008
+            ],
+            "delta": -0.0013361838588989846
+          }
+        },
+        "same_channel_outcome_agreement": {
+          "hm_i0_vs_i0": 0.96044895777659,
+          "hm_i135_vs_i135": 0.9767504008551576,
+          "hm_i45_vs_i45": 0.9795563869588455,
+          "hm_i90_vs_i90": 0.9807589524318546,
+          "ms_i0_vs_i0": 0.98690539818279,
+          "ms_i135_vs_i135": 0.9937199358631748,
+          "ms_i45_vs_i45": 0.9930518439337253,
+          "ms_i90_vs_i90": 0.9941207910208445
+        },
+        "samples_evaluated": 7484,
+        "scope": "all documents (fixed method chosen on train; not held out)"
+      },
+      "tesseract": {
+        "candidate_sets": {
+          "hm4": {
+            "gain": 0.05451630144307857,
+            "gain_ci95": [
+              0.04516301443078568,
+              0.0642705384413011
+            ],
+            "oracle_exact": 0.26443078567610906,
+            "single_exact": 0.20991448423303047,
+            "train_best": "hm_i0"
+          },
+          "ms4": {
+            "gain": 0.056787814003206843,
+            "gain_ci95": [
+              0.0475992036344201,
+              0.06614110101549973
+            ],
+            "oracle_exact": 0.27886157135221806,
+            "single_exact": 0.22207375734901122,
+            "train_best": "ms_i0"
+          },
+          "raw4": {
+            "gain": 0.05986103687867451,
+            "gain_ci95": [
+              0.0498659914484233,
+              0.07014965259219669
+            ],
+            "oracle_exact": 0.27685729556386957,
+            "single_exact": 0.2169962586851951,
+            "train_best": "i0"
+          }
+        },
+        "documents_evaluated": 50,
+        "fixed_i0_matched_minus_raw": {
+          "hm_i0_minus_i0": {
+            "ci95": [
+              -0.0144,
+              -0.0005333333333333334
+            ],
+            "delta": -0.007081774452164618
+          },
+          "ms_i0_minus_i0": {
+            "ci95": [
+              0.0009333333333333333,
+              0.009353787991779348
+            ],
+            "delta": 0.005077498663816141
+          }
+        },
+        "headroom_difference_vs_raw4": {
+          "hm4": {
+            "ci95": [
+              -0.010133333333333333,
+              -0.0006695232994108195
+            ],
+            "delta": -0.005344735435595938
+          },
+          "ms4": {
+            "ci95": [
+              -0.007067044361304115,
+              0.0009353287012292892
+            ],
+            "delta": -0.0030732228754676645
+          }
+        },
+        "same_channel_outcome_agreement": {
+          "hm_i0_vs_i0": 0.940807055050775,
+          "hm_i135_vs_i135": 0.9584446819882416,
+          "hm_i45_vs_i45": 0.9577765900587921,
+          "hm_i90_vs_i90": 0.9584446819882416,
+          "ms_i0_vs_i0": 0.9692677712453234,
+          "ms_i135_vs_i135": 0.9808925708177445,
+          "ms_i45_vs_i45": 0.9778193479422769,
+          "ms_i90_vs_i90": 0.9824959914484233
+        },
+        "samples_evaluated": 7484,
+        "scope": "all documents (fixed method chosen on train; not held out)"
+      }
+    },
+    "test": {
+      "easyocr": {
+        "candidate_sets": {
+          "hm4": {
+            "gain": 0.03868471953578337,
+            "gain_ci95": [
+              0.022954091816367265,
+              0.054285714285714284
+            ],
+            "oracle_exact": 0.1344294003868472,
+            "single_exact": 0.09574468085106383,
+            "train_best": "hm_i0"
+          },
+          "ms4": {
+            "gain": 0.025145067698259187,
+            "gain_ci95": [
+              0.015717092337917484,
+              0.03428571428571429
+            ],
+            "oracle_exact": 0.13829787234042554,
+            "single_exact": 0.11315280464216634,
+            "train_best": "ms_i0"
+          },
+          "raw4": {
+            "gain": 0.025145067698259187,
+            "gain_ci95": [
+              0.014970059880239521,
+              0.035238095238095235
+            ],
+            "oracle_exact": 0.13829787234042554,
+            "single_exact": 0.11315280464216634,
+            "train_best": "i0"
+          }
+        },
+        "documents_evaluated": 7,
+        "fixed_i0_matched_minus_raw": {
+          "hm_i0_minus_i0": {
+            "ci95": [
+              -0.03143418467583497,
+              -0.0038684719535783366
+            ],
+            "delta": -0.017408123791102514
+          },
+          "ms_i0_minus_i0": {
+            "ci95": [
+              -0.005714285714285714,
+              0.00499001996007984
+            ],
+            "delta": 0.0
+          }
+        },
+        "headroom_difference_vs_raw4": {
+          "hm4": {
+            "ci95": [
+              0.0019342359767891683,
+              0.023809523809523808
+            ],
+            "delta": 0.013539651837524178
+          },
+          "ms4": {
+            "ci95": [
+              -0.002857142857142857,
+              0.0029013539651837525
+            ],
+            "delta": 0.0
+          }
+        },
+        "same_channel_outcome_agreement": {
+          "hm_i0_vs_i0": 0.9593810444874274,
+          "hm_i135_vs_i135": 0.9825918762088974,
+          "hm_i45_vs_i45": 0.9835589941972921,
+          "hm_i90_vs_i90": 0.9825918762088974,
+          "ms_i0_vs_i0": 0.988394584139265,
+          "ms_i135_vs_i135": 0.9980657640232108,
+          "ms_i45_vs_i45": 0.995164410058027,
+          "ms_i90_vs_i90": 0.9932301740812379
+        },
+        "samples_evaluated": 1034,
+        "scope": "test split only (fixed method chosen on train)"
+      },
+      "tesseract": {
+        "candidate_sets": {
+          "hm4": {
+            "gain": 0.05609284332688588,
+            "gain_ci95": [
+              0.03293413173652695,
+              0.07736943907156674
+            ],
+            "oracle_exact": 0.30464216634429403,
+            "single_exact": 0.24854932301740812,
+            "train_best": "hm_i0"
+          },
+          "ms4": {
+            "gain": 0.0609284332688588,
+            "gain_ci95": [
+              0.041916167664670656,
+              0.07736943907156674
+            ],
+            "oracle_exact": 0.327852998065764,
+            "single_exact": 0.26692456479690524,
+            "train_best": "ms_i0"
+          },
+          "raw4": {
+            "gain": 0.06576402321083172,
+            "gain_ci95": [
+              0.0412573673870334,
+              0.08857142857142856
+            ],
+            "oracle_exact": 0.3288201160541586,
+            "single_exact": 0.26305609284332687,
+            "train_best": "i0"
+          }
+        },
+        "documents_evaluated": 7,
+        "fixed_i0_matched_minus_raw": {
+          "hm_i0_minus_i0": {
+            "ci95": [
+              -0.029980657640232108,
+              -0.0009523809523809524
+            ],
+            "delta": -0.014506769825918761
+          },
+          "ms_i0_minus_i0": {
+            "ci95": [
+              -0.006666666666666667,
+              0.013539651837524178
+            ],
+            "delta": 0.0038684719535783366
+          }
+        },
+        "headroom_difference_vs_raw4": {
+          "hm4": {
+            "ci95": [
+              -0.018095238095238095,
+              0.0
+            ],
+            "delta": -0.009671179883945842
+          },
+          "ms4": {
+            "ci95": [
+              -0.014285714285714285,
+              0.0038684719535783366
+            ],
+            "delta": -0.004835589941972921
+          }
+        },
+        "same_channel_outcome_agreement": {
+          "hm_i0_vs_i0": 0.9332688588007737,
+          "hm_i135_vs_i135": 0.9516441005802708,
+          "hm_i45_vs_i45": 0.9429400386847195,
+          "hm_i90_vs_i90": 0.9516441005802708,
+          "ms_i0_vs_i0": 0.965183752417795,
+          "ms_i135_vs_i135": 0.9787234042553191,
+          "ms_i45_vs_i45": 0.9758220502901354,
+          "ms_i90_vs_i90": 0.9671179883945842
+        },
+        "samples_evaluated": 1034,
+        "scope": "test split only (fixed method chosen on train)"
+      }
+    }
+  },
+  "experiment": "offline-gate-p-extension-controls",
+  "noise_model": {
+    "a": 0.0010927443160946636,
+    "b": 0.0004155122405929927,
+    "calibration_file": "noise_calibration_pdd_high.json",
+    "caveat": "Calibrated on PDD High (a different sensor, no text). The blind redundancy estimate on SHDocs exports gives an effective level far below PDD High, so the doses are anchored on pixel distance to the real channels, not on sensor noise.",
+    "form": "variance = a*x + b with x in [0,1]; sigma in 8-bit gray = 255*multiplier*sqrt(var)",
+    "pdd_high_sigma_gray_at_x0.5": 7.9086366095292995,
+    "shdocs_blind_sigma_gray_at_x0.5": 1.2985911239288268,
+    "shdocs_multiplier_upper_bound_of_pdd_high": 0.1641991139615802,
+    "source": "PDD High reference_fit"
+  },
+  "noise_only_null": {
+    "all_documents": {
+      "easyocr": {
+        "anchors": {
+          "alternative_accuracy": {
+            "criterion": "exact rate of the noisy copy bracketing the mean exact rate of the real I45/I90/I135 (selected post hoc, after the dose-response was visible)",
+            "doses": [
+              0.25,
+              0.5
+            ],
+            "entries": [
+              "i0_m0.25",
+              "i0_m0.5"
+            ],
+            "null_share_of_real_headroom": {
+              "max": 0.875,
+              "min": 0.771139705882353
+            },
+            "real_minus_null_ci_includes_zero": [
+              false,
+              true
+            ],
+            "real_minus_null_delta_range": [
+              0.004543025120256547,
+              0.008317744521646178
+            ]
+          },
+          "pixel_distance": {
+            "criterion": "to-base RMS of the noisy copy within the real I0-to-other-channel median RMS range (nearest dose on each side if none inside)",
+            "doses": [
+              1.0
+            ],
+            "entries": [
+              "i0_m1"
+            ],
+            "null_share_of_real_headroom": {
+              "max": 0.5441176470588235,
+              "min": 0.5441176470588235
+            },
+            "real_minus_null_ci_includes_zero": [
+              false
+            ],
+            "real_minus_null_delta_range": [
+              0.016568679850347406,
+              0.016568679850347406
+            ]
+          }
+        },
+        "documents_evaluated": 50,
+        "doses": {
+          "i0_m0.25": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.10101549973276323,
+              "gain": 0.0280264564404062,
+              "gain_ci95": [
+                0.02162528185463751,
+                0.03528428093197643
+              ],
+              "oracle_exact": 0.12904195617316944,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0006004476215927314,
+                  0.015901178361006962
+                ],
+                "delta": 0.008317744521646178
+              },
+              "share_of_real_headroom": 0.771139705882353
+            },
+            "dose_multiplier_of_pdd_high": 0.25,
+            "exchangeable": {
+              "gain": 0.03504142169962587,
+              "gain_ci95": [
+                0.0282601284811991,
+                0.0422
+              ],
+              "oracle_exact": 0.1297434526990914,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.005222558025352616,
+                  0.008000020085698983
+                ],
+                "delta": 0.00130277926242651
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.011324158204168894,
+                  0.02231462873340648
+                ],
+                "delta": 0.016535275253874934
+              },
+              "single_exact": 0.09470203099946553
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 2.5639600138786927,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 1.813786566352732,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m0.5": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.10101549973276323,
+              "gain": 0.03180117584179583,
+              "gain_ci95": [
+                0.023917691074291824,
+                0.040740492769148366
+              ],
+              "oracle_exact": 0.13281667557455906,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.003968333333333333,
+                  0.012533333333333334
+                ],
+                "delta": 0.004543025120256547
+              },
+              "share_of_real_headroom": 0.875
+            },
+            "dose_multiplier_of_pdd_high": 0.5,
+            "exchangeable": {
+              "gain": 0.048470069481560664,
+              "gain_ci95": [
+                0.03848164559666227,
+                0.059366579065588496
+              ],
+              "oracle_exact": 0.12439871726349545,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.0199,
+                  -0.0047666666666666664
+                ],
+                "delta": -0.012125868519508285
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.0018372528059861038,
+                  0.008133367702196035
+                ],
+                "delta": 0.003106627471940139
+              },
+              "single_exact": 0.0759286477819348
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 5.078634928741144,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 3.5899816036079466,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m0.75": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.10101549973276323,
+              "gain": 0.024585783003741316,
+              "gain_ci95": [
+                0.017637519597363264,
+                0.0327
+              ],
+              "oracle_exact": 0.12560128273650453,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.003733095813204509,
+                  0.019282714247455805
+                ],
+                "delta": 0.011758417958311064
+              },
+              "share_of_real_headroom": 0.6764705882352943
+            },
+            "dose_multiplier_of_pdd_high": 0.75,
+            "exchangeable": {
+              "gain": 0.04713388562266168,
+              "gain_ci95": [
+                0.0356418693212186,
+                0.05952078055753005
+              ],
+              "oracle_exact": 0.10061464457509353,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.020333837707552222,
+                  -0.0017992610903260395
+                ],
+                "delta": -0.0107896846606093
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.0016710649385355424,
+                  0.010589555177005987
+                ],
+                "delta": 0.004442811330839123
+              },
+              "single_exact": 0.05348075895243185
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 7.600492374548663,
+              "pair_vs_real_raw_pairs": "within",
+              "to_base_rms_median_gray": 5.375821207300152,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m1": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.10101549973276323,
+              "gain": 0.01977552111170497,
+              "gain_ci95": [
+                0.013854790660225444,
+                0.02709112773917691
+              ],
+              "oracle_exact": 0.1207910208444682,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.008666294762159273,
+                  0.0241185735603925
+                ],
+                "delta": 0.016568679850347406
+              },
+              "share_of_real_headroom": 0.5441176470588235
+            },
+            "dose_multiplier_of_pdd_high": 1.0,
+            "exchangeable": {
+              "gain": 0.04282469267771245,
+              "gain_ci95": [
+                0.03059200536902969,
+                0.0568
+              ],
+              "oracle_exact": 0.07896846606092998,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.018166802512025657,
+                  0.004200833333333321
+                ],
+                "delta": -0.006480491715660075
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.0006673249505906036,
+                  0.016700057455905932
+                ],
+                "delta": 0.008752004275788348
+              },
+              "single_exact": 0.03614377338321753
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 10.134724423810736,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 7.164613621593334,
+              "to_base_vs_real_distances": "within"
+            }
+          },
+          "i0_m1.5": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.10101549973276323,
+              "gain": 0.009587119187600213,
+              "gain_ci95": [
+                0.005066643853998926,
+                0.01503210003563157
+              ],
+              "oracle_exact": 0.11060261892036344,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.01824339716122121,
+                  0.03545164390287448
+                ],
+                "delta": 0.026757081774452164
+              },
+              "share_of_real_headroom": 0.26378676470588236
+            },
+            "dose_multiplier_of_pdd_high": 1.5,
+            "exchangeable": {
+              "gain": 0.02441876002137894,
+              "gain_ci95": [
+                0.015265900587920898,
+                0.03486749999999998
+              ],
+              "oracle_exact": 0.039818278995189735,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0009019241047568146,
+                  0.02231462873340648
+                ],
+                "delta": 0.011925440940673437
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.0183,
+                  0.03623192028985507
+                ],
+                "delta": 0.02715793693212186
+              },
+              "single_exact": 0.015399518973810797
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 15.19703655200195,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 10.741991819837434,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m0.25": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.08030464991982897,
+              "gain": 0.023583645109567078,
+              "gain_ci95": [
+                0.017132500000000002,
+                0.03130083333333332
+              ],
+              "oracle_exact": 0.10388829502939605,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0040839103084210505,
+                  0.020966666666666668
+                ],
+                "delta": 0.012760555852485303
+              },
+              "share_of_real_headroom": 0.6488970588235295
+            },
+            "dose_multiplier_of_pdd_high": 0.25,
+            "exchangeable": {
+              "gain": 0.02956306787814003,
+              "gain_ci95": [
+                0.023582809994655268,
+                0.03617774853019775
+              ],
+              "oracle_exact": 0.1044895777659006,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  6.680562978799215e-05,
+                  0.013557957296937984
+                ],
+                "delta": 0.006781133083912347
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.015633350703723497,
+                  0.02888993036957686
+                ],
+                "delta": 0.02201362907536077
+              },
+              "single_exact": 0.07492650988776056
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 2.581485066450089,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 1.8263725178790975,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "mean_m0.5": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.08030464991982897,
+              "gain": 0.028427311598075895,
+              "gain_ci95": [
+                0.019793120804428473,
+                0.03844907611510161
+              ],
+              "oracle_exact": 0.10873196151790487,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.0008369041242635244,
+                  0.015634186264029917
+                ],
+                "delta": 0.007916889363976483
+              },
+              "share_of_real_headroom": 0.7821691176470589
+            },
+            "dose_multiplier_of_pdd_high": 0.5,
+            "exchangeable": {
+              "gain": 0.042123196151790485,
+              "gain_ci95": [
+                0.03200156333511491,
+                0.05336784874398715
+              ],
+              "oracle_exact": 0.10128273650454303,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.014361342315132128,
+                  0.002033442009620522
+                ],
+                "delta": -0.005778995189738108
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.003641101015499733,
+                  0.015165686798503475
+                ],
+                "delta": 0.009453500801710315
+              },
+              "single_exact": 0.05915954035275254
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 5.11484394734498,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 3.616990066543508,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "mean_m1": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.08030464991982897,
+              "gain": 0.01673570283270978,
+              "gain_ci95": [
+                0.010655800129367218,
+                0.0244
+              ],
+              "oracle_exact": 0.09704035275253875,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.010510953988040046,
+                  0.028000661411010146
+                ],
+                "delta": 0.019608498129342598
+              },
+              "share_of_real_headroom": 0.4604779411764706
+            },
+            "dose_multiplier_of_pdd_high": 1.0,
+            "exchangeable": {
+              "gain": 0.03186798503474078,
+              "gain_ci95": [
+                0.02198710372960373,
+                0.04315097569691256
+              ],
+              "oracle_exact": 0.057455905932656336,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.006327176095094686,
+                  0.014096821218599679
+                ],
+                "delta": 0.004476215927311598
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.0118,
+                  0.0274
+                ],
+                "delta": 0.01970871191876002
+              },
+              "single_exact": 0.025587920897915555
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 10.206083924859884,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 7.215866722884903,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m2": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.08030464991982897,
+              "gain": 0.0037747194013896313,
+              "gain_ci95": [
+                0.0017666666666666666,
+                0.006066990913949755
+              ],
+              "oracle_exact": 0.08407936932121861,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.024333333333333332,
+                  0.041321485836451094
+                ],
+                "delta": 0.03256948156066275
+              },
+              "share_of_real_headroom": 0.10386029411764706
+            },
+            "dose_multiplier_of_pdd_high": 2.0,
+            "exchangeable": {
+              "gain": 0.008417958311063602,
+              "gain_ci95": [
+                0.004632745857830038,
+                0.012687466523835029
+              ],
+              "oracle_exact": 0.013228220203099947,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.01921512680005508,
+                  0.03670029128808124
+                ],
+                "delta": 0.027926242650988777
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.034299166666666665,
+                  0.05264564404061999
+                ],
+                "delta": 0.0431587386424372
+              },
+              "single_exact": 0.004810261892036344
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 20.397877798999737,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 14.430812064284432,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m4": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.08030464991982897,
+              "gain": 0.0008017103153393907,
+              "gain_ci95": [
+                0.0,
+                0.0021089983931440815
+              ],
+              "oracle_exact": 0.08110636023516836,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.027366459112773918,
+                  0.044361438179226796
+                ],
+                "delta": 0.035542490646712985
+              },
+              "share_of_real_headroom": 0.022058823529411766
+            },
+            "dose_multiplier_of_pdd_high": 4.0,
+            "exchangeable": {
+              "gain": 0.0009019241047568146,
+              "gain_ci95": [
+                0.0,
+                0.00241028387787895
+              ],
+              "oracle_exact": 0.001202565473009086,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.027233118653126668,
+                  0.04428910447268759
+                ],
+                "delta": 0.03544227685729556
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.04048637092463923,
+                  0.061534116782469256
+                ],
+                "delta": 0.050674772848743985
+              },
+              "single_exact": 0.0003006413682522715
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 40.65994648401278,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 28.741731374098123,
+              "to_base_vs_real_distances": "above"
+            }
+          }
+        },
+        "error_handling": {
+          "crash_signatures": [],
+          "crashed_ocr_calls": 0,
+          "crashed_samples": 0,
+          "policy": "fail",
+          "samples_dropped": 0,
+          "samples_with_a_crash_by_split": {
+            "test": 0,
+            "train": 0,
+            "val": 0
+          },
+          "total_ocr_calls": 336780
+        },
+        "noise_free_mean_view_minus_i0": {
+          "ci95": [
+            -0.028193479422768574,
+            -0.013524370648098553
+          ],
+          "delta": -0.020710849812934258
+        },
+        "real_pixel_distance_gray": {
+          "channels_to_mean_median": {
+            "i0": 5.025269786899495,
+            "i135": 3.7729509557191,
+            "i45": 3.956186486121612,
+            "i90": 4.59657687528977
+          },
+          "i0_to_other_channels_median": {
+            "i135": 6.929743167473353,
+            "i45": 6.73556185649192,
+            "i90": 9.240109580570483
+          },
+          "raw_pair_median_range": [
+            5.755923075195752,
+            9.240109580570483
+          ]
+        },
+        "real_raw4": {
+          "gain": 0.036344200962052375,
+          "gain_ci95": [
+            0.02839969469737547,
+            0.045030327810440036
+          ],
+          "oracle_exact": 0.1373597006948156,
+          "single_exact": 0.10101549973276323,
+          "train_best": "i0"
+        },
+        "real_raw4_oracle_minus_mean_single": {
+          "gain": 0.051576696953500804,
+          "gain_ci95": [
+            0.0415543322839453,
+            0.06229873327188178
+          ],
+          "oracle_exact": 0.1373597006948156,
+          "single_exact": 0.08578300374131481
+        },
+        "samples_evaluated": 7484,
+        "scope": "all documents (fixed method chosen on train; not held out)"
+      },
+      "tesseract": {
+        "anchors": {
+          "alternative_accuracy": {
+            "criterion": "exact rate of the noisy copy bracketing the mean exact rate of the real I45/I90/I135 (selected post hoc, after the dose-response was visible)",
+            "doses": [
+              0.5,
+              0.75
+            ],
+            "entries": [
+              "i0_m0.5",
+              "i0_m0.75"
+            ],
+            "null_share_of_real_headroom": {
+              "max": 0.8443080357142857,
+              "min": 0.61328125
+            },
+            "real_minus_null_ci_includes_zero": [
+              false,
+              false
+            ],
+            "real_minus_null_delta_range": [
+              0.009319882415820416,
+              0.023149385355424906
+            ]
+          },
+          "pixel_distance": {
+            "criterion": "to-base RMS of the noisy copy within the real I0-to-other-channel median RMS range (nearest dose on each side if none inside)",
+            "doses": [
+              1.0
+            ],
+            "entries": [
+              "i0_m1"
+            ],
+            "null_share_of_real_headroom": {
+              "max": 0.3052455357142857,
+              "min": 0.3052455357142857
+            },
+            "real_minus_null_ci_includes_zero": [
+              false
+            ],
+            "real_minus_null_delta_range": [
+              0.04158872260823089,
+              0.04158872260823089
+            ]
+          }
+        },
+        "documents_evaluated": 50,
+        "doses": {
+          "i0_m0.25": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.2169962586851951,
+              "gain": 0.0494722073757349,
+              "gain_ci95": [
+                0.041633053180117584,
+                0.057479678751198394
+              ],
+              "oracle_exact": 0.26646846606093,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0034143863273251103,
+                  0.018000511027434097
+                ],
+                "delta": 0.010388829502939604
+              },
+              "share_of_real_headroom": 0.8264508928571428
+            },
+            "dose_multiplier_of_pdd_high": 0.25,
+            "exchangeable": {
+              "gain": 0.06009486905398183,
+              "gain_ci95": [
+                0.05129940138963121,
+                0.06883367183324425
+              ],
+              "oracle_exact": 0.2585515766969535,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.008317798761530413,
+                  0.008300443613041148
+                ],
+                "delta": -0.0002338321753073223
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.029362539208801663,
+                  0.045533333333333335
+                ],
+                "delta": 0.03744655264564404
+              },
+              "single_exact": 0.19845670764297169
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 2.5639600138786927,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 1.813786566352732,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m0.5": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.2169962586851951,
+              "gain": 0.050541154462854086,
+              "gain_ci95": [
+                0.042156348022004166,
+                0.059192944949225015
+              ],
+              "oracle_exact": 0.2675374131480492,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.002772433636201675,
+                  0.01620126015306498
+                ],
+                "delta": 0.009319882415820416
+              },
+              "share_of_real_headroom": 0.8443080357142857
+            },
+            "dose_multiplier_of_pdd_high": 0.5,
+            "exchangeable": {
+              "gain": 0.07175307322287547,
+              "gain_ci95": [
+                0.060895831551754855,
+                0.08240083333333333
+              ],
+              "oracle_exact": 0.23877605558524853,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.021001622488910278,
+                  -0.0029459025174076057
+                ],
+                "delta": -0.011892036344200963
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.01829959205582394,
+                  0.03294138323513657
+                ],
+                "delta": 0.025788348476750402
+              },
+              "single_exact": 0.16702298236237306
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 5.078634928741144,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 3.5899816036079466,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m0.75": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.2169962586851951,
+              "gain": 0.0367116515232496,
+              "gain_ci95": [
+                0.029066549973276325,
+                0.04466666666666667
+              ],
+              "oracle_exact": 0.2537079102084447,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.015967378852663458,
+                  0.030933506591840357
+                ],
+                "delta": 0.023149385355424906
+              },
+              "share_of_real_headroom": 0.61328125
+            },
+            "dose_multiplier_of_pdd_high": 0.75,
+            "exchangeable": {
+              "gain": 0.07295563869588455,
+              "gain_ci95": [
+                0.06066666666666667,
+                0.08516666666666667
+              ],
+              "oracle_exact": 0.18319080705505078,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.025194714170692432,
+                  -0.00153898616996031
+                ],
+                "delta": -0.013094601817210049
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.015732504008551574,
+                  0.03326699141170155
+                ],
+                "delta": 0.024585783003741316
+              },
+              "single_exact": 0.11023516835916622
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 7.600492374548663,
+              "pair_vs_real_raw_pairs": "within",
+              "to_base_rms_median_gray": 5.375821207300152,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m1": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.2169962586851951,
+              "gain": 0.018272314270443613,
+              "gain_ci95": [
+                0.01396657803313736,
+                0.0226785567127209
+              ],
+              "oracle_exact": 0.2352685729556387,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.03287258748437779,
+                  0.05060019909139497
+                ],
+                "delta": 0.04158872260823089
+              },
+              "share_of_real_headroom": 0.3052455357142857
+            },
+            "dose_multiplier_of_pdd_high": 1.0,
+            "exchangeable": {
+              "gain": 0.05070817744521646,
+              "gain_ci95": [
+                0.04033864265309766,
+                0.061766769107429155
+              ],
+              "oracle_exact": 0.10756280064136825,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.004251472951258704,
+                  0.02231474701585604
+                ],
+                "delta": 0.009152859433458043
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.0341,
+                  0.06006737172634953
+                ],
+                "delta": 0.046833244254409406
+              },
+              "single_exact": 0.05685462319615179
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 10.134724423810736,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 7.164613621593334,
+              "to_base_vs_real_distances": "within"
+            }
+          },
+          "i0_m1.5": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.2169962586851951,
+              "gain": 0.0031400320684126137,
+              "gain_ci95": [
+                0.0014,
+                0.0053
+              ],
+              "oracle_exact": 0.2201362907536077,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.04696602440762516,
+                  0.06661756829137654
+                ],
+                "delta": 0.05672100481026189
+              },
+              "share_of_real_headroom": 0.052455357142857144
+            },
+            "dose_multiplier_of_pdd_high": 1.5,
+            "exchangeable": {
+              "gain": 0.01586718332442544,
+              "gain_ci95": [
+                0.010366658615136876,
+                0.021927226321300453
+              ],
+              "oracle_exact": 0.027124532335649387,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.032638351479048894,
+                  0.0550195866049397
+                ],
+                "delta": 0.04399385355424906
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.06797835382148584,
+                  0.09553342864778193
+                ],
+                "delta": 0.08167423837520042
+              },
+              "single_exact": 0.011257349011223945
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 15.19703655200195,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 10.741991819837434,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m0.25": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.17036344200962053,
+              "gain": 0.04392704436130412,
+              "gain_ci95": [
+                0.03614351238197042,
+                0.05180964729418096
+              ],
+              "oracle_exact": 0.21429048637092465,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.007616247995724212,
+                  0.024236743438671667
+                ],
+                "delta": 0.01593399251737039
+              },
+              "share_of_real_headroom": 0.7338169642857143
+            },
+            "dose_multiplier_of_pdd_high": 0.25,
+            "exchangeable": {
+              "gain": 0.05191074291822555,
+              "gain_ci95": [
+                0.043666666666666666,
+                0.060066666666666664
+              ],
+              "oracle_exact": 0.2069748797434527,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0012359700694815606,
+                  0.015064334047491518
+                ],
+                "delta": 0.007950293960448957
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.036544628540887227,
+                  0.05461692988248166
+                ],
+                "delta": 0.04563067878140032
+              },
+              "single_exact": 0.15506413682522716
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 2.581485066450089,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 1.8263725178790975,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "mean_m0.5": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.17036344200962053,
+              "gain": 0.04676643506146446,
+              "gain_ci95": [
+                0.038915500500190346,
+                0.05493438671665774
+              ],
+              "oracle_exact": 0.21712987707108497,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.00470946347745034,
+                  0.021866666666666666
+                ],
+                "delta": 0.013094601817210049
+              },
+              "share_of_real_headroom": 0.78125
+            },
+            "dose_multiplier_of_pdd_high": 0.5,
+            "exchangeable": {
+              "gain": 0.06584045964724747,
+              "gain_ci95": [
+                0.055785316477329816,
+                0.07589691341528591
+              ],
+              "oracle_exact": 0.1984233030464992,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.014801544551798175,
+                  0.0024392388205950366
+                ],
+                "delta": -0.005979422768572956
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.023984054427222522,
+                  0.03956882699517943
+                ],
+                "delta": 0.031700962052378406
+              },
+              "single_exact": 0.13258284339925175
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 5.11484394734498,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 3.616990066543508,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "mean_m1": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.17036344200962053,
+              "gain": 0.017637626937466594,
+              "gain_ci95": [
+                0.012927578834847676,
+                0.022733333333333335
+              ],
+              "oracle_exact": 0.18800106894708712,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.03344727897537276,
+                  0.0510004418853776
+                ],
+                "delta": 0.042223409941207914
+              },
+              "share_of_real_headroom": 0.2946428571428571
+            },
+            "dose_multiplier_of_pdd_high": 1.0,
+            "exchangeable": {
+              "gain": 0.043626402993051844,
+              "gain_ci95": [
+                0.0335651202565473,
+                0.054568327530798044
+              ],
+              "oracle_exact": 0.08832175307322288,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.002433016406670253,
+                  0.029034049973276313
+                ],
+                "delta": 0.01623463388562266
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.04039965392838055,
+                  0.06801229779084268
+                ],
+                "delta": 0.053915018706574024
+              },
+              "single_exact": 0.04469535008017103
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 10.206083924859884,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 7.215866722884903,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m2": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.17036344200962053,
+              "gain": 0.0008351149118118654,
+              "gain_ci95": [
+                0.0002,
+                0.0016738082485270487
+              ],
+              "oracle_exact": 0.17119855692143238,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.04907605784681307,
+                  0.06906749999999999
+                ],
+                "delta": 0.05902592196686264
+              },
+              "share_of_real_headroom": 0.013950892857142858
+            },
+            "dose_multiplier_of_pdd_high": 2.0,
+            "exchangeable": {
+              "gain": 0.0037413148049171567,
+              "gain_ci95": [
+                0.0016,
+                0.006366666666666666
+              ],
+              "oracle_exact": 0.006814537680384821,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.04566071876385745,
+                  0.0664183851098018
+                ],
+                "delta": 0.05611972207375735
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.08010411678246927,
+                  0.10673486237306251
+                ],
+                "delta": 0.09380010689470872
+              },
+              "single_exact": 0.0030732228754676645
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 20.397877798999737,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 14.430812064284432,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m4": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.17036344200962053,
+              "gain": 0.0,
+              "gain_ci95": [
+                0.0,
+                0.0
+              ],
+              "oracle_exact": 0.17036344200962053,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0498659914484233,
+                  0.07014965259219669
+                ],
+                "delta": 0.05986103687867451
+              },
+              "share_of_real_headroom": 0.0
+            },
+            "dose_multiplier_of_pdd_high": 4.0,
+            "exchangeable": {
+              "gain": 0.0,
+              "gain_ci95": [
+                0.0,
+                0.0
+              ],
+              "oracle_exact": 0.0,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0498659914484233,
+                  0.07014965259219669
+                ],
+                "delta": 0.05986103687867451
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.0836308655394525,
+                  0.11043643105291286
+                ],
+                "delta": 0.09754142169962587
+              },
+              "single_exact": 0.0
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 40.65994648401278,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 28.741731374098123,
+              "to_base_vs_real_distances": "above"
+            }
+          }
+        },
+        "error_handling": {
+          "crash_signatures": [
+            "<Signals.SIGFPE: 8>."
+          ],
+          "crashed_ocr_calls": 285,
+          "crashed_samples": 243,
+          "policy": "fail",
+          "samples_dropped": 0,
+          "samples_with_a_crash_by_split": {
+            "test": 30,
+            "train": 179,
+            "val": 34
+          },
+          "total_ocr_calls": 336780
+        },
+        "noise_free_mean_view_minus_i0": {
+          "ci95": [
+            -0.058516336368505624,
+            -0.034740780331373594
+          ],
+          "delta": -0.04663281667557456
+        },
+        "real_pixel_distance_gray": {
+          "channels_to_mean_median": {
+            "i0": 5.025269786899495,
+            "i135": 3.7729509557191,
+            "i45": 3.956186486121612,
+            "i90": 4.59657687528977
+          },
+          "i0_to_other_channels_median": {
+            "i135": 6.929743167473353,
+            "i45": 6.73556185649192,
+            "i90": 9.240109580570483
+          },
+          "raw_pair_median_range": [
+            5.755923075195752,
+            9.240109580570483
+          ]
+        },
+        "real_raw4": {
+          "gain": 0.05986103687867451,
+          "gain_ci95": [
+            0.0498659914484233,
+            0.07014965259219669
+          ],
+          "oracle_exact": 0.27685729556386957,
+          "single_exact": 0.2169962586851951,
+          "train_best": "i0"
+        },
+        "real_raw4_oracle_minus_mean_single": {
+          "gain": 0.09754142169962587,
+          "gain_ci95": [
+            0.0836308655394525,
+            0.11043643105291286
+          ],
+          "oracle_exact": 0.27685729556386957,
+          "single_exact": 0.17931587386424372
+        },
+        "samples_evaluated": 7484,
+        "scope": "all documents (fixed method chosen on train; not held out)"
+      }
+    },
+    "tesseract_crash_drop_sensitivity_test": {
+      "anchors": {
+        "alternative_accuracy": {
+          "criterion": "exact rate of the noisy copy bracketing the mean exact rate of the real I45/I90/I135 (selected post hoc, after the dose-response was visible)",
+          "doses": [
+            0.5,
+            0.75
+          ],
+          "entries": [
+            "i0_m0.5",
+            "i0_m0.75"
+          ],
+          "null_share_of_real_headroom": {
+            "max": 0.8768656716417911,
+            "min": 0.7947761194029851
+          },
+          "real_minus_null_ci_includes_zero": [
+            true,
+            true
+          ],
+          "real_minus_null_delta_range": [
+            0.008217131474103585,
+            0.013695219123505976
+          ]
+        },
+        "pixel_distance": {
+          "criterion": "to-base RMS of the noisy copy within the real I0-to-other-channel median RMS range (nearest dose on each side if none inside)",
+          "doses": [
+            1.0
+          ],
+          "entries": [
+            "i0_m1"
+          ],
+          "null_share_of_real_headroom": {
+            "max": 0.3656716417910448,
+            "min": 0.3656716417910448
+          },
+          "real_minus_null_ci_includes_zero": [
+            false
+          ],
+          "real_minus_null_delta_range": [
+            0.04233067729083665,
+            0.04233067729083665
+          ]
+        }
+      },
+      "documents_evaluated": 7,
+      "doses": {
+        "i0_m0.25": {
+          "base": "i0",
+          "clean_base": {
+            "base_exact": 0.2679282868525896,
+            "gain": 0.04606573705179283,
+            "gain_ci95": [
+              0.03146794084294085,
+              0.06081375137226197
+            ],
+            "oracle_exact": 0.31399402390438247,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.001286008230452675,
+                0.04187649449322626
+              ],
+              "delta": 0.020667330677290836
+            },
+            "share_of_real_headroom": 0.6902985074626866
+          },
+          "dose_multiplier_of_pdd_high": 0.25,
+          "exchangeable": {
+            "gain": 0.07021912350597609,
+            "gain_ci95": [
+              0.046153846153846156,
+              0.0896551724137931
+            ],
+            "oracle_exact": 0.30776892430278885,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.02125,
+                0.014095048873270158
+              ],
+              "delta": -0.0034860557768924302
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.04125248508946322,
+                0.07969543147208122
+              ],
+              "delta": 0.06150398406374502
+            },
+            "single_exact": 0.23754980079681276
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 2.5485610856417846,
+            "pair_vs_real_raw_pairs": "below",
+            "to_base_rms_median_gray": 1.8064430086313792,
+            "to_base_vs_real_distances": "below"
+          }
+        },
+        "i0_m0.5": {
+          "base": "i0",
+          "clean_base": {
+            "base_exact": 0.2679282868525896,
+            "gain": 0.058515936254980076,
+            "gain_ci95": [
+              0.039,
+              0.0775609756097561
+            ],
+            "oracle_exact": 0.3264442231075697,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.00656886839559342,
+                0.022189349112426034
+              ],
+              "delta": 0.008217131474103585
+            },
+            "share_of_real_headroom": 0.8768656716417911
+          },
+          "dose_multiplier_of_pdd_high": 0.5,
+          "exchangeable": {
+            "gain": 0.08316733067729083,
+            "gain_ci95": [
+              0.06436663233779609,
+              0.10151663405088063
+            ],
+            "oracle_exact": 0.2968127490039841,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.03275060975609756,
+                -0.0020181634712411706
+              ],
+              "delta": -0.01643426294820717
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.02756286266924565,
+                0.07357357357357357
+              ],
+              "delta": 0.04855577689243028
+            },
+            "single_exact": 0.21364541832669323
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 5.060128565761307,
+            "pair_vs_real_raw_pairs": "below",
+            "to_base_rms_median_gray": 3.576237138006869,
+            "to_base_vs_real_distances": "below"
+          }
+        },
+        "i0_m0.75": {
+          "base": "i0",
+          "clean_base": {
+            "base_exact": 0.2679282868525896,
+            "gain": 0.05303784860557769,
+            "gain_ci95": [
+              0.02985772687892571,
+              0.07759522058397711
+            ],
+            "oracle_exact": 0.3209661354581673,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.005055611729019211,
+                0.03231462925851703
+              ],
+              "delta": 0.013695219123505976
+            },
+            "share_of_real_headroom": 0.7947761194029851
+          },
+          "dose_multiplier_of_pdd_high": 0.75,
+          "exchangeable": {
+            "gain": 0.10084661354581673,
+            "gain_ci95": [
+              0.07327141382868937,
+              0.12475868725868726
+            ],
+            "oracle_exact": 0.25298804780876494,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.062253937007874016,
+                -0.008605424802177884
+              ],
+              "delta": -0.034113545816733065
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.010219341974077766,
+                0.052866327621436955
+              ],
+              "delta": 0.030876494023904383
+            },
+            "single_exact": 0.1521414342629482
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 7.567493586921108,
+            "pair_vs_real_raw_pairs": "within",
+            "to_base_rms_median_gray": 5.3555917868189695,
+            "to_base_vs_real_distances": "below"
+          }
+        },
+        "i0_m1": {
+          "base": "i0",
+          "clean_base": {
+            "base_exact": 0.2679282868525896,
+            "gain": 0.02440239043824701,
+            "gain_ci95": [
+              0.010131380953381121,
+              0.04302670623145401
+            ],
+            "oracle_exact": 0.29233067729083667,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.021187982266990216,
+                0.06098153547133139
+              ],
+              "delta": 0.04233067729083665
+            },
+            "share_of_real_headroom": 0.3656716417910448
+          },
+          "dose_multiplier_of_pdd_high": 1.0,
+          "exchangeable": {
+            "gain": 0.06847609561752988,
+            "gain_ci95": [
+              0.05049885216952574,
+              0.08631528046421663
+            ],
+            "oracle_exact": 0.15338645418326693,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.03725590955806783,
+                0.028414755732801594
+              ],
+              "delta": -0.0017430278884462151
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.02899333057657751,
+                0.09984984984984985
+              ],
+              "delta": 0.06324701195219123
+            },
+            "single_exact": 0.08491035856573705
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 10.090796908842128,
+            "pair_vs_real_raw_pairs": "above",
+            "to_base_rms_median_gray": 7.134443965872711,
+            "to_base_vs_real_distances": "within"
+          }
+        },
+        "i0_m1.5": {
+          "base": "i0",
+          "clean_base": {
+            "base_exact": 0.2679282868525896,
+            "gain": 0.0032370517928286854,
+            "gain_ci95": [
+              0.0,
+              0.007773319959879639
+            ],
+            "oracle_exact": 0.2711653386454183,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.03978439425051335,
+                0.08390578999018646
+              ],
+              "delta": 0.06349601593625498
+            },
+            "share_of_real_headroom": 0.04850746268656717
+          },
+          "dose_multiplier_of_pdd_high": 1.5,
+          "exchangeable": {
+            "gain": 0.022908366533864542,
+            "gain_ci95": [
+              0.007492507492507493,
+              0.03930375842561386
+            ],
+            "oracle_exact": 0.053784860557768925,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.006276150627615063,
+                0.07300884955752213
+              ],
+              "delta": 0.043824701195219126
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.06791044776119402,
+                0.15059055118110237
+              ],
+              "delta": 0.10881474103585657
+            },
+            "single_exact": 0.030876494023904383
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 15.130463099020666,
+            "pair_vs_real_raw_pairs": "above",
+            "to_base_rms_median_gray": 10.69956159264947,
+            "to_base_vs_real_distances": "above"
+          }
+        },
+        "mean_m0.25": {
+          "base": "mean",
+          "clean_base": {
+            "base_exact": 0.1902390438247012,
+            "gain": 0.054282868525896415,
+            "gain_ci95": [
+              0.039028367187996696,
+              0.06723371773506473
+            ],
+            "oracle_exact": 0.24452191235059761,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.007614213197969543,
+                0.031490384615384615
+              ],
+              "delta": 0.01245019920318725
+            },
+            "share_of_real_headroom": 0.8134328358208955
+          },
+          "dose_multiplier_of_pdd_high": 0.25,
+          "exchangeable": {
+            "gain": 0.053286852589641436,
+            "gain_ci95": [
+              0.03215020576131687,
+              0.07368044098414485
+            ],
+            "oracle_exact": 0.2400398406374502,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.008534686993588387,
+                0.032869481765834936
+              ],
+              "delta": 0.013446215139442231
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.060796169509650604,
+                0.09666339548577037
+              ],
+              "delta": 0.07843625498007968
+            },
+            "single_exact": 0.18675298804780877
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 2.5675598773696695,
+            "pair_vs_real_raw_pairs": "below",
+            "to_base_rms_median_gray": 1.8189916394194567,
+            "to_base_vs_real_distances": "below"
+          }
+        },
+        "mean_m0.5": {
+          "base": "mean",
+          "clean_base": {
+            "base_exact": 0.1902390438247012,
+            "gain": 0.06922310756972111,
+            "gain_ci95": [
+              0.05355276907001045,
+              0.08229116442807208
+            ],
+            "oracle_exact": 0.2594621513944223,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.02783400809716599,
+                0.019775390625
+              ],
+              "delta": -0.00249003984063745
+            },
+            "share_of_real_headroom": 1.037313432835821
+          },
+          "dose_multiplier_of_pdd_high": 0.5,
+          "exchangeable": {
+            "gain": 0.08167330677290836,
+            "gain_ci95": [
+              0.05575128384762223,
+              0.10818273092369478
+            ],
+            "oracle_exact": 0.24900398406374502,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.04174901185770751,
+                0.012336354481369587
+              ],
+              "delta": -0.014940239043824702
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.03765690376569038,
+                0.061334641805691856
+              ],
+              "delta": 0.050049800796812746
+            },
+            "single_exact": 0.16733067729083664
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 5.0988165313429,
+            "pair_vs_real_raw_pairs": "below",
+            "to_base_rms_median_gray": 3.6028191690095728,
+            "to_base_vs_real_distances": "below"
+          }
+        },
+        "mean_m1": {
+          "base": "mean",
+          "clean_base": {
+            "base_exact": 0.1902390438247012,
+            "gain": 0.025896414342629483,
+            "gain_ci95": [
+              0.013015717092337918,
+              0.04149797570850203
+            ],
+            "oracle_exact": 0.21613545816733068,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.012218719920020821,
+                0.06439764936336925
+              ],
+              "delta": 0.04083665338645418
+            },
+            "share_of_real_headroom": 0.3880597014925374
+          },
+          "dose_multiplier_of_pdd_high": 1.0,
+          "exchangeable": {
+            "gain": 0.058515936254980076,
+            "gain_ci95": [
+              0.034125379170879676,
+              0.08614864864864864
+            ],
+            "oracle_exact": 0.12250996015936255,
+            "real_fixed_minus_null": {
+              "ci95": [
+                -0.03475422570850203,
+                0.04319761668321748
+              ],
+              "delta": 0.008217131474103585
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.03131416837782341,
+                0.11269756540640334
+              ],
+              "delta": 0.07320717131474104
+            },
+            "single_exact": 0.06399402390438247
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 10.158359213206989,
+            "pair_vs_real_raw_pairs": "above",
+            "to_base_rms_median_gray": 7.188907440584433,
+            "to_base_vs_real_distances": "above"
+          }
+        },
+        "mean_m2": {
+          "base": "mean",
+          "clean_base": {
+            "base_exact": 0.1902390438247012,
+            "gain": 0.00249003984063745,
+            "gain_ci95": [
+              0.0007239382239382239,
+              0.004897880389981769
+            ],
+            "oracle_exact": 0.19272908366533864,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.03875770020533881,
+                0.08638113570741097
+              ],
+              "delta": 0.06424302788844621
+            },
+            "share_of_real_headroom": 0.0373134328358209
+          },
+          "dose_multiplier_of_pdd_high": 2.0,
+          "exchangeable": {
+            "gain": 0.009213147410358566,
+            "gain_ci95": [
+              0.002714641855094813,
+              0.016634050880626222
+            ],
+            "oracle_exact": 0.022908366533864542,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.028816422248609842,
+                0.08169774288518156
+              ],
+              "delta": 0.0575199203187251
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.09044178574738962,
+                0.15703946728408272
+              ],
+              "delta": 0.12250996015936255
+            },
+            "single_exact": 0.013695219123505976
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 20.33014031947846,
+            "pair_vs_real_raw_pairs": "above",
+            "to_base_rms_median_gray": 14.372358511506315,
+            "to_base_vs_real_distances": "above"
+          }
+        },
+        "mean_m4": {
+          "base": "mean",
+          "clean_base": {
+            "base_exact": 0.1902390438247012,
+            "gain": 0.0,
+            "gain_ci95": [
+              0.0,
+              0.0
+            ],
+            "oracle_exact": 0.1902390438247012,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.04232283464566929,
+                0.08869395711500974
+              ],
+              "delta": 0.06673306772908366
+            },
+            "share_of_real_headroom": 0.0
+          },
+          "dose_multiplier_of_pdd_high": 4.0,
+          "exchangeable": {
+            "gain": 0.0,
+            "gain_ci95": [
+              0.0,
+              0.0
+            ],
+            "oracle_exact": 0.0,
+            "real_fixed_minus_null": {
+              "ci95": [
+                0.04232283464566929,
+                0.08869395711500974
+              ],
+              "delta": 0.06673306772908366
+            },
+            "real_oracle_minus_mean_single_minus_null": {
+              "ci95": [
+                0.10112359550561797,
+                0.16192084942084942
+              ],
+              "delta": 0.1317231075697211
+            },
+            "single_exact": 0.0
+          },
+          "pixel_distance": {
+            "pair_rms_median_gray": 40.477678675239815,
+            "pair_vs_real_raw_pairs": "above",
+            "to_base_rms_median_gray": 28.640436681081024,
+            "to_base_vs_real_distances": "above"
+          }
+        }
+      },
+      "error_handling": {
+        "crash_signatures": [
+          "<Signals.SIGFPE: 8>."
+        ],
+        "crashed_ocr_calls": 285,
+        "crashed_samples": 243,
+        "policy": "drop",
+        "samples_dropped": 243,
+        "samples_with_a_crash_by_split": {
+          "test": 30,
+          "train": 179,
+          "val": 34
+        },
+        "total_ocr_calls": 336780
+      },
+      "noise_free_mean_view_minus_i0": {
+        "ci95": [
+          -0.10300257757757757,
+          -0.04825330256364753
+        ],
+        "delta": -0.07768924302788845
+      },
+      "real_pixel_distance_gray": {
+        "channels_to_mean_median": {
+          "i0": 5.3428859508191895,
+          "i135": 3.767344024442174,
+          "i45": 3.906177054848756,
+          "i90": 4.672708671816273
+        },
+        "i0_to_other_channels_median": {
+          "i135": 7.107740323873692,
+          "i45": 6.948298073911607,
+          "i90": 9.695230442520545
+        },
+        "raw_pair_median_range": [
+          5.957319685381506,
+          9.695230442520545
+        ]
+      },
+      "real_raw4": {
+        "gain": 0.06673306772908366,
+        "gain_ci95": [
+          0.04232283464566929,
+          0.08869395711500974
+        ],
+        "oracle_exact": 0.3346613545816733,
+        "single_exact": 0.2679282868525896,
+        "train_best": "i0"
+      },
+      "real_raw4_oracle_minus_mean_single": {
+        "gain": 0.1317231075697211,
+        "gain_ci95": [
+          0.10112359550561797,
+          0.16192084942084942
+        ],
+        "oracle_exact": 0.3346613545816733,
+        "single_exact": 0.20293824701195218
+      },
+      "samples_evaluated": 1004,
+      "scope": "test split only (fixed method chosen on train)"
+    },
+    "test": {
+      "easyocr": {
+        "anchors": {
+          "alternative_accuracy": {
+            "criterion": "exact rate of the noisy copy bracketing the mean exact rate of the real I45/I90/I135 (selected post hoc, after the dose-response was visible)",
+            "doses": [
+              0.5,
+              0.75
+            ],
+            "entries": [
+              "i0_m0.5",
+              "i0_m0.75"
+            ],
+            "null_share_of_real_headroom": {
+              "max": 1.2596153846153846,
+              "min": 1.0
+            },
+            "real_minus_null_ci_includes_zero": [
+              true,
+              true
+            ],
+            "real_minus_null_delta_range": [
+              -0.006528046421663443,
+              0.0
+            ]
+          },
+          "pixel_distance": {
+            "criterion": "to-base RMS of the noisy copy within the real I0-to-other-channel median RMS range (nearest dose on each side if none inside)",
+            "doses": [
+              1.0
+            ],
+            "entries": [
+              "i0_m1"
+            ],
+            "null_share_of_real_headroom": {
+              "max": 0.7211538461538461,
+              "min": 0.7211538461538461
+            },
+            "real_minus_null_ci_includes_zero": [
+              true
+            ],
+            "real_minus_null_delta_range": [
+              0.007011605415860735,
+              0.007011605415860735
+            ]
+          }
+        },
+        "documents_evaluated": 7,
+        "doses": {
+          "i0_m0.25": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.11315280464216634,
+              "gain": 0.027804642166344293,
+              "gain_ci95": [
+                0.01669941060903733,
+                0.041428571428571426
+              ],
+              "oracle_exact": 0.14095744680851063,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.011666666666666667,
+                  0.008095238095238095
+                ],
+                "delta": -0.0026595744680851063
+              },
+              "share_of_real_headroom": 1.1057692307692308
+            },
+            "dose_multiplier_of_pdd_high": 0.25,
+            "exchangeable": {
+              "gain": 0.03409090909090909,
+              "gain_ci95": [
+                0.01958413926499033,
+                0.0514990328820116
+              ],
+              "oracle_exact": 0.14216634429400388,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.020714285714285713,
+                  0.002857142857142857
+                ],
+                "delta": -0.008945841392649903
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.0012088974854932303,
+                  0.022347740667976426
+                ],
+                "delta": 0.00918762088974855
+              },
+              "single_exact": 0.10807543520309477
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 2.5485610856417846,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 1.8064430086313792,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m0.5": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.11315280464216634,
+              "gain": 0.03167311411992263,
+              "gain_ci95": [
+                0.023095238095238096,
+                0.04047619047619048
+              ],
+              "oracle_exact": 0.14482591876208897,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.018463073852295408,
+                  0.006289824537164911
+                ],
+                "delta": -0.006528046421663443
+              },
+              "share_of_real_headroom": 1.2596153846153846
+            },
+            "dose_multiplier_of_pdd_high": 0.5,
+            "exchangeable": {
+              "gain": 0.042794970986460346,
+              "gain_ci95": [
+                0.025449101796407185,
+                0.062142857142857146
+              ],
+              "oracle_exact": 0.1344294003868472,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.03333333333333333,
+                  0.00024177949709864604
+                ],
+                "delta": -0.01764990328820116
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.008333333333333333,
+                  0.007142857142857143
+                ],
+                "delta": 0.00048355899419729207
+              },
+              "single_exact": 0.09163442940038685
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 5.060128565761307,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 3.576237138006869,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m0.75": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.11315280464216634,
+              "gain": 0.025145067698259187,
+              "gain_ci95": [
+                0.01472055888223553,
+                0.03806483300589391
+              ],
+              "oracle_exact": 0.1382978723404255,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.012619047619047618,
+                  0.012330754352030947
+                ],
+                "delta": 0.0
+              },
+              "share_of_real_headroom": 1.0
+            },
+            "dose_multiplier_of_pdd_high": 0.75,
+            "exchangeable": {
+              "gain": 0.049081237911025144,
+              "gain_ci95": [
+                0.02666489361702128,
+                0.07588495333513202
+              ],
+              "oracle_exact": 0.11798839458413926,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.045938104448742745,
+                  -0.002142857142857143
+                ],
+                "delta": -0.023936170212765957
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.015473945380860275,
+                  0.003744033231710998
+                ],
+                "delta": -0.005802707930367505
+              },
+              "single_exact": 0.06890715667311412
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 7.567493586921108,
+              "pair_vs_real_raw_pairs": "within",
+              "to_base_rms_median_gray": 5.3555917868189695,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m1": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.11315280464216634,
+              "gain": 0.01813346228239845,
+              "gain_ci95": [
+                0.012330754352030947,
+                0.023809523809523808
+              ],
+              "oracle_exact": 0.1312862669245648,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.004110251450676982,
+                  0.019523809523809523
+                ],
+                "delta": 0.007011605415860735
+              },
+              "share_of_real_headroom": 0.7211538461538461
+            },
+            "dose_multiplier_of_pdd_high": 1.0,
+            "exchangeable": {
+              "gain": 0.048597678916827855,
+              "gain_ci95": [
+                0.017380952380952382,
+                0.08547619047619047
+              ],
+              "oracle_exact": 0.10058027079303675,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.0569047619047619,
+                  0.00918762088974855
+                ],
+                "delta": -0.023452611218568665
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.022727272727272728,
+                  0.011904761904761904
+                ],
+                "delta": -0.005319148936170213
+              },
+              "single_exact": 0.0519825918762089
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 10.090796908842128,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 7.134443965872711,
+              "to_base_vs_real_distances": "within"
+            }
+          },
+          "i0_m1.5": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.11315280464216634,
+              "gain": 0.00918762088974855,
+              "gain_ci95": [
+                0.003929273084479371,
+                0.015476190476190477
+              ],
+              "oracle_exact": 0.12234042553191489,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.004110251450676982,
+                  0.027079303675048357
+                ],
+                "delta": 0.015957446808510637
+              },
+              "share_of_real_headroom": 0.3653846153846154
+            },
+            "dose_multiplier_of_pdd_high": 1.5,
+            "exchangeable": {
+              "gain": 0.032156673114119926,
+              "gain_ci95": [
+                0.00858914538310413,
+                0.06642857142857143
+              ],
+              "oracle_exact": 0.059961315280464215,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.03833333333333333,
+                  0.01880952380952381
+                ],
+                "delta": -0.007011605415860735
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.00846501105277701,
+                  0.028494343119781922
+                ],
+                "delta": 0.011121856866537718
+              },
+              "single_exact": 0.027804642166344293
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 15.130463099020666,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 10.69956159264947,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m0.25": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.09961315280464217,
+              "gain": 0.02756286266924565,
+              "gain_ci95": [
+                0.014489194499017682,
+                0.04119047619047619
+              ],
+              "oracle_exact": 0.12717601547388782,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.017857142857142856,
+                  0.016666666666666666
+                ],
+                "delta": -0.0024177949709864605
+              },
+              "share_of_real_headroom": 1.0961538461538463
+            },
+            "dose_multiplier_of_pdd_high": 0.25,
+            "exchangeable": {
+              "gain": 0.033365570599613155,
+              "gain_ci95": [
+                0.021856581532416503,
+                0.04424664962696876
+              ],
+              "oracle_exact": 0.1276595744680851,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.0206286836935167,
+                  0.007619047619047619
+                ],
+                "delta": -0.008220502901353965
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.007978723404255319,
+                  0.02756286266924565
+                ],
+                "delta": 0.009912959381044487
+              },
+              "single_exact": 0.09429400386847195
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 2.5675598773696695,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 1.8189916394194567,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "mean_m0.5": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.09961315280464217,
+              "gain": 0.022969052224371372,
+              "gain_ci95": [
+                0.015717092337917484,
+                0.031431334622823985
+              ],
+              "oracle_exact": 0.12258220502901353,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.008462282398452611,
+                  0.01402321083172147
+                ],
+                "delta": 0.0021760154738878143
+              },
+              "share_of_real_headroom": 0.9134615384615384
+            },
+            "dose_multiplier_of_pdd_high": 0.5,
+            "exchangeable": {
+              "gain": 0.04182785299806576,
+              "gain_ci95": [
+                0.027501812611095522,
+                0.057465618860510805
+              ],
+              "oracle_exact": 0.11508704061895551,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.027142857142857142,
+                  -0.007618895593600901
+                ],
+                "delta": -0.016682785299806577
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.007011605415860735,
+                  0.009730538922155689
+                ],
+                "delta": 0.0014506769825918763
+              },
+              "single_exact": 0.07325918762088975
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 5.0988165313429,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 3.6028191690095728,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "mean_m1": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.09961315280464217,
+              "gain": 0.01764990328820116,
+              "gain_ci95": [
+                0.010229540918163672,
+                0.024523809523809524
+              ],
+              "oracle_exact": 0.11726305609284332,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.005077369439071566,
+                  0.021034816247582206
+                ],
+                "delta": 0.007495164410058027
+              },
+              "share_of_real_headroom": 0.7019230769230769
+            },
+            "dose_multiplier_of_pdd_high": 1.0,
+            "exchangeable": {
+              "gain": 0.03723404255319149,
+              "gain_ci95": [
+                0.016184781083356723,
+                0.06785714285714285
+              ],
+              "oracle_exact": 0.07736943907156674,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.041666666666666664,
+                  0.013297872340425532
+                ],
+                "delta": -0.012088974854932301
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  -0.010479041916167664,
+                  0.02111984282907662
+                ],
+                "delta": 0.0060444874274661504
+              },
+              "single_exact": 0.04013539651837524
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 10.158359213206989,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 7.188907440584433,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m2": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.09961315280464217,
+              "gain": 0.0026595744680851063,
+              "gain_ci95": [
+                0.0007142857142857143,
+                0.004835589941972921
+              ],
+              "oracle_exact": 0.10227272727272727,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.013223552894211578,
+                  0.031914893617021274
+                ],
+                "delta": 0.02248549323017408
+              },
+              "share_of_real_headroom": 0.10576923076923077
+            },
+            "dose_multiplier_of_pdd_high": 2.0,
+            "exchangeable": {
+              "gain": 0.01402321083172147,
+              "gain_ci95": [
+                0.0011904761904761906,
+                0.030705996131528045
+              ],
+              "oracle_exact": 0.027079303675048357,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.008982035928143712,
+                  0.028333333333333332
+                ],
+                "delta": 0.011121856866537718
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.011847195357833656,
+                  0.04666666666666667
+                ],
+                "delta": 0.02925531914893617
+              },
+              "single_exact": 0.013056092843326886
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 20.33014031947846,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 14.372358511506315,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m4": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.09961315280464217,
+              "gain": 0.0007253384912959381,
+              "gain_ci95": [
+                0.0,
+                0.0021760154738878143
+              ],
+              "oracle_exact": 0.10033849129593811,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.014970059880239521,
+                  0.03404761904761905
+                ],
+                "delta": 0.02441972920696325
+              },
+              "share_of_real_headroom": 0.028846153846153848
+            },
+            "dose_multiplier_of_pdd_high": 4.0,
+            "exchangeable": {
+              "gain": 0.0007253384912959381,
+              "gain_ci95": [
+                0.0,
+                0.0021760154738878143
+              ],
+              "oracle_exact": 0.0009671179883945841,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.014970059880239521,
+                  0.03404761904761905
+                ],
+                "delta": 0.02441972920696325
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.023818252493049266,
+                  0.06404761904761905
+                ],
+                "delta": 0.0425531914893617
+              },
+              "single_exact": 0.00024177949709864604
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 40.477678675239815,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 28.640436681081024,
+              "to_base_vs_real_distances": "above"
+            }
+          }
+        },
+        "error_handling": {
+          "crash_signatures": [],
+          "crashed_ocr_calls": 0,
+          "crashed_samples": 0,
+          "policy": "fail",
+          "samples_dropped": 0,
+          "samples_with_a_crash_by_split": {
+            "test": 0,
+            "train": 0,
+            "val": 0
+          },
+          "total_ocr_calls": 336780
+        },
+        "noise_free_mean_view_minus_i0": {
+          "ci95": [
+            -0.03288201160541586,
+            0.005714285714285714
+          ],
+          "delta": -0.013539651837524178
+        },
+        "real_pixel_distance_gray": {
+          "channels_to_mean_median": {
+            "i0": 5.3428859508191895,
+            "i135": 3.767344024442174,
+            "i45": 3.906177054848756,
+            "i90": 4.672708671816273
+          },
+          "i0_to_other_channels_median": {
+            "i135": 7.107740323873692,
+            "i45": 6.948298073911607,
+            "i90": 9.695230442520545
+          },
+          "raw_pair_median_range": [
+            5.957319685381506,
+            9.695230442520545
+          ]
+        },
+        "real_raw4": {
+          "gain": 0.025145067698259187,
+          "gain_ci95": [
+            0.014970059880239521,
+            0.035238095238095235
+          ],
+          "oracle_exact": 0.13829787234042554,
+          "single_exact": 0.11315280464216634,
+          "train_best": "i0"
+        },
+        "real_raw4_oracle_minus_mean_single": {
+          "gain": 0.04327852998065764,
+          "gain_ci95": [
+            0.02480353634577603,
+            0.06452380952380952
+          ],
+          "oracle_exact": 0.13829787234042554,
+          "single_exact": 0.09501934235976789
+        },
+        "samples_evaluated": 1034,
+        "scope": "test split only (fixed method chosen on train)"
+      },
+      "tesseract": {
+        "anchors": {
+          "alternative_accuracy": {
+            "criterion": "exact rate of the noisy copy bracketing the mean exact rate of the real I45/I90/I135 (selected post hoc, after the dose-response was visible)",
+            "doses": [
+              0.5,
+              0.75
+            ],
+            "entries": [
+              "i0_m0.5",
+              "i0_m0.75"
+            ],
+            "null_share_of_real_headroom": {
+              "max": 0.8786764705882353,
+              "min": 0.7830882352941176
+            },
+            "real_minus_null_ci_includes_zero": [
+              true,
+              true
+            ],
+            "real_minus_null_delta_range": [
+              0.007978723404255319,
+              0.014264990328820115
+            ]
+          },
+          "pixel_distance": {
+            "criterion": "to-base RMS of the noisy copy within the real I0-to-other-channel median RMS range (nearest dose on each side if none inside)",
+            "doses": [
+              1.0
+            ],
+            "entries": [
+              "i0_m1"
+            ],
+            "null_share_of_real_headroom": {
+              "max": 0.3602941176470589,
+              "min": 0.3602941176470589
+            },
+            "real_minus_null_ci_includes_zero": [
+              false
+            ],
+            "real_minus_null_delta_range": [
+              0.04206963249516441,
+              0.04206963249516441
+            ]
+          }
+        },
+        "documents_evaluated": 7,
+        "doses": {
+          "i0_m0.25": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.26305609284332687,
+              "gain": 0.0456963249516441,
+              "gain_ci95": [
+                0.03093812375249501,
+                0.06
+              ],
+              "oracle_exact": 0.308752417794971,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0007485029940119761,
+                  0.04071428571428572
+                ],
+                "delta": 0.02006769825918762
+              },
+              "share_of_real_headroom": 0.6948529411764707
+            },
+            "dose_multiplier_of_pdd_high": 0.25,
+            "exchangeable": {
+              "gain": 0.06914893617021277,
+              "gain_ci95": [
+                0.04448742746615087,
+                0.08880952380952381
+              ],
+              "oracle_exact": 0.3027079303675048,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.02087426326129666,
+                  0.013339285714285628
+                ],
+                "delta": -0.0033849129593810446
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.04047619047619048,
+                  0.07809523809523809
+                ],
+                "delta": 0.06020309477756286
+              },
+              "single_exact": 0.23355899419729206
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 2.5485610856417846,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 1.8064430086313792,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m0.5": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.26305609284332687,
+              "gain": 0.0577852998065764,
+              "gain_ci95": [
+                0.03833333333333333,
+                0.07712765957446809
+              ],
+              "oracle_exact": 0.3208413926499033,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.008104125736738703,
+                  0.022857142857142857
+                ],
+                "delta": 0.007978723404255319
+              },
+              "share_of_real_headroom": 0.8786764705882353
+            },
+            "dose_multiplier_of_pdd_high": 0.5,
+            "exchangeable": {
+              "gain": 0.08244680851063829,
+              "gain_ci95": [
+                0.06262088974854932,
+                0.10130560928433269
+              ],
+              "oracle_exact": 0.29206963249516443,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.03409090909090909,
+                  -0.0019047619047619048
+                ],
+                "delta": -0.016682785299806577
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.02666071428571429,
+                  0.071191166152119
+                ],
+                "delta": 0.04690522243713733
+              },
+              "single_exact": 0.2096228239845261
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 5.060128565761307,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 3.576237138006869,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m0.75": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.26305609284332687,
+              "gain": 0.0514990328820116,
+              "gain_ci95": [
+                0.02824165029469548,
+                0.07616128995118357
+              ],
+              "oracle_exact": 0.3145551257253385,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.00499001996007984,
+                  0.033123791102514503
+                ],
+                "delta": 0.014264990328820115
+              },
+              "share_of_real_headroom": 0.7830882352941176
+            },
+            "dose_multiplier_of_pdd_high": 0.75,
+            "exchangeable": {
+              "gain": 0.09792069632495165,
+              "gain_ci95": [
+                0.06928571428571428,
+                0.12306576402321083
+              ],
+              "oracle_exact": 0.24564796905222436,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.06041257367387033,
+                  -0.0064285714285714285
+                ],
+                "delta": -0.032156673114119926
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.011847195357833656,
+                  0.052949709864603484
+                ],
+                "delta": 0.031431334622823985
+              },
+              "single_exact": 0.14772727272727273
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 7.567493586921108,
+              "pair_vs_real_raw_pairs": "within",
+              "to_base_rms_median_gray": 5.3555917868189695,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "i0_m1": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.26305609284332687,
+              "gain": 0.023694390715667313,
+              "gain_ci95": [
+                0.009523809523809525,
+                0.04231141199226306
+              ],
+              "oracle_exact": 0.2867504835589942,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.020459081836327345,
+                  0.06190476190476191
+                ],
+                "delta": 0.04206963249516441
+              },
+              "share_of_real_headroom": 0.3602941176470589
+            },
+            "dose_multiplier_of_pdd_high": 1.0,
+            "exchangeable": {
+              "gain": 0.0672147001934236,
+              "gain_ci95": [
+                0.048355899419729204,
+                0.08668958742632613
+              ],
+              "oracle_exact": 0.14990328820116053,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.037717601547388784,
+                  0.03
+                ],
+                "delta": -0.0014506769825918763
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.02761904761904762,
+                  0.09858538270240377
+                ],
+                "delta": 0.06213733075435203
+              },
+              "single_exact": 0.08268858800773694
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 10.090796908842128,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 7.134443965872711,
+              "to_base_vs_real_distances": "within"
+            }
+          },
+          "i0_m1.5": {
+            "base": "i0",
+            "clean_base": {
+              "base_exact": 0.26305609284332687,
+              "gain": 0.0031431334622823983,
+              "gain_ci95": [
+                0.0,
+                0.007495164410058027
+              ],
+              "oracle_exact": 0.26619922630560927,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.03868471953578337,
+                  0.0838095238095238
+                ],
+                "delta": 0.06262088974854932
+              },
+              "share_of_real_headroom": 0.04779411764705883
+            },
+            "dose_multiplier_of_pdd_high": 1.5,
+            "exchangeable": {
+              "gain": 0.022243713733075435,
+              "gain_ci95": [
+                0.0073673870333988214,
+                0.03795938104448743
+              ],
+              "oracle_exact": 0.05222437137330754,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0060444874274661504,
+                  0.07428571428571429
+                ],
+                "delta": 0.043520309477756286
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.06654302320142202,
+                  0.1486943907156673
+                ],
+                "delta": 0.1071083172147002
+              },
+              "single_exact": 0.029980657640232108
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 15.130463099020666,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 10.69956159264947,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m0.25": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.18568665377176016,
+              "gain": 0.054883945841392646,
+              "gain_ci95": [
+                0.03880157170923379,
+                0.06866537717601548
+              ],
+              "oracle_exact": 0.2405705996131528,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.01039553752535497,
+                  0.030238095238095238
+                ],
+                "delta": 0.010880077369439071
+              },
+              "share_of_real_headroom": 0.8345588235294118
+            },
+            "dose_multiplier_of_pdd_high": 0.25,
+            "exchangeable": {
+              "gain": 0.05391682785299807,
+              "gain_ci95": [
+                0.03266208251473477,
+                0.07525511190936698
+              ],
+              "oracle_exact": 0.2369439071566731,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.010398510177765496,
+                  0.03142857142857143
+                ],
+                "delta": 0.011847195357833656
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.0582688588007737,
+                  0.0940626929553746
+                ],
+                "delta": 0.07543520309477757
+              },
+              "single_exact": 0.18302707930367504
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 2.5675598773696695,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 1.8189916394194567,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "mean_m0.5": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.18568665377176016,
+              "gain": 0.06794003868471954,
+              "gain_ci95": [
+                0.0514990328820116,
+                0.08119047619047619
+              ],
+              "oracle_exact": 0.25362669245647973,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.02756286266924565,
+                  0.019523809523809523
+                ],
+                "delta": -0.0021760154738878143
+              },
+              "share_of_real_headroom": 1.0330882352941178
+            },
+            "dose_multiplier_of_pdd_high": 0.5,
+            "exchangeable": {
+              "gain": 0.08027079303675048,
+              "gain_ci95": [
+                0.05391682785299807,
+                0.1069047619047619
+              ],
+              "oracle_exact": 0.2437137330754352,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.04013796398636824,
+                  0.012142857142857143
+                ],
+                "delta": -0.014506769825918761
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.037717601547388784,
+                  0.06
+                ],
+                "delta": 0.049081237911025144
+              },
+              "single_exact": 0.16344294003868473
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 5.0988165313429,
+              "pair_vs_real_raw_pairs": "below",
+              "to_base_rms_median_gray": 3.6028191690095728,
+              "to_base_vs_real_distances": "below"
+            }
+          },
+          "mean_m1": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.18568665377176016,
+              "gain": 0.025145067698259187,
+              "gain_ci95": [
+                0.012380952380952381,
+                0.04037822565700319
+              ],
+              "oracle_exact": 0.21083172147001933,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.012719551074667955,
+                  0.06476190476190476
+                ],
+                "delta": 0.04061895551257253
+              },
+              "share_of_real_headroom": 0.3823529411764706
+            },
+            "dose_multiplier_of_pdd_high": 1.0,
+            "exchangeable": {
+              "gain": 0.056818181818181816,
+              "gain_ci95": [
+                0.03266153625457433,
+                0.08414162815928374
+              ],
+              "oracle_exact": 0.11895551257253385,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  -0.0333672596779362,
+                  0.043333333333333335
+                ],
+                "delta": 0.008945841392649903
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.03167976424361493,
+                  0.11142857142857143
+                ],
+                "delta": 0.0725338491295938
+              },
+              "single_exact": 0.06213733075435203
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 10.158359213206989,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 7.188907440584433,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m2": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.18568665377176016,
+              "gain": 0.0024177949709864605,
+              "gain_ci95": [
+                0.0007142857142857143,
+                0.004817444219066937
+              ],
+              "oracle_exact": 0.18810444874274662,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.037231026540908096,
+                  0.08619047619047619
+                ],
+                "delta": 0.06334622823984526
+              },
+              "share_of_real_headroom": 0.03676470588235294
+            },
+            "dose_multiplier_of_pdd_high": 2.0,
+            "exchangeable": {
+              "gain": 0.008945841392649903,
+              "gain_ci95": [
+                0.0026595744680851063,
+                0.01644100580270793
+              ],
+              "oracle_exact": 0.022243713733075435,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.02865111561866126,
+                  0.08119047619047619
+                ],
+                "delta": 0.056818181818181816
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.08823648339813482,
+                  0.1544970986460348
+                ],
+                "delta": 0.12040618955512572
+              },
+              "single_exact": 0.013297872340425532
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 20.33014031947846,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 14.372358511506315,
+              "to_base_vs_real_distances": "above"
+            }
+          },
+          "mean_m4": {
+            "base": "mean",
+            "clean_base": {
+              "base_exact": 0.18568665377176016,
+              "gain": 0.0,
+              "gain_ci95": [
+                0.0,
+                0.0
+              ],
+              "oracle_exact": 0.18568665377176016,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0412573673870334,
+                  0.08857142857142856
+                ],
+                "delta": 0.06576402321083172
+              },
+              "share_of_real_headroom": 0.0
+            },
+            "dose_multiplier_of_pdd_high": 4.0,
+            "exchangeable": {
+              "gain": 0.0,
+              "gain_ci95": [
+                0.0,
+                0.0
+              ],
+              "oracle_exact": 0.0,
+              "real_fixed_minus_null": {
+                "ci95": [
+                  0.0412573673870334,
+                  0.08857142857142856
+                ],
+                "delta": 0.06576402321083172
+              },
+              "real_oracle_minus_mean_single_minus_null": {
+                "ci95": [
+                  0.09829818933561449,
+                  0.15976190476190477
+                ],
+                "delta": 0.12935203094777564
+              },
+              "single_exact": 0.0
+            },
+            "pixel_distance": {
+              "pair_rms_median_gray": 40.477678675239815,
+              "pair_vs_real_raw_pairs": "above",
+              "to_base_rms_median_gray": 28.640436681081024,
+              "to_base_vs_real_distances": "above"
+            }
+          }
+        },
+        "error_handling": {
+          "crash_signatures": [
+            "<Signals.SIGFPE: 8>."
+          ],
+          "crashed_ocr_calls": 285,
+          "crashed_samples": 243,
+          "policy": "fail",
+          "samples_dropped": 0,
+          "samples_with_a_crash_by_split": {
+            "test": 30,
+            "train": 179,
+            "val": 34
+          },
+          "total_ocr_calls": 336780
+        },
+        "noise_free_mean_view_minus_i0": {
+          "ci95": [
+            -0.10412573673870335,
+            -0.04857142857142857
+          ],
+          "delta": -0.07736943907156674
+        },
+        "real_pixel_distance_gray": {
+          "channels_to_mean_median": {
+            "i0": 5.3428859508191895,
+            "i135": 3.767344024442174,
+            "i45": 3.906177054848756,
+            "i90": 4.672708671816273
+          },
+          "i0_to_other_channels_median": {
+            "i135": 7.107740323873692,
+            "i45": 6.948298073911607,
+            "i90": 9.695230442520545
+          },
+          "raw_pair_median_range": [
+            5.957319685381506,
+            9.695230442520545
+          ]
+        },
+        "real_raw4": {
+          "gain": 0.06576402321083172,
+          "gain_ci95": [
+            0.0412573673870334,
+            0.08857142857142856
+          ],
+          "oracle_exact": 0.3288201160541586,
+          "single_exact": 0.26305609284332687,
+          "train_best": "i0"
+        },
+        "real_raw4_oracle_minus_mean_single": {
+          "gain": 0.12935203094777564,
+          "gain_ci95": [
+            0.09829818933561449,
+            0.15976190476190477
+          ],
+          "oracle_exact": 0.3288201160541586,
+          "single_exact": 0.19946808510638298
+        },
+        "samples_evaluated": 1034,
+        "scope": "test split only (fixed method chosen on train)"
+      }
+    }
+  },
+  "protocol": {
+    "conditions": "a-o (highlight); camera excluded from all headline numbers here",
+    "documents": {
+      "test": 7,
+      "train": 35,
+      "val": 8
+    },
+    "fixed_method_selection": "train split only",
+    "normalization": "NFKC + uppercase + collapsed whitespace; no dictionary correction",
+    "ocr_backends": {
+      "easyocr": "EasyOCR 1.7.2, GT-ROI recognizer",
+      "tesseract": "Tesseract 5.5.3, PSM 7, eng, GT-ROI"
+    },
+    "preprocessing": "4x bicubic, no autocontrast",
+    "regions_per_document": 10,
+    "reported_split": "test (7 documents, 1,034 ROI) unless the scope says all documents",
+    "seed": 20261102,
+    "split_version": "shdocs-document-v1",
+    "uncertainty": "document-cluster bootstrap, 95% percentile interval, 5,000 resamples"
+  },
+  "proxy_only": true,
+  "replication_of_first_round_e2": {
+    "easyocr": {
+      "first_round_file": "e0_e2_shdocs_easyocr_scale4.json",
+      "max_abs_difference_by_quantity": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "fixed_exact": 0.0,
+        "headroom": 0.0,
+        "oracle_exact": 0.0,
+        "per_channel_exact": 0.0
+      },
+      "max_abs_difference_overall": 0.0,
+      "note": "Raw-channel E2 re-derived end to end by the new runner and analysis code (same split, ROI sampling, exclusions, 4x bicubic, seeds, 5,000 bootstrap resamples) and compared against the committed first-round file; the intervals are only comparable because the resample count and seed are the same",
+      "same_test_samples": true,
+      "same_train_best": true
+    },
+    "tesseract": {
+      "first_round_file": "e0_e2_shdocs_tesseract_scale4.json",
+      "max_abs_difference_by_quantity": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "fixed_exact": 0.0,
+        "headroom": 0.0,
+        "oracle_exact": 0.0,
+        "per_channel_exact": 0.0
+      },
+      "max_abs_difference_overall": 0.0,
+      "note": "Raw-channel E2 re-derived end to end by the new runner and analysis code (same split, ROI sampling, exclusions, 4x bicubic, seeds, 5,000 bootstrap resamples) and compared against the committed first-round file; the intervals are only comparable because the resample count and seed are the same",
+      "same_test_samples": true,
+      "same_train_best": true
+    }
+  }
+}

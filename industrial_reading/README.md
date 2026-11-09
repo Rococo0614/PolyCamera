@@ -3,9 +3,13 @@
 变化反射条件下工业标识可靠识读的离线前置实验目录。当前阶段只运行公开数据
 代理实验，不把公开文档结果表述为工业喷码实物结论。
 
-## 当前结果（2026-11-03）
+## 当前结果（2026-11-09 更新；其余条目为 2026-11-03 首轮）
 
-- 14 项单元测试通过；
+- 2026-11-09 增补三项不需要硬件的对照（密集固定虚拟角、强度匹配、噪声零对照），详见
+  `14_offline_gate_p_results.md` 第 8 节与 `evidence/offline_extension_controls.json`：
+  连续固定角没有优于 raw I0；强度匹配没有消除 oracle gap；**同内容噪声零对照复现了 gap 的
+  相当大一部分**，因此 oracle gap 不能单独作为偏振互补内容的证据，P2 改为"未成立也未被否定"；
+- 14 项单元测试通过（首轮；增补后的总数见 `09_execution_log.md` 2026-11-09 条目）；
 - EasyOCR 1.7.2 与 Tesseract 5.5.3 两个独立后端已完成执行冒烟；
 - E1 合成仿射仪器矩阵恢复将 Stokes RMSE 从 `0.01147` 降至 `0.00260`；
 - PDD 40 场景 × 3 噪声级首轮简单基线完成：双线性 MPFA 的 AoLP MAE 为
@@ -18,8 +22,8 @@
   oracle 为 `13.83%`，差 `+2.51 pp`（文档聚类 95% CI `+1.50–+3.52 pp`）；
   Tesseract 对应为 `26.31% → 32.88%`，差 `+6.58 pp`（CI
   `+4.13–+8.86 pp`）；
-- 互补机制已跨后端重复，但 E0、连续固定角和 deployable selector 仍不足，
-  Offline Gate P 保持 open；
+- oracle gap 已跨后端重复，但 E0 和 deployable selector 仍不足，且噪声零对照复现了其中
+  一大部分；Offline Gate P 保持 open；
 - 这些数字只验证公开数据代理链和预处理敏感性，不是自有相机标定结果。
 
 ## 当前目标
@@ -128,3 +132,42 @@ python industrial_reading/scripts/summarize_ocr_records.py \
 
 所有正式结果必须记录数据清单、split、OCR 版本、归一化规则、代码 commit 和配置
 哈希。相同文档的不同高光条件不得跨 split。
+
+## 补充对照：密集固定角、强度匹配、噪声零对照
+
+这些实验在"计算视图"上运行 OCR：每个视图由同一 ROI 的四个 SDK 通道裁剪计算
+（`polread.views`），并沿用首轮的 split、ROI 抽样、排除清单与 `4× bicubic`。
+
+| 模块 / 脚本 | 作用 |
+|---|---|
+| `polread.views` | 原始、虚拟角 `virtual_<deg>`、直方图/均值方差匹配 `hm_*`/`ms_*`、噪声零对照 `null_<mean\|i0>_m<m>_k<k>` |
+| `polread.noise` | PDD 噪声标定（`var = a·x + b`）与 SHDocs 盲估计 |
+| `polread.protocol` | 冻结 split、每文档 ROI 抽样、排除清单、分片 |
+| `polread.headroom` | 成功矩阵、train-best、oracle、文档聚类 bootstrap |
+| `polread.analysis` | 每样本增益（固定/可交换/干净基线）、配对对比、剂量锚点 |
+| `scripts/run_shdocs_views_ocr.py` | 可分片、可断点续跑的 GT-ROI OCR |
+| `scripts/measure_view_differences.py` | 视图间像素 RMS，用来**在看 OCR 结果前**锚定噪声剂量 |
+| `scripts/summarize_dense_sweep.py`, `analyze_dense_decomposition.py` | 密集扫角、间距对照、逐条件最优角 |
+| `scripts/summarize_e3_matching.py` | 强度匹配 vs raw 的 gap 变化 |
+| `scripts/summarize_noise_null.py` | 噪声零对照与真实 gap 的配对对比 |
+| `scripts/build_extension_evidence.py` | 汇总为 `evidence/offline_extension_controls.json`（含各 JSONL/源码 SHA-256） |
+
+最小复现（路径按本机 `/mnt/ssd/polycamera_offline` 布局，大数据不入库）：
+
+```bash
+python industrial_reading/scripts/run_shdocs_views_ocr.py \
+  --images-root .../testing_data/images --annotations-root .../testing_data/annotations \
+  --backend tesseract --views hm_i0,hm_i45,hm_i90,hm_i135,ms_i0,ms_i45,ms_i90,ms_i135 \
+  --conditions a,b,c,d,e,f,g,h,i,j,k,l,m,n,o --shard-index 0 --shards 8 --output e3_tess_shard0.jsonl \
+  --tesseract-executable .../tesseract --tessdata-directory .../tessdata
+python industrial_reading/scripts/summarize_e3_matching.py --raw 'raw4_shard*.jsonl' \
+  --matched 'e3_tess_shard*.jsonl' --backend-label 'Tesseract 5.5.3 PSM7, 4x bicubic' --output e3.json
+```
+
+噪声零对照需要 `--noise-model-json`（PDD-High 标定结果）；`summarize_noise_null.py` 默认只评测
+测试集（`--eval-split test`），`--eval-split all` 合并 50 篇文档，仅用作稳健性检查（固定方法
+仍只在 train 上选，因此对 train 文档偏乐观）。OCR 引擎崩溃（`status != ok`）默认计为读错
+（`--error-policy fail`），`drop` 为丢弃含崩溃样本的敏感性分析。
+
+**解读边界：** 噪声零对照是注入的 iid 高斯噪声，不是真实重复曝光；它只能界定同量级扰动能制造
+多少"挑最优"增益。剂量按像素距离锚定，而不是按传感器噪声。
