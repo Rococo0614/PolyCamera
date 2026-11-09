@@ -182,6 +182,8 @@ PPFT 结果级复现和弱偏振反例，并明确它只支持“偏振不能被
 - `13_industrial_reading_experiment_plan.md`：E0–E13 实验、基线、统计、Gate、动态节拍与成本协议。
 - `14_offline_gate_p_results.md`：无硬件阶段 E0/E1/E2 公开代理结果、双后端对照、
   2026-11-09 补充对照（密集固定角、强度匹配、噪声零对照）和当前 Gate 判定。
+- `15_shared_polarization_encoder_pretraining_controls.md`：候选共享偏振编码器新主线的
+  PolaRGB 发布版审计、无学习基线、负对照、仿真要求与训练前 Gate A0。
 - `01_topic_and_research_questions.md`：当前研究问题、可证伪假设、候选贡献和停止条件。
 - `02_datasets_and_prior_work.md`：工业 OCR、高光去除、偏振反射去除、公开数据与候选缺口。
 - `03_one_month_plan.md`：首月文献、工位、标定、pilot、Gate 1/2 和开题交付。
