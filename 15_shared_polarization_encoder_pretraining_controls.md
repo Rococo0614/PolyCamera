@@ -175,13 +175,39 @@ processed RGB 上计算；95% CI 按场景聚类重抽样。当前脚本仍是�
 | 强度 | RGB identity、`mean4/S0` | 最低基线 |
 | 固定方向 | train-selected fixed angle | 排除在 test 上挑方向 |
 | 简单偏振 | `min4`、`virtual_min`、median | 判断网络是否只学了暗通道规则 |
-| 传统方法 | Lei 2020 或可复现的 PCA/物理分离 | 与非深度学习偏振分离比较 |
+| 传统方法 | Farid/ICA、Schechner、Kong 或 Wen 2021 ADMM 等可复现物理分离 | 与非深度学习偏振分离比较 |
+| 任务专用学习方法 | ReflectNet（ECCV 2018）、Lei 2020、Polarization-to-Polarization（2024）、PolarFree（2025） | 比较共享表示与单任务专用网络 |
 | 颜色对照 | 只在 train 拟合的全局/场景外 color affine | 排除逐图 GT 色彩 oracle |
 | 官方参考 | PolarFree 发布 checkpoint | 只在 release/config 对齐后作为参考 |
 | 上界 | per-sample angle oracle、GT affine、GT alignment | 只能标“ceiling”，不能当可部署基线 |
 
 特别需要补的是 **train-fitted、test-frozen 的颜色仿射基线**。当前逐图 GT affine 只能说明
 混杂有多大，不能用于方法比较。
+
+传统物理方法和任务专用网络必须分成两张表或两个分组：前者回答“不学习时偏振测量本身能做到
+什么”，后者回答“共享编码器相对已经针对反光分离训练过的网络是否仍有价值”。不要求一开始
+复现所有网络；先审计代码、数据和 checkpoint，再选择至少一个可重复的早期强基线和 PolarFree。
+
+NVIDIA ReflectNet（ECCV 2018）使用三张间隔 45° 的顺序偏振图，通过 Canonical Projection
+Layer 得到规范方向，再由 encoder-decoder 预测 transmission/reflection 残差。它主要用
+Places2 图像生成合成训练数据，并模拟动态范围、非刚性变化、曲面和入射角；真实 URD 只有
+28 组高分辨率 RAW，由 Sony Alpha 6000 和 Canon EOS 7D 加旋转偏振片采集。因此它适合作为
+“任务专用网络 + 仿真设计”基线，但不是单曝光 DoFP 四方向的同硬件结果；若改成四方向输入，
+必须标为本项目适配版而不是官方复现。
+
+#### A3.1 颜色仿射对照是什么
+
+这里的 affine 不是图像平移/旋转，而是每个颜色通道的全局线性变换：
+
+```text
+y_c = a_c x_c + b_c
+```
+
+它只能改变亮度、对比度和色偏，不能移动或删除反射纹理。PolaRGB 的 mixed 和 transmission
+在不同时间、不同光路下采集；如果只修正全局曝光/颜色就能大幅提高 PSNR，那么网络的涨点可能
+主要来自颜色校正，而不是层分离。逐测试图利用 GT 拟合 `a,b` 只是 oracle ceiling；公平对照必须
+只在 train 场景拟合参数并冻结到 test。主表应比较 `RGB`、`RGB+affine`、`min4`、
+`min4+affine` 和模型输出，判断结构性反射去除还剩多少增量。
 
 ### A4：指标与分组（阻塞项）
 
@@ -191,6 +217,12 @@ processed RGB 上计算；95% CI 按场景聚类重抽样。当前脚本仍是�
 4. clean preservation：无反射输入不应被明显改坏；
 5. 失败案例：纹理删除、颜色漂移、残留反射、生成不存在细节；
 6. 所有区间按场景而不是视频帧计算。
+
+这里的“场景聚类区间”不是聚类算法。因为一个场景的多个玻璃姿态共享同一背景、相机和 GT，
+188 张测试图不是 188 个独立实验。bootstrap 时应整组抽取场景，得到方法差值的 95% 区间。
+它用于防止样本最多的场景把均值和显著性“刷高”。例如当前 `min4-RGB` 的样本加权均值为
+`+3.08 dB`、场景聚类区间 `[+1.22,+4.90]`，而场景等权均值为 `+2.40 dB`。区间不跨 0
+表示当前 8 个场景下差值方向较稳定，但只有 8 个场景，仍不能解释为对所有真实场景的保证。
 
 ### A5：网络负对照协议（现在冻结，训练时执行）
 
@@ -209,6 +241,12 @@ processed RGB 上计算；95% CI 按场景聚类重抽样。当前脚本仍是�
 
 只有 C5/C6/C7 稳定优于 C0/C1/C2，并且 C3 明显退化，才能把收益归因到与样本对应的偏振信息。
 
+这些负对照不是随意输入“错误图片”看网络会生成什么，而是只破坏一个待验证因素，同时保持
+通道数、噪声或数值分布尽量不变。例如 C3 保留 `(Q,U)` 的总体分布，却把它换到另一场景；
+若性能仍不下降，说明网络可能忽略偏振或只利用数据集偏差。若正确偏振优于重复 RGB/噪声副本，
+且打乱对应关系后退化到强度基线，才支持“与当前场景对应的偏振信息在起作用”。另需单独做
+工程故障对照（通道交换、角度元数据错误、饱和），检查模型是否回退/拒绝，而不是高置信输出伪结果。
+
 ### A6：官方代码与 checkpoint 复核（阻塞“复现”表述，不阻塞自建协议）
 
 1. 修复路径前先原样记录官方 commit、配置和 checkpoint 哈希；
@@ -218,9 +256,21 @@ processed RGB 上计算；95% CI 按场景聚类重抽样。当前脚本仍是�
    `Ip/Inp`，审计时需区分“代码存在”与“模型实际使用”；
 5. 不把修改输入层后重新训练的 RGB 方法称为原论文官方结果。
 
+当前官方仓库提供的是 PolarFree stage-2 的 `net_g`、`net_le_dm` 和 `net_d` 权重。它们以
+PolaRGB 的 mixed RGB、四方向灰度图、AoLP 和 DoLP 为条件，输出 reflection-free transmission
+RGB；它们不是可直接接深度/分割头的通用编码器 checkpoint。论文在其口径下报告
+PSNR `22.44`、SSIM `0.8681`、LPIPS `0.1325`；去掉偏振输入的消融为 PSNR `21.56`。
+但论文/配置/release 划分存在第 2.3 节的不一致，所以这些数在本地 checkpoint 复核前只能引用为
+论文结果。论文正文和当前仓库只确认使用彩色 Bayer DoFP 商用偏振相机，没有给出可核实的具体
+相机型号；不能仅凭 1224×1024 输出或项目页的 LUCID 示意图推断型号。
+
 ## 5. 仿真前置对照
 
 公开数据只能给最终图和少量采集说明。自建仿真器应先验证测量链，而不是先生成大量漂亮图片。
+
+实现分两层：第一层用 Python + NumPy/PyTorch 写可解析、可单元测试的 Stokes/Fresnel 前向模型；
+第二层再参考 ReflectNet 的图像式生成管线加入真实纹理、曲面、动态范围和局部形变。第一层通过后，
+若二维图像合成仍不足，再考虑支持偏振渲染的 Mitsuba 3；不从重型光线追踪开始。
 
 ### 5.1 最小前向模型
 
@@ -245,6 +295,12 @@ Transmission Stokes + Reflection Stokes
 6. 报告不可辨识区并定义回退，而不是强制输出高置信分离结果。
 
 仿真通过的含义只是“实现和假设自洽”，不能替代真实数据。
+
+第一层可以直接复用本仓库的 `instrument.py`、`mosaic.py` 和 `noise.py`：先合成 transmission
+与 reflection 的 `(S0,S1,S2)`，相加后通过 0/45/90/135° analyzer matrix，随后加入仪器角度、
+增益、偏置、shot/read noise、clipping、Bayer×MPFA 采样和去马赛克。每个样本必须同时保存
+`T/R/四方向/Stokes/失效 mask` 真值。ReflectNet 的生成器可作为第二层的重要基线，但要删除
+其顺序拍摄运动假设或改成 DoFP 子像元错位，因为本课题目标是单曝光。
 
 ## 6. 共享表示的下游数据接口
 
@@ -303,5 +359,6 @@ Gate A0 通过后也只训练一个小模型来验证“偏振相对强度的增
 - PolarFree / PolaRGB：<https://arxiv.org/abs/2503.18055>
 - PolarFree 代码：<https://github.com/mdyao/PolarFree>
 - PolaRGB processed release：<https://huggingface.co/datasets/Mingde/PolaRGB>
+- NVIDIA ReflectNet（ECCV 2018）：<https://research.nvidia.com/publication/2018-09_separating-reflection-and-transmission-images-wild>
 - ShareCMP / UPLight / ZJU：<https://arxiv.org/abs/2312.03430>
 - ShareCMP 代码与 UPLight 下载入口：<https://github.com/LEFTeyex/ShareCMP>
