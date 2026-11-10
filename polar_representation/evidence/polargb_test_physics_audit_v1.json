@@ -1,0 +1,195 @@
+{
+  "domain_decision": {
+    "criterion": "lower orthogonal-pair relative residual; diagnostic evidence, not a RAW response calibration",
+    "primary": "stored"
+  },
+  "experiment": "polargb-processed-physics-audit",
+  "groups": 188,
+  "metrics_sample": {
+    "dark_share": {
+      "mean": 2.1773110077918575e-05,
+      "median": 1.83836826831427e-05,
+      "p05": 1.6455556832107842e-06,
+      "p95": 6.0832370600149814e-05
+    },
+    "dolp_gt1_share": {
+      "mean": 2.6233542149972073e-05,
+      "median": 2.7730940837221987e-05,
+      "p05": 7.978775924126647e-07,
+      "p95": 6.0024817785929544e-05
+    },
+    "dolp_median_valid": {
+      "mean": 0.1271979595219076,
+      "median": 0.07794429696117504,
+      "p05": 0.02842966664959199,
+      "p95": 0.28348317576664367
+    },
+    "pair_residual_srgb_decoded": {
+      "mean": 0.0946434116535874,
+      "median": 0.06166647026149851,
+      "p05": 0.04520267311060093,
+      "p95": 0.2318491347063557
+    },
+    "pair_residual_stored": {
+      "mean": 0.048116771607967124,
+      "median": 0.03035526462381796,
+      "p05": 0.024105948782332062,
+      "p95": 0.12933915796346415
+    },
+    "reprojection_rmse": {
+      "mean": 0.018860964745183287,
+      "median": 0.010330179140672885,
+      "p05": 0.006917487233339463,
+      "p95": 0.055970809971446316
+    },
+    "rgb_mean4_mae": {
+      "mean": 0.0016567396771739545,
+      "median": 0.0016740617006947144,
+      "p05": 0.0015728269846967283,
+      "p95": 0.0017128785764948544
+    },
+    "saturated_share": {
+      "mean": 0.06920501131819777,
+      "median": 0.044375251321231615,
+      "p05": 0.004231179098158361,
+      "p95": 0.19920981080963202
+    }
+  },
+  "metrics_scene_macro": {
+    "dark_share": {
+      "mean": 1.7820043495720367e-05,
+      "median": 1.7573089324988754e-05,
+      "p05": 3.74571690112677e-06,
+      "p95": 3.54961831904904e-05
+    },
+    "dolp_gt1_share": {
+      "mean": 1.67240944747351e-05,
+      "median": 1.498920614038837e-05,
+      "p05": 2.144794527034321e-06,
+      "p95": 3.536752600670258e-05
+    },
+    "dolp_median_valid": {
+      "mean": 0.08834098269383042,
+      "median": 0.06903239877676769,
+      "p05": 0.033380026038852824,
+      "p95": 0.2007772457191621
+    },
+    "pair_residual_srgb_decoded": {
+      "mean": 0.08047688152513738,
+      "median": 0.05669481527019393,
+      "p05": 0.048045883180840104,
+      "p95": 0.16783228942057934
+    },
+    "pair_residual_stored": {
+      "mean": 0.04034252038035835,
+      "median": 0.027712218844685835,
+      "p05": 0.024983025927511775,
+      "p95": 0.08199340233330736
+    },
+    "reprojection_rmse": {
+      "mean": 0.015205211700694313,
+      "median": 0.009688715021749561,
+      "p05": 0.007124497435643267,
+      "p95": 0.03501809629327452
+    },
+    "rgb_mean4_mae": {
+      "mean": 0.001645137260879236,
+      "median": 0.0016565484508378491,
+      "p05": 0.001602859886753864,
+      "p95": 0.001674751689721371
+    },
+    "saturated_share": {
+      "mean": 0.07298530295397859,
+      "median": 0.059832191738292365,
+      "p05": 0.011048274154496867,
+      "p95": 0.1596569454265539
+    }
+  },
+  "per_scene_mean": {
+    "00": {
+      "dark_share": 6.484708321986202e-06,
+      "dolp_gt1_share": 2.484264855711901e-06,
+      "dolp_median_valid": 0.036410490299082644,
+      "pair_residual_srgb_decoded": 0.056279597287674704,
+      "pair_residual_stored": 0.026792695769003415,
+      "reprojection_rmse": 0.008222761591392133,
+      "rgb_mean4_mae": 0.0016549634424905162,
+      "saturated_share": 0.022204297300517425
+    },
+    "01": {
+      "dark_share": 1.2496683739165956e-05,
+      "dolp_gt1_share": 1.9697190204145705e-05,
+      "dolp_median_valid": 0.03174823759103677,
+      "pair_residual_srgb_decoded": 0.050485579154388394,
+      "pair_residual_stored": 0.025179608582111865,
+      "reprojection_rmse": 0.009682828344765224,
+      "rgb_mean4_mae": 0.0016053651221769783,
+      "saturated_share": 0.07379228151622592
+    },
+    "02": {
+      "dark_share": 4.944977936921296e-06,
+      "dolp_gt1_share": 1.9620028115925467e-06,
+      "dolp_median_valid": 0.03961141024939312,
+      "pair_residual_srgb_decoded": 0.05020514301386811,
+      "pair_residual_stored": 0.0266274004199637,
+      "reprojection_rmse": 0.007838956455755736,
+      "rgb_mean4_mae": 0.0016224504713877959,
+      "saturated_share": 0.043852754148263035
+    },
+    "03": {
+      "dark_share": 3.099960958775871e-06,
+      "dolp_gt1_share": 8.111439936414366e-06,
+      "dolp_median_valid": 0.10304530731069847,
+      "pair_residual_srgb_decoded": 0.04688320480920964,
+      "pair_residual_stored": 0.024877173728880958,
+      "reprojection_rmse": 0.011342168527928255,
+      "rgb_mean4_mae": 0.0016015109138337257,
+      "saturated_share": 0.15963037029590482
+    },
+    "04": {
+      "dark_share": 2.264949491081155e-05,
+      "dolp_gt1_share": 3.0102556331368215e-05,
+      "dolp_median_valid": 0.06567126032036406,
+      "pair_residual_srgb_decoded": 0.05711003325271316,
+      "pair_residual_stored": 0.028631741920368256,
+      "reprojection_rmse": 0.009694601698733896,
+      "rgb_mean4_mae": 0.001675852743185717,
+      "saturated_share": 0.0458721019603588
+    },
+    "05": {
+      "dark_share": 2.4201303785403047e-05,
+      "dolp_gt1_share": 2.2951569903980562e-05,
+      "dolp_median_valid": 0.10607902112106969,
+      "pair_residual_srgb_decoded": 0.18090769171282026,
+      "pair_residual_stored": 0.08579502261869247,
+      "reprojection_rmse": 0.03725296801402934,
+      "rgb_mean4_mae": 0.001658133459185182,
+      "saturated_share": 0.159671255112288
+    },
+    "06": {
+      "dark_share": 3.0493029042546506e-05,
+      "dolp_gt1_share": 3.8202509678036474e-05,
+      "dolp_median_valid": 0.25176859742582736,
+      "pair_residual_srgb_decoded": 0.14354939944927486,
+      "pair_residual_stored": 0.07493325037473501,
+      "reprojection_rmse": 0.03086762024044415,
+      "rgb_mean4_mae": 0.001670115058629245,
+      "saturated_share": 0.0738181785300926
+    },
+    "07": {
+      "dark_share": 3.81901892701525e-05,
+      "dolp_gt1_share": 1.0281222076631036e-05,
+      "dolp_median_valid": 0.07239353723317131,
+      "pair_residual_srgb_decoded": 0.058394403521149794,
+      "pair_residual_stored": 0.029903269629111107,
+      "reprojection_rmse": 0.0067397887325057835,
+      "rgb_mean4_mae": 0.0016727068761447285,
+      "saturated_share": 0.005041184768178104
+    }
+  },
+  "scenes": 8,
+  "side": "input",
+  "subsets": [
+    "test"
+  ]
+}

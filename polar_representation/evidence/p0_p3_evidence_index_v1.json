@@ -1,0 +1,44 @@
+{
+  "claim_boundary": "Large images and run records remain outside Git. This index pins the exact release metadata, processed manifest, source and compact evidence used by P0-P3.",
+  "evidence_sha256": {
+    "polar_representation/evidence/images/virtual_min_gain_ambiguity_sweep.png": "cc019a6501e5234ab360a6bf1ce499b4348070d1dc56de1398e2248ca5923f41",
+    "polar_representation/evidence/images/virtual_min_gain_reflection_sweep.png": "d43b2cd5111b4ca094b188be4ef29773b70a1192ccae31e518e7cf91478eff1b",
+    "polar_representation/evidence/p3_forward_simulation_v1.json": "e4f517110b4d06d5c346f7a5ce74e01d1b7af0e57a2bf6fdf15c52341f8c5fe4",
+    "polar_representation/evidence/polargb_release_v1.json": "395356d5fa6e3231576c532f572753cd17670bd32a43d129d743f7f134524ed7",
+    "polar_representation/evidence/polargb_scene_split_v1.json": "34fff8e3b6292c5b4d7ef22b6b5da768c14c05b7695300f6c98af49eff5cb854",
+    "polar_representation/evidence/polargb_test_gt_physics_audit_v1.json": "27eea75a0b400f0f1054e73170d71c8d8ed6fa7a3d691e5f15b109103397a91f",
+    "polar_representation/evidence/polargb_test_physics_audit_v1.json": "7e7e60ba2fe818d4ce63ba8b455c0f12095a3721f401b61f3ca547c8fbbefed8",
+    "polar_representation/evidence/polargb_test_probe_v1.json": "843d992bffde56b9a76c928ddd8d28d34deb98cfef66d0b45148bfece398eae1"
+  },
+  "experiment": "polar-representation-p0-p3-evidence-index-v1",
+  "external_artifacts": {
+    "/mnt/ssd/polycamera_offline/cache/polargb/hf_dataset_metadata.json": {
+      "bytes": 7695900,
+      "sha256": "52faebf58ceabe3760191295c9c3f05402912c6fa69bc8cf0fae80b1062d146f"
+    },
+    "/mnt/ssd/polycamera_offline/manifests/polargb_processed_v1.tsv.gz": {
+      "bytes": 1524667,
+      "sha256": "7a0a833919a24b94d120dc378584a5ca50425724533e0722731f0ecb57c01bc4"
+    }
+  },
+  "source_sha256": {
+    "polar_representation/scripts/audit_polargb_physics.py": "ff1c7f93651f6b7e21fce2d1fd51ea1823f93811c2f82923e672646adbd256d1",
+    "polar_representation/scripts/build_evidence_index.py": "230901f7f2990b1e466e117c4ad2c754e30d635ac9bda5520f0eab179077f765",
+    "polar_representation/scripts/download_polargb.py": "36432c75692753e25ecee0786b965e2c54a57a5f857b8b0178c03570020a87c7",
+    "polar_representation/scripts/freeze_polargb_release.py": "9b72e6f0daa5222c1b8d160731babbe9d57ba0eb0d26fceffced99a6261a4b51",
+    "polar_representation/scripts/run_forward_simulation.py": "c00c0f85893d60fbf0393305d39a3023ec7b67bc5fa0c859027074791bc69b4c",
+    "polar_representation/scripts/run_polargb_baselines.py": "3c57f0d80041310f533f59915ec0960b3abc103a8781133b91c14485afa35ecf",
+    "polar_representation/scripts/run_polargb_test_probe.py": "a4870584f68c912669ae76585c5296364b3d8252f5f882319726a2f3b1ae8938",
+    "polar_representation/scripts/verify_polargb_local.py": "dd903219ccb543f6995ec2f5a2e2ff783decce82bff1d2e5c35dc81efd570e45",
+    "polar_representation/src/polrep/__init__.py": "38faf7f65b575697755824dd54b8b3cf854321a3b866ad2d7e686fb5225c1908",
+    "polar_representation/src/polrep/baselines.py": "9dbfc3f93919624e5dafeca06d1d084cd78b75aff73b2e55dd40f95f08f5b21a",
+    "polar_representation/src/polrep/physics.py": "b45aadbe43b658fbe919074fc78b97fc8679343f4f6253a11ac790298ecc61a8",
+    "polar_representation/src/polrep/polargb.py": "e5df3c721d42d8f2009a808d7c0d4f74462940758fd2e173da52f4e0911ef8c4",
+    "polar_representation/src/polrep/simulation.py": "e43ed540185a3855d4624a4d0398c2d64b45d452ff46c9e01d407d3680d85b47",
+    "polar_representation/src/polrep/statistics.py": "4f66a8d0a58a80f778ca1ee4014877faa7d31876ce398a331dbd70fa826321b7",
+    "polar_representation/tests/test_baselines.py": "976307d431df89a80d0a9e748a72626668df3d7a04c2f63c930958b1de5d730d",
+    "polar_representation/tests/test_physics.py": "89f0394de021aca586b4d935a6d7ee41e7f10560050d1d9ced6be69f16c3ba43",
+    "polar_representation/tests/test_polargb.py": "ad13ab1900ef34bd009af42f7278398fd1dacaa4a2d7cc06619ee90c26e2bb21",
+    "polar_representation/tests/test_simulation.py": "d7322866faa0589a34b095bff61f1f3c77cabac03a72268b6d4a6a02cc156d32"
+  }
+}

@@ -1,0 +1,400 @@
+{
+  "claim_boundary": "Release test only. No fixed direction or color transform is selected for deployment. Per-image angle and GT-affine entries are diagnostic ceilings and must not be compared as deployable methods. Final P1 waits for fit-scene train-fitted controls.",
+  "clean_preservation": {
+    "mean4": {
+      "psnr_range": [
+        52.704692066774484,
+        53.6138503862517
+      ],
+      "psnr_scene_macro": 53.396293834378596,
+      "ssim_scene_macro": 0.9985277992322963
+    },
+    "min4": {
+      "psnr_range": [
+        27.678575997088856,
+        36.155210497478826
+      ],
+      "psnr_scene_macro": 31.47271522114177,
+      "ssim_scene_macro": 0.9614327493437387
+    },
+    "virtual_min": {
+      "psnr_range": [
+        27.858019848208873,
+        36.13577749621895
+      ],
+      "psnr_scene_macro": 31.232197910107423,
+      "ssim_scene_macro": 0.9615965255515277
+    }
+  },
+  "experiment": "polargb-test-only-no-learning-probe-v1",
+  "metadata_sha256": "52faebf58ceabe3760191295c9c3f05402912c6fa69bc8cf0fae80b1062d146f",
+  "methods": {
+    "angle_000": {
+      "psnr": {
+        "sample_micro": 15.256950483543157,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          10.912975816957562,
+          19.78608456942524
+        ],
+        "scene_macro": 16.874665678765936,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": -0.4250834882775422,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          -2.2601516018668724,
+          1.4780374928769682
+        ],
+        "scene_macro": -0.360687722085961,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.7359245103646819,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.645093471421079,
+          0.832483892316214
+        ],
+        "scene_macro": 0.7652620327316159,
+        "scenes": 8
+      }
+    },
+    "angle_045": {
+      "psnr": {
+        "sample_micro": 15.392128031670683,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          13.10428503432417,
+          18.169761068078536
+        ],
+        "scene_macro": 16.801375236356236,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": -0.2899059401500148,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          -0.6314683535673903,
+          0.006278524529153057
+        ],
+        "scene_macro": -0.4339781644956616,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.75847053849837,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.7234089458577556,
+          0.8299233719417011
+        ],
+        "scene_macro": 0.7965129901575765,
+        "scenes": 8
+      }
+    },
+    "angle_090": {
+      "psnr": {
+        "sample_micro": 17.39909392552807,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          16.369785836289317,
+          18.708838949354632
+        ],
+        "scene_macro": 18.312540201075734,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": 1.7170599537073714,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          -1.2669206210498078,
+          4.748348651766371
+        ],
+        "scene_macro": 1.0771868002238372,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.7860986638585437,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.7589541964464276,
+          0.8388592804279631
+        ],
+        "scene_macro": 0.8170764587040189,
+        "scenes": 8
+      }
+    },
+    "angle_135": {
+      "psnr": {
+        "sample_micro": 14.96740121637746,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          11.920872882670443,
+          18.43003081172518
+        ],
+        "scene_macro": 16.6580132765065,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": -0.7146327554432375,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          -1.2261279705866392,
+          -0.2009476901912745
+        ],
+        "scene_macro": -0.5773401243453959,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.7411608536003642,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.6738594464324079,
+          0.8230608646253981
+        ],
+        "scene_macro": 0.7687659965121448,
+        "scenes": 8
+      }
+    },
+    "mean4": {
+      "psnr": {
+        "sample_micro": 15.656954182633967,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          13.11136227125478,
+          18.657204735384816
+        ],
+        "scene_macro": 17.20062821812761,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": -0.025079789186732968,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          -0.03789044723582917,
+          -0.021184542209716314
+        ],
+        "scene_macro": -0.034725182724289344,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.784119889988619,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.7290129028726263,
+          0.8629698473731707
+        ],
+        "scene_macro": 0.8196649611331702,
+        "scenes": 8
+      }
+    },
+    "median4": {
+      "psnr": {
+        "sample_micro": 15.25848654085791,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          12.500211969664658,
+          18.47978498146443
+        ],
+        "scene_macro": 16.875012007931332,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": -0.4235474309627882,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          -0.6407566304493416,
+          -0.18617873329202103
+        ],
+        "scene_macro": -0.36034139292056777,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.7730291925868146,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.7153351608431432,
+          0.8538250589433638
+        ],
+        "scene_macro": 0.8085482870304257,
+        "scenes": 8
+      }
+    },
+    "min4": {
+      "psnr": {
+        "sample_micro": 18.76112877206169,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          17.87313234649655,
+          20.15218197178078
+        ],
+        "scene_macro": 19.638340946992486,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": 3.0790948002409904,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          1.2230918281420022,
+          4.951996817093379
+        ],
+        "scene_macro": 2.4029875461405887,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.8178168594867141,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.7907008240153656,
+          0.8627209500544396
+        ],
+        "scene_macro": 0.8406196026931141,
+        "scenes": 8
+      }
+    },
+    "min4_gt_affine_ceiling": {
+      "psnr": {
+        "sample_micro": 20.20767648852813,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          19.442042430788376,
+          21.707984352884584
+        ],
+        "scene_macro": 21.29308053453081,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": 4.5256425167074275,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          2.4274534245533905,
+          6.470252428397383
+        ],
+        "scene_macro": 4.057727133678908,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.8185057715837256,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.7896984726273771,
+          0.8661576868540763
+        ],
+        "scene_macro": 0.8425050968299816,
+        "scenes": 8
+      }
+    },
+    "per_sample_angle_oracle_ceiling": {
+      "psnr": {
+        "sample_micro": 19.064066755595885,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          17.913795011878683,
+          20.56357169916843
+        ],
+        "scene_macro": 19.70094598197948,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": 3.3820327837751867,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          1.4058179595076445,
+          5.108941005292327
+        ],
+        "scene_macro": 2.46559258112758,
+        "scenes": 8
+      }
+    },
+    "rgb": {
+      "psnr": {
+        "sample_micro": 15.682033971820697,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          13.133949333054655,
+          18.686860907304645
+        ],
+        "scene_macro": 17.2353534008519,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.783940607798326,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.7289757251120709,
+          0.8623332363772931
+        ],
+        "scene_macro": 0.8193802652996593,
+        "scenes": 8
+      }
+    },
+    "rgb_gt_affine_ceiling": {
+      "psnr": {
+        "sample_micro": 18.30355698717378,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          16.515558133212767,
+          20.86293133960062
+        ],
+        "scene_macro": 20.057170215376434,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": 2.6215230153530813,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          1.469475812729287,
+          3.7855926256256485
+        ],
+        "scene_macro": 2.8218168145245333,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.8032032190758968,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.76569297343424,
+          0.8616170808955784
+        ],
+        "scene_macro": 0.8267301304484322,
+        "scenes": 8
+      }
+    },
+    "virtual_min": {
+      "psnr": {
+        "sample_micro": 18.380812219125122,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          17.22411641129689,
+          20.038098536826737
+        ],
+        "scene_macro": 19.378129743951856,
+        "scenes": 8
+      },
+      "psnr_minus_rgb": {
+        "sample_micro": 2.6987782473044253,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          1.1889677079795742,
+          4.246437522514606
+        ],
+        "scene_macro": 2.1427763430999542,
+        "scenes": 8
+      },
+      "ssim": {
+        "sample_micro": 0.8168852976245811,
+        "samples": 188,
+        "scene_cluster_ci95": [
+          0.7868836334023023,
+          0.8647078761893441
+        ],
+        "scene_macro": 0.8409867803888159,
+        "scenes": 8
+      }
+    }
+  },
+  "repository_revision": "ea2829b16b02a25183708702b73592577ae9c313",
+  "samples": 188,
+  "scenes": 8
+}

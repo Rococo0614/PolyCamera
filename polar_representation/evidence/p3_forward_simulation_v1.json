@@ -1,0 +1,3109 @@
+{
+  "aolp_difference_sweep": [
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 0.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.6
+      },
+      "score": {
+        "min4_gain_db": -7.1704757492627245,
+        "min4_psnr": 10.292660536807155,
+        "rgb_psnr": 17.46313628606988,
+        "saturation_share": 0.20011393229166666,
+        "stokes_rmse": 0.21583895283509993,
+        "virtual_min_gain_db": -5.295458765658093,
+        "virtual_min_psnr": 12.167677520411786
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 15.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.6
+      },
+      "score": {
+        "min4_gain_db": -5.564854877246255,
+        "min4_psnr": 11.694070963979769,
+        "rgb_psnr": 17.258925841226024,
+        "saturation_share": 0.22520616319444445,
+        "stokes_rmse": 0.21261254262949913,
+        "virtual_min_gain_db": -5.376975001774053,
+        "virtual_min_psnr": 11.88195083945197
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 30.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.6
+      },
+      "score": {
+        "min4_gain_db": -2.1988977385635824,
+        "min4_psnr": 14.724452485774242,
+        "rgb_psnr": 16.923350224337824,
+        "saturation_share": 0.2366265190972222,
+        "stokes_rmse": 0.19643134344067908,
+        "virtual_min_gain_db": -4.528609220832179,
+        "virtual_min_psnr": 12.394741003505645
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.6
+      },
+      "score": {
+        "min4_gain_db": -3.437757960615979,
+        "min4_psnr": 13.18673692410864,
+        "rgb_psnr": 16.62449488472462,
+        "saturation_share": 0.18986002604166666,
+        "stokes_rmse": 0.17091782982655254,
+        "virtual_min_gain_db": -2.4033763859662987,
+        "virtual_min_psnr": 14.22111849875832
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 60.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.6
+      },
+      "score": {
+        "min4_gain_db": -1.282592743273197,
+        "min4_psnr": 14.850387152697257,
+        "rgb_psnr": 16.132979895970454,
+        "saturation_share": 0.17542860243055555,
+        "stokes_rmse": 0.14154133742806038,
+        "virtual_min_gain_db": -0.9128031331581496,
+        "virtual_min_psnr": 15.220176762812304
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 90.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.6
+      },
+      "score": {
+        "min4_gain_db": -1.374249335553186,
+        "min4_psnr": 14.272535137909522,
+        "rgb_psnr": 15.646784473462708,
+        "saturation_share": 0.1343315972222222,
+        "stokes_rmse": 0.11080055127991004,
+        "virtual_min_gain_db": -0.5169047910995861,
+        "virtual_min_psnr": 15.129879682363121
+      }
+    }
+  ],
+  "claim_boundary": "Analytical grayscale Stokes layer simulation. It establishes implementation sanity and identifiability trends, not real-camera performance or uniqueness of layer separation.",
+  "experiment": "p3-analytical-polarization-layer-sweep-v1",
+  "instrument_and_mpfa_sweep": [
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "label": "ideal",
+      "score": {
+        "min4_gain_db": 12.041199826559243,
+        "min4_psnr": 46.835375891575886,
+        "rgb_psnr": 34.79417606501664,
+        "saturation_share": 0.0,
+        "stokes_rmse": 5.853471075396356e-17,
+        "virtual_min_gain_db": 12.041199826559279,
+        "virtual_min_psnr": 46.83537589157592
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.03,
+          0.97,
+          1.02,
+          0.98
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.005,
+          -0.003,
+          0.002,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "label": "gain_offset",
+      "score": {
+        "min4_gain_db": 4.791134404717887,
+        "min4_psnr": 39.165754886726226,
+        "rgb_psnr": 34.37462048200834,
+        "saturation_share": 0.00029839409722222225,
+        "stokes_rmse": 0.007461705615338011,
+        "virtual_min_gain_db": 17.159398797506284,
+        "virtual_min_psnr": 51.534019279514624
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          1.3,
+          -1.2,
+          1.1,
+          1.7
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "label": "angle_error",
+      "score": {
+        "min4_gain_db": 12.184788939323333,
+        "min4_psnr": 46.81619041558218,
+        "rgb_psnr": 34.631401476258844,
+        "saturation_share": 0.0,
+        "stokes_rmse": 0.00042105478706794535,
+        "virtual_min_gain_db": 11.549963726673525,
+        "virtual_min_psnr": 46.18136520293237
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": true,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "label": "mpfa_bilinear",
+      "score": {
+        "min4_gain_db": -0.6420715020932803,
+        "min4_psnr": 28.50062844422729,
+        "rgb_psnr": 29.14269994632057,
+        "saturation_share": 0.0,
+        "stokes_rmse": 0.048021511475165715,
+        "virtual_min_gain_db": -0.7810142225011738,
+        "virtual_min_psnr": 28.361685723819395
+      }
+    }
+  ],
+  "noise_sweep": [
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 12.032986405323712,
+        "min4_psnr": 40.81477597829626,
+        "rgb_psnr": 28.78178957297255,
+        "saturation_share": 0.0008951822916666666,
+        "stokes_rmse": 0.0010529975625377178,
+        "virtual_min_gain_db": 11.989490055359447,
+        "virtual_min_psnr": 40.771279628331996
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.005,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 11.040710867925043,
+        "min4_psnr": 39.807753745610526,
+        "rgb_psnr": 28.767042877685483,
+        "saturation_share": 0.0009223090277777778,
+        "stokes_rmse": 0.006518129219638033,
+        "virtual_min_gain_db": 11.325488165186705,
+        "virtual_min_psnr": 40.09253104287219
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.01,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 9.256397944064929,
+        "min4_psnr": 37.96929944596184,
+        "rgb_psnr": 28.71290150189691,
+        "saturation_share": 0.001193576388888889,
+        "stokes_rmse": 0.012903148207814009,
+        "virtual_min_gain_db": 9.857361515342888,
+        "virtual_min_psnr": 38.570263017239796
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.02,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 6.024795555094045,
+        "min4_psnr": 34.517943891958865,
+        "rgb_psnr": 28.49314833686482,
+        "saturation_share": 0.0015462239583333333,
+        "stokes_rmse": 0.025728927922761963,
+        "virtual_min_gain_db": 6.543459154315315,
+        "virtual_min_psnr": 35.036607491180135
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.04,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 1.1626252038232785,
+        "min4_psnr": 28.863134692823245,
+        "rgb_psnr": 27.700509488999966,
+        "saturation_share": 0.0037977430555555555,
+        "stokes_rmse": 0.05132427276955542,
+        "virtual_min_gain_db": 1.8148753810715768,
+        "virtual_min_psnr": 29.515384870071543
+      }
+    }
+  ],
+  "reflection_sweep": [
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.0,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.0,
+        "min4_psnr": 28.773576151737018,
+        "rgb_psnr": 28.773576151737018,
+        "saturation_share": 0.0,
+        "stokes_rmse": 4.94470036147982e-17,
+        "virtual_min_gain_db": 3.552713678800501e-15,
+        "virtual_min_psnr": 28.77357615173702
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.0,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.0,
+        "min4_psnr": 20.874986097514665,
+        "rgb_psnr": 20.874986097514665,
+        "saturation_share": 0.016927083333333332,
+        "stokes_rmse": 0.005682487761661214,
+        "virtual_min_gain_db": 3.552713678800501e-15,
+        "virtual_min_psnr": 20.874986097514668
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.0,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.0,
+        "min4_psnr": 15.167189523738138,
+        "rgb_psnr": 15.167189523738138,
+        "saturation_share": 0.07562934027777778,
+        "stokes_rmse": 0.03340488842630994,
+        "virtual_min_gain_db": 0.0,
+        "virtual_min_psnr": 15.167189523738138
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.0,
+        "reflection_ratio": 1.0,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.0,
+        "min4_psnr": 10.22301917600549,
+        "rgb_psnr": 10.22301917600549,
+        "saturation_share": 0.2772352430555556,
+        "stokes_rmse": 0.13430337655821864,
+        "virtual_min_gain_db": 0.0,
+        "virtual_min_psnr": 10.22301917600549
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.0,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.0,
+        "min4_psnr": 8.363903810595348,
+        "rgb_psnr": 8.363903810595348,
+        "saturation_share": 0.5030381944444444,
+        "stokes_rmse": 0.28335343834581506,
+        "virtual_min_gain_db": 1.7763568394002505e-15,
+        "virtual_min_psnr": 8.36390381059535
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.1,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.914999901469713,
+        "min4_psnr": 29.688725962950517,
+        "rgb_psnr": 28.773726061480804,
+        "saturation_share": 5.425347222222222e-05,
+        "stokes_rmse": 5.213211835362421e-05,
+        "virtual_min_gain_db": 0.9148302100653893,
+        "virtual_min_psnr": 29.688556271546194
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.1,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.8937505578817948,
+        "min4_psnr": 21.77174966648209,
+        "rgb_psnr": 20.877999108600296,
+        "saturation_share": 0.017469618055555556,
+        "stokes_rmse": 0.006014519229281478,
+        "virtual_min_gain_db": 0.8903203013511636,
+        "virtual_min_psnr": 21.76831940995146
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.1,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.8422704209655976,
+        "min4_psnr": 16.016569307043444,
+        "rgb_psnr": 15.174298886077846,
+        "saturation_share": 0.07622612847222222,
+        "stokes_rmse": 0.0343886616787201,
+        "virtual_min_gain_db": 0.8342253790858329,
+        "virtual_min_psnr": 16.00852426516368
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.1,
+        "reflection_ratio": 1.0,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.6294314214648455,
+        "min4_psnr": 10.878753270903037,
+        "rgb_psnr": 10.249321849438191,
+        "saturation_share": 0.2787272135416667,
+        "stokes_rmse": 0.13753567143876314,
+        "virtual_min_gain_db": 0.6011194147235788,
+        "virtual_min_psnr": 10.85044126416177
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.1,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 0.3608197548212697,
+        "min4_psnr": 8.751810685432012,
+        "rgb_psnr": 8.390990930610743,
+        "saturation_share": 0.5006781684027778,
+        "stokes_rmse": 0.2889077185217033,
+        "virtual_min_gain_db": 0.33331460660944856,
+        "virtual_min_psnr": 8.724305537220191
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.25,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 2.4977744093786356,
+        "min4_psnr": 31.272350883903016,
+        "rgb_psnr": 28.77457647452438,
+        "saturation_share": 0.00018988715277777778,
+        "stokes_rmse": 0.00020703178311942748,
+        "virtual_min_gain_db": 2.496375527369665,
+        "virtual_min_psnr": 31.270952001894045
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.25,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 2.4433341760757443,
+        "min4_psnr": 23.335759360453533,
+        "rgb_psnr": 20.89242518437779,
+        "saturation_share": 0.018473307291666668,
+        "stokes_rmse": 0.007439371224910937,
+        "virtual_min_gain_db": 2.4184970146921962,
+        "virtual_min_psnr": 23.310922199069985
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.25,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 2.2965227071589283,
+        "min4_psnr": 17.506794311996646,
+        "rgb_psnr": 15.210271604837718,
+        "saturation_share": 0.0805935329861111,
+        "stokes_rmse": 0.03896347170679937,
+        "virtual_min_gain_db": 2.2372389284200445,
+        "virtual_min_psnr": 17.447510533257763
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.25,
+        "reflection_ratio": 1.0,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 1.7590170346320946,
+        "min4_psnr": 12.126226252789277,
+        "rgb_psnr": 10.367209218157182,
+        "saturation_share": 0.28125,
+        "stokes_rmse": 0.1525479260863976,
+        "virtual_min_gain_db": 1.5821642765157584,
+        "virtual_min_psnr": 11.94937349467294
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.25,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 1.060720604074767,
+        "min4_psnr": 9.581737104846543,
+        "rgb_psnr": 8.521016500771776,
+        "saturation_share": 0.4898274739583333,
+        "stokes_rmse": 0.31534791599201584,
+        "virtual_min_gain_db": 0.8937474173914897,
+        "virtual_min_psnr": 9.414763918163265
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.5,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 6.016912510641756,
+        "min4_psnr": 34.794176065016636,
+        "rgb_psnr": 28.77726355437488,
+        "saturation_share": 0.0004069010416666667,
+        "stokes_rmse": 0.0005786177227094004,
+        "virtual_min_gain_db": 6.008562207263747,
+        "virtual_min_psnr": 34.78582576163863
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.5,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 5.906067416098217,
+        "min4_psnr": 26.838429418275677,
+        "rgb_psnr": 20.93236200217746,
+        "saturation_share": 0.020209418402777776,
+        "stokes_rmse": 0.010973303450076346,
+        "virtual_min_gain_db": 5.772950578701025,
+        "virtual_min_psnr": 26.705312580878484
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.5,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 5.545353966250076,
+        "min4_psnr": 20.874986097514665,
+        "rgb_psnr": 15.329632131264589,
+        "saturation_share": 0.08436414930555555,
+        "stokes_rmse": 0.05157119769608612,
+        "virtual_min_gain_db": 5.201301680231278,
+        "virtual_min_psnr": 20.530933811495867
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.5,
+        "reflection_ratio": 1.0,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 4.449484480154304,
+        "min4_psnr": 15.167189523738138,
+        "rgb_psnr": 10.717705043583834,
+        "saturation_share": 0.2832845052083333,
+        "stokes_rmse": 0.19337347927974816,
+        "virtual_min_gain_db": 3.6258303390526194,
+        "virtual_min_psnr": 14.343535382636453
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.5,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 3.160539806111,
+        "min4_psnr": 12.126226252789277,
+        "rgb_psnr": 8.965686446678276,
+        "saturation_share": 0.4622395833333333,
+        "stokes_rmse": 0.38720713604146073,
+        "virtual_min_gain_db": 2.3589127860326293,
+        "virtual_min_psnr": 11.324599232710906
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 12.032986405323712,
+        "min4_psnr": 40.81477597829626,
+        "rgb_psnr": 28.78178957297255,
+        "saturation_share": 0.0008951822916666666,
+        "stokes_rmse": 0.0010529975625377178,
+        "virtual_min_gain_db": 11.989490055359447,
+        "virtual_min_psnr": 40.771279628331996
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 11.871736634323906,
+        "min4_psnr": 32.85597580485551,
+        "rgb_psnr": 20.984239170531605,
+        "saturation_share": 0.023003472222222224,
+        "stokes_rmse": 0.015086944886671177,
+        "virtual_min_gain_db": 11.288776157658443,
+        "virtual_min_psnr": 32.27301532819005
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 11.332972990381815,
+        "min4_psnr": 26.838429418275677,
+        "rgb_psnr": 15.505456427893861,
+        "saturation_share": 0.0923122829861111,
+        "stokes_rmse": 0.06623410100759328,
+        "virtual_min_gain_db": 9.839944347659038,
+        "virtual_min_psnr": 25.3454007755529
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 1.0,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 9.643544415917209,
+        "min4_psnr": 20.874986097514665,
+        "rgb_psnr": 11.231441681597456,
+        "saturation_share": 0.2880859375,
+        "stokes_rmse": 0.24098201633100633,
+        "virtual_min_gain_db": 6.76606165592791,
+        "virtual_min_psnr": 17.997503337525366
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 7.874275797371578,
+        "min4_psnr": 17.506794311996646,
+        "rgb_psnr": 9.632518514625069,
+        "saturation_share": 0.4423014322916667,
+        "stokes_rmse": 0.46922939452823353,
+        "virtual_min_gain_db": 5.094279511046855,
+        "virtual_min_psnr": 14.726798025671924
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 1.0,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 306.595104722168,
+        "min4_psnr": 335.38389497567607,
+        "rgb_psnr": 28.788790253508076,
+        "saturation_share": 0.0016547309027777778,
+        "stokes_rmse": 0.0016376989757915686,
+        "virtual_min_gain_db": 35.1656156075312,
+        "virtual_min_psnr": 63.95440586103928
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 1.0,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 310.17510056484616,
+        "min4_psnr": 331.2229854665733,
+        "rgb_psnr": 21.047884901727095,
+        "saturation_share": 0.027370876736111112,
+        "stokes_rmse": 0.019695631980436192,
+        "virtual_min_gain_db": 23.50974013452764,
+        "virtual_min_psnr": 44.557625036254734
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 1.0,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 313.06449638257465,
+        "min4_psnr": 328.8012046689021,
+        "rgb_psnr": 15.736708286327449,
+        "saturation_share": 0.10712348090277778,
+        "stokes_rmse": 0.08239509047951542,
+        "virtual_min_gain_db": 18.245274923918224,
+        "virtual_min_psnr": 33.98198321024567
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 1.0,
+        "reflection_ratio": 1.0,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 313.74301099798043,
+        "min4_psnr": 325.58723090592247,
+        "rgb_psnr": 11.84421990794204,
+        "saturation_share": 0.2968478732638889,
+        "stokes_rmse": 0.29012052259548093,
+        "virtual_min_gain_db": 12.595035601555313,
+        "virtual_min_psnr": 24.439255509497354
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 1.0,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 313.8929106899275,
+        "min4_psnr": 324.3288177182223,
+        "rgb_psnr": 10.435907028294801,
+        "saturation_share": 0.439453125,
+        "stokes_rmse": 0.5501860288777185,
+        "virtual_min_gain_db": 10.84174618600242,
+        "virtual_min_psnr": 21.27765321429722
+      }
+    }
+  ],
+  "summary": {
+    "ambiguity_sweep_gain_range_db": [
+      -19.370970638146925,
+      12.041199826559279
+    ],
+    "ambiguity_sweep_positive_share_gt_0p1db": 0.5,
+    "positive_gain_threshold_db": 0.1,
+    "reflection_sweep_gain_range_db": [
+      0.0,
+      35.1656156075312
+    ],
+    "reflection_sweep_positive_share_gt_0p1db": 0.8333333333333334
+  },
+  "transmission_ambiguity_sweep": [
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 12.041199826559243,
+        "min4_psnr": 46.835375891575886,
+        "rgb_psnr": 34.79417606501664,
+        "saturation_share": 0.0,
+        "stokes_rmse": 5.853471075396356e-17,
+        "virtual_min_gain_db": 12.041199826559279,
+        "virtual_min_psnr": 46.83537589157592
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 12.032986405323712,
+        "min4_psnr": 40.81477597829626,
+        "rgb_psnr": 28.78178957297255,
+        "saturation_share": 0.0008951822916666666,
+        "stokes_rmse": 0.0010529975625377178,
+        "virtual_min_gain_db": 11.989490055359447,
+        "virtual_min_psnr": 40.771279628331996
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 11.871736634323906,
+        "min4_psnr": 32.85597580485551,
+        "rgb_psnr": 20.984239170531605,
+        "saturation_share": 0.023003472222222224,
+        "stokes_rmse": 0.015086944886671177,
+        "virtual_min_gain_db": 11.288776157658443,
+        "virtual_min_psnr": 32.27301532819005
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 11.332972990381815,
+        "min4_psnr": 26.838429418275677,
+        "rgb_psnr": 15.505456427893861,
+        "saturation_share": 0.0923122829861111,
+        "stokes_rmse": 0.06623410100759328,
+        "virtual_min_gain_db": 9.839944347659038,
+        "virtual_min_psnr": 25.3454007755529
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.75,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 10.537874049340811,
+        "min4_psnr": 23.335759360453533,
+        "rgb_psnr": 12.797885311112722,
+        "saturation_share": 0.1928439670138889,
+        "stokes_rmse": 0.1437760313409401,
+        "virtual_min_gain_db": 8.198021702119007,
+        "virtual_min_psnr": 20.99590701323173
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.0
+      },
+      "score": {
+        "min4_gain_db": 7.874275797371578,
+        "min4_psnr": 17.506794311996646,
+        "rgb_psnr": 9.632518514625069,
+        "saturation_share": 0.4423014322916667,
+        "stokes_rmse": 0.46922939452823353,
+        "virtual_min_gain_db": 5.094279511046855,
+        "virtual_min_psnr": 14.726798025671924
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.1
+      },
+      "score": {
+        "min4_gain_db": -7.604057415068546,
+        "min4_psnr": 27.241160842304645,
+        "rgb_psnr": 34.84521825737319,
+        "saturation_share": 0.006266276041666667,
+        "stokes_rmse": 0.0020924669057451797,
+        "virtual_min_gain_db": -7.781957258781258,
+        "virtual_min_psnr": 27.063260998591932
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.1
+      },
+      "score": {
+        "min4_gain_db": 0.5637008922915925,
+        "min4_psnr": 29.408114248622937,
+        "rgb_psnr": 28.844413356331344,
+        "saturation_share": 0.010362413194444444,
+        "stokes_rmse": 0.004359265055796835,
+        "virtual_min_gain_db": 0.14012733281649759,
+        "virtual_min_psnr": 28.984540689147842
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.1
+      },
+      "score": {
+        "min4_gain_db": 9.7054364114367,
+        "min4_psnr": 30.763588728796478,
+        "rgb_psnr": 21.058152317359777,
+        "saturation_share": 0.03200954861111111,
+        "stokes_rmse": 0.02039894507590873,
+        "virtual_min_gain_db": 10.717957002842091,
+        "virtual_min_psnr": 31.77610932020187
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.1
+      },
+      "score": {
+        "min4_gain_db": 11.20830230779822,
+        "min4_psnr": 26.76734171139803,
+        "rgb_psnr": 15.559039403599808,
+        "saturation_share": 0.10237630208333333,
+        "stokes_rmse": 0.07159770662479459,
+        "virtual_min_gain_db": 10.79168155172594,
+        "virtual_min_psnr": 26.350720955325748
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.75,
+        "seed": 20261110,
+        "transmission_dolp": 0.1
+      },
+      "score": {
+        "min4_gain_db": 10.520040695988198,
+        "min4_psnr": 23.354559799023257,
+        "rgb_psnr": 12.834519103035058,
+        "saturation_share": 0.19590928819444445,
+        "stokes_rmse": 0.14848690027042136,
+        "virtual_min_gain_db": 8.63989525676441,
+        "virtual_min_psnr": 21.474414359799468
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.1
+      },
+      "score": {
+        "min4_gain_db": 7.854478442655928,
+        "min4_psnr": 17.506794311996646,
+        "rgb_psnr": 9.652315869340718,
+        "saturation_share": 0.4415147569444444,
+        "stokes_rmse": 0.47221649642312696,
+        "virtual_min_gain_db": 5.165277411247221,
+        "virtual_min_psnr": 14.81759328058794
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.3
+      },
+      "score": {
+        "min4_gain_db": -18.477061526694385,
+        "min4_psnr": 16.117759382574846,
+        "rgb_psnr": 34.59482090926923,
+        "saturation_share": 0.037543402777777776,
+        "stokes_rmse": 0.030979732907069076,
+        "virtual_min_gain_db": -18.17156526181377,
+        "virtual_min_psnr": 16.42325564745546
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.3
+      },
+      "score": {
+        "min4_gain_db": -12.323813780400144,
+        "min4_psnr": 16.905710806808425,
+        "rgb_psnr": 29.22952458720857,
+        "saturation_share": 0.041558159722222224,
+        "stokes_rmse": 0.03464263143771881,
+        "virtual_min_gain_db": -12.011843727131723,
+        "virtual_min_psnr": 17.217680860076847
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.3
+      },
+      "score": {
+        "min4_gain_db": -2.2286315206756377,
+        "min4_psnr": 19.207336837388265,
+        "rgb_psnr": 21.435968358063903,
+        "saturation_share": 0.0654025607638889,
+        "stokes_rmse": 0.05102306790639957,
+        "virtual_min_gain_db": -1.9975378656597371,
+        "virtual_min_psnr": 19.438430492404166
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.3
+      },
+      "score": {
+        "min4_gain_db": 5.522455103220107,
+        "min4_psnr": 21.391801867660874,
+        "rgb_psnr": 15.869346764440767,
+        "saturation_share": 0.12608506944444445,
+        "stokes_rmse": 0.10144140919191069,
+        "virtual_min_gain_db": 6.230614200637085,
+        "virtual_min_psnr": 22.09996096507785
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.75,
+        "seed": 20261110,
+        "transmission_dolp": 0.3
+      },
+      "score": {
+        "min4_gain_db": 8.119642735654704,
+        "min4_psnr": 21.234549416614268,
+        "rgb_psnr": 13.114906680959564,
+        "saturation_share": 0.2150607638888889,
+        "stokes_rmse": 0.17735974316499895,
+        "virtual_min_gain_db": 8.350057067692077,
+        "virtual_min_psnr": 21.46496374865164
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.3
+      },
+      "score": {
+        "min4_gain_db": 7.629168550459227,
+        "min4_psnr": 17.432124635886638,
+        "rgb_psnr": 9.802956085427411,
+        "saturation_share": 0.4384494357638889,
+        "stokes_rmse": 0.49395221016454,
+        "virtual_min_gain_db": 5.3204231873761,
+        "virtual_min_psnr": 15.123379272803511
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.5
+      },
+      "score": {
+        "min4_gain_db": -19.934388129952424,
+        "min4_psnr": 11.370925272279882,
+        "rgb_psnr": 31.305313402232308,
+        "saturation_share": 0.06939019097222222,
+        "stokes_rmse": 0.0732357992063061,
+        "virtual_min_gain_db": -19.370970638146925,
+        "virtual_min_psnr": 11.934342764085383
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.5
+      },
+      "score": {
+        "min4_gain_db": -16.859053179684977,
+        "min4_psnr": 11.837085430205619,
+        "rgb_psnr": 28.696138609890596,
+        "saturation_share": 0.07359483506944445,
+        "stokes_rmse": 0.07790287841952229,
+        "virtual_min_gain_db": -16.24100116074052,
+        "virtual_min_psnr": 12.455137449150076
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.5
+      },
+      "score": {
+        "min4_gain_db": -8.611743724595446,
+        "min4_psnr": 13.26176075558427,
+        "rgb_psnr": 21.873504480179715,
+        "saturation_share": 0.1042209201388889,
+        "stokes_rmse": 0.09583921904726848,
+        "virtual_min_gain_db": -7.912474237657243,
+        "virtual_min_psnr": 13.961030242522472
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.5
+      },
+      "score": {
+        "min4_gain_db": -0.9145605336324927,
+        "min4_psnr": 15.428714161902562,
+        "rgb_psnr": 16.343274695535055,
+        "saturation_share": 0.17122395833333334,
+        "stokes_rmse": 0.1450905319022702,
+        "virtual_min_gain_db": -0.08458178468340805,
+        "virtual_min_psnr": 16.258692910851646
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.75,
+        "seed": 20261110,
+        "transmission_dolp": 0.5
+      },
+      "score": {
+        "min4_gain_db": 3.1614745518181895,
+        "min4_psnr": 16.743285021224757,
+        "rgb_psnr": 13.581810469406568,
+        "saturation_share": 0.2500542534722222,
+        "stokes_rmse": 0.21980575171199776,
+        "virtual_min_gain_db": 4.227377643975883,
+        "virtual_min_psnr": 17.80918811338245
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.5
+      },
+      "score": {
+        "min4_gain_db": 6.201722530329148,
+        "min4_psnr": 16.28693120549337,
+        "rgb_psnr": 10.085208675164223,
+        "saturation_share": 0.42529296875,
+        "stokes_rmse": 0.5313537948212392,
+        "virtual_min_gain_db": 4.9830236661408716,
+        "virtual_min_psnr": 15.068232341305094
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.7
+      },
+      "score": {
+        "min4_gain_db": -19.041785237784932,
+        "min4_psnr": 8.316833704172044,
+        "rgb_psnr": 27.358618941956976,
+        "saturation_share": 0.10560438368055555,
+        "stokes_rmse": 0.12389850198051815,
+        "virtual_min_gain_db": -18.235419496747433,
+        "virtual_min_psnr": 9.123199445209544
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.7
+      },
+      "score": {
+        "min4_gain_db": -18.12012362669232,
+        "min4_psnr": 8.647113638312344,
+        "rgb_psnr": 26.767237265004663,
+        "saturation_share": 0.11100260416666667,
+        "stokes_rmse": 0.12940585905590157,
+        "virtual_min_gain_db": -17.242120338378168,
+        "virtual_min_psnr": 9.525116926626495
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.7
+      },
+      "score": {
+        "min4_gain_db": -12.524160243343989,
+        "min4_psnr": 9.659628259870583,
+        "rgb_psnr": 22.183788503214572,
+        "saturation_share": 0.14029947916666666,
+        "stokes_rmse": 0.14929110081917912,
+        "virtual_min_gain_db": -11.482880025546443,
+        "virtual_min_psnr": 10.70090847766813
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.7
+      },
+      "score": {
+        "min4_gain_db": -5.574768108016293,
+        "min4_psnr": 11.331478820718512,
+        "rgb_psnr": 16.906246928734806,
+        "saturation_share": 0.2011447482638889,
+        "stokes_rmse": 0.19876721587373194,
+        "virtual_min_gain_db": -4.359611588663263,
+        "virtual_min_psnr": 12.546635340071543
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.75,
+        "seed": 20261110,
+        "transmission_dolp": 0.7
+      },
+      "score": {
+        "min4_gain_db": -1.3531429405476985,
+        "min4_psnr": 12.759743774026092,
+        "rgb_psnr": 14.11288671457379,
+        "saturation_share": 0.2718098958333333,
+        "stokes_rmse": 0.27125330357262334,
+        "virtual_min_gain_db": 0.03893299576014009,
+        "virtual_min_psnr": 14.15181971033393
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.7
+      },
+      "score": {
+        "min4_gain_db": 3.7071971500425462,
+        "min4_psnr": 14.1866177707093,
+        "rgb_psnr": 10.479420620666755,
+        "saturation_share": 0.4107259114583333,
+        "stokes_rmse": 0.5771760366582787,
+        "virtual_min_gain_db": 3.9657639674414025,
+        "virtual_min_psnr": 14.445184588108157
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.05,
+        "seed": 20261110,
+        "transmission_dolp": 0.9
+      },
+      "score": {
+        "min4_gain_db": -18.00316690598726,
+        "min4_psnr": 6.061227856825756,
+        "rgb_psnr": 24.064394762813016,
+        "saturation_share": 0.13362630208333334,
+        "stokes_rmse": 0.18094759987931658,
+        "virtual_min_gain_db": -16.987037203218854,
+        "virtual_min_psnr": 7.077357559594164
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.1,
+        "seed": 20261110,
+        "transmission_dolp": 0.9
+      },
+      "score": {
+        "min4_gain_db": -17.932794542148407,
+        "min4_psnr": 6.316840485229504,
+        "rgb_psnr": 24.24963502737791,
+        "saturation_share": 0.1389431423611111,
+        "stokes_rmse": 0.1871622319659618,
+        "virtual_min_gain_db": -16.840809888813748,
+        "virtual_min_psnr": 7.408825138564162
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.25,
+        "seed": 20261110,
+        "transmission_dolp": 0.9
+      },
+      "score": {
+        "min4_gain_db": -14.926269161835915,
+        "min4_psnr": 7.099109385798236,
+        "rgb_psnr": 22.02537854763415,
+        "saturation_share": 0.1637912326388889,
+        "stokes_rmse": 0.20876443977734344,
+        "virtual_min_gain_db": -13.644394738540555,
+        "virtual_min_psnr": 8.380983809093596
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.9
+      },
+      "score": {
+        "min4_gain_db": -8.961143895519106,
+        "min4_psnr": 8.418472269699405,
+        "rgb_psnr": 17.37961616521851,
+        "saturation_share": 0.2178276909722222,
+        "stokes_rmse": 0.2586413868244575,
+        "virtual_min_gain_db": -7.479026905568498,
+        "virtual_min_psnr": 9.900589259650014
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 0.75,
+        "seed": 20261110,
+        "transmission_dolp": 0.9
+      },
+      "score": {
+        "min4_gain_db": -4.960820455257048,
+        "min4_psnr": 9.664911742995015,
+        "rgb_psnr": 14.625732198252063,
+        "saturation_share": 0.2875434027777778,
+        "stokes_rmse": 0.3289583097388339,
+        "virtual_min_gain_db": -3.3294046611927026,
+        "virtual_min_psnr": 11.29632753705936
+      }
+    },
+    {
+      "config": {
+        "angle_error_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "aolp_difference_deg": 45.0,
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mpfa_bilinear": false,
+        "noise_sigma": 0.0,
+        "offsets": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reflection_dolp": 0.75,
+        "reflection_ratio": 1.5,
+        "seed": 20261110,
+        "transmission_dolp": 0.9
+      },
+      "score": {
+        "min4_gain_db": 0.9635027646730219,
+        "min4_psnr": 11.875865370049802,
+        "rgb_psnr": 10.91236260537678,
+        "saturation_share": 0.4153645833333333,
+        "stokes_rmse": 0.6278137007547591,
+        "virtual_min_gain_db": 2.233214147225439,
+        "virtual_min_psnr": 13.145576752602219
+      }
+    }
+  ]
+}
