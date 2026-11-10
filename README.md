@@ -185,7 +185,8 @@ PPFT 结果级复现和弱偏振反例，并明确它只支持“偏振不能被
 - `15_shared_polarization_encoder_pretraining_controls.md`：候选共享偏振编码器新主线的
   PolaRGB 发布版审计、无学习基线、负对照、仿真要求与训练前 Gate A0。
 - `polar_representation/`：共享偏振表示 P0–P3 的数据冻结、无学习基线、物理审计、解析仿真、
-  测试与小型 evidence；当前结果见 `polar_representation/RESULTS.md`。
+  测试与小型 evidence；当前结果见 `polar_representation/RESULTS.md`，论文分层见
+  `polar_representation/LITERATURE.md`。
 - `01_topic_and_research_questions.md`：当前研究问题、可证伪假设、候选贡献和停止条件。
 - `02_datasets_and_prior_work.md`：工业 OCR、高光去除、偏振反射去除、公开数据与候选缺口。
 - `03_one_month_plan.md`：首月文献、工位、标定、pilot、Gate 1/2 和开题交付。

@@ -176,7 +176,7 @@ processed RGB 上计算；95% CI 按场景聚类重抽样。当前脚本仍是�
 | 固定方向 | train-selected fixed angle | 排除在 test 上挑方向 |
 | 简单偏振 | `min4`、`virtual_min`、median | 判断网络是否只学了暗通道规则 |
 | 传统方法 | Farid/ICA、Schechner、Kong 或 Wen 2021 ADMM 等可复现物理分离 | 与非深度学习偏振分离比较 |
-| 任务专用学习方法 | ReflectNet（ECCV 2018）、Lei 2020、Polarization-to-Polarization（2024）、PolarFree（2025） | 比较共享表示与单任务专用网络 |
+| 任务专用学习方法 | ReflectNet（2018）、Lei（2020）、Multi-bounce（2020）、RP2PN（2024/2026）、dual-stream attention（2025）、PolarFree（2025）、cross dual-stream（2026） | 比较共享表示与单任务专用网络 |
 | 颜色对照 | 只在 train 拟合的全局/场景外 color affine | 排除逐图 GT 色彩 oracle |
 | 官方参考 | PolarFree 发布 checkpoint | 只在 release/config 对齐后作为参考 |
 | 上界 | per-sample angle oracle、GT affine、GT alignment | 只能标“ceiling”，不能当可部署基线 |
