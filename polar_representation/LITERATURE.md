@@ -29,6 +29,18 @@
 效应下的噪声放大、多图配准，以及厚玻璃多次反射、ghosting、曲面/粗糙界面和偏振照明造成的
 模型失配。学习方法应补充局部结构和语义先验，而不是删除物理重投影与质量门控。
 
+### 1.1 偏振反光网络的恢复层级与采集审计
+
+| 工作 | 偏振输入与强度/偏振输出 | 训练数据 | 真实采集硬件与场景 |
+|---|---|---|---|
+| ReflectNet, ECCV 2018 | 3 张相差 45° 的 RGB 偏振图；canonical projection 得到 `I⊥/I∥`；网络预测 RGB 残差与权重，输出可观察的强度 `T/R`，不输出四方向 polarized `T/R` | PLACE2 图像对合成；模拟 HDR 动态范围、edge-aware reflection、非刚性变化、曲面和手动检偏角误差 | URD 约 28 个高分辨率 RAW 城市半反射场景；Sony Alpha 6000 / Canon EOS 7D + 镜前线偏振片手动旋转，三方向顺序采集 |
+| Lei et al., CVPR 2020 | 四方向 RAW + intensity/DoLP/AoLP/过曝掩码；RNet 先估计单通道强度 `R`，TNet 再估计单通道强度 `T`；不恢复逐角 `T/R` | 807 组真实 M-R 数据，超过 100 类玻璃 | LUCID PHX050S-P + Sony IMX250MZR 单色 DoFP，单曝光四方向；黑布挡住透射得到 `R`，再拍 `M`，在线性 RAW 域计算 `T=M−R`；日常门窗及平面/曲面、薄/厚、有色/无色玻璃 |
+| Multi-bounce, ECCV 2020 | PolarNet 逐角预测 `{Tφ,Rφ}`；FusionNet 输出最终彩色强度 `T/R`；PSE 用 Stokes/Mueller 多次反射模型重建四方向输入 | 10,000 组合成混合图 + 13 个真实训练场景 | LUCID PHX050S-Q + Sony IMX250MYR 彩色 DoFP，单曝光四方向；26 个静态场景，每景一组无玻璃偏振 GT 与 6–12 组不同玻璃角度/位置混合图，13/13 划分 |
+| Deng et al., KBS 2026 | 已确认 cross dual-stream、`T/R` 估计与 polarization restoration 联合方向；具体输入和偏振恢复监督尚未开放核实 | 数据集、split 和损失待全文 | 相机型号、DoFP/旋转偏振片、采集场景均待全文，不推测 |
+
+因此需要严格区分三种主张：`polarization-to-intensity`、`polarization-to-polarization`，以及带四方向
+重投影的物理闭环。仅把四方向图送入网络，并不能证明输出或潜表示保留了偏振物理。
+
 ## 2. 必须补入的直接竞争工作
 
 ### 2.1 Wang, Zhang & Chen：Dual-stream attention guidance

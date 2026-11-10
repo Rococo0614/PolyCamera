@@ -1,6 +1,6 @@
 # PPT 图片来源与许可
 
-以下第一组场景图片下载自 Wikimedia Commons，用于本项目学术汇报中的工业场景示意。它们不是本项目实验数据。本文档记录原文件、作者和许可；本地 WebP 仅做尺寸压缩和格式转换。第 3 页另含论文原图节选，单独记录在后表。
+以下第一组场景图片下载自 Wikimedia Commons，用于本项目学术汇报中的工业场景示意。它们不是本项目实验数据。本文档记录原文件、作者和许可；本地 WebP 仅做尺寸压缩和格式转换。第 3–4 页另含论文原图节选，单独记录在后表。
 
 | 本地文件 | 原文件与作者 | 许可 |
 |---|---|---|
@@ -15,17 +15,22 @@
 
 图注中的“Wikimedia Commons”指向本清单。后续获得自有喷码工位、工件和四方向偏振照片后，应优先替换这些场景示意图，并保留“网络示意图”和“本项目实验数据”的明确区分。
 
-## 第 3 页论文图节选
+## 第 3–4 页论文图节选
 
 以下图像只用于说明传统偏振分离方法的历史演进，均在页面内写明作者、年份、出处和图号；版权归原作者与出版方。它们不是本项目实验结果，也不用于重新评测论文性能。
 
 | 本地文件 | 原始论文与图号 | 本地处理 |
 |---|---|---|
-| `03-farid-ica.webp` | H. Farid and E. H. Adelson, *Separating Reflections from Images by Use of Independent Components Analysis*, JOSA A 16(9), 1999, [author PDF](https://hfarid.org/downloads/publications/josa99.pdf), Figs. 8–9 | 从论文图中节选两幅偏振混合观测与 ICA 输出，统一灰度、并排排版；未改变图像内容 |
+| `03-farid-ica.webp` | H. Farid and E. H. Adelson, *Separating Reflections from Images by Use of Independent Component Analysis*, JOSA A 16(9), 1999, [author PDF](https://hfarid.org/downloads/publications/josa99.pdf), Figs. 8–9 | 从论文图中节选两幅偏振混合观测与 ICA 输出，统一灰度、并排排版；未改变图像内容 |
 | `03-schechner-decorrelation.webp` | Y. Y. Schechner, J. Shamir and N. Kiryati, *Polarization-Based Decorrelation of Transparent Layers: The Inclination Angle of an Invisible Surface*, ICCV 1999, [author PDF](https://webee.technion.ac.il/people/yoav/publications/iccv99polart2.pdf), Figs. 5 and 7 | 节选检偏观测与重建层，统一灰度、并排排版；未改变图像内容 |
 | `03-schechner-mi-minima.webp` | Y. Y. Schechner, J. Shamir and N. Kiryati, *Polarization and Statistical Analysis of Scenes Containing a Semireflector*, JOSA A 17(2), 2000, [author PDF](https://webee.technion.ac.il/people/yoav/publications/polarjosa.pdf), Fig. 5 | 节选互信息曲线的极小值区域，转换为 WebP 并轻微增强投影对比度；曲线内容未改动 |
+| `04-reflectnet-architecture.webp` | P. Wieschollek et al., *Separating Reflection and Transmission Images in the Wild*, ECCV 2018, [CVF PDF](https://openaccess.thecvf.com/content_ECCV_2018/papers/Patrick_Wieschollek_Separating_Reflection_and_ECCV_2018_paper.pdf), Fig. 4 | 节选 canonical projection 与残差编码器架构，裁除正文和图注后转为 WebP；图内内容未改动 |
+| `04-lei-two-stage.webp` | C. Lei et al., *Polarized Reflection Removal With Perfect Alignment in the Wild*, CVPR 2020, [CVF PDF](https://openaccess.thecvf.com/content_CVPR_2020/papers/Lei_Polarized_Reflection_Removal_With_Perfect_Alignment_in_the_Wild_CVPR_2020_paper.pdf), Fig. 5 | 节选四方向预处理、RNet 与 TNet 两阶段架构，裁除正文和图注后转为 WebP |
+| `04-multibounce-architecture.webp` | R. Li et al., *Reflection Separation via Multi-Bounce Polarization State Tracing*, ECCV 2020, [ECVA PDF](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123580766.pdf), Fig. 2 | 节选 PolarNet、FusionNet 与 PSE 闭环架构，裁除页眉和正文后转为 WebP |
 
 第 3 页 Kong–Tai–Shin 卡片中的流程图为本项目依据 *A Physically-Based Approach to Reflection Separation: From Physical Modeling to Constrained Optimization*, TPAMI 36(2), 2014, DOI [`10.1109/TPAMI.2013.45`](https://doi.org/10.1109/TPAMI.2013.45) 的方法描述与公开摘要重绘，不是论文原图。
+
+第 4 页 Deng et al. 2026 卡片为本项目根据论文题名、出版元数据和已核实的 cross dual-stream / T-R / polarization-restoration 方向重绘，不是论文原图。由于没有开放全文或代码，卡片明确保留输入表示、恢复监督、相机、采集方式、数据集和场景等未知字段。
 
 ## 本项目原创示意图
 
@@ -42,7 +47,7 @@ BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相
 |---|---|---|
 | 2 | 五类 RGB 失效场景、彩色偏振相机、Stokes、Fresnel、microfacet BRDF 与 T/R 欠定 | LUCID Phoenix PHX050S-QC 产品资料、Sony IMX250MYR / Polarsens 资料、`05_polarization_camera_physical_models.md`、Born & Wolf *Principles of Optics*、Cook–Torrance / Walter 等 microfacet 模型、Schechner / ReflectNet 的半反射层模型；所有图为机制示意，4×4 单元非芯片实际相位图 |
 | 3 | Farid–Schechner–Kong 的传统偏振 T/R 分离演进、共同边界及对学习先验的启发 | 上述三张论文图节选；Farid & Adelson, JOSA A 1999；Schechner et al., ICCV 1999 / JOSA A 2000；Kong et al., TPAMI 2014；方法口径同步见 `polar_representation/LITERATURE.md` |
-| 4 | 物理分离、任务网络、偏振恢复与共享表示路线 | `polar_representation/LITERATURE.md`；Deng et al. 2026 的网络细节按“待全文核查”处理 |
+| 4 | ReflectNet、Lei 2020、Multi-bounce 与 Deng 2026 的偏振/强度恢复层级及采集方案 | 上述三张论文架构图；对应 ECCV 2018、CVPR 2020、ECCV 2020 原文；Deng et al. 2026 仅使用出版元数据与已核实方向，具体输入、监督和采集字段按“待全文核查”处理；完整审计见 `polar_representation/LITERATURE.md` |
 | 5 | 物理 stem、共享编码器、负对照与 Gate A0 | `15_shared_polarization_encoder_pretraining_controls.md` 第 10 节 |
 | 6 | PolaRGB 与 P0–P3 工作量 | `polar_representation/evidence/polargb_release_v1.json`、`p0_p3_evidence_index_v1.json`、`polar_representation/RESULTS.md` |
 | 7 | 前期代理 E0：900 张清晰合成字符 | `industrial_reading/evidence/e0_clean_code_sanity.json` |
