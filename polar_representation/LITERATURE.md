@@ -9,8 +9,9 @@
 
 | 工作 | 本项目借助的内容 | 当前用途 |
 |---|---|---|
-| Farid & Adelson, *Separating Reflections and Lighting Using ICA*, CVPR 1999 | 多偏振观测作为不同混合、统计独立分层 | 传统无学习基线 |
-| Schechner, Shamir & Kiryati, *Polarization and Statistical Analysis of Scenes Containing a Semireflector*, JOSA A 2000 | 半反射介质、表面方向、互信息、噪声/角度误差与根本歧义 | 物理假设与失败边界 |
+| Farid & Adelson, *Separating Reflections from Images by Use of Independent Component Analysis*, JOSA A 1999 | 两幅正交检偏图作为同一 T/R 的不同全局线性混合，以统计独立性做 ICA 分层 | 传统无学习基线 |
+| Schechner, Shamir & Kiryati, *Polarization-Based Decorrelation of Transparent Layers: The Inclination Angle of an Invisible Surface*, ICCV 1999 | 用 Fresnel 权重反演两层，以重建层去相关估计半反射面的入射角并标注 T/R | 从任意 ICA 混合矩阵到物理混合矩阵 |
+| Schechner, Shamir & Kiryati, *Polarization and Statistical Analysis of Scenes Containing a Semireflector*, JOSA A 2000 | 双表面内部反射、表面方向、互信息、噪声/角度误差与根本歧义 | 物理假设与失败边界 |
 | Kong, Tai & Shin, *A Physically-Based Approach to Reflection Separation*, CVPR 2012 / TPAMI 2014 | 空间变化入射角、约束优化、三偏振图分层 | 传统物理强基线候选 |
 | Wieschollek et al., *Separating Reflection and Transmission Images in the Wild*（ReflectNet）, ECCV 2018 | canonical projection、残差 T/R、曲面/动态范围/非刚性合成 | P3 仿真设计、早期学习基线 |
 | Lei et al., *Polarized Reflection Removal With Perfect Alignment in the Wild*, CVPR 2020 | PHX050S-P + IMX250MZR 单曝光四方向、M-R 采集、先 R 后 T 两阶段网络、807 对数据 | 与自有设备最接近的真实数据/网络基线 |
@@ -22,6 +23,11 @@
 
 此外，PDD 公开数据用于去马赛克/噪声代理；SHDocs 用于此前 OCR 选择效应对照；HAMMER/PPFT
 仅保留为历史偏振质量与可靠性方法，不作为反光分离精度证据。
+
+上述传统路线的约束演进是：全局线性混合与统计独立 → Fresnel 系数和表面方向 → 完整概率分布与
+双表面内部反射 → 空间变化系数场和多尺度约束优化。其共同边界包括 T/R 相关或相似纹理、低偏振
+效应下的噪声放大、多图配准，以及厚玻璃多次反射、ghosting、曲面/粗糙界面和偏振照明造成的
+模型失配。学习方法应补充局部结构和语义先验，而不是删除物理重投影与质量门控。
 
 ## 2. 必须补入的直接竞争工作
 

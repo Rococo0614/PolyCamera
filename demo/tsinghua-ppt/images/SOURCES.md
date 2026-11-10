@@ -1,6 +1,6 @@
 # PPT 图片来源与许可
 
-以下图片均下载自 Wikimedia Commons，用于本项目学术汇报中的工业场景示意。它们不是本项目实验数据。本文档记录原文件、作者和许可；本地 WebP 仅做尺寸压缩和格式转换。
+以下第一组场景图片下载自 Wikimedia Commons，用于本项目学术汇报中的工业场景示意。它们不是本项目实验数据。本文档记录原文件、作者和许可；本地 WebP 仅做尺寸压缩和格式转换。第 3 页另含论文原图节选，单独记录在后表。
 
 | 本地文件 | 原文件与作者 | 许可 |
 |---|---|---|
@@ -14,6 +14,18 @@
 | `04-standup-pouch.webp` | [Stand-up pouch.jpg](https://commons.wikimedia.org/wiki/File:Stand-up_pouch.jpg), Pkgx | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 
 图注中的“Wikimedia Commons”指向本清单。后续获得自有喷码工位、工件和四方向偏振照片后，应优先替换这些场景示意图，并保留“网络示意图”和“本项目实验数据”的明确区分。
+
+## 第 3 页论文图节选
+
+以下图像只用于说明传统偏振分离方法的历史演进，均在页面内写明作者、年份、出处和图号；版权归原作者与出版方。它们不是本项目实验结果，也不用于重新评测论文性能。
+
+| 本地文件 | 原始论文与图号 | 本地处理 |
+|---|---|---|
+| `03-farid-ica.webp` | H. Farid and E. H. Adelson, *Separating Reflections from Images by Use of Independent Components Analysis*, JOSA A 16(9), 1999, [author PDF](https://hfarid.org/downloads/publications/josa99.pdf), Figs. 8–9 | 从论文图中节选两幅偏振混合观测与 ICA 输出，统一灰度、并排排版；未改变图像内容 |
+| `03-schechner-decorrelation.webp` | Y. Y. Schechner, J. Shamir and N. Kiryati, *Polarization-Based Decorrelation of Transparent Layers: The Inclination Angle of an Invisible Surface*, ICCV 1999, [author PDF](https://webee.technion.ac.il/people/yoav/publications/iccv99polart2.pdf), Figs. 5 and 7 | 节选检偏观测与重建层，统一灰度、并排排版；未改变图像内容 |
+| `03-schechner-mi-minima.webp` | Y. Y. Schechner, J. Shamir and N. Kiryati, *Polarization and Statistical Analysis of Scenes Containing a Semireflector*, JOSA A 17(2), 2000, [author PDF](https://webee.technion.ac.il/people/yoav/publications/polarjosa.pdf), Fig. 5 | 节选互信息曲线的极小值区域，转换为 WebP 并轻微增强投影对比度；曲线内容未改动 |
+
+第 3 页 Kong–Tai–Shin 卡片中的流程图为本项目依据 *A Physically-Based Approach to Reflection Separation: From Physical Modeling to Constrained Optimization*, TPAMI 36(2), 2014, DOI [`10.1109/TPAMI.2013.45`](https://doi.org/10.1109/TPAMI.2013.45) 的方法描述与公开摘要重绘，不是论文原图。
 
 ## 本项目原创示意图
 
@@ -29,7 +41,7 @@ BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相
 | 页码 | 内容 | 冻结来源 |
 |---|---|---|
 | 2 | 五类 RGB 失效场景、彩色偏振相机、Stokes、Fresnel、microfacet BRDF 与 T/R 欠定 | LUCID Phoenix PHX050S-QC 产品资料、Sony IMX250MYR / Polarsens 资料、`05_polarization_camera_physical_models.md`、Born & Wolf *Principles of Optics*、Cook–Torrance / Walter 等 microfacet 模型、Schechner / ReflectNet 的半反射层模型；所有图为机制示意，4×4 单元非芯片实际相位图 |
-| 3 | 四方向 Stokes 与统一 direct/nuisance 物理形式 | `05_polarization_camera_physical_models.md`、`polar_representation/LITERATURE.md`；4 张照片为上述 Commons 场景示意（该页将在下一轮改为传统 ICA 与偏振分离网络） |
+| 3 | Farid–Schechner–Kong 的传统偏振 T/R 分离演进、共同边界及对学习先验的启发 | 上述三张论文图节选；Farid & Adelson, JOSA A 1999；Schechner et al., ICCV 1999 / JOSA A 2000；Kong et al., TPAMI 2014；方法口径同步见 `polar_representation/LITERATURE.md` |
 | 4 | 物理分离、任务网络、偏振恢复与共享表示路线 | `polar_representation/LITERATURE.md`；Deng et al. 2026 的网络细节按“待全文核查”处理 |
 | 5 | 物理 stem、共享编码器、负对照与 Gate A0 | `15_shared_polarization_encoder_pretraining_controls.md` 第 10 节 |
 | 6 | PolaRGB 与 P0–P3 工作量 | `polar_representation/evidence/polargb_release_v1.json`、`p0_p3_evidence_index_v1.json`、`polar_representation/RESULTS.md` |
