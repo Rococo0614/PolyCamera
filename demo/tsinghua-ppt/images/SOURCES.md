@@ -32,6 +32,8 @@
 
 第 4 页 Deng et al. 2026 卡片为本项目根据论文题名、出版元数据和已核实的 cross dual-stream / T-R / polarization-restoration 方向重绘，不是论文原图。由于没有开放全文或代码，卡片明确保留输入表示、恢复监督、相机、采集方式、数据集和场景等未知字段。
 
+第 5 页 `05-e1b-aolp-{gt,nearest,bilinear}.webp` 由公开 PDD 2025 的 `High/Scene12` 四方向 PNG 生成：使用项目冻结的绿色通道、MPFA 排列 `[[90,45],[135,0]]`、最近邻/3×3 normalized bilinear 和 `linear_stokes`。可视化中色相表示 AoLP、饱和度为 `clip(4×DoLP)`、亮度为共享尺度的 S₀。它是本项目派生的定性示意，页面报告的 31.81°/23.69° 是 High 40 场景的聚合 MAE，不是 Scene12 单图指标。
+
 ## 本项目原创示意图
 
 `11-polar-a.svg`、`11-polar-b.svg`、`11-stokes.svg`、`11-quality.svg`、`11-adaptive.svg`、`11-ocr.svg` 为本项目根据研究方案绘制的数据结构示意，不代表已采集的偏振图或实验结果。
@@ -48,8 +50,8 @@ BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相
 | 2 | 五类 RGB 失效场景、彩色偏振相机、Stokes、Fresnel、microfacet BRDF 与 T/R 欠定 | LUCID Phoenix PHX050S-QC 产品资料、Sony IMX250MYR / Polarsens 资料、`05_polarization_camera_physical_models.md`、Born & Wolf *Principles of Optics*、Cook–Torrance / Walter 等 microfacet 模型、Schechner / ReflectNet 的半反射层模型；所有图为机制示意，4×4 单元非芯片实际相位图 |
 | 3 | Farid–Schechner–Kong 的传统偏振 T/R 分离演进、共同边界及对学习先验的启发 | 上述三张论文图节选；Farid & Adelson, JOSA A 1999；Schechner et al., ICCV 1999 / JOSA A 2000；Kong et al., TPAMI 2014；方法口径同步见 `polar_representation/LITERATURE.md` |
 | 4 | ReflectNet、Lei 2020、Multi-bounce 与 Deng 2026 的偏振/强度恢复层级及采集方案 | 上述三张论文架构图；对应 ECCV 2018、CVPR 2020、ECCV 2020 原文；Deng et al. 2026 仅使用出版元数据与已核实方向，具体输入、监督和采集字段按“待全文核查”处理；完整审计见 `polar_representation/LITERATURE.md` |
-| 5 | 物理 stem、共享编码器、负对照与 Gate A0 | `15_shared_polarization_encoder_pretraining_controls.md` 第 10 节 |
-| 6 | PolaRGB 与 P0–P3 工作量 | `polar_representation/evidence/polargb_release_v1.json`、`p0_p3_evidence_index_v1.json`、`polar_representation/RESULTS.md` |
+| 5 | 探索路线 1 的 E0 清晰识读上限、E1-a 合成仪器恢复与 E1-b PDD AoLP 可视化 | `e0_clean_code_sanity.json`、`e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json`；上述 PDD High/Scene12 派生图 |
+| 6 | E2、C1、C2、C3 假设检验链及 Raw I₀ / Fixed / Selector / Oracle / Noise best-of 柱状对照 | `e0_e2_shdocs_easyocr_scale4.json`、`e0_e2_shdocs_tesseract_scale4.json`、`industrial_reading/evidence/offline_extension_controls.json`；Noise best-of 使用 m=1 像素 RMS 锚点 |
 | 7 | 前期代理 E0：900 张清晰合成字符 | `industrial_reading/evidence/e0_clean_code_sanity.json` |
 | 8 | 前期代理 E1：合成仪器恢复与 PDD | `e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json` |
 | 9 | 前期代理 E2：SHDocs 双 OCR 后端 | `e0_e2_shdocs_easyocr_scale4.json`、`e0_e2_shdocs_tesseract_scale4.json` |
