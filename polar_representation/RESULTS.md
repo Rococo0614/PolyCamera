@@ -118,6 +118,13 @@ P0 本地全量完整性与 P1 train-fitted 对照等待 processed train 下载�
 - 当前高频纹理上，四张完整图的 +12.0 dB 在单色 MPFA 双线性后变成 **−0.78 dB**；
 - 这不是对真实彩色 DoFP 的数值预测，但证明去马赛克不能被视为中性预处理。
 
+### 4.4 Fresnel 入射角依据
+
+空气到折射率 1.5 的无吸收介质，固定观测反射强度比为 0.25、只让 reflected DoLP 按 Fresnel
+变化：法向入射 DoLP 为 0，`virtual_min` 增益为 0 dB；30° 为 +4.16 dB，45° 为 +14.18 dB；
+在 Brewster 角约 56.31°，反射 DoLP 达 1，增益峰值约 +23.51 dB；继续增大入射角后 DoLP 与增益
+再次下降。该扫描把“偏振帮助反光分离”限定为与入射角相关的条件性结论，而不是普遍结论。
+
 证据：
 
 - `evidence/p3_forward_simulation_v1.json`

@@ -5,6 +5,7 @@ import numpy as np
 from polrep.physics import (
     analyze_stokes,
     demosaic_mpfa_bilinear,
+    fresnel_reflection_unpolarized,
     make_mpfa_mosaic,
     rotate_reference,
     solve_stokes,
@@ -33,6 +34,13 @@ class PhysicsTests(unittest.TestCase):
         measurements[...] = np.array([0.2, 0.4, 0.6, 0.8])
         reconstructed = demosaic_mpfa_bilinear(make_mpfa_mosaic(measurements))
         np.testing.assert_allclose(reconstructed, measurements)
+
+    def test_fresnel_reflection_is_fully_polarized_at_brewster_angle(self):
+        brewster = np.rad2deg(np.arctan(1.5))
+        result = fresnel_reflection_unpolarized(brewster)
+        self.assertAlmostEqual(float(result["reflected_dolp"]), 1.0, places=12)
+        normal = fresnel_reflection_unpolarized(0.0)
+        self.assertAlmostEqual(float(normal["reflected_dolp"]), 0.0, places=12)
 
 
 if __name__ == "__main__":

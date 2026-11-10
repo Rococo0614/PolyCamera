@@ -160,3 +160,31 @@ def demosaic_mpfa_bilinear(mosaic: np.ndarray) -> np.ndarray:
         mask[row::2, column::2] = 1.0
         channels.append(_normalized_convolution(values * mask, mask))
     return np.stack(channels, axis=-1)
+
+
+def fresnel_reflection_unpolarized(
+    incidence_deg: np.ndarray | float,
+    *,
+    n_incident: float = 1.0,
+    n_transmitted: float = 1.5,
+) -> dict[str, np.ndarray]:
+    """Dielectric Fresnel reflectance and reflected-light DoLP.
+
+    The incident light is assumed unpolarized and absorption is ignored. Angles
+    beyond the critical angle return total reflection when applicable.
+    """
+
+    theta_i = np.deg2rad(np.asarray(incidence_deg, dtype=np.float64))
+    if np.any((theta_i < 0.0) | (theta_i >= np.pi / 2)):
+        raise ValueError("incidence_deg must lie in [0, 90)")
+    sin_t = (n_incident / n_transmitted) * np.sin(theta_i)
+    total_internal = np.abs(sin_t) > 1.0
+    cos_i = np.cos(theta_i)
+    cos_t = np.sqrt(np.maximum(1.0 - sin_t**2, 0.0))
+    rs = ((n_incident * cos_i - n_transmitted * cos_t) / np.maximum(n_incident * cos_i + n_transmitted * cos_t, 1e-12)) ** 2
+    rp = ((n_incident * cos_t - n_transmitted * cos_i) / np.maximum(n_incident * cos_t + n_transmitted * cos_i, 1e-12)) ** 2
+    rs = np.where(total_internal, 1.0, rs)
+    rp = np.where(total_internal, 1.0, rp)
+    mean = 0.5 * (rs + rp)
+    dolp = np.abs(rs - rp) / np.maximum(rs + rp, 1e-12)
+    return {"rs": rs, "rp": rp, "mean_reflectance": mean, "reflected_dolp": dolp}

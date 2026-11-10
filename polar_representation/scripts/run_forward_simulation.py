@@ -10,6 +10,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 
+from polrep.physics import fresnel_reflection_unpolarized
 from polrep.simulation import SimulationConfig, score_simulation, simulate
 
 
@@ -106,6 +107,24 @@ def main() -> None:
         )
         instrument_rows.append({"label": label, "config": config.__dict__, "score": score_simulation(simulate(config))})
 
+    incidence_angles = [0.0, 15.0, 30.0, 45.0, 55.0, float(np.rad2deg(np.arctan(1.5))), 65.0, 75.0, 80.0]
+    fresnel_rows = []
+    for incidence in incidence_angles:
+        fresnel = fresnel_reflection_unpolarized(incidence)
+        config = SimulationConfig(
+            reflection_ratio=0.25,
+            reflection_dolp=float(fresnel["reflected_dolp"]),
+        )
+        fresnel_rows.append(
+            {
+                "incidence_deg": incidence,
+                "mean_reflectance": float(fresnel["mean_reflectance"]),
+                "reflected_dolp": float(fresnel["reflected_dolp"]),
+                "fixed_observed_reflection_ratio": 0.25,
+                "score": score_simulation(simulate(config)),
+            }
+        )
+
     write_heatmap(
         args.image_dir / "virtual_min_gain_reflection_sweep.png",
         main_matrix,
@@ -128,6 +147,7 @@ def main() -> None:
         "aolp_difference_sweep": angle_rows,
         "noise_sweep": noise_rows,
         "instrument_and_mpfa_sweep": instrument_rows,
+        "fresnel_incidence_sweep": fresnel_rows,
         "summary": {
             "positive_gain_threshold_db": 0.1,
             "reflection_sweep_positive_share_gt_0p1db": float(np.mean(main_matrix > 0.1)),

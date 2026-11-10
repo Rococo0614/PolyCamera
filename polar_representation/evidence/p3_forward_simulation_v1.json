@@ -231,6 +231,143 @@
   ],
   "claim_boundary": "Analytical grayscale Stokes layer simulation. It establishes implementation sanity and identifiability trends, not real-camera performance or uniqueness of layer separation.",
   "experiment": "p3-analytical-polarization-layer-sweep-v1",
+  "fresnel_incidence_sweep": [
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 0.0,
+      "mean_reflectance": 0.04000000000000001,
+      "reflected_dolp": 0.0,
+      "score": {
+        "min4_gain_db": 0.0,
+        "min4_psnr": 20.874986097514665,
+        "rgb_psnr": 20.874986097514665,
+        "saturation_share": 0.016927083333333332,
+        "stokes_rmse": 0.005682487761661214,
+        "virtual_min_gain_db": 3.552713678800501e-15,
+        "virtual_min_psnr": 20.874986097514668
+      }
+    },
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 15.0,
+      "mean_reflectance": 0.0400807671528674,
+      "reflected_dolp": 0.09366876419176802,
+      "score": {
+        "min4_gain_db": 0.8342861315330055,
+        "min4_psnr": 21.71191489132714,
+        "rgb_psnr": 20.877628759794135,
+        "saturation_share": 0.017496744791666668,
+        "stokes_rmse": 0.005975310794524563,
+        "virtual_min_gain_db": 0.8313033386740187,
+        "virtual_min_psnr": 21.708932098468154
+      }
+    },
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 30.0,
+      "mean_reflectance": 0.04152262597582152,
+      "reflected_dolp": 0.39191835884530796,
+      "score": {
+        "min4_gain_db": 4.2317299686729655,
+        "min4_psnr": 25.145217657860464,
+        "rgb_psnr": 20.913487689187498,
+        "saturation_share": 0.019558376736111112,
+        "stokes_rmse": 0.009340814415365486,
+        "virtual_min_gain_db": 4.1611398656505045,
+        "virtual_min_psnr": 25.074627554838003
+      }
+    },
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 45.0,
+      "mean_reflectance": 0.05023991101223594,
+      "reflected_dolp": 0.8314794192830981,
+      "score": {
+        "min4_gain_db": 15.278438854969764,
+        "min4_psnr": 36.2817170378315,
+        "rgb_psnr": 21.003278182861735,
+        "saturation_share": 0.023952907986111112,
+        "stokes_rmse": 0.016535472268658445,
+        "virtual_min_gain_db": 14.178683298298644,
+        "virtual_min_psnr": 35.18196148116038
+      }
+    },
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 55.0,
+      "mean_reflectance": 0.0697256663549892,
+      "reflected_dolp": 0.9974493270454156,
+      "score": {
+        "min4_gain_db": 51.63453394376509,
+        "min4_psnr": 72.68168043310688,
+        "rgb_psnr": 21.047146489341785,
+        "saturation_share": 0.027289496527777776,
+        "stokes_rmse": 0.01964606186127213,
+        "virtual_min_gain_db": 23.41593426629079,
+        "virtual_min_psnr": 44.463080755632575
+      }
+    },
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 56.309932474020215,
+      "mean_reflectance": 0.07396449704142012,
+      "reflected_dolp": 1.0,
+      "score": {
+        "min4_gain_db": 310.17510056484616,
+        "min4_psnr": 331.2229854665733,
+        "rgb_psnr": 21.047884901727095,
+        "saturation_share": 0.027370876736111112,
+        "stokes_rmse": 0.019695631980436192,
+        "virtual_min_gain_db": 23.50974013452764,
+        "virtual_min_psnr": 44.557625036254734
+      }
+    },
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 65.0,
+      "mean_reflectance": 0.12051316995530192,
+      "reflected_dolp": 0.8924318383725459,
+      "score": {
+        "min4_gain_db": 19.162717401948353,
+        "min4_psnr": 40.181101049016306,
+        "rgb_psnr": 21.018383647067953,
+        "saturation_share": 0.025173611111111112,
+        "stokes_rmse": 0.0176522061891495,
+        "virtual_min_gain_db": 17.07636382595965,
+        "virtual_min_psnr": 38.0947474730276
+      }
+    },
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 75.0,
+      "mean_reflectance": 0.2530605629903197,
+      "reflected_dolp": 0.578104554425067,
+      "score": {
+        "min4_gain_db": 7.363658263640023,
+        "min4_psnr": 28.310882059008264,
+        "rgb_psnr": 20.94722379536824,
+        "saturation_share": 0.020860460069444444,
+        "stokes_rmse": 0.012210868401508809,
+        "virtual_min_gain_db": 7.1580238033325365,
+        "virtual_min_psnr": 28.105247598700778
+      }
+    },
+    {
+      "fixed_observed_reflection_ratio": 0.25,
+      "incidence_deg": 80.0,
+      "mean_reflectance": 0.3877043546914726,
+      "reflected_dolp": 0.38918972467612234,
+      "score": {
+        "min4_gain_db": 4.19349547325449,
+        "min4_psnr": 25.106531366497467,
+        "rgb_psnr": 20.913035893242977,
+        "saturation_share": 0.019476996527777776,
+        "stokes_rmse": 0.009301186459083939,
+        "virtual_min_gain_db": 4.124107373411164,
+        "virtual_min_psnr": 25.03714326665414
+      }
+    }
+  ],
   "instrument_and_mpfa_sweep": [
     {
       "config": {
