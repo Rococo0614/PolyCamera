@@ -14,5 +14,8 @@ dependencies = [
   "scikit-image>=0.24",
 ]
 
+[project.optional-dependencies]
+raw = ["opencv-python>=4.8"]
+
 [tool.setuptools.packages.find]
 where = ["src"]

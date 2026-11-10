@@ -74,3 +74,14 @@ $PY polar_representation/scripts/run_forward_simulation.py \
 ```bash
 $PY -m unittest discover -s polar_representation/tests
 ```
+
+## 可选 RAW 对照
+
+下载约 1 GB 的 raw test 后，可核对 2×2 偏振排列、Bayer 去马赛克与 processed release 的关系：
+
+```bash
+$PY polar_representation/scripts/audit_polargb_raw.py \
+  --raw-root /mnt/ssd/polycamera_offline/datasets/polargb_raw \
+  --processed-root /mnt/ssd/polycamera_offline/datasets/polargb \
+  --output polar_representation/evidence/polargb_raw_test_audit_v1.json
+```
