@@ -36,14 +36,14 @@
 
 ## 本项目原创示意图
 
-`11-polar-a.svg`、`11-polar-b.svg`、`11-stokes.svg`、`11-quality.svg`、`11-adaptive.svg`、`11-ocr.svg` 为本项目根据研究方案绘制的数据结构示意，不代表已采集的偏振图或实验结果。
+`11-polar-a.svg`、`11-polar-b.svg`、`11-stokes.svg`、`11-quality.svg`、`11-adaptive.svg`、`11-ocr.svg` 为早期版本根据研究方案绘制并保留的示意资产；当前 10 页主稿未使用，不代表已采集图像或实验结果。
 
 第 2 页的工业反光、去雾、车牌、半反射层、水下增强场景图标，以及 DoFP、Fresnel 和微表面
 BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相机照片、光线追踪结果或定量实验。
 
 ## 本项目实验数字与结果图
 
-当前 PPT 为 18 页共享偏振表示研究更新版。所有新主线数字均来自公开数据或解析仿真，不是自有相机结果。
+当前 PPT 为 10 页共享偏振表示研究更新版。第 5–6 页数字来自公开数据或合成代理；第 7–9 页是预注册协议与拟执行架构，不是训练结果，也不是自有相机结果。
 
 | 页码 | 内容 | 冻结来源 |
 |---|---|---|
@@ -52,28 +52,20 @@ BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相
 | 4 | ReflectNet、Lei 2020、Multi-bounce 与 Deng 2026 的偏振/强度恢复层级及采集方案 | 上述三张论文架构图；对应 ECCV 2018、CVPR 2020、ECCV 2020 原文；Deng et al. 2026 仅使用出版元数据与已核实方向，具体输入、监督和采集字段按“待全文核查”处理；完整审计见 `polar_representation/LITERATURE.md` |
 | 5 | 探索路线 1 的 E0 清晰识读上限、E1-a 合成仪器恢复与 E1-b PDD AoLP 可视化 | `e0_clean_code_sanity.json`、`e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json`；上述 PDD High/Scene12 派生图 |
 | 6 | E2、C1、C2、C3 假设检验链及 Raw I₀ / Fixed / Selector / Oracle / Noise best-of 柱状对照 | `e0_e2_shdocs_easyocr_scale4.json`、`e0_e2_shdocs_tesseract_scale4.json`、`industrial_reading/evidence/offline_extension_controls.json`；Noise best-of 使用 m=1 像素 RMS 锚点 |
-| 7 | 前期代理 E0：900 张清晰合成字符 | `industrial_reading/evidence/e0_clean_code_sanity.json` |
-| 8 | 前期代理 E1：合成仪器恢复与 PDD | `e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json` |
-| 9 | 前期代理 E2：SHDocs 双 OCR 后端 | `e0_e2_shdocs_easyocr_scale4.json`、`e0_e2_shdocs_tesseract_scale4.json` |
-| 10 | 密集固定角、强度匹配与噪声零对照 | `industrial_reading/evidence/offline_extension_controls.json` |
-| 11 | P0：PolaRGB revision、manifest 与 59/8 release 口径 | `polargb_release_v1.json`、`polargb_scene_split_v1.json` |
-| 12 | P1 test-only 无学习基线 | `polargb_test_probe_v1.json`；GT affine 和 per-sample angle 明确标为 ceiling |
-| 13 | P2 processed test 偏振一致性与饱和 | `polargb_test_physics_audit_v1.json`、`polargb_test_gt_physics_audit_v1.json` |
-| 14 | P3 Fresnel、透射偏振失败区与 MPFA 反例 | `p3_forward_simulation_v1.json`；`14-sim-ambiguity.png` 为本项目解析仿真图 |
-| 15 | 冻结编码器跨任务验证矩阵 | `15_shared_polarization_encoder_pretraining_controls.md` 第 10 节 |
-| 16 | Gate A0 状态与正式采集前顺序 | `polar_representation/RESULTS.md`；尚未训练和试采的条目明确标注 |
-| 17 | 代表参考文献 | `polar_representation/LITERATURE.md` |
-| 18 | 总结数字 | 上述 P0–P3 compact evidence |
+| 7 | C0–C3 匹配输入干预、合法角度零点旋转与偏振归因 Gate G1 | `15_shared_polarization_encoder_pretraining_controls.md` A5、§10.5；该页为预注册协议，没有训练结果 |
+| 8 | `S₀/Q/U` 解析 stem、`q_meas/q_pol`、共享编码器与重投影/等变/重组/稳定约束 | `15_shared_polarization_encoder_pretraining_controls.md` §10.2–10.3；`05_polarization_camera_physical_models.md` |
+| 9 | PolaRGB 源任务、扰动稳定和 UPLight/ZJU 冻结迁移三阶段实验矩阵 | `polargb_scene_split_v1.json`；`15_shared_polarization_encoder_pretraining_controls.md` §6、§10.4–10.5；UPLight/ZJU 许可与 split 仍待执行前核查 |
+| 10 | 路线 1 代理结果、拟议编码器契约与当前未训练状态总结 | 第 5–9 页上述证据与协议；“0 个已训练共享编码器”是当前项目状态，不是性能结果 |
 
 `14-sim-ambiguity.png` 与 `14-sim-reflection.png` 复制自
 `polar_representation/evidence/images/`，为本项目基于解析灰度 Stokes 层生成的仿真热图，
 不是实拍、光线追踪结果或未来相机性能预测。
 
-第 7–10 页保留旧工业识读代理实验，只用于说明任务定义、去马赛克和选择效应；SHDocs 平面文档
-不作为共享编码器或工业喷码有效性证据。HAMMER/PPFT 仅作为历史测量与可靠性资产，不在本版
-主结果页报告精度。
+SHDocs 平面文档只用于第 6 页说明候选选择与噪声混杂，不作为共享编码器或工业喷码有效性证据。
+第 7–9 页全部以 `PRE-REGISTERED / PLAN / NO RESULT` 标注；HAMMER/PPFT 仅作为历史测量与可靠性
+资产，不在本版主结果页报告精度。
 
 P0 当前通过的是远端 release/split 冻结；完整 processed 数据仍在仓库外下载，本地全量
 size/SHA-256/PNG decode 尚未完成。P1 仅是 release test probe，fixed angle 与 color affine
-尚未在 fit 场景冻结，因此页面明确写为“P1 final 未完成”。P2 是 processed 诊断，不是 RAW 响应
-标定。P3 是 96×96 灰度解析层仿真，只说明条件性趋势和失败边界。
+尚未在 fit 场景冻结。P2 是 processed 诊断，不是 RAW 响应标定；P3 是 96×96 灰度解析层仿真，
+只说明条件性趋势和失败边界。它们为后续 Gate 提供背景，但当前 10 页主稿不把它们展开成训练结论。
