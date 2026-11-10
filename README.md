@@ -202,8 +202,8 @@ PPFT 结果级复现和弱偏振反例，并明确它只支持“偏振不能被
   `evidence/offline_extension_controls.json`，其中钉有各 JSONL 与源码的 SHA-256）；大数据和
   运行结果保存在仓库外 `/home/chocbrownie0524/poldepth/`，2026-11-09 的补充实验在本机
   `/mnt/ssd/polycamera_offline/`（根盘空间不足）。
-- `demo/tsinghua-ppt/index.html`：12 页结果导向的清华学术风 HTML PPT；理论与背景合并为
-  1 页，第 5–9 页集中报告工作量及 E0/E1/E2 结果，并保留备注、计时和观众屏。
+- `demo/tsinghua-ppt/index.html`：18 页清华学术风 HTML PPT；新增相关工作、P0–P3 前置对照、
+  共享编码器验证矩阵与参考文献，并保留演讲备注、计时和观众屏。
 - `demo/tsinghua-ppt/images/SOURCES.md`：网络实拍图作者、许可和本项目原创示意图说明。
 - `demo/tsinghua-ppt/shots/`：1600×900 逐页预览与总览图。
 - `demo/前人巨作/`：用户提供的参考答辩材料，未修改。
