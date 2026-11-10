@@ -25,8 +25,8 @@
 
 | 页码 | 内容 | 冻结来源 |
 |---|---|---|
-| 2 | 方向演进、旧代理结论与新主线边界 | `09_execution_log.md`、`14_offline_gate_p_results.md`、`15_shared_polarization_encoder_pretraining_controls.md` |
-| 3 | 四方向 Stokes 与统一 direct/nuisance 物理形式 | `05_polarization_camera_physical_models.md`、`polar_representation/LITERATURE.md`；4 张照片为上述 Commons 场景示意 |
+| 2 | 彩色偏振相机、Stokes、Fresnel、microfacet BRDF 与 T/R 欠定 | LUCID Phoenix PHX050S-QC 产品资料、Sony IMX250MYR / Polarsens 资料、`05_polarization_camera_physical_models.md`、Born & Wolf *Principles of Optics*、Cook–Torrance / Walter 等 microfacet 模型、Schechner / ReflectNet 的半反射层模型；4×4 图为结构示意，非芯片实际相位图 |
+| 3 | 四方向 Stokes 与统一 direct/nuisance 物理形式 | `05_polarization_camera_physical_models.md`、`polar_representation/LITERATURE.md`；4 张照片为上述 Commons 场景示意（该页将在下一轮改为传统 ICA 与偏振分离网络） |
 | 4 | 物理分离、任务网络、偏振恢复与共享表示路线 | `polar_representation/LITERATURE.md`；Deng et al. 2026 的网络细节按“待全文核查”处理 |
 | 5 | 物理 stem、共享编码器、负对照与 Gate A0 | `15_shared_polarization_encoder_pretraining_controls.md` 第 10 节 |
 | 6 | PolaRGB 与 P0–P3 工作量 | `polar_representation/evidence/polargb_release_v1.json`、`p0_p3_evidence_index_v1.json`、`polar_representation/RESULTS.md` |

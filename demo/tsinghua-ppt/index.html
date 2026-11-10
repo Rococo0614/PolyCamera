@@ -208,6 +208,25 @@
   .variable-list{display:grid;gap:0;align-content:start}
   .variable{display:grid;grid-template-columns:5.5em 1fr;gap:.8vw;padding:1.05vh 0;border-bottom:1px solid var(--line);font:400 clamp(13px,.84vw,16px)/1.45 var(--sans);color:var(--ink-soft)}
   .variable .symbol{color:var(--accent);font:italic 600 clamp(18px,1.25vw,24px)/1.25 var(--equation)}
+  .sensor-overview{display:grid;grid-template-columns:10.5em 1fr;gap:1vw;align-items:center;padding:1.1vh .9vw;border:1px solid var(--line);background:#fff}
+  .sensor-mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);aspect-ratio:1;border:1px solid var(--line-strong)}
+  .sensor-cell{display:grid;place-items:center;border:1px solid rgba(255,255,255,.8);font:800 clamp(9px,.61vw,12px)/1 var(--mono)}
+  .sensor-cell.r{background:#f7dfe2;color:#9b2e39}.sensor-cell.g{background:#dff0e8;color:#25644f}.sensor-cell.b{background:#dfe9f5;color:#315f8d}
+  .sensor-copy h2{font:750 clamp(17px,1.12vw,22px)/1.22 var(--sans)}
+  .sensor-copy p{margin-top:.45vh;color:var(--muted);font:550 clamp(11px,.72vw,14px)/1.38 var(--sans)}
+  .sensor-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:.38vh .5vw;margin-top:.75vh}
+  .sensor-specs span{padding:.48vh .45vw;background:var(--paper-soft);font:650 clamp(10px,.67vw,13px)/1.25 var(--sans);color:var(--ink-soft)}
+  .physics-duo{display:grid;grid-template-columns:1fr 1fr;gap:.75vw;min-height:0}
+  .physics-card{display:grid;align-content:start;gap:.52vh;padding:.85vh .75vw;border-top:3px solid var(--accent);background:var(--paper-soft)}
+  .physics-card h3{font:750 clamp(14px,.92vw,18px)/1.22 var(--sans)}
+  .physics-card .math{font:italic 500 clamp(17px,1.18vw,23px)/1.25 var(--equation);color:var(--ink)}
+  .physics-card p{font:500 clamp(11px,.72vw,14px)/1.38 var(--sans);color:var(--muted)}
+  .constraint-stack{height:100%;display:grid;grid-template-rows:auto auto 1fr auto;gap:.85vh}
+  .rank-card{padding:1.05vh .85vw;background:var(--accent);color:#fff}
+  .rank-card strong{display:block;font:800 clamp(30px,2.45vw,48px)/1 var(--sans-latin)}
+  .rank-card span{display:block;margin-top:.4vh;font:650 clamp(11px,.73vw,14px)/1.35 var(--sans)}
+  .reality-list{display:grid;grid-template-columns:1fr 1fr;gap:.5vh .5vw;align-content:start}
+  .reality-item{padding:.68vh .55vw;border-left:3px solid var(--line-strong);background:#fff;font:600 clamp(10px,.67vw,13px)/1.3 var(--sans);color:var(--ink-soft)}
 
   /* THU10 · 规律分析 */
   .analysis-layout{height:100%;display:grid;grid-template-columns:66% 1fr;gap:2.5vw}
@@ -747,17 +766,17 @@
   </div>
 </section>
 
-<section class="slide soft" data-layout="THU15" data-animate="academic" data-slide-id="direction-change">
-  <div class="thu-page"><header class="thu-header"><div><div class="thu-section">一、方向演进与前期资产</div><h1 class="thu-title">深度与识读代理形成方法资产；新主线聚焦可迁移的偏振共享表示</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>方向演进</strong><span>Research Evolution</span></div></div></header>
-  <main class="thu-content compact"><div class="workload-layout summary-layout">
-    <div class="dense-kpis workload-kpis" data-anim><div class="dense-kpi"><strong>09-21</strong><span>透明物体与三维感知宽调研</span></div><div class="dense-kpi"><strong>10-23</strong><span>偏振辅助深度增强</span></div><div class="dense-kpi"><strong>11-02</strong><span>工业识读代理与 Gate</span></div><div class="dense-kpi"><strong>11-09</strong><span>密集角 / 强度 / 噪声零对照</span></div><div class="dense-kpi pivot"><strong>11-10</strong><span>共享编码器候选新主线 · P0–P3</span></div></div>
-    <div class="workload-cards" data-anim>
-      <article class="workload-card"><h2>已形成的测量资产</h2><p class="sub">不是从零开始换题</p><div class="workload-list"><div><span>Stokes / DoLP / AoLP</span><strong>公式与单元测试</strong></div><div><span>仪器矩阵恢复</span><strong>合成误差链</strong></div><div><span>MPFA 重建</span><strong>PDD 120 条件</strong></div><div><span>分组统计</span><strong>scene / document cluster</strong></div><div><span>可靠性边界</span><strong>饱和 / 低 DoLP / 拒绝</strong></div></div><div class="workload-result">保留：测量链、冻结协议、质量意识与可证伪 Gate。</div></article>
-      <article class="workload-card"><h2>为何从单任务继续收敛</h2><p class="sub">OCR 结果暴露了选择效应，而非直接证明互补内容</p><div class="workload-list"><div><span>Oracle gap</span><strong>跨 OCR 后端为正</strong></div><div><span>噪声零对照</span><strong>可复现相当部分 gap</strong></div><div><span>连续固定角</span><strong>未优于 raw I₀</strong></div><div><span>部署选择器</span><strong>未兑现事后上界</strong></div><div><span>结论</span><strong>P2 未成立也未被否定</strong></div></div><div class="workload-result">转向：先学习物理表示，再用不同任务头验证是否可迁移。</div></article>
-      <article class="workload-card"><h2>候选新主线与边界</h2><p class="sub">共享的是偏振场，不是某个任务的最终图</p><div class="workload-list"><div><span>源任务</span><strong>PolaRGB 反光层分离</strong></div><div><span>下游候选</span><strong>UPLight / ZJU 分割</strong></div><div><span>方法</span><strong>物理 stem + E + 小型 decoder</strong></div><div><span>负对照</span><strong>S₀ 重复 / 噪声 / 打乱 Q,U</strong></div><div><span>尚未完成</span><strong>训练 / 冻结迁移 / 自采</strong></div></div><div class="workload-result">当前只报告 P0–P3 前置证据，不宣称编码器可行。</div></article>
+<section class="slide soft" data-layout="THU09" data-animate="academic" data-slide-id="direction-change">
+  <div class="thu-page"><header class="thu-header"><div><div class="thu-section">一、偏振相机与成像物理</div><h1 class="thu-title">偏振相机把方向差异变成可计算观测，但不能由公式唯一分离 T / R</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>相机原理</strong><span>Camera & Physics</span></div></div></header>
+  <main class="thu-content tight"><div class="formula-layout">
+    <div class="derivation" data-anim>
+      <article class="sensor-overview"><div class="sensor-mosaic" aria-label="彩色 Bayer 与四方向微偏振片组成的 4×4 采样示意，实际排列需按数据手册核对"><span class="sensor-cell r">0°</span><span class="sensor-cell g">45°</span><span class="sensor-cell r">90°</span><span class="sensor-cell g">135°</span><span class="sensor-cell g">90°</span><span class="sensor-cell b">135°</span><span class="sensor-cell g">0°</span><span class="sensor-cell b">45°</span><span class="sensor-cell r">0°</span><span class="sensor-cell g">45°</span><span class="sensor-cell r">90°</span><span class="sensor-cell g">135°</span><span class="sensor-cell g">90°</span><span class="sensor-cell b">135°</span><span class="sensor-cell g">0°</span><span class="sensor-cell b">45°</span></div><div class="sensor-copy"><h2>LUCID 彩色偏振相机</h2><p>代表硬件：Phoenix PHX050S-QC / Sony IMX250MYR Polarsens。相机一次曝光记录四方向子像元，S₀/S₁/S₂ 由标定与重建得到；左图仅示意双层采样，实际排列按 datasheet / SDK 核对。</p><div class="sensor-specs"><span>5 MP · 2448×2048</span><span>Global shutter</span><span>2×2 微偏振阵列</span><span>Bayer×MPFA = 4×4 周期</span></div></div></article>
+      <div class="derivation-step"><span class="step">01</span><div><div class="equation">S₀≈I₀+I₉₀≈I₄₅+I₁₃₅；S₁=I₀−I₉₀；S₂=I₄₅−I₁₃₅ <span class="no">(1)</span></div><p class="caption">四方向有 4 个读数，但理想线偏振模型只有 3 个独立量；正交和差异也是测量一致性检查。</p></div></div>
+      <div class="derivation-step"><span class="step">02</span><div><div class="equation">I(θ)=½[S₀+S₁cos(2θ)+S₂sin(2θ)] <span class="no">(2)</span></div><p class="caption">给定校准后的 Stokes，可计算同一位置任意虚拟检偏角 θ 下的强度；不能生成饱和后已截断的信息。</p></div></div>
+      <div class="physics-duo"><article class="physics-card"><h3>Fresnel / Brewster</h3><div class="math">ρ<sub>R</sub>=|R<sub>s</sub>−R<sub>p</sub>|/(R<sub>s</sub>+R<sub>p</sub>)</div><p>理想介质界面在 θ<sub>B</sub>=atan(n₂/n₁) 处 R<sub>p</sub>=0，反射偏振最强；离开 Brewster 角后收益下降。</p></article><article class="physics-card"><h3>微表面 BRDF</h3><div class="math">f<sub>r</sub>=f<sub>d</sub>+D·F·G/[4(n·l)(n·v)]</div><p>粗糙度 D、Fresnel 项 F、遮蔽 G 与法向分布共同决定镜面反射；现实像素积分多个微表面与波长。</p></article></div>
     </div>
-    <div class="repro-strip" data-anim><strong>叙事变化</strong><span>旧：偏振能否改善单任务</span><span>新：偏振表示能否跨任务复用</span><span>共同约束：同容量公平对照</span><span>共同底线：失败时回退 / 拒绝</span></div>
-  </div></main><footer class="thu-footer"><span>来源：09_execution_log.md；14_offline_gate_p_results.md；15_shared_polarization_encoder_pretraining_controls.md</span><span class="thu-footer-line"></span><span class="thu-page-no">02 / 18</span></footer></div>
+    <aside class="constraint-stack" data-anim><div class="rank-card"><strong>3 &lt; 6</strong><span>观测只有 (S₀,S₁,S₂) 三个独立量；若 T、R 各有线偏振 Stokes，则至少有六个未知量。</span></div><div class="callout danger"><strong>欠定：</strong>S<sub>obs</sub>=S<sub>T</sub>+S<sub>R</sub> 有无限多组分解。四方向增加约束，但不自动给出唯一 T / R。</div><div class="reality-list"><div class="reality-item">T 与 R 都可能部分偏振</div><div class="reality-item">LED / 天空光可能已偏振</div><div class="reality-item">玻璃曲率使入射角空间变化</div><div class="reality-item">多次反射与彩色吸收</div><div class="reality-item">粗糙表面 / 次表面散射</div><div class="reality-item">饱和、噪声和动态范围</div><div class="reality-item">Bayer×MPFA 子像元错位</div><div class="reality-item">去马赛克与光谱响应误差</div></div><div class="callout success"><strong>因此需要：</strong>物理约束负责可解释观测与重组；数据先验负责选择可能解；质量 q 负责回退与拒绝。</div></aside>
+  </div></main><footer class="thu-footer"><span>硬件来源：LUCID Phoenix / Sony IMX250MYR；物理依据：Fresnel、microfacet BRDF、Stokes/Mueller；自有型号仍以铭牌与 SDK 为准</span><span class="thu-footer-line"></span><span class="thu-page-no">02 / 18</span></footer></div>
 </section>
 
 <section class="slide" data-layout="THU03" data-animate="academic" data-slide-id="background-physics">
@@ -932,7 +951,7 @@
 <script>
 const SPEAKER_NOTES = [
   {id:'cover',title:'候选新主线与当前边界',section:'开场',minutes:0.4,purpose:'交代共享偏振表示的新主线、已完成 P0–P3 和尚未训练的边界',talk:['候选主线不再是只优化一个 OCR 或去反光任务，而是学习可冻结复用的偏振表示','反光层分离是第一个源任务，水下与道路分割是下游候选','目前只完成公开数据和解析仿真的 P0–P3；没有共享编码器结果，也没有自采数据'],transition:'先说明方向如何从前期深度和识读代理演进到共享表示'},
-  {id:'direction-change',title:'方向演进与前期资产',section:'开场',minutes:1.1,purpose:'说明新主线承接了哪些资产，以及为什么 oracle gap 促使问题进一步收敛',talk:['深度线留下测量、质量和可靠性资产；工业识读线留下冻结协议和选择效应零对照','SHDocs 上 oracle gap 为正，但同内容噪声可复现相当部分，因此不能把事后最好等同于偏振互补','新问题改成：同一物理编码器能否在冻结后服务不同任务，而不是为每个任务重新发明偏振前端'],transition:'下一页用统一 Stokes 观测说明为什么这种共享有物理基础'},
+  {id:'direction-change',title:'偏振相机与成像物理',section:'物理基础',minutes:1.6,purpose:'说明彩色 DoFP 如何从四方向观测恢复 Stokes，并解释 Fresnel/BRDF 为什么仍不能唯一求解 T/R',talk:['相机直接记录的是 0、45、90、135 度子像元强度；S0、S1、S2 需要经过方向响应标定、Bayer×MPFA 重建后计算','代表硬件是 LUCID Phoenix PHX050S-QC 与 Sony IMX250MYR 彩色 Polarsens：5 MP、全局快门、2×2 微偏振阵列与 Bayer 叠加形成 4×4 采样周期；自有型号仍以铭牌和 SDK 为准','由 Stokes 可以合成同一位置任意虚拟检偏角的强度，但不能恢复饱和后已经截断的信息','Fresnel 说明 Brewster 角附近反射偏振最强；微表面 BRDF 进一步受到粗糙度、法向分布、遮蔽和波长影响','观测只有三个独立线偏振量，而 T、R 各自都可能有三个 Stokes 未知量；再加部分偏振照明、曲率、多次反射、噪声和去马赛克，所以不是代公式即可唯一求解，仍需要数据先验与质量门控'],transition:'下一页再把这些物理约束映射到传统 ICA、偏振 T/R 网络和其他相关工作',cue:'先指左上相机采样，再依次指公式、Fresnel/BRDF 和右侧“3<6”欠定关系'},
   {id:'background-physics',title:'统一物理问题',section:'问题与文献',minutes:1.0,purpose:'给出共享表示的物理依据和欠定边界',talk:['四方向只测得三个独立线偏振 Stokes 量，多个任务共享的是这一光场而不是最终结果图','互不相干光的 Stokes 可加，使反光、雾和水下可写成 direct 与 nuisance 的统一形式','但两个未知层通常超过三个未知量，物理只缩小解空间，不能保证唯一分解','所以要同时输出质量，并在低 DoLP、饱和和 MPFA 失败时回退'],transition:'物理基础已有长期积累，下面明确现有网络已经做到哪里、我们的缺口还剩什么'},
   {id:'related-work-map',title:'相关工作与研究缺口',section:'问题与文献',minutes:1.2,purpose:'按路线梳理前人工作，并避免把已有双流/T-R/偏振恢复误写成创新',talk:['传统路线从 ICA、半反射面到空间变化入射角和 ADMM，主要回答可辨识条件','任务网络已经覆盖 canonical projection、先 R 后 T、多次反射 tracing、polarized T/R、dual-stream 和 polarization restoration','PolarFree 提供大规模数据，ShareCMP 提供共享双分支与下游接口','因此候选差异必须是冻结跨任务、严格负对照归因和失效质量门控；Deng 2026 的全文细节仍需核查'],transition:'基于这个缺口，下一页给出最小方法和不允许跳过的 Gate'},
   {id:'system-protocol',title:'候选方法与验证协议',section:'方法与协议',minutes:1.0,purpose:'说明物理 stem、共享编码器、任务头、负对照和 Gate A0',talk:['先把四方向校准为 Stokes 与质量，再进入共享编码器；decoder 保持小且同容量','物理约束包括重投影、角度等变和层重组，不能只看 PSNR','负对照只破坏一个因素：重复 S0、噪声副本、跨样本打乱 Q,U','P0–P3 未完成前不训练；通过后也只跑轻量 pilot，不先上 diffusion'],transition:'先集中展示本轮新增的公开数据与仿真工作量'},
