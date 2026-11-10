@@ -19,13 +19,16 @@
 
 `11-polar-a.svg`、`11-polar-b.svg`、`11-stokes.svg`、`11-quality.svg`、`11-adaptive.svg`、`11-ocr.svg` 为本项目根据研究方案绘制的数据结构示意，不代表已采集的偏振图或实验结果。
 
+第 2 页的工业反光、去雾、车牌、半反射层、水下增强场景图标，以及 DoFP、Fresnel 和微表面
+BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相机照片、光线追踪结果或定量实验。
+
 ## 本项目实验数字与结果图
 
 当前 PPT 为 18 页共享偏振表示研究更新版。所有新主线数字均来自公开数据或解析仿真，不是自有相机结果。
 
 | 页码 | 内容 | 冻结来源 |
 |---|---|---|
-| 2 | 彩色偏振相机、Stokes、Fresnel、microfacet BRDF 与 T/R 欠定 | LUCID Phoenix PHX050S-QC 产品资料、Sony IMX250MYR / Polarsens 资料、`05_polarization_camera_physical_models.md`、Born & Wolf *Principles of Optics*、Cook–Torrance / Walter 等 microfacet 模型、Schechner / ReflectNet 的半反射层模型；4×4 图为结构示意，非芯片实际相位图 |
+| 2 | 五类 RGB 失效场景、彩色偏振相机、Stokes、Fresnel、microfacet BRDF 与 T/R 欠定 | LUCID Phoenix PHX050S-QC 产品资料、Sony IMX250MYR / Polarsens 资料、`05_polarization_camera_physical_models.md`、Born & Wolf *Principles of Optics*、Cook–Torrance / Walter 等 microfacet 模型、Schechner / ReflectNet 的半反射层模型；所有图为机制示意，4×4 单元非芯片实际相位图 |
 | 3 | 四方向 Stokes 与统一 direct/nuisance 物理形式 | `05_polarization_camera_physical_models.md`、`polar_representation/LITERATURE.md`；4 张照片为上述 Commons 场景示意（该页将在下一轮改为传统 ICA 与偏振分离网络） |
 | 4 | 物理分离、任务网络、偏振恢复与共享表示路线 | `polar_representation/LITERATURE.md`；Deng et al. 2026 的网络细节按“待全文核查”处理 |
 | 5 | 物理 stem、共享编码器、负对照与 Gate A0 | `15_shared_polarization_encoder_pretraining_controls.md` 第 10 节 |
