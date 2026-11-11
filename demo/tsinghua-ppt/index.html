@@ -1105,6 +1105,29 @@
   .transfer-protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:.22vw}.transfer-protocol span{padding:.3vh .2vw;background:var(--success-soft);color:var(--success);text-align:center;font:750 clamp(8px,.54vw,10px)/1.1 var(--sans)}
   .proof-bottom{display:grid;grid-template-columns:auto repeat(3,1fr);gap:.42vw;align-items:stretch;padding:.58vh .6vw;background:var(--success-soft);border-left:4px solid var(--success)}.proof-bottom>strong{display:grid;place-items:center;padding:0 .32vw;color:var(--success);font:800 clamp(10px,.68vw,13px)/1.15 var(--mono);text-align:center}.proof-gate{display:grid;align-content:center;padding:.44vh .46vw;background:#fff;color:var(--ink-soft);font:650 clamp(10px,.65vw,12px)/1.22 var(--sans)}.proof-gate b{display:block;margin-bottom:.15vh;color:var(--success)}.proof-gate.stop{background:var(--danger-soft);color:var(--danger)}.proof-gate.stop b{color:var(--danger)}
 
+  /* 09 · 投影可读性放大：保持能力表、机制矩阵与迁移阶梯内容不变 */
+  .proof-separation-layout .proof-lock>strong{font-size:clamp(11px,.72vw,14px)}
+  .proof-separation-layout .proof-lock span{font-size:clamp(11px,.7vw,13px);line-height:1.18}
+  .proof-separation-layout .proof-lock em{font-size:clamp(11px,.7vw,13px)}
+  .proof-separation-layout .proof-panel-head .pid{font-size:clamp(24px,1.62vw,32px)}
+  .proof-separation-layout .proof-panel-head h2{font-size:clamp(16px,1.02vw,20px);line-height:1.18}
+  .proof-separation-layout .proof-panel-head p{font-size:clamp(11px,.7vw,13px);line-height:1.18}
+  .proof-separation-layout .external-row{grid-template-columns:7.2em 4.6em 1fr;padding:.58vh .48vw}
+  .proof-separation-layout .external-row b{font-size:clamp(11px,.7vw,13px)}
+  .proof-separation-layout .external-row strong{font-size:clamp(12px,.78vw,15px);line-height:1.18}
+  .proof-separation-layout .external-row span{font-size:clamp(11px,.7vw,13px);line-height:1.24}
+  .proof-separation-layout .proof-panel-note{font-size:clamp(11px,.7vw,13px);line-height:1.28;padding:.56vh .5vw}
+  .proof-separation-layout .mechanism-matrix th,
+  .proof-separation-layout .mechanism-matrix td{font-size:clamp(11px,.72vw,13px);line-height:1.22;padding:.5vh .4vw}
+  .proof-separation-layout .transfer-step{grid-template-columns:3.5em 1fr;padding:.54vh .46vw}
+  .proof-separation-layout .transfer-step b{font-size:clamp(11px,.7vw,13px)}
+  .proof-separation-layout .transfer-step strong{font-size:clamp(12px,.8vw,15px);line-height:1.18}
+  .proof-separation-layout .transfer-step span{font-size:clamp(11px,.7vw,13px);line-height:1.24}
+  .proof-separation-layout .transfer-protocol span{font-size:clamp(10px,.66vw,12px);line-height:1.18;padding:.4vh .24vw}
+  .proof-separation-layout .proof-bottom>strong{font-size:clamp(12px,.78vw,15px)}
+  .proof-separation-layout .proof-gate{font-size:clamp(11px,.74vw,14px);line-height:1.3;padding:.54vh .52vw}
+  [data-slide-id="capability-attribution-proof"] .thu-footer{font-size:clamp(12px,.78vw,15px)}
+
   /* 10 · 结果式收束 */
   .compact-closing{height:100%;display:grid;grid-template-columns:63% 1fr;background:var(--accent);color:#fff}
   .compact-closing-main{display:grid;grid-template-rows:auto auto 1fr auto;gap:1.5vh;padding:5.2vh 4.4vw;position:relative;overflow:hidden}
