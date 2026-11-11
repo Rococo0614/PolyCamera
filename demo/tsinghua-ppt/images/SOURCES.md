@@ -53,8 +53,8 @@ BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相
 | 5 | 从任务读出、仪器响应到 DoFP 重建的三段误差源审计：E0 合成 OCR sanity、E1-a 已知 Stokes 仪器矩阵自检、E1-b PDD MPFA/AoLP 误差 | `e0_clean_code_sanity.json`、`e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json`；三段使用不同数据与指标，页面明确禁止直接相加为统一“误差份额” |
 | 6 | E2 真实四方向配对增量 → C2 全局亮度/对比度匹配 → C3 噪声选择下限与后端相关剩余信号 → 基础 Selector 和 C1 密集候选控制；由此导向“偏振物理 + 输入质量”联合先验 | 相机为 FLIR BFS-U3-51S5P / Sony IMX250MZR DoFP；公开方向图为作者/SDK 去马赛克后的 8-bit PNG；数字来自 `e0_e2_shdocs_easyocr_scale4.json`、`e0_e2_shdocs_tesseract_scale4.json`、`offline_extension_controls.json` 与 `shdocs_e2_string_length_audit_v1.json`；C1 未训练36路 Selector，只比较固定策略、候选数量与 GT Oracle 上界 |
 | 7 | “数据来源—物理处理—共享编码器—证据 Gate”技术闭环：PolaRGB 源任务，合成/PDD/SHDocs 审计，UPLight/ZJU 冻结迁移候选，`S₀/Q/U/q` 与匹配对照，以及 G1–G3 最小主张 | `polargb_release_v1.json`、`polargb_scene_split_v1.json`、`15_shared_polarization_encoder_pretraining_controls.md` A5、§6、§10；UPLight/ZJU 许可与 split 待核查；该页为预注册方案，没有训练或迁移结果 |
-| 8 | `S₀/Q/U` 解析 stem、`q_meas/q_pol`、共享编码器与重投影/等变/重组/稳定约束 | `15_shared_polarization_encoder_pretraining_controls.md` §10.2–10.3；`05_polarization_camera_physical_models.md` |
-| 9 | PolaRGB 源任务、扰动稳定和 UPLight/ZJU 冻结迁移三阶段实验矩阵 | `polargb_scene_split_v1.json`；`15_shared_polarization_encoder_pretraining_controls.md` §6、§10.4–10.5；UPLight/ZJU 许可与 split 仍待执行前核查 |
+| 8 | `S₀/Q/U` 解析 stem、`q_meas/q_pol` 双质量、强度/偏振/质量三支路编码器、逐尺度质量门控、源任务/冻结迁移头，以及重投影/等变/重组/稳定质量约束 | `15_shared_polarization_encoder_pretraining_controls.md` §10.2–10.3；`05_polarization_camera_physical_models.md`；该架构为预注册方案，尚未训练 |
+| 9 | G1 PolaRGB源任务归因、G2物理稳定与失败回退、G3 UPLight/ZJU冻结迁移的输入、指标、PASS和FAIL标准；顶部锁定公平预算，底部锁定可主张范围 | `polargb_scene_split_v1.json`；`15_shared_polarization_encoder_pretraining_controls.md` A5、§6、§10.4–10.5；UPLight/ZJU许可、下载与split仍待执行前核查，当前无训练结果 |
 | 10 | 路线 1 代理结果、拟议编码器契约与当前未训练状态总结 | 第 5–9 页上述证据与协议；“0 个已训练共享编码器”是当前项目状态，不是性能结果 |
 
 `14-sim-ambiguity.png` 与 `14-sim-reflection.png` 复制自
