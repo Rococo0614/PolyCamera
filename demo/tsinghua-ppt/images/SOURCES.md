@@ -34,6 +34,12 @@
 
 第 5 页 `05-e1b-aolp-{gt,nearest,bilinear}.webp` 由公开 PDD 2025 的 `High/Scene12` 四方向 PNG 生成：使用项目冻结的绿色通道、MPFA 排列 `[[90,45],[135,0]]`、最近邻/3×3 normalized bilinear 和 `linear_stokes`。可视化中色相表示 AoLP、饱和度为 `clip(4×DoLP)`、亮度为共享尺度的 S₀。三张图只是单场景定性示意；其下 Low/Mid/High 表格为每档 40 场景的平均 AoLP MAE，并同时列出完整四方向带噪声、Nearest MPFA 与 Bilinear MPFA，不能把表中数字解释为 Scene12 单图误差。
 
+第 7–9 页新增的 `07-polargb-source.webp`、`08-polargb-{i0,i45,i90,i135}.webp` 与 `09-polargb-mixed-gt.webp` 均派生自公开 PolaRGB processed release 的 test scene 06：输入使用 capture `0032`，透射参考使用该场景 `gt/0000_rgb.png`。只做统一 16:10 裁切、缩放和 WebP 转换；它们是公开数据示例，不是本项目模型输出。PolaRGB 数据许可为 CC BY-NC 4.0。
+
+`07-audit-shdocs-pdd.webp` 是本项目将两项已有代理证据并列后的缩略图：左侧来自 `17-shdocs-four-direction-examples.png` 的 SHDocs 真实 DoFP 文字方向差异，右侧来自 PDD `High/Scene12` 的 Bilinear AoLP 派生图；只用于区分选择效应审计与 MPFA 重建审计，不代表同一相机或同一实验。
+
+`07-uplight-paper-fig3.webp` 截取自 Liu et al., *ShareCMP: Polarization-Aware RGB-P Semantic Segmentation*, arXiv:2312.03430v3 / TCSVT 2025, [Figure 3](https://arxiv.org/html/2312.03430v3#S4.F3) 的 UPLight 四方向图像区域。第 7、9 页明确将其标为论文示意与迁移候选，不表示 UPLight 已下载、许可已独立核实或迁移实验已经运行。`09-pdd-reference-bilinear.webp` 为上述 PDD Reference/Bilinear AoLP 图的并列缩略图。
+
 ## 本项目原创示意图
 
 `11-polar-a.svg`、`11-polar-b.svg`、`11-stokes.svg`、`11-quality.svg`、`11-adaptive.svg`、`11-ocr.svg` 为早期版本根据研究方案绘制并保留的示意资产；当前 10 页主稿未使用，不代表已采集图像或实验结果。
@@ -52,9 +58,9 @@ BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相
 | 4 | ReflectNet、Lei 2020、Multi-bounce 与 Deng 2026 的偏振/强度恢复层级及采集方案 | 上述三张论文架构图；对应 ECCV 2018、CVPR 2020、ECCV 2020 原文；Deng et al. 2026 仅使用出版元数据与已核实方向，具体输入、监督和采集字段按“待全文核查”处理；完整审计见 `polar_representation/LITERATURE.md` |
 | 5 | 从任务读出、仪器响应到 DoFP 重建的三段误差源审计：E0 合成 OCR sanity、E1-a 已知 Stokes 仪器矩阵自检、E1-b PDD MPFA/AoLP 误差 | `e0_clean_code_sanity.json`、`e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json`；三段使用不同数据与指标，页面明确禁止直接相加为统一“误差份额” |
 | 6 | E2 真实四方向配对增量 → C2 全局亮度/对比度匹配 → C3 噪声选择下限与后端相关剩余信号 → 基础 Selector 和 C1 密集候选控制；由此导向“偏振物理 + 输入质量”联合先验 | 相机为 FLIR BFS-U3-51S5P / Sony IMX250MZR DoFP；公开方向图为作者/SDK 去马赛克后的 8-bit PNG；数字来自 `e0_e2_shdocs_easyocr_scale4.json`、`e0_e2_shdocs_tesseract_scale4.json`、`offline_extension_controls.json` 与 `shdocs_e2_string_length_audit_v1.json`；C1 未训练36路 Selector，只比较固定策略、候选数量与 GT Oracle 上界 |
-| 7 | “数据来源—物理处理—共享编码器—证据 Gate”技术闭环：PolaRGB 源任务，合成/PDD/SHDocs 审计，UPLight/ZJU 冻结迁移候选，`S₀/Q/U/q` 与匹配对照，以及 G1–G3 最小主张 | `polargb_release_v1.json`、`polargb_scene_split_v1.json`、`15_shared_polarization_encoder_pretraining_controls.md` A5、§6、§10；UPLight/ZJU 许可与 split 待核查；该页为预注册方案，没有训练或迁移结果 |
-| 8 | `S₀/Q/U` 解析 stem、`q_meas/q_pol` 双质量、强度/偏振/质量三支路编码器、逐尺度质量门控、源任务/冻结迁移头，以及重投影/等变/重组/稳定质量约束 | `15_shared_polarization_encoder_pretraining_controls.md` §10.2–10.3；`05_polarization_camera_physical_models.md`；该架构为预注册方案，尚未训练 |
-| 9 | G1 PolaRGB源任务归因、G2物理稳定与失败回退、G3 UPLight/ZJU冻结迁移的输入、指标、PASS和FAIL标准；顶部锁定公平预算，底部锁定可主张范围 | `polargb_scene_split_v1.json`；`15_shared_polarization_encoder_pretraining_controls.md` A5、§6、§10.4–10.5；UPLight/ZJU许可、下载与split仍待执行前核查，当前无训练结果 |
+| 7 | “数据来源—物理处理—共享编码器—证据 Gate”技术闭环：PolaRGB 源任务，合成/PDD/SHDocs 审计，UPLight/ZJU 冻结迁移候选，`S₀/Q/U/q` 与匹配对照，以及 G1–G3 最小主张 | `polargb_release_v1.json`、`polargb_scene_split_v1.json`、`15_shared_polarization_encoder_pretraining_controls.md` A5、§6、§10；配图为上述 PolaRGB真实输入、SHDocs/PDD代理缩略图和ShareCMP Fig.3；UPLight/ZJU许可与split待核查；该页没有训练或迁移结果 |
+| 8 | `S₀/Q/U` 解析 stem、`q_meas/q_pol` 双质量、强度/偏振/质量三支路编码器、逐尺度质量门控、源任务/冻结迁移头，以及重投影/等变/重组/稳定质量约束 | `15_shared_polarization_encoder_pretraining_controls.md` §10.2–10.3；`05_polarization_camera_physical_models.md`；stem中的四张图为上述PolaRGB scene 06真实processed方向输入；该架构尚未训练 |
+| 9 | G1 PolaRGB源任务归因、G2物理稳定与失败回退、G3 UPLight/ZJU冻结迁移的输入、指标、PASS和FAIL标准；顶部锁定公平预算，底部锁定可主张范围 | `polargb_scene_split_v1.json`；`15_shared_polarization_encoder_pretraining_controls.md` A5、§6、§10.4–10.5；三张缩略图分别为PolaRGB mixed/T GT、PDD Reference/Bilinear和ShareCMP Fig.3论文节选；当前无训练结果 |
 | 10 | 路线 1 代理结果、拟议编码器契约与当前未训练状态总结 | 第 5–9 页上述证据与协议；“0 个已训练共享编码器”是当前项目状态，不是性能结果 |
 
 `14-sim-ambiguity.png` 与 `14-sim-reflection.png` 复制自
