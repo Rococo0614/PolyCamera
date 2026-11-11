@@ -32,7 +32,7 @@
 
 第 4 页 Deng et al. 2026 卡片为本项目根据论文题名、出版元数据和已核实的 cross dual-stream / T-R / polarization-restoration 方向重绘，不是论文原图。由于没有开放全文或代码，卡片明确保留输入表示、恢复监督、相机、采集方式、数据集和场景等未知字段。
 
-第 5 页 `05-e1b-aolp-{gt,nearest,bilinear}.webp` 由公开 PDD 2025 的 `High/Scene12` 四方向 PNG 生成：使用项目冻结的绿色通道、MPFA 排列 `[[90,45],[135,0]]`、最近邻/3×3 normalized bilinear 和 `linear_stokes`。可视化中色相表示 AoLP、饱和度为 `clip(4×DoLP)`、亮度为共享尺度的 S₀。它是本项目派生的定性示意，页面报告的 31.81°/23.69° 是 High 40 场景的聚合 MAE，不是 Scene12 单图指标。
+第 5 页 `05-e1b-aolp-{gt,nearest,bilinear}.webp` 由公开 PDD 2025 的 `High/Scene12` 四方向 PNG 生成：使用项目冻结的绿色通道、MPFA 排列 `[[90,45],[135,0]]`、最近邻/3×3 normalized bilinear 和 `linear_stokes`。可视化中色相表示 AoLP、饱和度为 `clip(4×DoLP)`、亮度为共享尺度的 S₀。三张图只是单场景定性示意；其下 Low/Mid/High 表格为每档 40 场景的平均 AoLP MAE，并同时列出完整四方向带噪声、Nearest MPFA 与 Bilinear MPFA，不能把表中数字解释为 Scene12 单图误差。
 
 ## 本项目原创示意图
 
@@ -50,7 +50,7 @@ BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相
 | 2 | 五类 RGB 失效场景、彩色偏振相机、Stokes、Fresnel、microfacet BRDF 与 T/R 欠定 | LUCID Phoenix PHX050S-QC 产品资料、Sony IMX250MYR / Polarsens 资料、`05_polarization_camera_physical_models.md`、Born & Wolf *Principles of Optics*、Cook–Torrance / Walter 等 microfacet 模型、Schechner / ReflectNet 的半反射层模型；所有图为机制示意，4×4 单元非芯片实际相位图 |
 | 3 | Farid–Schechner–Kong 的传统偏振 T/R 分离演进、共同边界及对学习先验的启发 | 上述三张论文图节选；Farid & Adelson, JOSA A 1999；Schechner et al., ICCV 1999 / JOSA A 2000；Kong et al., TPAMI 2014；方法口径同步见 `polar_representation/LITERATURE.md` |
 | 4 | ReflectNet、Lei 2020、Multi-bounce 与 Deng 2026 的偏振/强度恢复层级及采集方案 | 上述三张论文架构图；对应 ECCV 2018、CVPR 2020、ECCV 2020 原文；Deng et al. 2026 仅使用出版元数据与已核实方向，具体输入、监督和采集字段按“待全文核查”处理；完整审计见 `polar_representation/LITERATURE.md` |
-| 5 | 探索路线 1 的 E0 清晰识读上限、E1-a 合成仪器恢复与 E1-b PDD AoLP 可视化 | `e0_clean_code_sanity.json`、`e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json`；上述 PDD High/Scene12 派生图 |
+| 5 | 从任务读出、仪器响应到 DoFP 重建的三段误差源审计：E0 合成 OCR sanity、E1-a 已知 Stokes 仪器矩阵自检、E1-b PDD MPFA/AoLP 误差 | `e0_clean_code_sanity.json`、`e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json`；三段使用不同数据与指标，页面明确禁止直接相加为统一“误差份额” |
 | 6 | E2、C1、C2、C3 假设检验链及 Raw I₀ / Fixed / Selector / Oracle / Noise best-of 柱状对照 | `e0_e2_shdocs_easyocr_scale4.json`、`e0_e2_shdocs_tesseract_scale4.json`、`industrial_reading/evidence/offline_extension_controls.json`；Noise best-of 使用 m=1 像素 RMS 锚点 |
 | 7 | C0–C3 匹配输入干预、合法角度零点旋转与偏振归因 Gate G1 | `15_shared_polarization_encoder_pretraining_controls.md` A5、§10.5；该页为预注册协议，没有训练结果 |
 | 8 | `S₀/Q/U` 解析 stem、`q_meas/q_pol`、共享编码器与重投影/等变/重组/稳定约束 | `15_shared_polarization_encoder_pretraining_controls.md` §10.2–10.3；`05_polarization_camera_physical_models.md` |
