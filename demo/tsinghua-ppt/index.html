@@ -799,42 +799,52 @@
   .next-path.months .next-step{grid-template-columns:4.3em 1fr auto}
   .next-path.months .next-step .no{white-space:nowrap}
 
-  /* 07 · 偏振因果归因：匹配对照与干预 */
-  .attribution-layout{height:100%;display:grid;grid-template-columns:1fr;grid-template-rows:7.4vh minmax(0,1fr) 9.4vh;gap:.85vh}
-  .attribution-hypothesis{display:grid;grid-template-columns:auto 1fr auto;gap:.75vw;align-items:center;padding:.7vh .72vw;background:var(--accent);color:#fff}
-  .attribution-hypothesis>strong{font:800 clamp(11px,.72vw,14px)/1.15 var(--mono);letter-spacing:.05em}
-  .attribution-hypothesis>span{font:700 clamp(13px,.86vw,17px)/1.28 var(--sans)}
-  .attribution-hypothesis>em{padding:.4vh .48vw;background:rgba(255,255,255,.14);font:750 clamp(10px,.66vw,13px)/1 var(--mono);font-style:normal;white-space:nowrap}
-  .attribution-body{min-height:0;display:grid;grid-template-columns:62% 1fr;gap:.78vw}
-  .control-ledger{min-height:0;display:grid;grid-template-rows:auto repeat(6,1fr);gap:.4vh}
-  .control-ledger-head,.control-ledger-row{display:grid;grid-template-columns:3.1em 1.12fr .9fr 1.3fr;gap:.5vw;align-items:center}
-  .control-ledger-head{padding:.62vh .55vw;background:var(--ink);color:#fff;font:750 clamp(10px,.66vw,13px)/1.15 var(--sans)}
-  .control-ledger-row{padding:.48vh .55vw;border:1px solid var(--line);background:#fff}
-  .control-ledger-row .cid{display:grid;place-items:center;width:2.55em;aspect-ratio:1;background:var(--info-soft);color:var(--info);font:800 clamp(11px,.72vw,14px)/1 var(--mono)}
-  .control-ledger-row.transform .cid{background:var(--success-soft);color:var(--success)}
-  .control-ledger-row.candidate{border-color:var(--accent);background:var(--accent-pale)}
-  .control-ledger-row.candidate .cid{background:var(--accent);color:#fff}
-  .control-ledger-row strong{font:750 clamp(11px,.74vw,14px)/1.18 var(--sans)}
-  .control-ledger-row code{display:block;margin-top:.18vh;color:var(--accent);font:650 clamp(10px,.67vw,13px)/1.15 var(--mono)}
-  .control-ledger-row span{color:var(--ink-soft);font:600 clamp(10px,.67vw,13px)/1.25 var(--sans)}
-  .control-ledger-row span b{display:block;margin-bottom:.12vh;color:var(--muted);font:700 clamp(9px,.61vw,12px)/1 var(--mono)}
-  .attribution-rules{min-height:0;display:grid;grid-template-rows:auto auto 1fr;gap:.55vh}
-  .fairness-card{padding:.72vh .65vw;border-top:4px solid var(--info);background:#fff}
-  .fairness-card h2,.attribution-readout h2{font:750 clamp(14px,.92vw,18px)/1.18 var(--sans)}
-  .fairness-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.35vw;margin-top:.58vh}
-  .fairness-grid span{display:grid;place-items:center;min-height:3.25vh;padding:.38vh .28vw;background:var(--info-soft);color:var(--info);text-align:center;font:750 clamp(9px,.61vw,12px)/1.15 var(--sans)}
-  .attribution-equation{display:grid;grid-template-columns:auto 1fr;gap:.7vw;align-items:center;padding:.75vh .65vw;border-left:4px solid var(--accent);background:var(--accent-pale)}
-  .attribution-equation strong{color:var(--accent);font:800 clamp(11px,.72vw,14px)/1.15 var(--mono)}
-  .attribution-equation .math{font:italic 600 clamp(17px,1.18vw,23px)/1.2 var(--equation);text-align:center}
-  .attribution-readout{display:grid;grid-template-rows:auto repeat(3,1fr);gap:.42vh;padding:.7vh .65vw;background:#fff;border:1px solid var(--line)}
-  .readout-row{display:grid;grid-template-columns:auto 1fr;gap:.48vw;align-items:center;padding:.45vh .45vw;background:var(--paper-soft)}
-  .readout-row .mark{color:var(--danger);font:800 clamp(13px,.86vw,17px)/1 var(--mono)}
-  .readout-row strong{display:block;font:750 clamp(11px,.73vw,14px)/1.15 var(--sans)}
-  .readout-row p{margin-top:.18vh;color:var(--muted);font:550 clamp(10px,.66vw,13px)/1.25 var(--sans)}
-  .attribution-gate{display:grid;grid-template-columns:auto repeat(4,1fr);gap:.45vw;align-items:stretch;padding:.58vh .62vw;background:var(--success-soft);border-left:4px solid var(--success)}
-  .attribution-gate>strong{display:grid;place-items:center;padding:0 .35vw;color:var(--success);font:800 clamp(11px,.72vw,14px)/1.15 var(--mono)}
-  .gate-proof{display:grid;align-content:center;padding:.42vh .45vw;background:#fff;color:var(--ink-soft);font:650 clamp(10px,.67vw,13px)/1.22 var(--sans)}
-  .gate-proof b{display:block;margin-bottom:.14vh;color:var(--success)}
+  /* 07 · 技术方案总览：数据—处理—编码—证明 */
+  .method-blueprint-layout{height:100%;display:grid;grid-template-columns:1fr;grid-template-rows:7.2vh minmax(0,1fr) 9.4vh;gap:.82vh}
+  .blueprint-claim{display:grid;grid-template-columns:auto 1fr auto;gap:.72vw;align-items:center;padding:.66vh .7vw;background:var(--accent);color:#fff}
+  .blueprint-claim strong{font:800 clamp(11px,.72vw,14px)/1.15 var(--mono);letter-spacing:.05em}
+  .blueprint-claim span{font:700 clamp(13px,.86vw,17px)/1.28 var(--sans)}
+  .blueprint-claim em{padding:.38vh .46vw;background:rgba(255,255,255,.14);font:750 clamp(10px,.65vw,12px)/1 var(--mono);font-style:normal;white-space:nowrap}
+  .blueprint-flow{min-height:0;display:grid;grid-template-columns:1.05fr auto 1.08fr auto 1.08fr auto 1.08fr;gap:.48vw;align-items:stretch}
+  .blueprint-arrow{display:grid;place-items:center;color:var(--accent);font:800 clamp(20px,1.38vw,27px)/1 var(--sans)}
+  .blueprint-stage{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:.5vh;padding:.66vh .58vw;border:1px solid var(--line);border-top:4px solid var(--info);background:#fff}
+  .blueprint-stage.process{border-top-color:var(--accent)}.blueprint-stage.model{border-top-color:var(--success)}.blueprint-stage.proof{border-top-color:var(--ink)}
+  .blueprint-stage-head{display:grid;grid-template-columns:auto 1fr;gap:.5vw;align-items:center;padding-bottom:.4vh;border-bottom:1px solid var(--line)}
+  .blueprint-stage-head .no{color:var(--line-strong);font:800 clamp(24px,1.75vw,34px)/1 var(--mono)}
+  .blueprint-stage-head h2{font:750 clamp(14px,.92vw,18px)/1.15 var(--sans)}
+  .blueprint-stage-head span{display:block;margin-top:.18vh;color:var(--muted);font:700 clamp(9px,.59vw,11px)/1 var(--mono);letter-spacing:.04em}
+  .blueprint-stage-body{min-height:0;display:grid;align-content:stretch;gap:.42vh}
+  .blueprint-stage.data .blueprint-stage-body{grid-template-rows:repeat(3,1fr)}
+  .blueprint-stage.process .blueprint-stage-body,.blueprint-stage.model .blueprint-stage-body,.blueprint-stage.proof .blueprint-stage-body{grid-template-rows:minmax(0,1fr) auto}
+  .source-group{display:grid;grid-template-columns:4.8em 1fr;gap:.42vw;align-items:center;padding:.5vh .42vw;background:var(--paper-soft)}
+  .source-group b{color:var(--info);font:800 clamp(9px,.6vw,11px)/1.1 var(--mono)}
+  .source-group strong{display:block;font:750 clamp(11px,.72vw,14px)/1.15 var(--sans)}
+  .source-group span{display:block;margin-top:.18vh;color:var(--muted);font:600 clamp(9px,.59vw,11px)/1.2 var(--sans)}
+  .process-stack{display:grid;grid-template-rows:repeat(4,1fr);gap:.38vh;min-height:0}
+  .process-step{display:grid;grid-template-columns:2.2em 1fr;gap:.42vw;align-items:center;padding:.46vh .42vw;background:var(--paper-soft)}
+  .process-step b{display:grid;place-items:center;width:2em;aspect-ratio:1;background:var(--accent-soft);color:var(--accent);font:800 clamp(9px,.59vw,11px)/1 var(--mono)}
+  .process-step strong{display:block;font:750 clamp(10px,.68vw,13px)/1.14 var(--sans)}
+  .process-step span{display:block;margin-top:.15vh;color:var(--muted);font:600 clamp(9px,.58vw,11px)/1.17 var(--sans)}
+  .blueprint-formula{display:grid;place-items:center;padding:.55vh .4vw;background:var(--accent-pale);color:var(--accent);font:italic 650 clamp(15px,1vw,19px)/1.15 var(--equation);text-align:center}
+  .mini-model-flow{display:grid;grid-template-rows:repeat(4,1fr);gap:.38vh;min-height:0}
+  .mini-model-node{display:grid;grid-template-columns:4.5em 1fr;gap:.45vw;align-items:center;padding:.48vh .42vw;background:var(--paper-soft);border-left:3px solid var(--success)}
+  .mini-model-node b{color:var(--success);font:800 clamp(9px,.6vw,11px)/1.1 var(--mono)}
+  .mini-model-node strong{display:block;font:750 clamp(10px,.68vw,13px)/1.14 var(--sans)}
+  .mini-model-node span{display:block;margin-top:.16vh;color:var(--muted);font:600 clamp(9px,.58vw,11px)/1.17 var(--sans)}
+  .loss-mini-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.22vw}.loss-mini-strip span{padding:.32vh .18vw;background:var(--success-soft);color:var(--success);text-align:center;font:750 clamp(8px,.54vw,10px)/1.08 var(--mono)}
+  .proof-mini-stack{display:grid;grid-template-rows:repeat(3,1fr);gap:.4vh;min-height:0}
+  .proof-mini{display:grid;grid-template-columns:2.7em 1fr;gap:.45vw;align-items:center;padding:.48vh .42vw;background:var(--paper-soft);border-left:3px solid var(--accent)}
+  .proof-mini:nth-child(2){border-left-color:var(--info)}.proof-mini:nth-child(3){border-left-color:var(--success)}
+  .proof-mini .gid{color:var(--accent);font:800 clamp(12px,.8vw,15px)/1 var(--mono)}
+  .proof-mini strong{display:block;font:750 clamp(10px,.68vw,13px)/1.14 var(--sans)}
+  .proof-mini span{display:block;margin-top:.15vh;color:var(--muted);font:600 clamp(9px,.58vw,11px)/1.18 var(--sans)}
+  .proof-fairness{display:grid;grid-template-columns:repeat(3,1fr);gap:.22vw}.proof-fairness span{padding:.32vh .2vw;background:var(--accent-soft);color:var(--accent);text-align:center;font:750 clamp(8px,.55vw,10px)/1.08 var(--sans)}
+  .blueprint-output{padding:.46vh .42vw;background:#fff;border-top:1px solid var(--line);color:var(--ink-soft);font:650 clamp(9px,.61vw,11px)/1.2 var(--sans)}
+  .blueprint-output b{color:var(--accent);font-family:var(--mono)}
+  .blueprint-bottom{display:grid;grid-template-columns:auto 1.18fr 1.18fr 1.05fr;gap:.42vw;align-items:stretch;padding:.58vh .6vw;background:var(--success-soft);border-left:4px solid var(--success)}
+  .blueprint-bottom>strong{display:grid;place-items:center;padding:0 .3vw;color:var(--success);font:800 clamp(10px,.69vw,13px)/1.15 var(--mono);text-align:center}
+  .minimum-proof{display:grid;align-content:center;padding:.44vh .46vw;background:#fff;color:var(--ink-soft);font:650 clamp(10px,.65vw,12px)/1.23 var(--sans)}.minimum-proof b{display:block;margin-bottom:.15vh;color:var(--success)}
+  .minimum-proof.status{background:var(--danger-soft);color:var(--danger)}.minimum-proof.status b{color:var(--danger)}
 
   /* 08 · 物理约束共享编码器 */
   .physics-encoder-layout{height:100%;display:grid;grid-template-columns:1fr;grid-template-rows:7.2vh 22.5vh minmax(0,1fr) 8.4vh;gap:.82vh}
@@ -1175,23 +1185,21 @@
   </div></main><footer class="thu-footer"><span>SHDocs 真实 DoFP · C2 全局统计匹配 · C3 噪声零对照 · C1 密集虚拟角候选控制</span><span class="thu-footer-line"></span><span class="thu-page-no">06 / 10</span></footer></div>
 </section>
 
-<section class="slide" data-layout="THU12" data-animate="academic" data-slide-id="polarization-attribution">
-  <div class="thu-page"><header class="thu-header"><div><div class="thu-section">五、共享偏振表征 · 因果归因</div><h1 class="thu-title">只保持统计不够：必须保留当前样本对应关系，并通过合法角度变换检验</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>归因协议</strong><span>Causal Attribution</span></div></div></header>
-  <main class="thu-content tight"><div class="attribution-layout experiment-layout">
-    <div class="attribution-hypothesis" data-anim><strong>可检验主张</strong><span>容量与训练预算匹配后，只有正确配对且满足 Stokes 几何的偏振分量，才应产生稳定任务增量。</span><em>PRE-REGISTERED · 未训练</em></div>
-    <div class="attribution-body" data-anim>
-      <div class="control-ledger"><div class="control-ledger-head"><span>ID</span><span>输入干预</span><span>有意保留</span><span>被改变 / 预期</span></div>
-        <article class="control-ledger-row"><span class="cid">C0</span><div><strong>强度基线</strong><code>RGB / S₀</code></div><span><b>BASE</b>总强度与纹理</span><span><b>QUESTION</b>强度先验是否已经足够</span></article>
-        <article class="control-ledger-row"><span class="cid">C1</span><div><strong>重复通道</strong><code>[S₀,S₀,S₀,S₀]</code></div><span><b>KEEP</b>通道数与模型接口</span><span><b>RULE OUT</b>“通道更多”带来的容量收益</span></article>
-        <article class="control-ledger-row"><span class="cid">C2</span><div><strong>匹配噪声副本</strong><code>S₀ + 3×εmatch</code></div><span><b>KEEP</b>候选数、扰动和噪声幅度</span><span><b>RULE OUT</b>正则化、best-of 与噪声抽签</span></article>
-        <article class="control-ledger-row"><span class="cid">C3</span><div><strong>跨样本打乱</strong><code>S₀,Qπ,Uπ</code></div><span><b>KEEP</b>Q/U 边际分布与通道统计</span><span><b>BREAK</b>偏振与当前场景的物理对应</span></article>
-        <article class="control-ledger-row transform"><span class="cid">T1</span><div><strong>合法零点旋转</strong><code>R(2α)[Q,U]</code></div><span><b>KEEP</b>同一物理偏振状态</span><span><b>EXPECT</b>潜变量等变、任务输出不变</span></article>
-        <article class="control-ledger-row candidate"><span class="cid">P</span><div><strong>正确偏振输入</strong><code>S₀,Q,U,q</code></div><span><b>KEEP</b>当前样本的完整对应关系</span><span><b>CANDIDATE</b>唯一允许支持偏振归因的输入</span></article>
-      </div>
-      <aside class="attribution-rules"><article class="fairness-card"><h2>除输入外全部锁定</h2><div class="fairness-grid"><span>同 backbone</span><span>同参数量</span><span>同小型 head</span><span>同训练步数</span><span>同增强 / seeds</span><span>同 scene split</span></div></article><div class="attribution-equation"><strong>PRIMARY CONTRAST</strong><div class="math">Δ<sub>phys</sub> = M(P) − max{M(C0), M(C1), M(C2), M(C3)}</div></div><article class="attribution-readout"><h2>失败结果同样可解释</h2><div class="readout-row"><span class="mark">×</span><div><strong>P ≈ C1 / C2</strong><p>增益可由通道数、扰动或噪声解释。</p></div></div><div class="readout-row"><span class="mark">×</span><div><strong>P ≈ C3</strong><p>编码器忽略偏振对应关系，或只学习数据集统计。</p></div></div><div class="readout-row"><span class="mark">×</span><div><strong>T1 后任务输出漂移</strong><p>表示没有遵守检偏角参考系的 2α 几何。</p></div></div></article></aside>
+<section class="slide" data-layout="THU11" data-animate="academic" data-slide-id="polarization-attribution">
+  <div class="thu-page"><header class="thu-header"><div><div class="thu-section">五、技术方案 · 数据—表示—模型—证据</div><h1 class="thu-title">以 PolaRGB 学习物理约束表示，经匹配负对照归因，再冻结迁移验证共享性</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>技术闭环</strong><span>METHOD BLUEPRINT</span></div></div></header>
+  <main class="thu-content tight"><div class="method-blueprint-layout architecture-layout">
+    <div class="blueprint-claim" data-anim><strong>核心主张</strong><span>正确偏振相对强度表示的增量必须依赖当前样本的物理对应关系；同一编码器冻结后仍有增量，才允许称为共享表示。</span><em>PRE-REGISTERED · NO RESULT</em></div>
+    <div class="blueprint-flow" data-anim>
+      <article class="blueprint-stage data"><div class="blueprint-stage-head"><span class="no">01</span><div><h2>数据来源与角色冻结</h2><span>DATA SOURCES</span></div></div><div class="blueprint-stage-body"><div class="source-group"><b>SOURCE</b><div><strong>PolaRGB · 反光分离</strong><span>6,500 captures；release 59/8；项目 split 49/10/8；CC BY-NC 4.0</span></div></div><div class="source-group"><b>AUDIT</b><div><strong>合成矩阵 / PDD / SHDocs</strong><span>标定、MPFA、噪声与选择效应审计；不承担共享训练结论</span></div></div><div class="source-group"><b>TRANSFER</b><div><strong>UPLight 1,791 / ZJU 394</strong><span>水下与道路分割候选；独立许可、下载和 split 待冻结</span></div></div></div><div class="blueprint-output"><b>OUTPUT</b> release manifest · scene split · license · task role</div></article>
+      <span class="blueprint-arrow">→</span>
+      <article class="blueprint-stage process"><div class="blueprint-stage-head"><span class="no">02</span><div><h2>标定、质量与公平输入</h2><span>PHYSICAL PROCESSING</span></div></div><div class="blueprint-stage-body"><div class="process-stack"><div class="process-step"><b>A</b><div><strong>完整性与辐射口径</strong><span>size/SHA/decode · stored/linear · scene isolation</span></div></div><div class="process-step"><b>B</b><div><strong>四方向测量校正</strong><span>方向映射 · gain/offset · saturation · MPFA/demosaic mask</span></div></div><div class="process-step"><b>C</b><div><strong>连续偏振状态与质量</strong><span>S₀ / Q / U + q<sub>meas</sub> / q<sub>pol</sub></span></div></div><div class="process-step"><b>D</b><div><strong>同接口匹配对照</strong><span>S₀ · repeat · matched noise · shuffle(Q,U) · legal rotation</span></div></div></div><div class="blueprint-formula">Q=S₁/(S₀+ε), U=S₂/(S₀+ε)</div></div><div class="blueprint-output"><b>OUTPUT</b> x=(S₀,Q,U,q) + valid mask + matched controls</div></article>
+      <span class="blueprint-arrow">→</span>
+      <article class="blueprint-stage model"><div class="blueprint-stage-head"><span class="no">03</span><div><h2>物理 stem + 共享编码器</h2><span>SHARED ENCODER E</span></div></div><div class="blueprint-stage-body"><div class="mini-model-flow"><div class="mini-model-node"><b>STEM</b><div><strong>解析测量层</strong><span>Stokes、质量与合法角度变换</span></div></div><div class="mini-model-node"><b>E</b><div><strong>z<sub>I</sub> / z<sub>P</sub> / z<sub>q</sub></strong><span>强度纹理、偏振结构、质量门控</span></div></div><div class="mini-model-node"><b>SOURCE</b><div><strong>PolaRGB T/R 小头</strong><span>先训练一个轻量反光分离 pilot</span></div></div><div class="mini-model-node"><b>FREEZE</b><div><strong>水下 / 道路分割头</strong><span>冻结同一 E，只训练同容量小型 head</span></div></div></div><div class="loss-mini-strip"><span>Ltask</span><span>Lreproj</span><span>Lequiv</span><span>Lcompose</span><span>Lstable/q</span></div></div><div class="blueprint-output"><b>OUTPUT</b> 可重投影、角度等变、质量可回退的多尺度表示</div></article>
+      <span class="blueprint-arrow">→</span>
+      <article class="blueprint-stage proof"><div class="blueprint-stage-head"><span class="no">04</span><div><h2>归因、稳定性与迁移证明</h2><span>EVIDENCE GATES</span></div></div><div class="blueprint-stage-body"><div class="proof-mini-stack"><div class="proof-mini"><span class="gid">G1</span><div><strong>源任务因果归因</strong><span>正确偏振 &gt; S₀ / repeat / noise / shuffle；clean preserve</span></div></div><div class="proof-mini"><span class="gid">G2</span><div><strong>物理一致与失败边界</strong><span>重投影、合法旋转、扰动稳定、risk–coverage 与回退</span></div></div><div class="proof-mini"><span class="gid">G3</span><div><strong>冻结编码器迁移</strong><span>UPLight 或 ZJU 至少一项优于 RGB/S₀；10/25/100% labels</span></div></div></div><div class="proof-fairness"><span>同 backbone / params</span><span>同 head / steps / aug</span><span>≥3 seeds · scene CI</span></div></div><div class="blueprint-output"><b>REPORT</b> PSNR/SSIM/LPIPS · mIoU · labels/params · failure cases</div></article>
     </div>
-    <div class="attribution-gate" data-anim><strong>GATE G1</strong><div class="gate-proof"><b>源任务增量</b>P−S₀ 的场景聚类 95% CI 不跨 0。</div><div class="gate-proof"><b>对应关系必要</b>打乱 Q/U 后增益明显回落。</div><div class="gate-proof"><b>合法变换一致</b>潜变量等变、最终任务输出近似不变。</div><div class="gate-proof"><b>安全边界</b>clean 样本不被明显改坏，低质量可回退。</div></div>
-  </div></main><footer class="thu-footer"><span>协议来源：15_shared_polarization_encoder_pretraining_controls.md · A5 / §10；M 为统一方向化任务指标</span><span class="thu-footer-line"></span><span class="thu-page-no">07 / 10</span></footer></div>
+    <div class="blueprint-bottom" data-anim><strong>最小可主张结论</strong><div class="minimum-proof"><b>证明“偏振”</b>正确 P 在 PolaRGB 优于全部统计匹配对照；打乱 Q/U 后增益明显回落。</div><div class="minimum-proof"><b>证明“共享”</b>同一冻结 E 在 UPLight 或 ZJU 至少一个不同任务仍优于 RGB/S₀。</div><div class="minimum-proof status"><b>当前状态</b>Gate A0 尚未闭环；编码器未训练、无迁移结果。任一 Gate 失败即缩小主张。</div></div>
+  </div></main><footer class="thu-footer"><span>方案来源：PolaRGB / PDD / SHDocs 前置审计 + 共享编码器预注册协议；第 8 页展开物理结构，第 9 页展开实验矩阵</span><span class="thu-footer-line"></span><span class="thu-page-no">07 / 10</span></footer></div>
 </section>
 
 <section class="slide soft" data-layout="THU11" data-animate="academic" data-slide-id="physics-constrained-encoder">
@@ -1228,7 +1236,7 @@ const SPEAKER_NOTES = [
   {id:'polarized-reflection-networks',title:'偏振反光网络与采集方案',section:'问题与文献',minutes:1.7,purpose:'同口径比较偏振输入、强度/偏振恢复层级与采集方案',talk:['ReflectNet 用旋转偏振片顺序采集三角度，最终恢复 RGB 强度 T/R，不恢复逐角偏振层','Lei 2020 使用单色 DoFP 单曝光四方向，先估计强度 R 再估计强度 T，并以黑布 M−R 方案采集真值','Multi-bounce 使用彩色 DoFP，逐角预测 polarized T/R，再以 Stokes/Mueller 多次反射模型重投影四方向','Deng 2026 只确认 cross dual-stream、T/R 与 polarization restoration 方向；输入、监督、相机和数据仍待全文核查','输入含偏振不等于输出保留物理；后续方法必须报告采集硬件、输出层级和重投影一致性'],transition:'文献说明“偏振网络”不能只看输入标签，下面回顾路线 1 的可测前提'},
   {id:'route1-foundation',title:'探索路线 1 · 三段误差源审计',section:'探索路线 1',minutes:1.3,purpose:'从任务读出、仪器响应和 DoFP 空间重建三段逆向定位偏振系统中的独立误差源',talk:['这不是把三项百分比相加的统一误差预算；E0、E1-a、E1-b 使用不同数据与指标，作用是逐段锁定混杂因素','E0 是电脑字体、GT ROI 与字符白名单下的软件 sanity：EasyOCR 的 CER 只有 4.20%，但字符串长度和易混字符会把整串 Exact 放大到 60.78%，它不是实拍喷码上限','E1-a 把测量写成 m=Areal·s+b+ε；用已知合成 Stokes 的前 2,500 组估计 A,b，再在留出的 2,500 组反演，RMSE 从理想矩阵的 0.01147 降到 0.00260','E1-b 模拟 2×2 MPFA 每像素只测一个方向，再比较完整四方向、最近邻和双线性；伪彩图中色相是 AoLP、饱和度是 DoLP、亮度是 S0','双线性减轻但没有消除空间插值误差，所以 OCR backend、标定矩阵和 demosaic 都必须冻结或进入后续消融，不能被模型增益吸收'],transition:'三段测量链误差被显式化后，下一页继续检验 E2 的 Oracle gap 是否只是候选数量、图像统计和噪声选择效应',cue:'按左到右讲三段误差源；E1-b 先指 2×2 排列，再读伪彩图图例和 40 场景均值表'},
   {id:'route1-hypothesis-chain',title:'E2–C3–C1 · 方向归因与选择',section:'探索路线 1',minutes:1.3,purpose:'把真实 DoFP 方向差异、亮度统计、噪声选择下限和密集候选控制串成一条归因—选择—决策链',talk:['E2 的真实 DoFP 配对结果先建立观察：同一 ROI、字符串和高光条件下，Oracle–Fixed 在 Tesseract / EasyOCR 上为 +6.58 / +2.51 pp，说明四方向观测会改变 OCR 输出；绝对正确率仍受 1–376 字符和严格 Exact 压低','C2 把每个 ROI 的四方向匹配到共同 mean/std 或 pooled histogram 后重新 OCR；Tesseract gap 仍为 6.09 / 5.61 pp，Easy 为 2.51 / 3.87 pp，因此全局亮度和对比度不是主要解释，但局部高光结构仍被保留','C3 固定 I0，只加入三个独立噪声副本；GT best-of 已产生 +2.37 / +1.81 pp，相当于真实 gap 的 36% / 72%。这说明噪声与 OCR 稳定性会制造“最优候选”，输入质量必须进入方法主体','用真实 gap 对比当前噪声零对照后，Tesseract 仍剩 +4.21 pp 且区间不跨 0，Easy 只剩 +0.70 pp 且区间跨 0；因此偏振相关剩余信号是条件性、后端相关的，不能把全部剩余直接叫作物理增益','基础 confidence selector 对 Tesseract 只兑现 Oracle gap 的 19%，Easy 还下降；C1 的36角固定策略不优于 raw，而候选数只把 Oracle gap 放大到 14.41 / 5.71 pp。C1 没有训练36路 selector，结论是单纯扩大搜索空间无解，下一步应用校准 Stokes/Q,U 与饱和、SNR、噪声、demosaic 质量 q 共同约束可部署表示或 Selector'],transition:'方向差异、输入质量和候选选择已经分开后，下一页进一步用匹配输入干预定义什么结果才允许归因于当前样本的真实偏振信息',cue:'按左侧 E2 → 右侧 C2/C3/剩余信号 → 底部 Selector/C1 → 红色决策条的顺序讲'},
-  {id:'polarization-attribution',title:'真实偏振的因果归因协议',section:'共享偏振表征',minutes:1.2,purpose:'用匹配输入干预区分当前样本偏振信息与通道数、噪声、统计偏差和角度坐标系',talk:['C0 到 C3 不是随意喂错误图片，而是依次保持强度、通道数、噪声或 Q/U 边际分布，只破坏一个待验证因素','最关键的是跨样本打乱 Q/U：总体数值统计仍在，但与当前场景的物理对应关系被破坏','T1 是合法零点旋转，不应导致任务输出变化；它与非物理通道交换必须区分','所有输入使用同 backbone、参数、head、训练步数、增强、seeds 和 scene split','只有正确偏振优于全部对照、打乱后回落且合法旋转通过，才允许把增量归因于偏振'],transition:'归因协议说明要比较什么，下一页说明编码器内部必须保留什么物理结构',cue:'先讲 C3，再回看 C0–C2，最后读底部 Gate G1'},
+  {id:'polarization-attribution',title:'技术方案 · 数据到证据闭环',section:'共享偏振表征',minutes:1.3,purpose:'用一页总览数据来源、物理处理、共享编码器与三道证据 Gate，建立第 8–9 页的执行导航',talk:['数据按角色冻结：PolaRGB 是 6,500 组反光分离源任务并使用项目 49/10/8 场景划分；合成矩阵、PDD 和 SHDocs 只做标定、MPFA、噪声与选择效应审计；UPLight 与 ZJU 是许可和 split 待核查的冻结迁移候选','数据处理先冻结完整性、scene isolation 与 stored/linear 口径，再校正方向映射、gain/offset、饱和与 MPFA；主表示采用 S0/Q/U 和分开的 q_meas、q_pol','重复 S0、匹配噪声、跨样本打乱 Q/U 与合法零点旋转从数据接口阶段生成，确保负对照不是训练后补解释','模型由解析 physical stem、共享编码器 E 和同容量小型任务头组成；先训练 PolaRGB T/R pilot，再冻结同一 E 接水下或道路分割头','结果必须依次通过 G1 源任务归因、G2 物理一致与失败边界、G3 冻结迁移；当前仅完成预注册，编码器和迁移均无结果'],transition:'总体闭环确定后，下一页展开 physical stem、双质量变量、共享潜表示与四类损失如何具体实现',cue:'沿 01→04 从左到右讲，最后只读底部“证明偏振 / 证明共享 / 当前状态”三条'},
   {id:'physics-constrained-encoder',title:'物理约束共享编码器',section:'共享偏振表征',minutes:1.2,purpose:'定义解析 stem、双质量变量、共享表示和四类可验证约束',talk:['主输入使用 S0、Q、U，避免直接输入低 DoLP 区不稳定的裸 AoLP','q_meas 表示测量是否可信，q_pol 表示偏振是否有信息量；高 DoLP 但饱和与低 DoLP 但强度可信必须区分','编码器分出强度表示 zI、方向等变偏振表示 zP 和质量门控 zq，再连接小型任务头','重投影约束防止网络丢掉四方向物理，参考系等变约束角度几何，层重组约束源任务解释观测','扰动稳定先用冻结噪声模型；真实重复曝光只能在 H0 相机试采后验证，当前不冒充已有结果'],transition:'有了方法结构后，下一页给出怎样训练、怎样冻结、什么结果才算有用'},
   {id:'encoder-proof-plan',title:'共享编码器实验与通过判据',section:'共享偏振表征',minutes:1.2,purpose:'用 G1 源任务归因、G2 稳定性和 G3 冻结迁移证明编码器有用',talk:['G1 在 PolaRGB 49/10/8 场景划分上，用同一小型 decoder 比较全部输入对照，并报告场景聚类区间与 clean preservation','G2 按 DoLP、饱和、反射强度、easy/hard 和 MPFA 分组，检验重投影、输出漂移和风险覆盖关系','G3 冻结同一个编码器，只训练相同容量分割头，并比较 10%、25%、100% 标签量','共享的核心证据是 UPLight 或 ZJU 至少一个任务优于 S0/RGB；偏振的核心证据是打乱 Q/U 后回落','UPLight 与 ZJU 仍需先核查独立许可和冻结 split；任一 Gate 失败就缩小主张，不转向联合多任务或 diffusion'],transition:'最后用已完成、未完成和唯一下一项证据收束',cue:'从左侧 G1→G3 讲执行顺序，再读右侧矩阵和底部 minimum claim'},
   {id:'conclusion',title:'结论与讨论',section:'收束',minutes:0.6,purpose:'收束候选选择反例、物理编码器契约和冻结迁移证据标准',talk:['路线 1 最重要的修正是：Oracle gap 混入候选数量、OCR 不稳定和噪声选择效应，不能当偏振证据','新方案不再逐样本挑一张图，而是用 S0/Q/U/q 学习可重投影、等变、可回退的共享表示','共享编码器尚未训练；下一项证据是 Gate A0 通过后的轻量源任务 pilot，而不是更大的网络','请重点评价 C0–C3 是否足以归因、四类物理约束是否合理、G1–G3 是否真正证明迁移'],transition:'进入提问与讨论',cue:'停顿，指向右侧 NOT TRAINED / NOT STARTED 状态'}
