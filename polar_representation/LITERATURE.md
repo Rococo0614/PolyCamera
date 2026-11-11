@@ -1,6 +1,6 @@
 # 共享偏振表示相关论文地图
 
-**更新日期：** 2026-11-10
+**更新日期：** 2026-11-11
 
 本文区分“已经实际用于本项目设计/实验的工作”和“应补入的直接竞争工作”。论文被列入不等于
 结果已经复现；没有全文或代码时，只记录可公开核实的边界。
@@ -148,3 +148,20 @@ split 和数值结果。若提供论文 PDF，应优先做逐模块和逐表格�
 8. 是否做 RGB/S0、错误偏振、通道数匹配和跨任务迁移对照。
 
 上述第 8 项很可能仍是本项目与单任务双流网络的关键差异。
+
+## 6. 通用预训练模型与 2026 年新增直接竞争工作
+
+完整能力审计、论文内数值、模型选型与机制对照见
+[`FOUNDATION_MODELS.md`](FOUNDATION_MODELS.md)。以下发现修正“仅用小型ImageNet主干，暂不考虑DINO”的早期建议：
+
+| 工作 | 本次核验内容 | 对本项目的影响 |
+|---|---|---|
+| *Revisiting Shape from Polarization in the Era of Vision Foundation Models*，arXiv:2603.04817v1，2026预印本 | 冻结DINOv3 ConvNeXt-Base + 偏振UNet；三真实集平均法向误差12.54°，w/o polar为18.43°，w/o DINO为15.03°；并非每个子集都优于MoGe2 | 小型DINO应进入强预训练基线；噪声增强与预训练/偏振贡献需分别消融 |
+| *Learning Polarization Image Restoration with General Restoration Priors*，arXiv:2609.30728v1，2026预印本 | 归一化Stokes、强度/偏振分支、InstructIR预训练、门控与复合退化恢复 | 与当前模块方案高度相关；“归一化Stokes+预训练+门控”本身不足以作为创新；代码/数据入口本次未确认 |
+| *WindowSeat*，CVPRW 2026 | 通用图像编辑DiT经LoRA适配为反光恢复，公开Qwen-Image-Edit-2509版本和评测脚本 | 新增强RGB-only任务参照，不将不同数据集PSNR混比，不因此启动大模型训练 |
+| *PolarVLM*，arXiv:2605.07574v1，2026预印本 | LLaVA/CLIP偏振分支、物理问答；论文主指标为LLM 1–10分评判 | 预训练语言视觉适配已有先例；不能用VQA评分替代偏振恢复精度 |
+| *SegRGB-X*，arXiv:2603.28023v1，2026预印本 | LoRA-CLIP、多模态共享Transformer、联合分割训练 | 通用多模态分割已有竞争；联合训练仍不同于跨任务冻结迁移 |
+| *DORIS*，arXiv:2610.17991v2，2026-11-10更新 | RGB/偏振/退化语义联合水下恢复；同结构移除偏振后PSNR仅下降约0.1244dB，SSIM反而提高 | 偏振收益具有任务和指标依赖，不能预设一定大幅提升；UPLight分割数据仍不等于水下清晰GT |
+| *PBP-SAM*，Applied Optics 2026，DOI 10.1364/AO.607332 | 仅摘要确认偏振边界提示+SAM adapter/LoRA；全文与数值待核 | SAM可适配偏振已有先例，不代表原始SAM会直接使用偏振测量 |
+
+新的重点应是：**强预训练基线上，输入信息、物理损失、质量门控分别有多少可归因增量，以及同一冻结编码器能否带着增量跨任务迁移。**
