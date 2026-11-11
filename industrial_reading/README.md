@@ -3,7 +3,7 @@
 变化反射条件下工业标识可靠识读的离线前置实验目录。当前阶段只运行公开数据
 代理实验，不把公开文档结果表述为工业喷码实物结论。
 
-## 当前结果（2026-11-09 更新；其余条目为 2026-11-03 首轮）
+## 当前结果（2026-11-11 更新；其余条目为 2026-11-03/09）
 
 - 2026-11-09 增补三项不需要硬件的对照（密集固定虚拟角、强度匹配、噪声零对照），详见
   `14_offline_gate_p_results.md` 第 8 节与 `evidence/offline_extension_controls.json`：
@@ -16,6 +16,9 @@
   `15.14° / 21.24° / 23.69°`（低/中/高噪声）；
 - SHDocs processed 50 文档/800 captures 已通过 SHA-256、全 CRC 与偏振一致性审计；
   平均 pair residual `0.02361`、平均 DoLP `0.03387`；
+- 冻结 E2 字符串审计确认：测试为 7 文档、70 个唯一 GT ROI，在 15 个高光条件下展开为
+  1,034 条；规范化字符串中位数 11、均值 22.3、范围 1–376，因此 absolute exact 不能解释为
+  工业日期/批次码上限，详见 `evidence/shdocs_e2_string_length_audit_v1.json`；
 - 清晰合成 E0 中，Tesseract 对固定 `EXP YYYY-MM-DD` 达到 `99.56%` exact，
   但随机字母数字 `SN` 仅 `64%`，证明主字符集/格式是硬件前置决策；
 - SHDocs EasyOCR 4× 代理中，a–o 测试的 train-best fixed 为 `11.32%`，四方向
@@ -107,6 +110,14 @@ python industrial_reading/scripts/summarize_ocr_records.py \
   --records /path/to/ocr_records.jsonl \
   --conditions a,b,c,d,e,f,g,h,i,j,k,l,m,n,o \
   --output /path/to/e2_summary.json
+
+# 4. 审计 E2 实际使用字符串的长度与重复条件数
+python industrial_reading/scripts/audit_shdocs_e2_strings.py \
+  --archive /path/to/shdocs_processed.zip \
+  --archive-sha256 49457a4afae50fc750328399af708c12570a08c613b1ccfe7f552c6f8acb05c7 \
+  --split industrial_reading/evidence/shdocs_document_split_v1.json \
+  --exclusions industrial_reading/evidence/shdocs_excluded_rois_v1.json \
+  --output industrial_reading/evidence/shdocs_e2_string_length_audit_v1.json
 ```
 
 `camera` 清晰条件和 `a–o` 高光条件必须分开汇总；E2 的 train-best 和 oracle 不得

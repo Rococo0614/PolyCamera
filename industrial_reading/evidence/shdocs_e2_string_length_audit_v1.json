@@ -1,0 +1,85 @@
+{
+  "claim_boundary": "This audits the frozen SHDocs/FUNSD GT-ROI strings used by E2. They are mixed form fields, phrases and paragraphs, not industrial spray codes.",
+  "dataset": {
+    "archive_bytes": 1715393730,
+    "archive_sha256": "49457a4afae50fc750328399af708c12570a08c613b1ccfe7f552c6f8acb05c7",
+    "documents": 50
+  },
+  "date": "2026-11-11",
+  "experiment": "shdocs-e2-string-length-audit-v1",
+  "interpretation": [
+    "The page-6 absolute exact-read rate combines strings from 1 to 376 characters; one normalized character error fails the whole ROI.",
+    "The four analyzer views remain paired on the same ROI and string, so relative fixed-versus-oracle comparisons hold text length constant within each sample.",
+    "Absolute exact-read must not be interpreted as an industrial date/lot-code accuracy ceiling."
+  ],
+  "protocol": {
+    "conditions": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o"
+    ],
+    "exclusions_file_sha256": "5e3093970e5b274b147ab94be5566d5429e1ab8234a068eba65c41c41d8e6a2a",
+    "normalization": "NFKC + uppercase + collapsed whitespace",
+    "regions_per_document": 10,
+    "seed": 20261102,
+    "split_assignment_sha256": "3f1868c879df1112ce145eb711e33e7f441c8a5c8f6a31254b5c23419af74343",
+    "split_file_sha256": "02aae751b2b79cbda32360bf35c519b7549d79abedb880def112ecd4608469c9",
+    "split_version": "shdocs-document-v1"
+  },
+  "proxy_only": true,
+  "source_sha256": {
+    "industrial_reading/scripts/audit_shdocs_e2_strings.py": "9281b337200b6b99d478a7cbd099f650e7311d5708f24e79be309e3c355590fb"
+  },
+  "test_roi_conditions": {
+    "before_exclusions": 1050,
+    "character_length": {
+      "max": 376,
+      "mean": 22.53965183752418,
+      "median": 11.0,
+      "min": 1,
+      "p90": 34,
+      "q1": 7.0,
+      "q3": 19.0
+    },
+    "evaluated": 1034,
+    "excluded": 16
+  },
+  "test_unique_strings": {
+    "annotation_labels": {
+      "answer": 15,
+      "header": 4,
+      "other": 8,
+      "question": 43
+    },
+    "character_length": {
+      "max": 376,
+      "mean": 22.3,
+      "median": 11.0,
+      "min": 1,
+      "p90": 30,
+      "q1": 7.0,
+      "q3": 18.75
+    },
+    "documents": 7,
+    "length_bins": {
+      "1-5": 10,
+      "11-20": 22,
+      "21-40": 9,
+      "41+": 5,
+      "6-10": 24
+    },
+    "regions": 70
+  }
+}
