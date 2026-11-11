@@ -17,7 +17,7 @@
 
 ## 第 3–4 页论文图节选
 
-以下图像只用于说明传统偏振分离方法的历史演进，均在页面内写明作者、年份、出处和图号；版权归原作者与出版方。它们不是本项目实验结果，也不用于重新评测论文性能。
+以下图像只用于说明传统偏振分离的历史演进与现代偏振视觉研究版图，均在页面内写明作者、年份、出处或状态；版权归原作者与出版方。它们不是本项目实验结果，也不用于重新评测论文性能。
 
 | 本地文件 | 原始论文与图号 | 本地处理 |
 |---|---|---|
@@ -27,18 +27,22 @@
 | `04-reflectnet-architecture.webp` | P. Wieschollek et al., *Separating Reflection and Transmission Images in the Wild*, ECCV 2018, [CVF PDF](https://openaccess.thecvf.com/content_ECCV_2018/papers/Patrick_Wieschollek_Separating_Reflection_and_ECCV_2018_paper.pdf), Fig. 4 | 节选 canonical projection 与残差编码器架构，裁除正文和图注后转为 WebP；图内内容未改动 |
 | `04-lei-two-stage.webp` | C. Lei et al., *Polarized Reflection Removal With Perfect Alignment in the Wild*, CVPR 2020, [CVF PDF](https://openaccess.thecvf.com/content_CVPR_2020/papers/Lei_Polarized_Reflection_Removal_With_Perfect_Alignment_in_the_Wild_CVPR_2020_paper.pdf), Fig. 5 | 节选四方向预处理、RNet 与 TNet 两阶段架构，裁除正文和图注后转为 WebP |
 | `04-multibounce-architecture.webp` | R. Li et al., *Reflection Separation via Multi-Bounce Polarization State Tracing*, ECCV 2020, [ECVA PDF](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123580766.pdf), Fig. 2 | 节选 PolarNet、FusionNet 与 PSE 闭环架构，裁除页眉和正文后转为 WebP |
+| `04-dino-sfp-architecture.webp` | C. Li et al., *Revisiting Shape from Polarization in the Era of Vision Foundation Models*, arXiv:2603.04817v1, 2026, [HTML](https://arxiv.org/html/2603.04817v1), Fig. 2 | 下载论文 HTML 中的模型/数据增强架构图，转为 WebP；该工作为预印本，本项目未复现 |
+| `04-general-restoration-priors.webp` | C. Li et al., *Learning Polarization Image Restoration with General Restoration Priors*, arXiv:2609.30728v1, 2026, [HTML](https://arxiv.org/html/2609.30728v1), Fig. 3 | 下载强度—偏振双分支与通用恢复先验迁移架构图，缩放并转为 WebP；该工作为预印本，本项目未复现 |
+| `04-segrgbx-architecture.webp` | *SegRGB-X: General RGB-X Semantic Segmentation Model*, arXiv:2603.28023v1, 2026, [HTML](https://arxiv.org/html/2603.28023v1), Fig. 2 | 下载 MA-CLIP、共享 Transformer 与分割头总体架构图，转为 WebP；该工作为预印本，本项目未复现 |
+| `04-windowseat-teaser.webp` | D. Zakarin et al., *Reflection Removal through Efficient Adaptation of Diffusion Transformers*, arXiv:2512.05000 / CVPRW 2026, [official repository](https://github.com/huawei-bayerlab/windowseat-reflection-removal), teaser | 下载官方仓库 teaser，缩放并转为 WebP；只作强 RGB-only 任务能力参照，不是 PolaRGB 或本项目结果 |
 
 第 3 页 Kong–Tai–Shin 卡片中的流程图为本项目依据 *A Physically-Based Approach to Reflection Separation: From Physical Modeling to Constrained Optimization*, TPAMI 36(2), 2014, DOI [`10.1109/TPAMI.2013.45`](https://doi.org/10.1109/TPAMI.2013.45) 的方法描述与公开摘要重绘，不是论文原图。
 
-第 4 页 Deng et al. 2026 卡片为本项目根据论文题名、出版元数据和已核实的 cross dual-stream / T-R / polarization-restoration 方向重绘，不是论文原图。由于没有开放全文或代码，卡片明确保留输入表示、恢复监督、相机、采集方式、数据集和场景等未知字段。
+`04-reflectnet-architecture.webp` 与 `04-lei-two-stage.webp` 为早期逐论文版本保留资产；当前第 4 页只直接使用 Multi-bounce、DINOv3-SfP、General Restoration Priors、SegRGB-X 与 WindowSeat 图像。早期 Deng 2026 重绘卡片已从主稿移除，相关审计仍保留在 `polar_representation/LITERATURE.md`。
 
 第 5 页 `05-e1b-aolp-{gt,nearest,bilinear}.webp` 由公开 PDD 2025 的 `High/Scene12` 四方向 PNG 生成：使用项目冻结的绿色通道、MPFA 排列 `[[90,45],[135,0]]`、最近邻/3×3 normalized bilinear 和 `linear_stokes`。可视化中色相表示 AoLP、饱和度为 `clip(4×DoLP)`、亮度为共享尺度的 S₀。三张图只是单场景定性示意；其下 Low/Mid/High 表格为每档 40 场景的平均 AoLP MAE，并同时列出完整四方向带噪声、Nearest MPFA 与 Bilinear MPFA，不能把表中数字解释为 Scene12 单图误差。
 
-第 7–9 页新增的 `07-polargb-source.webp`、`08-polargb-{i0,i45,i90,i135}.webp` 与 `09-polargb-mixed-gt.webp` 均派生自公开 PolaRGB processed release 的 test scene 06：输入使用 capture `0032`，透射参考使用该场景 `gt/0000_rgb.png`。只做统一 16:10 裁切、缩放和 WebP 转换；它们是公开数据示例，不是本项目模型输出。PolaRGB 数据许可为 CC BY-NC 4.0。
+第 7–8 页使用的 `07-polargb-source.webp` 与 `08-polargb-{i0,i45,i90,i135}.webp`，以及早期版本保留的 `09-polargb-mixed-gt.webp`，均派生自公开 PolaRGB processed release 的 test scene 06：输入使用 capture `0032`，透射参考使用该场景 `gt/0000_rgb.png`。只做统一 16:10 裁切、缩放和 WebP 转换；它们是公开数据示例，不是本项目模型输出。PolaRGB 数据许可为 CC BY-NC 4.0。
 
 `07-audit-shdocs-pdd.webp` 是本项目将两项已有代理证据并列后的缩略图：左侧来自 `17-shdocs-four-direction-examples.png` 的 SHDocs 真实 DoFP 文字方向差异，右侧来自 PDD `High/Scene12` 的 Bilinear AoLP 派生图；只用于区分选择效应审计与 MPFA 重建审计，不代表同一相机或同一实验。
 
-`07-uplight-paper-fig3.webp` 截取自 Liu et al., *ShareCMP: Polarization-Aware RGB-P Semantic Segmentation*, arXiv:2312.03430v3 / TCSVT 2025, [Figure 3](https://arxiv.org/html/2312.03430v3#S4.F3) 的 UPLight 四方向图像区域。第 7、9 页明确将其标为论文示意与迁移候选，不表示 UPLight 已下载、许可已独立核实或迁移实验已经运行。`09-pdd-reference-bilinear.webp` 为上述 PDD Reference/Bilinear AoLP 图的并列缩略图。
+`07-uplight-paper-fig3.webp` 截取自 Liu et al., *ShareCMP: Polarization-Aware RGB-P Semantic Segmentation*, arXiv:2312.03430v3 / TCSVT 2025, [Figure 3](https://arxiv.org/html/2312.03430v3#S4.F3) 的 UPLight 四方向图像区域。第 7 页明确将其标为论文示意与迁移候选，不表示 UPLight 已下载、许可已独立核实或迁移实验已经运行。`09-pdd-reference-bilinear.webp` 为早期第 9 页保留资产，由上述 PDD Reference/Bilinear AoLP 图并列而成；当前主稿未使用。
 
 ## 本项目原创示意图
 
@@ -55,13 +59,13 @@ BRDF 图均为 HTML/CSS/无文字 SVG 的本项目原创机制示意，不是相
 |---|---|---|
 | 2 | 五类 RGB 失效场景、彩色偏振相机、Stokes、Fresnel、microfacet BRDF 与 T/R 欠定 | LUCID Phoenix PHX050S-QC 产品资料、Sony IMX250MYR / Polarsens 资料、`05_polarization_camera_physical_models.md`、Born & Wolf *Principles of Optics*、Cook–Torrance / Walter 等 microfacet 模型、Schechner / ReflectNet 的半反射层模型；所有图为机制示意，4×4 单元非芯片实际相位图 |
 | 3 | Farid–Schechner–Kong 的传统偏振 T/R 分离演进、共同边界及对学习先验的启发 | 上述三张论文图节选；Farid & Adelson, JOSA A 1999；Schechner et al., ICCV 1999 / JOSA A 2000；Kong et al., TPAMI 2014；方法口径同步见 `polar_representation/LITERATURE.md` |
-| 4 | ReflectNet、Lei 2020、Multi-bounce 与 Deng 2026 的偏振/强度恢复层级及采集方案 | 上述三张论文架构图；对应 ECCV 2018、CVPR 2020、ECCV 2020 原文；Deng et al. 2026 仅使用出版元数据与已核实方向，具体输入、监督和采集字段按“待全文核查”处理；完整审计见 `polar_representation/LITERATURE.md` |
+| 4 | 现代偏振视觉四类版图：任务专用网络、通用预训练＋偏振适配、共享语义感知、强 RGB 竞争者与条件性收益；由此重划本课题创新边界 | Multi-bounce ECCV 2020、PPFT CVPR 2024、PolarFree CVPR 2025、ShareCMP TCSVT 2025、WindowSeat CVPRW 2026，以及 DINOv3-SfP / General Restoration Priors / SegRGB-X / PolarVLM / DORIS 等 2026 预印本；图像来源见上表，论文内数字不跨协议比较，均未作为本项目结果 |
 | 5 | 从任务读出、仪器响应到 DoFP 重建的三段误差源审计：E0 合成 OCR sanity、E1-a 已知 Stokes 仪器矩阵自检、E1-b PDD MPFA/AoLP 误差 | `e0_clean_code_sanity.json`、`e1_synthetic_instrument_recovery.json`、`e1_pdd_simple_baselines.json`；三段使用不同数据与指标，页面明确禁止直接相加为统一“误差份额” |
 | 6 | E2 真实四方向配对增量 → C2 全局亮度/对比度匹配 → C3 噪声选择下限与后端相关剩余信号 → 基础 Selector 和 C1 密集候选控制；由此导向“偏振物理 + 输入质量”联合先验 | 相机为 FLIR BFS-U3-51S5P / Sony IMX250MZR DoFP；公开方向图为作者/SDK 去马赛克后的 8-bit PNG；数字来自 `e0_e2_shdocs_easyocr_scale4.json`、`e0_e2_shdocs_tesseract_scale4.json`、`offline_extension_controls.json` 与 `shdocs_e2_string_length_audit_v1.json`；C1 未训练36路 Selector，只比较固定策略、候选数量与 GT Oracle 上界 |
-| 7 | “数据来源—物理处理—共享编码器—证据 Gate”技术闭环：PolaRGB 源任务，合成/PDD/SHDocs 审计，UPLight/ZJU 冻结迁移候选，`S₀/Q/U/q` 与匹配对照，以及 G1–G3 最小主张 | `polargb_release_v1.json`、`polargb_scene_split_v1.json`、`15_shared_polarization_encoder_pretraining_controls.md` A5、§6、§10；配图为上述 PolaRGB真实输入、SHDocs/PDD代理缩略图和ShareCMP Fig.3；UPLight/ZJU许可与split待核查；该页没有训练或迁移结果 |
-| 8 | `S₀/Q/U` 解析 stem、`q_meas/q_pol` 双质量、强度/偏振/质量三支路编码器、逐尺度质量门控、源任务/冻结迁移头，以及重投影/等变/重组/稳定质量约束 | `15_shared_polarization_encoder_pretraining_controls.md` §10.2–10.3；`05_polarization_camera_physical_models.md`；stem中的四张图为上述PolaRGB scene 06真实processed方向输入；该架构尚未训练 |
-| 9 | G1 PolaRGB源任务归因、G2物理稳定与失败回退、G3 UPLight/ZJU冻结迁移的输入、指标、PASS和FAIL标准；顶部锁定公平预算，底部锁定可主张范围 | `polargb_scene_split_v1.json`；`15_shared_polarization_encoder_pretraining_controls.md` A5、§6、§10.4–10.5；三张缩略图分别为PolaRGB mixed/T GT、PDD Reference/Bilinear和ShareCMP Fig.3论文节选；当前无训练结果 |
-| 10 | 路线 1 代理结果、拟议编码器契约与当前未训练状态总结 | 第 5–9 页上述证据与协议；“0 个已训练共享编码器”是当前项目状态，不是性能结果 |
+| 7 | 通用先验选型与逐层增量路线：PolaRGB / 审计 / 迁移数据角色，MiT-B0 与 DINOv3-Tiny 共享底座候选，InstructIR/NAFNet 与外部任务参照，以及 `B-S₀→B-pol→B-phys→B-full` | `FOUNDATION_MODELS.md` §5–7、`15_shared_polarization_encoder_pretraining_controls.md` 与冻结数据清单；DINOv3-Tiny 29M 为官方 backbone 参数，不含 adapter/head；该页为拟执行路线，无训练结果 |
+| 8 | 一份预训练 S₀/RGB 主干 + 轻量 Q/U 偏振 adapter + `q_meas/q_pol` 质量 adapter；分阶段加入 task、重投影/重组/等变与稳定/质量约束 | `FOUNDATION_MODELS.md` §5.2、§6；`15_shared_polarization_encoder_pretraining_controls.md` §10.2–10.3；四方向图为 PolaRGB processed 公开输入。页面明确指出尚无真实仪器 `A,b` 标定，架构未训练 |
+| 9 | 外部能力表、同底座七版本机制矩阵与 E0–E4 冻结迁移阶梯分离报告；G1–G3 同时给出 PASS/FAIL 主张边界 | `FOUNDATION_MODELS.md` §6、`polargb_scene_split_v1.json` 与 `15_shared_polarization_encoder_pretraining_controls.md`；外部模型不同数据/预算不用于因果归因；当前无训练或迁移结果 |
+| 10 | 路线 1 代理结果、强通用先验起点、逐层增量与当前未训练状态总结 | 第 4–9 页上述文献、证据与协议；“2 个候选 / 7 个机制版本 / 0 个已训练共享编码器”均为方案和当前状态，不是性能结果 |
 
 `14-sim-ambiguity.png` 与 `14-sim-reflection.png` 复制自
 `polar_representation/evidence/images/`，为本项目基于解析灰度 Stokes 层生成的仿真热图，

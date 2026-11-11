@@ -933,6 +933,110 @@
   .gate-final-item{display:grid;align-content:center;padding:.43vh .45vw;background:#fff;color:var(--ink-soft);font:650 clamp(10px,.65vw,12px)/1.22 var(--sans)}.gate-final-item b{display:block;margin-bottom:.15vh;color:var(--success)}
   .gate-final em{display:grid;place-items:center;padding:.42vh .5vw;background:var(--danger);color:#fff;text-align:center;font:750 clamp(10px,.64vw,12px)/1.2 var(--sans);font-style:normal}
 
+  /* 04 · 2024–2026 现代偏振视觉版图 */
+  .modern-landscape-layout{height:100%;display:grid;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) 9.8vh;gap:.8vh}
+  .modern-landscape-grid{min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.7vh .72vw}
+  .landscape-card{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:.48vh;padding:.68vh .62vw;border:1px solid var(--line);border-top:4px solid var(--accent);background:#fff}
+  .landscape-card.prior{border-top-color:var(--info)}.landscape-card.semantic{border-top-color:var(--success)}.landscape-card.boundary{border-top-color:var(--danger)}
+  .landscape-head{display:grid;grid-template-columns:auto 1fr auto;gap:.52vw;align-items:center;padding-bottom:.4vh;border-bottom:1px solid var(--line)}
+  .landscape-head .route-id{color:var(--accent);font:800 clamp(18px,1.32vw,26px)/1 var(--mono)}
+  .landscape-card.prior .route-id{color:var(--info)}.landscape-card.semantic .route-id{color:var(--success)}.landscape-card.boundary .route-id{color:var(--danger)}
+  .landscape-head h2{font:750 clamp(14px,.91vw,18px)/1.16 var(--sans)}
+  .landscape-head p{margin-top:.16vh;color:var(--muted);font:650 clamp(10px,.64vw,12px)/1.14 var(--sans-latin)}
+  .paper-status{padding:.34vh .4vw;background:var(--success-soft);color:var(--success);font:800 clamp(9px,.59vw,11px)/1 var(--mono);letter-spacing:.04em;white-space:nowrap}
+  .paper-status.preprint{background:#fff2d9;color:#855700}.paper-status.mixed{background:var(--accent-soft);color:var(--accent)}
+  .landscape-main{min-height:0;display:grid;grid-template-columns:38% 1fr;gap:.58vw}
+  .landscape-media{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:.24vh;border:1px solid var(--line);background:var(--paper-soft);overflow:hidden}
+  .landscape-media.dual{grid-template-rows:1fr 1fr;gap:.26vh;border:0;background:transparent}
+  .landscape-media.dual figure{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;border:1px solid var(--line);overflow:hidden;background:#fff}
+  .landscape-media img{width:100%;height:100%;display:block;object-fit:contain;background:#fff}
+  .landscape-media.photo img{object-fit:cover;object-position:center 42%}
+  .landscape-media figcaption,.landscape-media>span{padding:.26vh .34vw;background:#fff;color:var(--muted);font:650 clamp(9px,.58vw,11px)/1.12 var(--sans)}
+  .landscape-paper-list{min-height:0;display:grid;grid-template-rows:repeat(3,1fr);gap:.35vh}
+  .landscape-paper{display:grid;grid-template-columns:6.7em 1fr;gap:.4vw;align-items:center;padding:.42vh .42vw;background:var(--paper-soft)}
+  .landscape-paper b{color:var(--accent);font:800 clamp(9px,.6vw,11px)/1.08 var(--mono)}
+  .landscape-card.prior .landscape-paper b{color:var(--info)}.landscape-card.semantic .landscape-paper b{color:var(--success)}.landscape-card.boundary .landscape-paper b{color:var(--danger)}
+  .landscape-paper strong{display:block;font:750 clamp(10px,.67vw,13px)/1.12 var(--sans)}
+  .landscape-paper span{display:block;margin-top:.14vh;color:var(--muted);font:600 clamp(9px,.58vw,11px)/1.16 var(--sans)}
+  .landscape-verdict{padding:.45vh .44vw;background:var(--accent-pale);color:var(--ink-soft);font:650 clamp(10px,.64vw,12px)/1.2 var(--sans)}
+  .landscape-verdict b{color:var(--accent)}.landscape-card.prior .landscape-verdict b{color:var(--info)}.landscape-card.semantic .landscape-verdict b{color:var(--success)}.landscape-card.boundary .landscape-verdict b{color:var(--danger)}
+  .novelty-boundary{display:grid;grid-template-columns:auto 1fr 1.18fr;gap:.48vw;align-items:stretch;padding:.58vh .6vw;background:var(--danger-soft);border-left:4px solid var(--danger)}
+  .novelty-boundary>strong{display:grid;place-items:center;padding:0 .35vw;color:var(--danger);font:800 clamp(10px,.69vw,13px)/1.15 var(--mono);text-align:center}
+  .novelty-cell{display:grid;align-content:center;padding:.46vh .5vw;background:#fff;color:var(--ink-soft);font:650 clamp(10px,.66vw,12px)/1.22 var(--sans)}
+  .novelty-cell b{display:block;margin-bottom:.16vh;color:var(--danger)}
+  .novelty-cell.target{background:var(--accent);color:#fff}.novelty-cell.target b{color:#fff}
+
+  /* 07 · 通用先验选型与逐层增量路线 */
+  .prior-route-layout{height:100%;display:grid;grid-template-columns:1fr;grid-template-rows:7.2vh minmax(0,1fr) 9.6vh;gap:.82vh}
+  .route-thesis{display:grid;grid-template-columns:auto 1fr auto;gap:.72vw;align-items:center;padding:.66vh .7vw;background:var(--accent);color:#fff}
+  .route-thesis strong{font:800 clamp(10px,.7vw,13px)/1.15 var(--mono);letter-spacing:.05em}.route-thesis span{font:700 clamp(13px,.86vw,17px)/1.28 var(--sans)}
+  .route-thesis em{padding:.38vh .46vw;background:rgba(255,255,255,.14);font:750 clamp(9px,.62vw,11px)/1 var(--mono);font-style:normal;white-space:nowrap}
+  .prior-route-grid{min-height:0;display:grid;grid-template-columns:1.02fr auto 1.08fr auto 1.14fr auto 1.03fr;gap:.45vw;align-items:stretch}
+  .route-arrow{display:grid;place-items:center;color:var(--accent);font:800 clamp(19px,1.3vw,25px)/1 var(--sans)}
+  .route-stage{height:100%;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:.48vh;padding:.66vh .58vw;border:1px solid var(--line);border-top:4px solid var(--info);background:#fff}
+  .route-stage.backbones{border-top-color:var(--accent)}.route-stage.ladder{border-top-color:var(--success)}.route-stage.gates{border-top-color:var(--ink)}
+  .route-stage-head{display:grid;grid-template-columns:auto 1fr;gap:.5vw;align-items:center;padding-bottom:.4vh;border-bottom:1px solid var(--line)}
+  .route-stage-head .no{color:var(--line-strong);font:800 clamp(23px,1.65vw,32px)/1 var(--mono)}
+  .route-stage-head h2{font:750 clamp(14px,.9vw,17px)/1.15 var(--sans)}.route-stage-head span{display:block;margin-top:.16vh;color:var(--muted);font:700 clamp(9px,.58vw,11px)/1 var(--mono)}
+  .route-source-stack,.backbone-stack,.adapt-ladder,.route-gate-stack{min-height:0;display:grid;gap:.38vh}
+  .route-source-stack{grid-template-rows:repeat(3,1fr)}.backbone-stack{grid-template-rows:repeat(4,1fr)}.adapt-ladder{grid-template-rows:repeat(4,1fr) auto}.route-gate-stack{grid-template-rows:repeat(3,1fr)}
+  .route-source{display:grid;grid-template-columns:4.2em 5em 1fr;gap:.3vw;align-items:center;padding:.42vh .4vw;background:var(--paper-soft)}
+  .route-source img{width:100%;height:5vh;min-height:38px;display:block;object-fit:cover;border:1px solid var(--line)}
+  .route-source b,.backbone-item b,.adapt-step b,.route-gate b{color:var(--accent);font:800 clamp(9px,.59vw,11px)/1.08 var(--mono)}
+  .route-source strong,.backbone-item strong,.adapt-step strong,.route-gate strong{display:block;font:750 clamp(10px,.67vw,13px)/1.13 var(--sans)}
+  .route-source span,.backbone-item span,.adapt-step span,.route-gate span{display:block;margin-top:.14vh;color:var(--muted);font:600 clamp(9px,.58vw,11px)/1.17 var(--sans)}
+  .backbone-item,.adapt-step,.route-gate{display:grid;grid-template-columns:4.6em 1fr;gap:.4vw;align-items:center;padding:.44vh .42vw;background:var(--paper-soft)}
+  .backbone-item.primary{background:var(--accent-pale);border-left:3px solid var(--accent)}.backbone-item.reference{background:var(--info-soft)}
+  .adapt-step{grid-template-columns:4.3em 1fr;border-left:3px solid var(--success)}.adapt-step.control{border-left-color:var(--line-strong);background:#f5f2f5}
+  .adapt-step b{color:var(--success)}.adapt-step.control b{color:var(--muted)}
+  .delta-triplet{display:grid;grid-template-columns:repeat(3,1fr);gap:.22vw}.delta-triplet span{padding:.36vh .2vw;background:var(--success-soft);color:var(--success);text-align:center;font:800 clamp(10px,.68vw,12px)/1.05 var(--equation)}
+  .route-gate{grid-template-columns:2.7em 1fr;border-left:3px solid var(--accent)}.route-gate:nth-child(2){border-left-color:var(--info)}.route-gate:nth-child(3){border-left-color:var(--success)}
+  .route-output{padding:.43vh .42vw;border-top:1px solid var(--line);background:#fff;color:var(--ink-soft);font:650 clamp(9px,.6vw,11px)/1.18 var(--sans)}.route-output b{color:var(--accent);font-family:var(--mono)}
+  .route-bottom{display:grid;grid-template-columns:auto 1.14fr 1.16fr 1.05fr;gap:.42vw;align-items:stretch;padding:.58vh .6vw;background:var(--success-soft);border-left:4px solid var(--success)}
+  .route-bottom>strong{display:grid;place-items:center;padding:0 .32vw;color:var(--success);font:800 clamp(10px,.68vw,13px)/1.15 var(--mono);text-align:center}
+  .route-bottom-cell{display:grid;align-content:center;padding:.44vh .46vw;background:#fff;color:var(--ink-soft);font:650 clamp(10px,.65vw,12px)/1.22 var(--sans)}.route-bottom-cell b{display:block;margin-bottom:.15vh;color:var(--success)}
+  .route-bottom-cell.status{background:var(--danger-soft);color:var(--danger)}.route-bottom-cell.status b{color:var(--danger)}
+
+  /* 08 · 单预训练主干 + 轻量偏振/质量适配 */
+  .hybrid-encoder-layout{height:100%;display:grid;grid-template-columns:1fr;grid-template-rows:7.2vh 30vh minmax(0,1fr) 8.6vh;gap:.8vh}
+  .hybrid-principles{display:grid;grid-template-columns:repeat(4,1fr);gap:.48vw}
+  .hybrid-principle{display:grid;grid-template-columns:auto 1fr;gap:.46vw;align-items:center;padding:.56vh .56vw;border-top:3px solid var(--accent);background:#fff}
+  .hybrid-principle:nth-child(2){border-top-color:var(--info)}.hybrid-principle:nth-child(3){border-top-color:var(--success)}.hybrid-principle:nth-child(4){border-top-color:var(--danger)}
+  .hybrid-principle b{color:var(--accent);font:800 clamp(9px,.61vw,12px)/1 var(--mono)}.hybrid-principle strong{display:block;font:750 clamp(11px,.73vw,14px)/1.14 var(--sans)}.hybrid-principle span{display:block;margin-top:.14vh;color:var(--muted);font:600 clamp(9px,.58vw,11px)/1.17 var(--sans)}
+  .hybrid-core-flow{min-height:0;display:grid;grid-template-columns:.88fr auto 1.14fr auto 1.16fr auto .92fr;gap:.44vw;align-items:stretch}
+  .hybrid-arrow{display:grid;place-items:center;color:var(--accent);font:800 clamp(19px,1.28vw,25px)/1 var(--sans)}
+  .hybrid-block{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);gap:.42vh;padding:.64vh .56vw;border:1px solid var(--line);border-top:4px solid var(--accent);background:#fff}
+  .hybrid-block.backbone{border-top-color:var(--info)}.hybrid-block.adapters{border-top-color:var(--success)}.hybrid-block.heads{border-top-color:var(--ink)}
+  .hybrid-head{padding-bottom:.36vh;border-bottom:1px solid var(--line)}.hybrid-head span{display:block;color:var(--muted);font:800 clamp(9px,.58vw,11px)/1 var(--mono)}.hybrid-head h2{margin-top:.2vh;font:750 clamp(13px,.85vw,16px)/1.14 var(--sans)}
+  .hybrid-stem{min-height:0;display:grid;grid-template-rows:1.18fr .82fr .82fr;gap:.34vh}
+  .hybrid-input{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);gap:.22vh;padding:.34vh .3vw;background:var(--paper-soft)}.hybrid-input>span{color:var(--accent);font:800 clamp(8px,.55vw,10px)/1 var(--mono)}
+  .hybrid-input-strip{min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:.14vw}.hybrid-input-strip figure{position:relative;min-height:0;overflow:hidden}.hybrid-input-strip img{width:100%;height:100%;display:block;object-fit:cover}.hybrid-input-strip figcaption{position:absolute;left:0;bottom:0;padding:.16vh .2vw;background:rgba(255,255,255,.9);color:var(--accent);font:800 clamp(8px,.52vw,9px)/1 var(--mono)}
+  .hybrid-node,.adapter-node,.head-node{display:grid;align-content:center;padding:.42vh .38vw;background:var(--paper-soft)}
+  .hybrid-node b,.adapter-node b,.head-node b{color:var(--accent);font:800 clamp(9px,.59vw,11px)/1 var(--mono)}.hybrid-node strong,.adapter-node strong,.head-node strong{display:block;margin-top:.18vh;font:750 clamp(10px,.67vw,13px)/1.13 var(--sans)}.hybrid-node span,.adapter-node span,.head-node span{display:block;margin-top:.14vh;color:var(--muted);font:600 clamp(9px,.57vw,11px)/1.17 var(--sans)}
+  .backbone-body{min-height:0;display:grid;grid-template-rows:1fr 1fr auto;gap:.35vh}.backbone-candidate{display:grid;grid-template-columns:4.5em 1fr;gap:.4vw;align-items:center;padding:.44vh .4vw;background:var(--info-soft);border-left:3px solid var(--info)}.backbone-candidate.alt{background:var(--paper-soft);border-left-color:var(--accent)}.backbone-candidate b{color:var(--info);font:800 clamp(9px,.59vw,11px)/1 var(--mono)}.backbone-candidate.alt b{color:var(--accent)}.backbone-candidate strong{display:block;font:750 clamp(10px,.68vw,13px)/1.14 var(--sans)}.backbone-candidate span{display:block;margin-top:.15vh;color:var(--muted);font:600 clamp(9px,.58vw,11px)/1.17 var(--sans)}
+  .backbone-training{padding:.38vh .36vw;background:#fff2d9;color:#6f4d09;text-align:center;font:750 clamp(9px,.59vw,11px)/1.15 var(--sans)}
+  .adapter-body{min-height:0;display:grid;grid-template-rows:1fr 1fr auto auto;gap:.34vh}.adapter-node{grid-template-columns:4.2em 1fr;gap:.4vw;align-items:center;border-left:3px solid var(--success)}.adapter-node.quality{border-left-color:var(--info);background:var(--info-soft)}.adapter-node b{color:var(--success)}.adapter-node.quality b{color:var(--info)}
+  .fusion-equation-new{padding:.4vh .34vw;background:var(--success-soft);color:var(--success);text-align:center;font:italic 650 clamp(13px,.9vw,17px)/1.14 var(--equation)}
+  .equiv-warning{padding:.36vh .34vw;background:var(--danger-soft);color:var(--danger);font:700 clamp(9px,.59vw,11px)/1.16 var(--sans)}
+  .heads-body{min-height:0;display:grid;grid-template-rows:1fr 1fr auto;gap:.35vh}.head-node{background:var(--paper-soft)}.head-lock-new{padding:.36vh .34vw;background:var(--danger-soft);color:var(--danger);text-align:center;font:750 clamp(9px,.58vw,11px)/1.14 var(--sans)}
+  .hybrid-objective-grid{min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:.48vw}
+  .objective-card{display:grid;grid-template-rows:auto auto 1fr;gap:.38vh;padding:.64vh .56vw;border:1px solid var(--line);background:#fff}.objective-card .oid{color:var(--accent);font:800 clamp(10px,.65vw,12px)/1 var(--mono)}.objective-card h3{font:750 clamp(12px,.8vw,15px)/1.14 var(--sans)}.objective-card div{display:grid;align-content:center;padding:.48vh .4vw;background:var(--accent-pale);color:var(--ink-soft);font:650 clamp(10px,.64vw,12px)/1.22 var(--sans)}.objective-card .math{font:italic 650 clamp(13px,.88vw,17px)/1.18 var(--equation);color:var(--ink);text-align:center}.objective-card small{display:block;margin-top:.4vh;color:var(--muted);font:650 clamp(9px,.58vw,11px)/1.18 var(--sans)}
+  .hybrid-boundary-rail{display:grid;grid-template-columns:auto 1fr auto 1fr auto 1.2fr;gap:.44vw;align-items:center;padding:.55vh .6vw;background:var(--danger-soft);border-left:4px solid var(--danger)}
+  .hybrid-boundary-rail>strong{color:var(--danger);font:800 clamp(10px,.68vw,13px)/1.15 var(--mono)}.hybrid-boundary-rail span{padding:.4vh .42vw;background:#fff;color:var(--ink-soft);font:650 clamp(10px,.64vw,12px)/1.2 var(--sans)}.hybrid-boundary-rail em{color:var(--danger);font:800 clamp(15px,1vw,19px)/1 var(--sans);font-style:normal}
+
+  /* 09 · 外部能力、同底座归因与冻结迁移分离报告 */
+  .proof-separation-layout{height:100%;display:grid;grid-template-columns:1fr;grid-template-rows:7.1vh minmax(0,1fr) 9.6vh;gap:.8vh}
+  .proof-lock{display:grid;grid-template-columns:auto repeat(6,1fr) auto;gap:.34vw;align-items:stretch;padding:.58vh .6vw;background:var(--accent);color:#fff}.proof-lock>strong{display:grid;place-items:center;padding:0 .3vw;font:800 clamp(10px,.68vw,13px)/1.15 var(--mono)}.proof-lock span{display:grid;place-items:center;padding:.36vh .28vw;background:rgba(255,255,255,.12);text-align:center;font:700 clamp(9px,.58vw,11px)/1.12 var(--sans)}.proof-lock em{display:grid;place-items:center;padding:0 .4vw;background:rgba(255,255,255,.15);font:750 clamp(9px,.58vw,11px)/1.12 var(--mono);font-style:normal;white-space:nowrap}
+  .proof-three{min-height:0;display:grid;grid-template-columns:.86fr 1.22fr 1fr;gap:.62vw}
+  .proof-panel{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:.46vh;padding:.66vh .58vw;border:1px solid var(--line);border-top:4px solid var(--accent);background:#fff}.proof-panel.mechanism{border-top-color:var(--info)}.proof-panel.transfer{border-top-color:var(--success)}
+  .proof-panel-head{display:grid;grid-template-columns:auto 1fr;gap:.46vw;align-items:center;padding-bottom:.4vh;border-bottom:1px solid var(--line)}.proof-panel-head .pid{color:var(--accent);font:800 clamp(20px,1.42vw,28px)/1 var(--mono)}.proof-panel.mechanism .pid{color:var(--info)}.proof-panel.transfer .pid{color:var(--success)}.proof-panel-head h2{font:750 clamp(13px,.88vw,17px)/1.14 var(--sans)}.proof-panel-head p{margin-top:.16vh;color:var(--muted);font:650 clamp(9px,.58vw,11px)/1.14 var(--sans)}
+  .external-stack{min-height:0;display:grid;grid-template-rows:repeat(4,1fr);gap:.36vh}.external-row{display:grid;grid-template-columns:6.1em 4.2em 1fr;gap:.34vw;align-items:center;padding:.42vh .4vw;background:var(--paper-soft)}.external-row b{color:var(--accent);font:800 clamp(9px,.59vw,11px)/1.08 var(--mono)}.external-row strong{font:750 clamp(10px,.65vw,12px)/1.12 var(--sans)}.external-row span{color:var(--muted);font:600 clamp(9px,.57vw,11px)/1.16 var(--sans)}
+  .proof-panel-note{padding:.44vh .42vw;background:var(--danger-soft);color:var(--danger);font:700 clamp(9px,.61vw,11px)/1.2 var(--sans)}.proof-panel.mechanism .proof-panel-note{background:var(--info-soft);color:var(--info)}.proof-panel.transfer .proof-panel-note{background:var(--success-soft);color:var(--success)}
+  .mechanism-matrix{width:100%;height:100%;table-layout:fixed}.mechanism-matrix th,.mechanism-matrix td{padding:.35vh .34vw;font-size:clamp(10px,.63vw,12px);line-height:1.15}.mechanism-matrix th:first-child,.mechanism-matrix td:first-child{width:5.3em}.mechanism-matrix th:nth-child(2),.mechanism-matrix td:nth-child(2){width:9.3em}.mechanism-matrix tr.control td{background:#f5f2f5;color:var(--muted)}.mechanism-matrix tr.key td{background:var(--accent-pale);color:var(--ink);font-weight:700}.mechanism-matrix tr.full td{background:var(--success-soft);color:var(--success);font-weight:750}
+  .transfer-stack{min-height:0;display:grid;grid-template-rows:repeat(5,1fr) auto;gap:.34vh}.transfer-step{display:grid;grid-template-columns:3.2em 1fr;gap:.4vw;align-items:center;padding:.4vh .4vw;background:var(--paper-soft);border-left:3px solid var(--line-strong)}.transfer-step:nth-child(2){border-left-color:var(--accent)}.transfer-step:nth-child(3){border-left-color:var(--info)}.transfer-step:nth-child(4){border-left-color:var(--success)}.transfer-step:nth-child(5){border-left-color:var(--ink)}.transfer-step b{color:var(--success);font:800 clamp(9px,.59vw,11px)/1 var(--mono)}.transfer-step strong{display:block;font:750 clamp(10px,.66vw,12px)/1.12 var(--sans)}.transfer-step span{display:block;margin-top:.13vh;color:var(--muted);font:600 clamp(9px,.57vw,11px)/1.15 var(--sans)}
+  .transfer-protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:.22vw}.transfer-protocol span{padding:.3vh .2vw;background:var(--success-soft);color:var(--success);text-align:center;font:750 clamp(8px,.54vw,10px)/1.1 var(--sans)}
+  .proof-bottom{display:grid;grid-template-columns:auto repeat(3,1fr);gap:.42vw;align-items:stretch;padding:.58vh .6vw;background:var(--success-soft);border-left:4px solid var(--success)}.proof-bottom>strong{display:grid;place-items:center;padding:0 .32vw;color:var(--success);font:800 clamp(10px,.68vw,13px)/1.15 var(--mono);text-align:center}.proof-gate{display:grid;align-content:center;padding:.44vh .46vw;background:#fff;color:var(--ink-soft);font:650 clamp(10px,.65vw,12px)/1.22 var(--sans)}.proof-gate b{display:block;margin-bottom:.15vh;color:var(--success)}.proof-gate.stop{background:var(--danger-soft);color:var(--danger)}.proof-gate.stop b{color:var(--danger)}
+
   /* 10 · 结果式收束 */
   .compact-closing{height:100%;display:grid;grid-template-columns:63% 1fr;background:var(--accent);color:#fff}
   .compact-closing-main{display:grid;grid-template-rows:auto auto 1fr auto;gap:1.5vh;padding:5.2vh 4.4vw;position:relative;overflow:hidden}
@@ -1172,17 +1276,67 @@
   </div></main><footer class="thu-footer"><span>原图均为学术引用节选并在 SOURCES.md 标注图号；Kong 框图为本项目依据 TPAMI 2014 方法描述重绘</span><span class="thu-footer-line"></span><span class="thu-page-no">03 / 10</span></footer></div>
 </section>
 
-<section class="slide soft" data-layout="THU04" data-animate="academic" data-slide-id="polarized-reflection-networks">
-  <div class="thu-page"><header class="thu-header"><div><div class="thu-section">三、前人工作（二）· 偏振反光网络</div><h1 class="thu-title">四类网络的关键差异：偏振只是输入，还是被恢复并参与物理重投影</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>网络与数据</strong><span>NETWORK &amp; CAPTURE</span></div></div></header>
-  <main class="thu-content tight"><div class="network-work-layout research-map">
-    <div class="network-paper-grid" data-anim>
-      <article class="network-paper"><div class="network-paper-head"><span class="year">2018</span><div><h2>ReflectNet · NVIDIA</h2><p>Wieschollek et al. · intensity separation</p></div><span class="venue">ECCV</span></div><div class="network-paper-main"><figure class="network-method-figure"><img src="images/04-reflectnet-architecture.webp" data-image-slot="thu04-reflectnet" alt="ReflectNet 原论文图 4，包含 canonical projection layer、编码器解码器和残差层输出"><figcaption>原论文 Fig. 4 · canonical projection + residual</figcaption></figure><div class="network-detail-stack"><div class="network-detail"><strong>恢复方案</strong><p>3 张 RGB 偏振图先投影到 I⊥ / I∥；网络预测 RGB 残差 R̃/T̃ 与权重 ξ，合成强度 R̂/T̂。<b>不输出四方向 T/R。</b></p></div><div class="network-detail capture"><strong>数据采集</strong><p>训练为 PLACE2 合成：HDR、非刚性变化、曲面与角度误差。URD 使用 Alpha 6000 / EOS 7D + 镜前线偏振片手动旋转，顺序采集城市玻璃场景。</p></div></div></div><div class="network-paper-foot"><span class="network-chip capture">ROTATING POLARIZER</span><span class="network-chip">P → INTENSITY</span><span class="network-cite">[5] · URD 28</span></div></article>
-      <article class="network-paper"><div class="network-paper-head"><span class="year">2020</span><div><h2>Perfect Alignment</h2><p>Lei et al. · reflection-first two-stage</p></div><span class="venue">CVPR</span></div><div class="network-paper-main"><figure class="network-method-figure"><img src="images/04-lei-two-stage.webp" data-image-slot="thu04-lei-two-stage" alt="Lei 等原论文图 5，四方向偏振预处理后先经 RNet 估计反射，再经 TNet 估计透射"><figcaption>原论文 Fig. 5 · RNet → R̂ → TNet → T̂</figcaption></figure><div class="network-detail-stack"><div class="network-detail"><strong>恢复方案</strong><p>I₀/I₄₅/I₉₀/I₁₃₅ + I/ρ/φ/O → RNet 估强度 R̂，再由 TNet 估强度 T̂；PNCC + perceptual loss。<b>输出为单通道强度层。</b></p></div><div class="network-detail capture"><strong>数据采集</strong><p>PHX050S-P / IMX250MZR 单色 DoFP，一次曝光四方向。黑布挡住 T 得 R，再拍 M，在线性 RAW 域取 T=M−R；807 组、&gt;100 类日常玻璃。</p></div></div></div><div class="network-paper-foot"><span class="network-chip capture">SNAPSHOT MONO DoFP</span><span class="network-chip">R → T INTENSITY</span><span class="network-cite">[7] · RAW M-R</span></div></article>
-      <article class="network-paper"><div class="network-paper-head"><span class="year">2020</span><div><h2>Multi-bounce State Tracing</h2><p>Li et al. · polarized layers + physical loop</p></div><span class="venue">ECCV</span></div><div class="network-paper-main"><figure class="network-method-figure"><img src="images/04-multibounce-architecture.webp" data-image-slot="thu04-multibounce" alt="Multi-bounce 原论文图 2，PolarNet、FusionNet 与偏振仿真引擎构成闭环"><figcaption>原论文 Fig. 2 · PolarNet + FusionNet + PSE</figcaption></figure><div class="network-detail-stack"><div class="network-detail"><strong>恢复方案</strong><p>PolarNet 逐角预测 {R̂φ,T̂φ}；FusionNet 得最终彩色强度 R̂/T̂；PSE 用 Stokes/Mueller 多次反射模型重投影四方向，形成显式物理闭环。</p></div><div class="network-detail capture"><strong>数据采集</strong><p>PHX050S-Q / IMX250MYR 彩色 DoFP，一次曝光四方向。10k 合成 + 26 个静态实景；每景无玻璃 GT 与 6–12 个不同玻璃角度/位置混合图。</p></div></div></div><div class="network-paper-foot"><span class="network-chip capture">SNAPSHOT COLOR DoFP</span><span class="network-chip physics">P → P + I · RERENDER</span><span class="network-cite">[8] · 13/13 scenes</span></div></article>
-      <article class="network-paper deng"><div class="network-paper-head"><span class="year">2026</span><div><h2>Cross Dual-Stream</h2><p>Deng et al. · polarization restoration</p></div><span class="venue">KBS</span></div><div class="network-paper-main"><div class="network-method-figure"><div class="cross-stream-figure"><div class="cross-stream"><strong>Visual stream</strong><span>T / R</span></div><span class="cross-stream-arrow">⇄</span><div class="cross-stream"><strong>Polar stream</strong><span>restoration</span></div><div class="cross-stream-output">Cross interaction · joint objective</div></div><div class="network-method-caption">据题名与已确认结构重绘；非论文原图</div></div><div class="network-detail-stack"><div class="network-detail"><strong>已核实</strong><p>cross dual-stream、T/R 估计与偏振信息恢复属于联合目标；因此“双流 + T/R + polarization restoration”已被覆盖。</p></div><div class="network-detail"><strong>仍待核实</strong><p>具体四方向 / Stokes 输入、恢复监督量、相机型号、DoFP 或旋转偏振片、数据集 split 与采集场景，公开索引均未给出。</p></div></div></div><div class="network-paper-foot"><span class="network-chip pending">FULL TEXT REQUIRED</span><span class="network-chip pending">CAPTURE ?</span><span class="network-cite">[13] · DOI 115811</span></div></article>
-    </div>
-    <div class="network-audit" data-anim><strong>读图结论</strong><div class="network-audit-item"><b>采集方式在演进</b>ReflectNet 是普通相机 + 手动旋转偏振片；Lei 与 Multi-bounce 已转为单曝光 DoFP，减少动态错位。</div><div class="network-audit-item"><b>输出物理层级不同</b>ReflectNet / Lei 主要恢复强度 T/R；Multi-bounce 进一步预测逐角层并用 PSE 重投影；Deng 的精确恢复量尚待全文。</div><div class="network-audit-item"><b>对本课题的约束</b>“输入含偏振”不等于“表示保留偏振”。必须分开审计采集硬件、强度输出、偏振输出与重投影一致性。</div></div>
-  </div></main><footer class="thu-footer"><span>图源：ReflectNet Fig. 4；Lei et al. Fig. 5；Li et al. Fig. 2；Deng 2026 仅报告可公开核实字段，未知项不推测</span><span class="thu-footer-line"></span><span class="thu-page-no">04 / 10</span></footer></div>
+<section class="slide soft" data-layout="THU04" data-animate="academic" data-slide-id="modern-polarization-landscape">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">三、前人工作（二）· 现代偏振视觉</div><h1 class="thu-title">2024–2026：通用视觉先验适配已成趋势，“双分支 + 门控”不能再单独构成创新</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>研究版图</strong><span>MODERN LANDSCAPE</span></div></div></header>
+    <main class="thu-content tight"><div class="modern-landscape-layout research-map">
+      <div class="modern-landscape-grid" data-anim>
+        <article class="landscape-card task">
+          <div class="landscape-head"><span class="route-id">A</span><div><h2>任务专用偏振网络已成熟</h2><p>REFLECTION / RESTORATION</p></div><span class="paper-status">PUBLISHED</span></div>
+          <div class="landscape-main">
+            <figure class="landscape-media"><img src="images/04-multibounce-architecture.webp" data-image-slot="thu04-task-specific" alt="Multi-bounce论文中PolarNet、FusionNet与偏振状态重投影闭环架构"><figcaption>Multi-bounce · ECCV 2020 · 原论文 Fig. 2</figcaption></figure>
+            <div class="landscape-paper-list">
+              <div class="landscape-paper"><b>2018–20</b><div><strong>ReflectNet / Lei</strong><span>偏振输入可提升强度 T/R 恢复，但输出层级与采集协议不同。</span></div></div>
+              <div class="landscape-paper"><b>ECCV 20</b><div><strong>Multi-bounce</strong><span>逐角 T/R + Stokes/Mueller 重投影，物理闭环已被明确提出。</span></div></div>
+              <div class="landscape-paper"><b>CVPR 25</b><div><strong>PolarFree</strong><span>论文消融：去偏振 21.56 → 完整 22.44 dB；属于任务专用两阶段模型。</span></div></div>
+            </div>
+          </div>
+          <div class="landscape-verdict"><b>已覆盖：</b>T/R、偏振层恢复、重投影与生成先验；仍不是“同一编码器冻结跨任务”。</div>
+        </article>
+        <article class="landscape-card prior">
+          <div class="landscape-head"><span class="route-id">B</span><div><h2>通用预训练 + 偏振适配</h2><p>FOUNDATION PRIOR + ADAPTER</p></div><span class="paper-status preprint">MIXED STATUS</span></div>
+          <div class="landscape-main">
+            <div class="landscape-media dual">
+              <figure><img src="images/04-dino-sfp-architecture.webp" data-image-slot="thu04-dino-sfp" alt="2026年DINOv3表面法向预印本中冻结DINO分支与偏振UNet融合架构"><figcaption>DINOv3-SfP · arXiv 2026</figcaption></figure>
+              <figure><img src="images/04-general-restoration-priors.webp" data-image-slot="thu04-general-restoration" alt="2026年通用恢复先验迁移到偏振图像恢复的双分支与门控架构"><figcaption>General Restoration Priors · arXiv 2026</figcaption></figure>
+            </div>
+            <div class="landscape-paper-list">
+              <div class="landscape-paper"><b>CVPR 24</b><div><strong>PPFT</strong><span>CompletionFormer + 偏振 prompt；同架构 RGB→偏振 guidance：33.06→28.63 mm。</span></div></div>
+              <div class="landscape-paper"><b>ARXIV 26</b><div><strong>DINOv3-SfP</strong><span>冻结 DINOv3 + 偏振分支；论文 Avg 12.54°，w/o polar 18.43°。</span></div></div>
+              <div class="landscape-paper"><b>ARXIV 26</b><div><strong>General Restoration Priors</strong><span>归一化 Stokes、InstructIR、双分支与门控均已有直接消融。</span></div></div>
+            </div>
+          </div>
+          <div class="landscape-verdict"><b>直接约束：</b>预训练、归一化 Stokes、多分支和门控只能作为起点，不能单独作为贡献。</div>
+        </article>
+        <article class="landscape-card semantic">
+          <div class="landscape-head"><span class="route-id">C</span><div><h2>共享语义与多模态感知扩展</h2><p>SEGMENTATION / VLM / PROMPT</p></div><span class="paper-status mixed">PUBLISHED + PREPRINT</span></div>
+          <div class="landscape-main">
+            <figure class="landscape-media"><img src="images/04-segrgbx-architecture.webp" data-image-slot="thu04-segrgbx" alt="SegRGB-X预印本中模态感知CLIP、共享Transformer与多任务分割架构"><figcaption>SegRGB-X · arXiv 2026 · 论文架构</figcaption></figure>
+            <div class="landscape-paper-list">
+              <div class="landscape-paper"><b>TCSVT 25</b><div><strong>ShareCMP</strong><span>ImageNet-MiT + 四方向 PGA；UPLight / ZJU 论文内 mIoU 92.45 / 92.40。</span></div></div>
+              <div class="landscape-paper"><b>ARXIV 26</b><div><strong>SegRGB-X</strong><span>模态 LoRA-CLIP + 共享 Transformer；五数据集联合训练而非冻结迁移。</span></div></div>
+              <div class="landscape-paper"><b>2026</b><div><strong>PolarVLM / PBP-SAM</strong><span>语言物理问答和边界 prompt 已出现；评价口径不同于 Stokes / T/R 真值。</span></div></div>
+            </div>
+          </div>
+          <div class="landscape-verdict"><b>仍需区分：</b>架构内共享、联合训练与“源任务学习后冻结同一 E 跨任务”不是同一证据。</div>
+        </article>
+        <article class="landscape-card boundary">
+          <div class="landscape-head"><span class="route-id">D</span><div><h2>强 RGB 竞争者与条件性收益</h2><p>CAPABILITY BASELINE / FAILURE BOUNDARY</p></div><span class="paper-status preprint">DO NOT CROSS-RANK</span></div>
+          <div class="landscape-main">
+            <figure class="landscape-media photo"><img src="images/04-windowseat-teaser.webp" data-image-slot="thu04-windowseat" alt="WindowSeat官方项目图中单张RGB反光图与去反光结果对比"><figcaption>WindowSeat · CVPRW 2026 · 官方项目图</figcaption></figure>
+            <div class="landscape-paper-list">
+              <div class="landscape-paper"><b>CVPRW 26</b><div><strong>WindowSeat</strong><span>通用图像编辑 DiT 经 LoRA 适配做单图去反光；是强 RGB-only 能力参照。</span></div></div>
+              <div class="landscape-paper"><b>ARXIV 26</b><div><strong>DORIS</strong><span>同模型偏振消融仅 +0.1244 dB，SSIM 反降：收益具有任务/指标依赖。</span></div></div>
+              <div class="landscape-paper"><b>评测规则</b><div><strong>能力 ≠ 机制归因</strong><span>不同数据、输入和预算单列表；不能把跨论文分数差全部算作偏振收益。</span></div></div>
+            </div>
+          </div>
+          <div class="landscape-verdict"><b>强制基线：</b>必须同时报告强 RGB 恢复能力与同底座偏振增量，不能只挑弱 RGB 对照。</div>
+        </article>
+      </div>
+      <div class="novelty-boundary" data-anim><strong>创新边界</strong><div class="novelty-cell"><b>不能再单独主张</b>“双流 / 归一化 Stokes / 门控 / 通用预训练”均已有直接先例。</div><div class="novelty-cell target"><b>本课题改为证明</b>物理约束相对普通偏振适配的独立增量 + 可校准质量回退 + 同一冻结编码器跨任务保留增量。</div></div>
+    </div></main>
+    <footer class="thu-footer"><span>论文数值均限于各自协议，不跨数据集排榜；arXiv 2026 工作均标为预印本，本项目未复现</span><span class="thu-footer-line"></span><span class="thu-page-no">04 / 10</span></footer>
+  </div>
 </section>
 
 <section class="slide" data-layout="THU14" data-animate="academic" data-slide-id="route1-foundation">
@@ -1214,47 +1368,172 @@
   </div></main><footer class="thu-footer"><span>SHDocs 真实 DoFP · C2 全局统计匹配 · C3 噪声零对照 · C1 密集虚拟角候选控制</span><span class="thu-footer-line"></span><span class="thu-page-no">06 / 10</span></footer></div>
 </section>
 
-<section class="slide" data-layout="THU11" data-animate="academic" data-slide-id="polarization-attribution">
-  <div class="thu-page"><header class="thu-header"><div><div class="thu-section">五、技术方案 · 数据—表示—模型—证据</div><h1 class="thu-title">以 PolaRGB 学习物理约束表示，经匹配负对照归因，再冻结迁移验证共享性</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>技术闭环</strong><span>METHOD BLUEPRINT</span></div></div></header>
-  <main class="thu-content tight"><div class="method-blueprint-layout architecture-layout">
-    <div class="blueprint-claim" data-anim><strong>核心主张</strong><span>正确偏振相对强度表示的增量必须依赖当前样本的物理对应关系；同一编码器冻结后仍有增量，才允许称为共享表示。</span><em>PRE-REGISTERED · NO RESULT</em></div>
-    <div class="blueprint-flow" data-anim>
-      <article class="blueprint-stage data"><div class="blueprint-stage-head"><span class="no">01</span><div><h2>数据来源与角色冻结</h2><span>DATA SOURCES</span></div></div><div class="blueprint-stage-body"><div class="source-group with-media"><b>SOURCE</b><img src="images/07-polargb-source.webp" data-image-slot="thu11-polargb-source" alt="PolaRGB测试场景中玻璃反射覆盖书本图案的真实四方向输入场景"><div><strong>PolaRGB · 反光分离</strong><span>6,500 captures；release 59/8；项目 split 49/10/8；CC BY-NC 4.0</span></div></div><div class="source-group with-media"><b>AUDIT</b><img src="images/07-audit-shdocs-pdd.webp" data-image-slot="thu11-audit-proxies" alt="SHDocs文字方向差异与PDD AoLP重建组成的公开误差审计示例"><div><strong>合成矩阵 / PDD / SHDocs</strong><span>标定、MPFA、噪声与选择效应审计；不承担共享训练结论</span></div></div><div class="source-group with-media"><b>TRANSFER</b><img src="images/07-uplight-paper-fig3.webp" data-image-slot="thu11-uplight-paper" alt="ShareCMP论文Figure 3中的UPLight水下四方向偏振图像节选"><div><strong>UPLight 1,791 / ZJU 394</strong><span>水下与道路分割候选；独立许可、下载和 split 待冻结</span></div></div></div><div class="blueprint-output"><b>OUTPUT</b> release manifest · scene split · license · task role</div></article>
-      <span class="blueprint-arrow">→</span>
-      <article class="blueprint-stage process"><div class="blueprint-stage-head"><span class="no">02</span><div><h2>标定、质量与公平输入</h2><span>PHYSICAL PROCESSING</span></div></div><div class="blueprint-stage-body"><div class="process-stack"><div class="process-step"><b>A</b><div><strong>完整性与辐射口径</strong><span>size/SHA/decode · stored/linear · scene isolation</span></div></div><div class="process-step"><b>B</b><div><strong>四方向测量校正</strong><span>方向映射 · gain/offset · saturation · MPFA/demosaic mask</span></div></div><div class="process-step"><b>C</b><div><strong>连续偏振状态与质量</strong><span>S₀ / Q / U + q<sub>meas</sub> / q<sub>pol</sub></span></div></div><div class="process-step"><b>D</b><div><strong>同接口匹配对照</strong><span>S₀ · repeat · matched noise · shuffle(Q,U) · legal rotation</span></div></div></div><div class="blueprint-formula">Q=S₁/(S₀+ε), U=S₂/(S₀+ε)</div></div><div class="blueprint-output"><b>OUTPUT</b> x=(S₀,Q,U,q) + valid mask + matched controls</div></article>
-      <span class="blueprint-arrow">→</span>
-      <article class="blueprint-stage model"><div class="blueprint-stage-head"><span class="no">03</span><div><h2>物理 stem + 共享编码器</h2><span>SHARED ENCODER E</span></div></div><div class="blueprint-stage-body"><div class="mini-model-flow"><div class="mini-model-node"><b>STEM</b><div><strong>解析测量层</strong><span>Stokes、质量与合法角度变换</span></div></div><div class="mini-model-node"><b>E</b><div><strong>z<sub>I</sub> / z<sub>P</sub> / z<sub>q</sub></strong><span>强度纹理、偏振结构、质量门控</span></div></div><div class="mini-model-node"><b>SOURCE</b><div><strong>PolaRGB T/R 小头</strong><span>先训练一个轻量反光分离 pilot</span></div></div><div class="mini-model-node"><b>FREEZE</b><div><strong>水下 / 道路分割头</strong><span>冻结同一 E，只训练同容量小型 head</span></div></div></div><div class="loss-mini-strip"><span>Ltask</span><span>Lreproj</span><span>Lequiv</span><span>Lcompose</span><span>Lstable/q</span></div></div><div class="blueprint-output"><b>OUTPUT</b> 可重投影、角度等变、质量可回退的多尺度表示</div></article>
-      <span class="blueprint-arrow">→</span>
-      <article class="blueprint-stage proof"><div class="blueprint-stage-head"><span class="no">04</span><div><h2>归因、稳定性与迁移证明</h2><span>EVIDENCE GATES</span></div></div><div class="blueprint-stage-body"><div class="proof-mini-stack"><div class="proof-mini"><span class="gid">G1</span><div><strong>源任务因果归因</strong><span>正确偏振 &gt; S₀ / repeat / noise / shuffle；clean preserve</span></div></div><div class="proof-mini"><span class="gid">G2</span><div><strong>物理一致与失败边界</strong><span>重投影、合法旋转、扰动稳定、risk–coverage 与回退</span></div></div><div class="proof-mini"><span class="gid">G3</span><div><strong>冻结编码器迁移</strong><span>UPLight 或 ZJU 至少一项优于 RGB/S₀；10/25/100% labels</span></div></div></div><div class="proof-fairness"><span>同 backbone / params</span><span>同 head / steps / aug</span><span>≥3 seeds · scene CI</span></div></div><div class="blueprint-output"><b>REPORT</b> PSNR/SSIM/LPIPS · mIoU · labels/params · failure cases</div></article>
-    </div>
-    <div class="blueprint-bottom" data-anim><strong>最小可主张结论</strong><div class="minimum-proof"><b>证明“偏振”</b>正确 P 在 PolaRGB 优于全部统计匹配对照；打乱 Q/U 后增益明显回落。</div><div class="minimum-proof"><b>证明“共享”</b>同一冻结 E 在 UPLight 或 ZJU 至少一个不同任务仍优于 RGB/S₀。</div><div class="minimum-proof status"><b>当前状态</b>Gate A0 尚未闭环；编码器未训练、无迁移结果。任一 Gate 失败即缩小主张。</div></div>
-  </div></main><footer class="thu-footer"><span>方案来源：PolaRGB / PDD / SHDocs 前置审计 + 共享编码器预注册协议；第 8 页展开物理结构，第 9 页展开实验矩阵</span><span class="thu-footer-line"></span><span class="thu-page-no">07 / 10</span></footer></div>
+<section class="slide" data-layout="THU11" data-animate="academic" data-slide-id="foundation-adaptation-route">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">五、技术方案 · 底座选型与增量分解</div><h1 class="thu-title">先建立强通用先验基线，再逐层增加偏振、物理与质量，避免把预训练收益误算为方法收益</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>技术路线</strong><span>PRIOR + ATTRIBUTABLE ADAPTATION</span></div></div></header>
+    <main class="thu-content tight"><div class="prior-route-layout architecture-layout">
+      <div class="route-thesis" data-anim><strong>核心主张</strong><span>通用模型负责视觉先验；本项目只为新增测量信息付出轻量适配成本，并分别测量输入、物理约束与质量门控的增量。</span><em>PRE-REGISTERED · NO RESULT</em></div>
+      <div class="prior-route-grid" data-anim>
+        <article class="route-stage data">
+          <div class="route-stage-head"><span class="no">01</span><div><h2>冻结数据角色</h2><span>DATA CONTRACT</span></div></div>
+          <div class="route-source-stack">
+            <div class="route-source"><b>SOURCE</b><img src="images/07-polargb-source.webp" data-image-slot="thu11-route-polargb" alt="PolaRGB测试场景中的真实四方向反光观测"><div><strong>PolaRGB · 反光源任务</strong><span>6,500 captures；项目 49/10/8 场景 split</span></div></div>
+            <div class="route-source"><b>AUDIT</b><img src="images/07-audit-shdocs-pdd.webp" data-image-slot="thu11-route-audit" alt="SHDocs与PDD公开代理证据并列图"><div><strong>合成 / PDD / SHDocs</strong><span>标定、MPFA、噪声和选择效应；不承担训练结论</span></div></div>
+            <div class="route-source"><b>TRANSFER</b><img src="images/07-uplight-paper-fig3.webp" data-image-slot="thu11-route-uplight" alt="ShareCMP论文中的UPLight四方向偏振示例"><div><strong>UPLight / ZJU</strong><span>冻结迁移候选；许可、下载与 split 仍待核查</span></div></div>
+          </div>
+          <div class="route-output"><b>INPUT</b> S₀ / Q / U / q + valid mask + matched controls</div>
+        </article>
+        <span class="route-arrow">→</span>
+        <article class="route-stage backbones">
+          <div class="route-stage-head"><span class="no">02</span><div><h2>两类共享底座 + 三类参照</h2><span>MODEL SELECTION</span></div></div>
+          <div class="backbone-stack">
+            <div class="backbone-item primary"><b>STRONG</b><div><strong>DINOv3 ConvNeXt-Tiny · 29M</strong><span>强自监督多尺度候选；Tiny 收益需本项目实测</span></div></div>
+            <div class="backbone-item"><b>LIGHT</b><div><strong>MiT-B0 · ImageNet</strong><span>先验证接口、负对照和轻量训练闭环</span></div></div>
+            <div class="backbone-item reference"><b>RESTORE</b><div><strong>InstructIR / NAFNet</strong><span>通用恢复先验参照，不默认充当共享语义主干</span></div></div>
+            <div class="backbone-item reference"><b>EXTERNAL</b><div><strong>PolarFree / WindowSeat / ShareCMP</strong><span>任务能力参照；不同预算，不用于机制归因</span></div></div>
+          </div>
+          <div class="route-output"><b>ORDER</b> MiT-B0 工程 pilot → 小型 DINO 强基线 → 只保留一条主路线</div>
+        </article>
+        <span class="route-arrow">→</span>
+        <article class="route-stage ladder">
+          <div class="route-stage-head"><span class="no">03</span><div><h2>同底座逐层适配</h2><span>INCREMENT LADDER</span></div></div>
+          <div class="adapt-ladder">
+            <div class="adapt-step"><b>B-S₀</b><div><strong>通用主干 + S₀ / RGB</strong><span>建立强度视觉先验基线</span></div></div>
+            <div class="adapt-step"><b>B-pol</b><div><strong>+ 正确 Q/U 轻量 adapter</strong><span>同结构、仅 task loss：测输入增量</span></div></div>
+            <div class="adapt-step"><b>B-phys</b><div><strong>+ 重投影 / 重组 / 等变</strong><span>相对普通偏振适配：测物理约束增量</span></div></div>
+            <div class="adapt-step"><b>B-full</b><div><strong>+ q<sub>meas</sub> / q<sub>pol</sub> 与回退</strong><span>测质量建模与风险排序增量</span></div></div>
+            <div class="delta-triplet"><span>Δ<sub>input</sub><br>B-pol−B-S₀</span><span>Δ<sub>phys</sub><br>B-phys−B-pol</span><span>Δ<sub>q</sub><br>B-full−B-phys</span></div>
+          </div>
+          <div class="route-output"><b>CONTROLS</b> repeat S₀ · matched noise · shuffle(Q,U) · Scratch / ImageNet/DINO init</div>
+        </article>
+        <span class="route-arrow">→</span>
+        <article class="route-stage gates">
+          <div class="route-stage-head"><span class="no">04</span><div><h2>证据 Gate 与止损</h2><span>EVIDENCE, NOT SCALE</span></div></div>
+          <div class="route-gate-stack">
+            <div class="route-gate"><b>G1</b><div><strong>源任务归因</strong><span>B-pol &gt; B-S₀ / repeat / noise / shuffle；再检验 Δphys 与 Δq</span></div></div>
+            <div class="route-gate"><b>G2</b><div><strong>物理与质量边界</strong><span>重投影、扰动、risk–coverage、回退 / 拒绝</span></div></div>
+            <div class="route-gate"><b>G3</b><div><strong>冻结跨任务迁移</strong><span>原始预训练 → S₀源训练 → 普通偏振 → 物理 → 完整 E</span></div></div>
+          </div>
+          <div class="route-output"><b>REPORT</b> 任务质量 + 偏振保真 + 稳定性 + 标签/参数/算力效率</div>
+        </article>
+      </div>
+      <div class="route-bottom" data-anim><strong>首轮执行边界</strong><div class="route-bottom-cell"><b>先回答输入是否有用</b>B-pol vs B-S₀；通过后才增加完整物理和质量模块。</div><div class="route-bottom-cell"><b>再回答约束是否特异</b>B-phys 还要对照同预算普通一致性正则，避免把“更多监督”误叫物理收益。</div><div class="route-bottom-cell status"><b>当前状态</b>Gate A0 未闭环；无已训练编码器。首轮不联合多任务、不训练大 diffusion。</div></div>
+    </div></main>
+    <footer class="thu-footer"><span>底座参数仅指官方 backbone；adapter、head 与推理成本另计。第 8 页展开混合架构，第 9 页展开能力/归因分离评测</span><span class="thu-footer-line"></span><span class="thu-page-no">07 / 10</span></footer>
+  </div>
 </section>
 
-<section class="slide soft" data-layout="THU11" data-animate="academic" data-slide-id="physics-constrained-encoder">
-  <div class="thu-page"><header class="thu-header"><div><div class="thu-section">五、技术方案 · 物理约束共享编码器</div><h1 class="thu-title">强度、偏振与质量三支路受控融合；低质量时回退，而不是强制生成答案</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>模型细化</strong><span>PHYSICS-CONSTRAINED E</span></div></div></header>
-  <main class="thu-content tight"><div class="physics-encoder-layout architecture-layout">
-    <div class="representation-strip" data-anim><article class="representation-card"><span class="rid">STATE</span><div><strong>连续偏振状态，不输入裸 AoLP</strong><p class="math">Q=S₁/(S₀+ε), U=S₂/(S₀+ε)</p></div></article><article class="representation-card"><span class="rid">q<sub>meas</sub></span><div><strong>测量是否可信</strong><p>饱和、SNR、正交残差、MPFA/demosaic有效域</p></div></article><article class="representation-card"><span class="rid">q<sub>pol</sub></span><div><strong>偏振是否有信息量</strong><p>DoLP与方向显著性；低值不等于强度无效</p></div></article></div>
-    <div class="encoder-core-flow" data-anim><article class="encoder-core-block stem"><div class="encoder-core-head"><span>01 · PHYSICAL STEM</span><h2>解析测量层</h2></div><div class="stem-steps visual"><div class="angle-input-block"><span>REAL POLARGB · m−b · Â<sup>+</sup></span><div class="angle-input-strip"><figure><img src="images/08-polargb-i0.webp" data-image-slot="thu11-polargb-i0" alt="PolaRGB真实I0方向输入"><figcaption>I₀</figcaption></figure><figure><img src="images/08-polargb-i45.webp" data-image-slot="thu11-polargb-i45" alt="PolaRGB真实I45方向输入"><figcaption>I₄₅</figcaption></figure><figure><img src="images/08-polargb-i90.webp" data-image-slot="thu11-polargb-i90" alt="PolaRGB真实I90方向输入"><figcaption>I₉₀</figcaption></figure><figure><img src="images/08-polargb-i135.webp" data-image-slot="thu11-polargb-i135" alt="PolaRGB真实I135方向输入"><figcaption>I₁₃₅</figcaption></figure></div></div><div class="stem-step"><b>STATE</b><strong>S₀ / Q / U</strong><span>连续表示 + valid / saturation mask</span></div><div class="stem-step"><b>CTRL</b><strong>合法变换与对照</strong><span>R(2α) · repeat · noise · shuffle</span></div></div></article><span class="encoder-core-arrow">→</span><article class="encoder-core-block branches"><div class="encoder-core-head"><span>02 · SHARED ENCODER E</span><h2>三支路、多尺度同骨干</h2></div><div class="branch-stack"><div class="encoder-branch"><b>E<sub>I</sub></b><div><strong>强度支路 z<sub>I</sub></strong><span>S₀ / RGB：纹理、颜色与总强度</span></div></div><div class="encoder-branch pol"><b>E<sub>P</sub></b><div><strong>偏振支路 z<sub>P</sub></strong><span>Q,U：方向结构；参考系变化按2α等变</span></div></div><div class="encoder-branch quality"><b>E<sub>q</sub></b><div><strong>质量支路 z<sub>q</sub></strong><span>q<sub>meas</sub>,q<sub>pol</sub>：决定融合、回退与置信度</span></div></div></div></article><span class="encoder-core-arrow">→</span><article class="encoder-core-block fusion"><div class="encoder-core-head"><span>03 · QUALITY-GATED FUSION</span><h2>逐尺度受控融合</h2></div><div class="fusion-stack"><div class="fusion-equation"><span>F<sub>ℓ</sub>=z<sub>I,ℓ</sub>+g<sub>ℓ</sub>(q)⊙z<sub>P,ℓ</sub></span></div><div class="fusion-rules"><span><b>q<sub>meas</sub>高：</b>允许偏振分支参与</span><span><b>q<sub>pol</sub>低：</b>保留强度，降低方向权重</span><span><b>测量失效：</b>回退 S₀ 或拒绝，不高置信猜测</span></div><div class="feature-pyramid"><span>F₁</span><span>F₂</span><span>F₃</span><span>F₄</span></div></div></article><span class="encoder-core-arrow">→</span><article class="encoder-core-block heads"><div class="encoder-core-head"><span>04 · TASK HEADS</span><h2>先源任务，再冻结迁移</h2></div><div class="head-stack"><div class="head-card"><b>TRAIN</b><strong>PolaRGB T/R decoder</strong><span>轻量源任务；T、R与观测重组一致</span></div><div class="head-card"><b>FREEZE</b><strong>UPLight / ZJU segmentation</strong><span>冻结同一 E；只训练同容量小型head</span></div><div class="head-lock">首轮不联合多任务 · 不上 diffusion</div></div></article></div>
-    <div class="constraint-grid" data-anim><article class="constraint-card"><span class="loss-id">L<sub>reproj</sub></span><h3>四方向重投影</h3><div class="loss-formula"><span>Î<sub>θ</sub>=½(Ŝ₀+Ŝ₁cos2θ+Ŝ₂sin2θ)</span><div class="loss-checks"><span>4-angle RMSE</span><span>valid / saturation mask</span></div></div><p>表示必须解释原始测量，不能只优化任务指标后丢掉偏振结构。</p></article><article class="constraint-card"><span class="loss-id">L<sub>equiv</sub></span><h3>参考系等变</h3><div class="loss-formula"><span>(Q,U)′=R(2α)(Q,U)</span><div class="loss-checks"><span>z<sub>P</sub> equivariance</span><span>task invariance</span></div></div><p>改变检偏角零点时潜变量可预测旋转，最终T/R或分割输出保持稳定。</p></article><article class="constraint-card"><span class="loss-id">L<sub>compose</sub></span><h3>层重组一致性</h3><div class="loss-formula"><span>S<sub>obs</sub>≈τS<sub>T</sub>+S<sub>R</sub></span><div class="loss-checks"><span>T/R re-render</span><span>clean preservation</span></div></div><p>源任务输出必须重组回观测，不能只生成视觉上更“干净”的图像。</p></article><article class="constraint-card"><span class="loss-id">L<sub>stable/q</sub></span><h3>扰动稳定与质量校准</h3><div class="loss-formula"><span>‖z(x)−z(x+ε)‖ + L<sub>q</sub></span><div class="loss-checks"><span>noise / exposure</span><span>risk–coverage</span></div></div><p>高质量区域表示稳定；饱和、低SNR与MPFA失败时q应下降并触发回退。</p></article></div>
-    <div class="encoder-reliability" data-anim><strong>FAILURE RAIL</strong><span><b>q<sub>meas</sub>↓：</b>测量不可信，先抑制偏振支路</span><em>→</em><span><b>q<sub>pol</sub>↓：</b>方向信息不足，但S₀仍可服务任务</span><em>回退 S₀ / 拒绝</em></div>
-  </div></main><footer class="thu-footer"><span>计划目标：Ltask + λrLreproj + λeLequiv + λcLcompose + λsLstable/q；架构为预注册方案，尚无训练结果</span><span class="thu-footer-line"></span><span class="thu-page-no">08 / 10</span></footer></div>
+<section class="slide soft" data-layout="THU11" data-animate="academic" data-slide-id="hybrid-polarization-encoder">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">五、技术方案 · 混合共享编码器</div><h1 class="thu-title">一份预训练主干承载视觉先验；轻量偏振与质量模块只学习新增测量信息</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>模型细化</strong><span>ONE BACKBONE + LIGHT ADAPTERS</span></div></div></header>
+    <main class="thu-content tight"><div class="hybrid-encoder-layout architecture-layout">
+      <div class="hybrid-principles" data-anim>
+        <article class="hybrid-principle"><b>BACKBONE</b><div><strong>只保留一份完整视觉主干</strong><span>DINOv3-Tiny 或 MiT-B0；不是三份大网络</span></div></article>
+        <article class="hybrid-principle"><b>POL</b><div><strong>Q/U 进入轻量残差 adapter</strong><span>小容量、零初始化输出投影，保护初始 RGB 行为</span></div></article>
+        <article class="hybrid-principle"><b>QUALITY</b><div><strong>q<sub>meas</sub> 与 q<sub>pol</sub> 分开</strong><span>测量可信度与偏振信息量承担不同职责</span></div></article>
+        <article class="hybrid-principle"><b>INIT CTRL</b><div><strong>Scratch 只作关键消融</strong><span>先冻结热身，再以差分学习率部分微调</span></div></article>
+      </div>
+      <div class="hybrid-core-flow" data-anim>
+        <article class="hybrid-block stem">
+          <div class="hybrid-head"><span>01 · ANALYTIC STEM</span><h2>解析测量接口</h2></div>
+          <div class="hybrid-stem">
+            <div class="hybrid-input"><span>REAL POLARGB PROCESSED · FOUR DIRECTIONS</span><div class="hybrid-input-strip"><figure><img src="images/08-polargb-i0.webp" data-image-slot="thu11-hybrid-i0" alt="PolaRGB真实I0方向输入"><figcaption>I₀</figcaption></figure><figure><img src="images/08-polargb-i45.webp" data-image-slot="thu11-hybrid-i45" alt="PolaRGB真实I45方向输入"><figcaption>I₄₅</figcaption></figure><figure><img src="images/08-polargb-i90.webp" data-image-slot="thu11-hybrid-i90" alt="PolaRGB真实I90方向输入"><figcaption>I₉₀</figcaption></figure><figure><img src="images/08-polargb-i135.webp" data-image-slot="thu11-hybrid-i135" alt="PolaRGB真实I135方向输入"><figcaption>I₁₃₅</figcaption></figure></div></div>
+            <div class="hybrid-node"><b>STATE</b><strong>S₀ / Q / U + valid mask</strong><span>不输入裸 AoLP；低 S₀ 仍需稳定项与质量门控</span></div>
+            <div class="hybrid-node"><b>CTRL</b><strong>repeat / noise / shuffle / R(2α)</strong><span>从数据接口生成匹配对照与合法参考系变换</span></div>
+          </div>
+        </article>
+        <span class="hybrid-arrow">→</span>
+        <article class="hybrid-block backbone">
+          <div class="hybrid-head"><span>02 · PRETRAINED MAIN PATH</span><h2>S₀ / RGB 通用视觉主干</h2></div>
+          <div class="backbone-body">
+            <div class="backbone-candidate"><b>STRONG</b><div><strong>DINOv3 ConvNeXt-Tiny</strong><span>29M 官方 backbone；多尺度 z<sup>I</sup><sub>l</sub>，Tiny 偏振收益待实测</span></div></div>
+            <div class="backbone-candidate alt"><b>LIGHT</b><div><strong>MiT-B0 · ImageNet</strong><span>先跑轻量 pilot，验证接口、显存与完整负对照</span></div></div>
+            <div class="backbone-training">训练顺序：冻结主干热身 → adapter / head 收敛 → 验证集决定是否部分解冻</div>
+          </div>
+        </article>
+        <span class="hybrid-arrow">→</span>
+        <article class="hybrid-block adapters">
+          <div class="hybrid-head"><span>03 · LIGHT POLAR / QUALITY PATHS</span><h2>轻量适配与逐尺度注入</h2></div>
+          <div class="adapter-body">
+            <div class="adapter-node"><b>A<sub>P</sub></b><div><strong>偏振残差 adapter</strong><span>Q,U → z<sup>P</sup><sub>l</sub>；容量与 S₀ 控制组匹配</span></div></div>
+            <div class="adapter-node quality"><b>A<sub>q</sub></b><div><strong>质量与回退 adapter</strong><span>q<sub>meas</sub>,q<sub>pol</sub> → g<sub>l</sub> 与风险分数</span></div></div>
+            <div class="fusion-equation-new">F<sub>l</sub>=z<sup>I</sup><sub>l</sub>+g<sub>l</sub>(q)⊙A<sub>l</sub>(z<sup>P</sup><sub>l</sub>)</div>
+            <div class="equiv-warning">门控公式本身不保证等变：必须定义潜变量变换并以实验测量，而不是写成架构定理。</div>
+          </div>
+        </article>
+        <span class="hybrid-arrow">→</span>
+        <article class="hybrid-block heads">
+          <div class="hybrid-head"><span>04 · SMALL TASK HEADS</span><h2>同一完整 E，不同小头</h2></div>
+          <div class="heads-body">
+            <div class="head-node"><b>SOURCE</b><strong>PolaRGB T/R decoder</strong><span>只训练一个轻量反光分离源任务</span></div>
+            <div class="head-node"><b>FREEZE</b><strong>UPLight / ZJU head</strong><span>冻结主干、adapter、质量模块与 norm 状态</span></div>
+            <div class="head-lock-new">不把下游可学习输入映射藏在“冻结 E”之外</div>
+          </div>
+        </article>
+      </div>
+      <div class="hybrid-objective-grid" data-anim>
+        <article class="objective-card"><span class="oid">B-pol · L<sub>task</sub></span><h3>普通偏振适配基线</h3><div><span class="math">min L<sub>task</sub>(ŷ,y)</span><small>先回答 Q/U 输入本身是否有增量；不提前把物理损失绑进“偏振组”。</small></div></article>
+        <article class="objective-card"><span class="oid">B-phys · L<sub>reproj</sub> + L<sub>compose</sub></span><h3>测量与分层闭环</h3><div><span class="math">Î<sub>θ</sub> ↔ Ŝ ; S<sub>obs</sub>≈τS<sub>T</sub>+S<sub>R</sub></span><small>重投影只能约束自洽；仍需 T/R 真值与普通一致性正则对照排除退化解。</small></div></article>
+        <article class="objective-card"><span class="oid">B-phys · L<sub>equiv</sub></span><h3>参考系变换可检验</h3><div><span class="math">(Q,U)′=R(2α)(Q,U)</span><small>检查 z<sub>P</sub> 的可预测变换与任务输出稳定；合法零点旋转不增加独立信息。</small></div></article>
+        <article class="objective-card"><span class="oid">B-full · L<sub>stable/q</sub></span><h3>稳定、风险与回退</h3><div><span class="math">‖z(x)−z(x+ε)‖ + L<sub>q</sub></span><small>高质量区域稳定；失效区 q 下降，先回退 S₀，强度也失效才拒绝。</small></div></article>
+      </div>
+      <div class="hybrid-boundary-rail" data-anim><strong>DATA / FAILURE BOUNDARY</strong><span><b>PolaRGB processed：</b>可做四方向映射与表示研究，但尚无真实仪器 Â,b 标定。</span><em>→</em><span><b>q<sub>meas</sub>↓：</b>抑制偏振 adapter；q<sub>pol</sub>↓时仍保留可信 S₀。</span><em>→</em><span><b>H0 以后：</b>用自有 RAW、真实重复曝光和标定矩阵验证稳定性；当前只允许冻结噪声模型与解析仿真。</span></div>
+    </div></main>
+    <footer class="thu-footer"><span>混合初始化与损失均为预注册方案；“DINOv3-Tiny 最优”“门控天然等变”“真实相机已标定”均尚未得到证据</span><span class="thu-footer-line"></span><span class="thu-page-no">08 / 10</span></footer>
+  </div>
 </section>
 
-<section class="slide" data-layout="THU12" data-animate="academic" data-slide-id="encoder-proof-plan">
-  <div class="thu-page"><header class="thu-header"><div><div class="thu-section">五、验证方案 · 预注册通过标准</div><h1 class="thu-title">G1归因、G2稳定、G3冻结迁移逐级止损；任一失败即缩小主张</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验执行</strong><span>PRE-REGISTERED GATES</span></div></div></header>
-  <main class="thu-content tight"><div class="gate-proof-layout experiment-layout">
-    <div class="gate-fairness-strip" data-anim><strong>FAIRNESS LOCK</strong><span>同 backbone</span><span>同参数量</span><span>同小型 head</span><span>同 steps / aug</span><span>同 seeds</span><span>scene split / test 一次冻结</span><em>PLAN · NO RESULT</em></div>
-    <div class="gate-card-grid" data-anim><article class="gate-proof-card g1"><div class="gate-proof-head"><span class="gid">G1</span><div><h2>源任务偏振归因</h2><p>POLARGB · CAUSAL SOURCE GATE</p></div><span class="state">NOT RUN</span></div><div class="gate-proof-body"><div class="gate-protocol-block with-thumb"><b>DATA</b><figure class="gate-thumb"><img src="images/09-polargb-mixed-gt.webp" data-image-slot="thu12-polargb-mixed-gt" alt="PolaRGB真实混合反光输入与透射GT并列图"><figcaption>Mixed | T GT</figcaption></figure><div><strong>PolaRGB 49/10/8 scenes</strong><span>fit训练、validation选配置、release test一次冻结</span></div></div><div class="gate-protocol-block"><b>INPUTS</b><div><strong>C0–C3 / P / T1</strong><span>S₀ · repeat S₀ · matched noise · shuffle(Q,U) · correct · legal rotation</span></div></div><div class="gate-protocol-block"><b>REPORT</b><div><strong>T/R恢复与干净保持</strong><div class="gate-metric-tags"><i>PSNR↑</i><i>SSIM↑</i><i>LPIPS↓</i><i>clean preserve</i></div></div></div><div class="gate-protocol-block"><b>STATS</b><div><strong>sample + scene macro</strong><span>按场景聚类95% CI；分DoLP、饱和、反射强度与easy/hard</span></div></div></div><div class="gate-pass"><b>PASS</b>正确偏振 P &gt; max{S₀, repeat, noise, shuffle}，差值CI不跨0；打乱Q/U后回落，clean样本不被明显改坏。</div><div class="gate-fail">FAIL 含义：最多只能称为反光任务网络，不能把增益归因于当前样本偏振。</div></article>
-      <article class="gate-proof-card g2"><div class="gate-proof-head"><span class="gid">G2</span><div><h2>物理一致与失败边界</h2><p>STABILITY · QUALITY · FALLBACK</p></div><span class="state">NOT RUN</span></div><div class="gate-proof-body"><div class="gate-protocol-block with-thumb"><b>STRATA</b><figure class="gate-thumb"><img src="images/09-pdd-reference-bilinear.webp" data-image-slot="thu12-pdd-reference-bilinear" alt="PDD参考AoLP与双线性MPFA重建AoLP并列示例"><figcaption>GT | Bilinear</figcaption></figure><div><strong>按失效条件分组</strong><span>DoLP · saturation · SNR · reflection · MPFA方法与高频边缘</span></div></div><div class="gate-protocol-block"><b>PERTURB</b><div><strong>只改变一个因素</strong><span>noise / exposure / legal angle rotation / repeated capture（H0后）</span></div></div><div class="gate-protocol-block"><b>REPORT</b><div><strong>物理与输出稳定性</strong><div class="gate-metric-tags"><i>reprojection↓</i><i>output drift↓</i><i>equivariance</i><i>q calibration</i></div></div></div><div class="gate-protocol-block"><b>SAFETY</b><div><strong>风险—覆盖与回退</strong><span>q降低时风险上升；偏振失效回退S₀，强度也失效才拒绝</span></div></div></div><div class="gate-pass"><b>PASS</b>合法旋转下潜变量按2α等变、任务输出稳定；q能排序失败风险，回退后不劣于强度基线。</div><div class="gate-fail">FAIL 含义：表示可能有效但不可靠，不能宣称物理约束或安全部署。</div></article>
-      <article class="gate-proof-card g3"><div class="gate-proof-head"><span class="gid">G3</span><div><h2>冻结编码器跨任务迁移</h2><p>HEAD-ONLY · TRANSFER GATE</p></div><span class="state">PENDING DATA</span></div><div class="gate-proof-body"><div class="gate-protocol-block with-thumb"><b>DATA</b><figure class="gate-thumb"><img src="images/07-uplight-paper-fig3.webp" data-image-slot="thu12-uplight-paper" alt="ShareCMP论文Figure 3中的UPLight水下四方向偏振图像节选"><figcaption>UPLight · paper Fig.3</figcaption></figure><div><strong>UPLight / ZJU RGB-P</strong><span>1,791 / 394；正式执行前冻结许可、下载、官方/项目split</span></div></div><div class="gate-protocol-block"><b>ENCODERS</b><div><strong>随机、RGB、S₀与偏振对照</strong><span>random frozen · RGB/ImageNet · S₀ · repeat/noise · shuffle · correct P</span></div></div><div class="gate-protocol-block"><b>LABELS</b><div><strong>冻结同一 E，只训练同容量head</strong><span>10% / 25% / 100%标注量；任务专用端到端模型只作性能上界</span></div></div><div class="gate-protocol-block"><b>REPORT</b><div><strong>性能、数据与参数效率</strong><div class="gate-metric-tags"><i>mIoU↑</i><i>labels</i><i>trainable params</i><i>≥3 seeds</i></div></div></div></div><div class="gate-pass"><b>PASS</b>同一正确偏振 E 在至少一个不同任务优于 RGB/ImageNet 与同数据 S₀；低标注或参数效率有收益，无严重负迁移。</div><div class="gate-fail">FAIL 含义：只能证明源任务有效，不能称为共享或可迁移偏振编码器。</div></article></div>
-    <div class="gate-final" data-anim><strong>最终可主张范围</strong><div class="gate-final-item"><b>“偏振”</b>由 G1 的当前样本对应关系、shuffle退化和匹配负对照证明。</div><div class="gate-final-item"><b>“共享”</b>由 G3 的同一冻结 E、不同任务和小型head增量证明；G2负责可靠性边界。</div><em>任一 Gate 失败：停止扩大模型，缩小主张；不联合多任务、不启用 diffusion。</em></div>
-  </div></main><footer class="thu-footer"><span>预注册指标：PSNR/SSIM/LPIPS、mIoU、scene-cluster CI、risk–coverage、labels/params/steps/seeds；当前无训练结果</span><span class="thu-footer-line"></span><span class="thu-page-no">09 / 10</span></footer></div>
+<section class="slide" data-layout="THU12" data-animate="academic" data-slide-id="capability-attribution-proof">
+  <div class="thu-page">
+    <header class="thu-header"><div><div class="thu-section">五、验证方案 · 能力与归因分离</div><h1 class="thu-title">外部强模型只回答“能做到什么”；同底座矩阵才回答“偏振、物理与质量为何有效”</h1></div><div class="thu-brand"><div class="thu-brand-mark">研</div><div class="thu-brand-copy"><strong>实验执行</strong><span>CAPABILITY ≠ ATTRIBUTION</span></div></div></header>
+    <main class="thu-content tight"><div class="proof-separation-layout experiment-layout">
+      <div class="proof-lock" data-anim><strong>FAIRNESS LOCK</strong><span>同 backbone / init</span><span>同接口与容量</span><span>同 head / steps / aug</span><span>同调参预算</span><span>≥3 seeds · scene CI</span><span>split冻结 / test一次</span><em>PLAN · NO RESULT</em></div>
+      <div class="proof-three" data-anim>
+        <article class="proof-panel external">
+          <div class="proof-panel-head"><span class="pid">A</span><div><h2>外部能力表 · 单独报告</h2><p>DIFFERENT DATA / INPUT / BUDGET</p></div></div>
+          <div class="external-stack">
+            <div class="external-row"><b>WindowSeat</b><strong>RGB / S₀</strong><span>强 RGB 单图去反光；不测偏振机制。</span></div>
+            <div class="external-row"><b>PolarFree</b><strong>四方向</strong><span>偏振专用反光恢复；任务性能参照。</span></div>
+            <div class="external-row"><b>ShareCMP</b><strong>RGB + P</strong><span>下游分割专用模型；不是本项目冻结 E。</span></div>
+            <div class="external-row"><b>DINOv3-SfP</b><strong>RGB + P</strong><span>通用先验适配的几何任务文献证据。</span></div>
+          </div>
+          <div class="proof-panel-note">不把不同论文、数据集和算力放进同一性能柱状图；只比较任务质量、延迟、显存与适用边界。</div>
+        </article>
+        <article class="proof-panel mechanism">
+          <div class="proof-panel-head"><span class="pid">B</span><div><h2>同底座机制矩阵 · 核心归因</h2><p>ONE FACTOR AT A TIME</p></div></div>
+          <table class="mechanism-matrix" aria-label="同底座偏振输入、物理约束与质量门控归因矩阵"><thead><tr><th>版本</th><th>输入 / 新增</th><th>回答的问题</th></tr></thead><tbody>
+            <tr><td><b>B-S₀</b></td><td>S₀ / RGB + task</td><td>通用视觉先验本身能做到多少</td></tr>
+            <tr class="control"><td><b>B-repeat</b></td><td>重复 S₀</td><td>更多通道 / 分支容量是否解释收益</td></tr>
+            <tr class="control"><td><b>B-noise</b></td><td>匹配噪声副本</td><td>扰动与正则化是否解释收益</td></tr>
+            <tr class="control"><td><b>B-shuffle</b></td><td>配对打乱 Q/U</td><td>当前样本物理对应关系是否必要</td></tr>
+            <tr class="key"><td><b>B-pol</b></td><td>正确 S₀/Q/U + task</td><td>Δinput：偏振输入的独立增量</td></tr>
+            <tr class="key"><td><b>B-phys</b></td><td>+ 物理损失</td><td>Δphys：物理约束相对普通适配</td></tr>
+            <tr class="full"><td><b>B-full</b></td><td>+ 质量 / 回退</td><td>Δq：质量建模与风险排序增量</td></tr>
+          </tbody></table>
+          <div class="proof-panel-note">B-phys 另加同辅助头、同预算的普通一致性正则，检验收益是否“物理特异”，而非任何额外监督。</div>
+        </article>
+        <article class="proof-panel transfer">
+          <div class="proof-panel-head"><span class="pid">C</span><div><h2>冻结迁移阶梯 · 同一完整 E</h2><p>UPLIGHT OR ZJU · HEAD ONLY</p></div></div>
+          <div class="transfer-stack">
+            <div class="transfer-step"><b>E0</b><div><strong>原始预训练编码器</strong><span>DINO / ImageNet 先验；冻结，只拟合小头</span></div></div>
+            <div class="transfer-step"><b>E1</b><div><strong>PolaRGB-S₀ 源训练后</strong><span>排除“做过源任务”本身的收益</span></div></div>
+            <div class="transfer-step"><b>E2</b><div><strong>普通偏振适配后</strong><span>B-pol；检验输入增量能否迁移</span></div></div>
+            <div class="transfer-step"><b>E3</b><div><strong>物理约束适配后</strong><span>B-phys；检验 Δphys 是否跨任务保留</span></div></div>
+            <div class="transfer-step"><b>E4</b><div><strong>完整质量门控后</strong><span>B-full；adapter / q / norm 全部冻结</span></div></div>
+            <div class="transfer-protocol"><span>10 / 25 / 100% labels</span><span>mIoU + per-class / boundary</span><span>params · GPUh · p50/p95</span></div>
+          </div>
+          <div class="proof-panel-note">repeat / noise / shuffle 编码器同样冻结迁移；可学习输入映射计入下游预算，不能藏在“head-only”之外。</div>
+        </article>
+      </div>
+      <div class="proof-bottom" data-anim><strong>预注册 PASS / FAIL</strong><div class="proof-gate"><b>G1 · 证明偏振与物理增量</b>Δinput&gt;0、胜过 repeat/noise 且 shuffle 回落；再分别要求 Δphys、Δq 为正并控制 clean 损伤。失败则只称源任务网络。</div><div class="proof-gate"><b>G2 · 证明可靠边界</b>重投影与合法变换稳定，q 能排序失败风险，回退不劣于 B-S₀。失败则不声称物理可靠。</div><div class="proof-gate stop"><b>G3 · 证明共享，否则停止扩大</b>E4 至少在一个不同任务优于 E0/E1/E2，并体现低标注或参数效率；失败则不称共享编码器。</div></div>
+    </div></main>
+    <footer class="thu-footer"><span>源任务：PSNR/SSIM/LPIPS + clean preservation；物理：Q/U、DoLP/AoLP、重投影；迁移：mIoU、标签/参数/算力效率</span><span class="thu-footer-line"></span><span class="thu-page-no">09 / 10</span></footer>
+  </div>
 </section>
 
 <section class="slide accent" data-layout="THU17" data-animate="academic" data-slide-id="conclusion">
-  <div class="compact-closing thu-closing"><div class="compact-closing-main"><div class="compact-closing-kicker" data-anim>ATTRIBUTE FIRST · ENCODE PHYSICS · FREEZE TO TRANSFER</div><h1 class="compact-closing-title" data-anim>从“选最好”转向<br>“证偏振、学表示、验迁移”</h1><div class="conclusion-list" data-anim><article class="conclusion-row"><span class="no">01</span><div><strong>候选上界不是偏振物理证据</strong><p>更多角度会机械放大 Oracle；同内容噪声已复现真实 gap 的 36% / 72%，必须改用匹配干预归因。</p></div></article><article class="conclusion-row"><span class="no">02</span><div><strong>编码器必须保留可检查的物理契约</strong><p>输入采用 S₀/Q/U 与双质量 q；以重投影、参考系等变、层重组和扰动稳定约束学习表示。</p></div></article><article class="conclusion-row"><span class="no">03</span><div><strong>“共享”只能由同一冻结 E 的跨任务增量证明</strong><p>先在 PolaRGB 排除强度、通道、噪声和统计解释，再以相同小型 head 验证 UPLight 或 ZJU。</p></div></article></div><div class="closing-number-strip" data-anim><div><strong>−77.3%</strong><span>E1-a · Stokes RMSE</span></div><div><strong>36% / 72%</strong><span>noise best-of · gap 复现</span></div><div><strong>49 / 10 / 8</strong><span>PolaRGB fit / val / test 场景</span></div><div><strong>0</strong><span>已训练共享编码器 · 当前</span></div></div></div>
-  <aside class="compact-closing-side"><div class="compact-brand" data-anim><strong>PolyCamera</strong><span>SHARED POLARIZATION REPRESENTATION</span></div><div class="closing-status" data-anim><div class="closing-status-row"><span>E0–E1 前置链</span><strong class="accent">COMPLETE · 公开数据 / 合成代理</strong></div><div class="closing-status-row"><span>E2–C3 归因状态</span><strong>UNRESOLVED · Oracle 被选择效应混杂</strong></div><div class="closing-status-row"><span>共享编码器</span><strong class="danger">NOT TRAINED · 仅完成预注册协议</strong></div><div class="closing-status-row"><span>冻结迁移 / 正式自采</span><strong class="danger">NOT STARTED · 等待 Gate A0 / H0</strong></div></div><div class="compact-closing-foot" data-anim>恳请重点评价：C0–C3 是否足以完成因果归因，物理约束是否过强，以及 G1–G3 是否能真正证明共享编码器有用。<br><br><strong>Questions & Discussion</strong></div></aside></div>
+  <div class="compact-closing thu-closing"><div class="compact-closing-main"><div class="compact-closing-kicker" data-anim>STRONG PRIOR · ATTRIBUTE EACH GAIN · FREEZE TO TRANSFER</div><h1 class="compact-closing-title" data-anim>从“再造双流网络”转向<br>“借强先验、拆增量、验迁移”</h1><div class="conclusion-list" data-anim><article class="conclusion-row"><span class="no">01</span><div><strong>候选上界不是偏振物理证据</strong><p>更多角度会机械放大 Oracle；同内容噪声已复现真实 gap 的 36% / 72%，必须改用匹配干预归因。</p></div></article><article class="conclusion-row"><span class="no">02</span><div><strong>通用视觉先验是起点，不是需要绕开的对手</strong><p>以一份 DINOv3-Tiny / MiT 主干承载视觉能力，只用轻量 adapter 学新增偏振与质量；B-pol、B-phys、B-full 分开报告。</p></div></article><article class="conclusion-row"><span class="no">03</span><div><strong>“共享”只能由同一完整 E 的冻结跨任务增量证明</strong><p>必须比较原始预训练、S₀源训练、普通偏振、物理约束与完整质量 E，而不是只和随机初始化相比。</p></div></article></div><div class="closing-number-strip" data-anim><div><strong>2</strong><span>共享底座候选 · MiT / DINO</span></div><div><strong>7</strong><span>同底座机制版本 · B-S₀→B-full</span></div><div><strong>49 / 10 / 8</strong><span>PolaRGB fit / val / test 场景</span></div><div><strong>0</strong><span>已训练共享编码器 · 当前</span></div></div></div>
+  <aside class="compact-closing-side"><div class="compact-brand" data-anim><strong>PolyCamera</strong><span>SHARED POLARIZATION REPRESENTATION</span></div><div class="closing-status" data-anim><div class="closing-status-row"><span>现代文献边界</span><strong class="accent">UPDATED · 通用先验适配已纳入竞争</strong></div><div class="closing-status-row"><span>E2–C3 归因状态</span><strong>UNRESOLVED · Oracle 被选择效应混杂</strong></div><div class="closing-status-row"><span>共享编码器</span><strong class="danger">NOT TRAINED · 仅完成预注册协议</strong></div><div class="closing-status-row"><span>冻结迁移 / 正式自采</span><strong class="danger">NOT STARTED · 等待 Gate A0 / H0</strong></div></div><div class="compact-closing-foot" data-anim>恳请重点评价：MiT / DINO 的选型是否充分，B-pol / B-phys / B-full 是否能完成独立归因，以及 E0–E4 是否能真正证明冻结迁移。<br><br><strong>Questions & Discussion</strong></div></aside></div>
 </section>
 
 </div>
@@ -1263,14 +1542,14 @@
 const SPEAKER_NOTES = [
   {id:'cover',title:'候选新主线与当前边界',section:'开场',minutes:0.4,purpose:'交代共享偏振表示的新主线、现有前置证据和尚未训练的边界',talk:['候选主线不再只优化 OCR 或去反光，而是学习可冻结复用的偏振表示','反光层分离作为源任务，水下和道路分割作为冻结迁移候选','目前只有公开数据、合成代理和解析仿真；P0 本地完整性、P1 final、共享编码器与自采均未完成'],transition:'先从成像物理说明为什么 RGB 不足、偏振增加了什么信息'},
   {id:'direction-change',title:'为什么需要偏振相机',section:'物理基础',minutes:1.8,purpose:'按“RGB 场景失效—DoFP 新观测—Fresnel 线索—BRDF 复杂度—T/R 欠定恢复”建立完整动机',talk:['顶部五类场景都包含总强度相似、光路成分不同的问题；RGB 很难判断光来自目标、界面还是散射','彩色 DoFP 以一次曝光获得 I0、I45、I90、I135，经标定重建 S0、S1、S2 与 DoLP/AoLP','Fresnel 说明反射偏振随入射角变化，Brewster 角附近线索最强；BRDF 又使这种线索随粗糙度和微法向空间变化','四方向理想情况下只有三个独立 Stokes 观测，而 T/R 两层至少有六个未知量，所以偏振增加约束但不保证唯一分解','方法必须结合物理重组、数据先验和质量 q，在饱和、低 DoLP 或 MPFA 失败时回退'],transition:'接着看传统方法如何逐步增加 Fresnel、统计与空间约束',cue:'按页面从上到下、从左到右讲：五场景 → 相机 → Fresnel → BRDF → 3<6'},
-  {id:'classical-reflection-separation',title:'传统偏振反光分离演进',section:'问题与文献',minutes:1.7,purpose:'说明传统路线如何从全局 ICA 逐步加入 Fresnel、统计分布和空间变化约束',talk:['Farid 与 Adelson 将正交检偏图写成同一 T/R 的不同线性混合，并以 ICA 假设统计独立源','Schechner 1999 用 Fresnel 把混合权重绑定到玻璃入射角，通过重建层去相关估计角度','JOSA A 2000 以互信息处理双表面内部反射，并分析噪声、角度误差和入射平面歧义','Kong 2014 把入射角和入射平面扩展为空间变化系数场，再做多尺度约束优化','共同边界是先验失配；学习器应补充局部结构和语义先验，而不是丢掉物理重组和质量门控'],transition:'传统方法明确了可辨识条件，下一页比较深度网络恢复到哪一层物理量',cue:'按顶部约束轴从左到右讲四篇工作，最后落到统计、测量和模型失配'},
-  {id:'polarized-reflection-networks',title:'偏振反光网络与采集方案',section:'问题与文献',minutes:1.7,purpose:'同口径比较偏振输入、强度/偏振恢复层级与采集方案',talk:['ReflectNet 用旋转偏振片顺序采集三角度，最终恢复 RGB 强度 T/R，不恢复逐角偏振层','Lei 2020 使用单色 DoFP 单曝光四方向，先估计强度 R 再估计强度 T，并以黑布 M−R 方案采集真值','Multi-bounce 使用彩色 DoFP，逐角预测 polarized T/R，再以 Stokes/Mueller 多次反射模型重投影四方向','Deng 2026 只确认 cross dual-stream、T/R 与 polarization restoration 方向；输入、监督、相机和数据仍待全文核查','输入含偏振不等于输出保留物理；后续方法必须报告采集硬件、输出层级和重投影一致性'],transition:'文献说明“偏振网络”不能只看输入标签，下面回顾路线 1 的可测前提'},
+  {id:'classical-reflection-separation',title:'传统偏振反光分离演进',section:'问题与文献',minutes:1.7,purpose:'说明传统路线如何从全局 ICA 逐步加入 Fresnel、统计分布和空间变化约束',talk:['Farid 与 Adelson 将正交检偏图写成同一 T/R 的不同线性混合，并以 ICA 假设统计独立源','Schechner 1999 用 Fresnel 把混合权重绑定到玻璃入射角，通过重建层去相关估计角度','JOSA A 2000 以互信息处理双表面内部反射，并分析噪声、角度误差和入射平面歧义','Kong 2014 把入射角和入射平面扩展为空间变化系数场，再做多尺度约束优化','共同边界是先验失配；学习器应补充局部结构和语义先验，而不是丢掉物理重组和质量门控'],transition:'传统可辨识条件明确后，下一页看任务专用网络如何进一步发展到通用预训练与多模态适配',cue:'按顶部约束轴从左到右讲四篇工作，最后落到统计、测量和模型失配'},
+  {id:'modern-polarization-landscape',title:'现代偏振视觉研究版图',section:'问题与文献',minutes:1.7,purpose:'把任务专用网络、通用预训练适配、共享语义感知与强RGB竞争者放入同一能力版图，重新界定创新边界',talk:['任务专用路线已经覆盖强度T/R、逐角偏振层、Stokes/Mueller重投影和生成先验；因此“恢复T/R并加入物理闭环”不是空白','PPFT证明预训练几何模型可以通过偏振prompt获得增量；2026年的DINOv3-SfP又给出冻结DINO特征加偏振分支的直接证据','General Restoration Priors已经使用归一化Stokes、通用恢复预训练、强度/偏振双分支和门控，说明这些模块本身不能再作为创新','ShareCMP、SegRGB-X、PolarVLM和PBP-SAM覆盖共享分割、LoRA、VLM或提示式偏振感知，但联合训练或架构共享不等于源任务后冻结同一编码器','WindowSeat提示强RGB生成模型必须进入能力基线；DORIS的偏振消融只有约0.12 dB且SSIM下降，说明偏振增益具有任务和指标依赖'],transition:'创新边界明确后，先回到已有代理实验，审计任务读出、仪器响应和DoFP重建是否会伪造增益',cue:'按A任务专用→B通用先验→C共享语义→D强RGB与边界的顺序讲；明确所有论文数字只限各自协议'},
   {id:'route1-foundation',title:'探索路线 1 · 三段误差源审计',section:'探索路线 1',minutes:1.3,purpose:'从任务读出、仪器响应和 DoFP 空间重建三段逆向定位偏振系统中的独立误差源',talk:['这不是把三项百分比相加的统一误差预算；E0、E1-a、E1-b 使用不同数据与指标，作用是逐段锁定混杂因素','E0 是电脑字体、GT ROI 与字符白名单下的软件 sanity：EasyOCR 的 CER 只有 4.20%，但字符串长度和易混字符会把整串 Exact 放大到 60.78%，它不是实拍喷码上限','E1-a 把测量写成 m=Areal·s+b+ε；用已知合成 Stokes 的前 2,500 组估计 A,b，再在留出的 2,500 组反演，RMSE 从理想矩阵的 0.01147 降到 0.00260','E1-b 模拟 2×2 MPFA 每像素只测一个方向，再比较完整四方向、最近邻和双线性；伪彩图中色相是 AoLP、饱和度是 DoLP、亮度是 S0','双线性减轻但没有消除空间插值误差，所以 OCR backend、标定矩阵和 demosaic 都必须冻结或进入后续消融，不能被模型增益吸收'],transition:'三段测量链误差被显式化后，下一页继续检验 E2 的 Oracle gap 是否只是候选数量、图像统计和噪声选择效应',cue:'按左到右讲三段误差源；E1-b 先指 2×2 排列，再读伪彩图图例和 40 场景均值表'},
   {id:'route1-hypothesis-chain',title:'E2–C3–C1 · 方向归因与选择',section:'探索路线 1',minutes:1.3,purpose:'把真实 DoFP 方向差异、亮度统计、噪声选择下限和密集候选控制串成一条归因—选择—决策链',talk:['E2 的真实 DoFP 配对结果先建立观察：同一 ROI、字符串和高光条件下，Oracle–Fixed 在 Tesseract / EasyOCR 上为 +6.58 / +2.51 pp，说明四方向观测会改变 OCR 输出；绝对正确率仍受 1–376 字符和严格 Exact 压低','C2 把每个 ROI 的四方向匹配到共同 mean/std 或 pooled histogram 后重新 OCR；Tesseract gap 仍为 6.09 / 5.61 pp，Easy 为 2.51 / 3.87 pp，因此全局亮度和对比度不是主要解释，但局部高光结构仍被保留','C3 固定 I0，只加入三个独立噪声副本；GT best-of 已产生 +2.37 / +1.81 pp，相当于真实 gap 的 36% / 72%。这说明噪声与 OCR 稳定性会制造“最优候选”，输入质量必须进入方法主体','用真实 gap 对比当前噪声零对照后，Tesseract 仍剩 +4.21 pp 且区间不跨 0，Easy 只剩 +0.70 pp 且区间跨 0；因此偏振相关剩余信号是条件性、后端相关的，不能把全部剩余直接叫作物理增益','基础 confidence selector 对 Tesseract 只兑现 Oracle gap 的 19%，Easy 还下降；C1 的36角固定策略不优于 raw，而候选数只把 Oracle gap 放大到 14.41 / 5.71 pp。C1 没有训练36路 selector，结论是单纯扩大搜索空间无解，下一步应用校准 Stokes/Q,U 与饱和、SNR、噪声、demosaic 质量 q 共同约束可部署表示或 Selector'],transition:'方向差异、输入质量和候选选择已经分开后，下一页进一步用匹配输入干预定义什么结果才允许归因于当前样本的真实偏振信息',cue:'按左侧 E2 → 右侧 C2/C3/剩余信号 → 底部 Selector/C1 → 红色决策条的顺序讲'},
-  {id:'polarization-attribution',title:'技术方案 · 数据到证据闭环',section:'共享偏振表征',minutes:1.3,purpose:'用一页总览数据来源、物理处理、共享编码器与三道证据 Gate，建立第 8–9 页的执行导航',talk:['数据按角色冻结：PolaRGB 是 6,500 组反光分离源任务并使用项目 49/10/8 场景划分；合成矩阵、PDD 和 SHDocs 只做标定、MPFA、噪声与选择效应审计；UPLight 与 ZJU 是许可和 split 待核查的冻结迁移候选','数据处理先冻结完整性、scene isolation 与 stored/linear 口径，再校正方向映射、gain/offset、饱和与 MPFA；主表示采用 S0/Q/U 和分开的 q_meas、q_pol','重复 S0、匹配噪声、跨样本打乱 Q/U 与合法零点旋转从数据接口阶段生成，确保负对照不是训练后补解释','模型由解析 physical stem、共享编码器 E 和同容量小型任务头组成；先训练 PolaRGB T/R pilot，再冻结同一 E 接水下或道路分割头','结果必须依次通过 G1 源任务归因、G2 物理一致与失败边界、G3 冻结迁移；当前仅完成预注册，编码器和迁移均无结果'],transition:'总体闭环确定后，下一页展开 physical stem、双质量变量、共享潜表示与四类损失如何具体实现',cue:'沿 01→04 从左到右讲，最后只读底部“证明偏振 / 证明共享 / 当前状态”三条'},
-  {id:'physics-constrained-encoder',title:'三支路物理约束共享编码器',section:'共享偏振表征',minutes:1.2,purpose:'细化解析 stem、强度/偏振/质量三支路、逐尺度质量门控、任务头和四类辅助约束',talk:['输入采用 S0/Q/U，不使用低DoLP区不连续的裸AoLP；q_meas描述饱和、SNR、正交残差和MPFA有效域，q_pol描述DoLP与方向信息量，两者不能混为一谈','解析stem先用标定矩阵校正四方向，再生成连续状态、valid mask、合法零点旋转和匹配负对照','共享编码器内部保留强度支路 EI、偏振支路 EP 和质量支路 Eq；偏振支路学习按2α等变的方向结构，质量支路决定融合权重和置信度','逐尺度融合使用 F_l=zI_l+g_l(q)⊙zP_l；q_meas低时先抑制偏振分支，q_pol低时仍保留强度，测量整体失效才拒绝','源任务只连接轻量PolaRGB T/R decoder，迁移时冻结同一E并替换同容量分割头；重投影、等变、层重组和稳定/质量损失用于检查表示没有丢掉物理'],transition:'模型内部结构明确后，下一页把每项主张绑定到可复现的输入、指标、通过条件和失败含义',cue:'按顶部 state/q → 中部 stem/三支路/融合/head → 下部四类损失 → failure rail 的顺序讲'},
-  {id:'encoder-proof-plan',title:'G1–G3 预注册实验与通过标准',section:'共享偏振表征',minutes:1.2,purpose:'把源任务因果归因、物理稳定性和冻结迁移写成可执行、可失败、可缩小主张的三道 Gate',talk:['所有 Gate 先锁定同 backbone、参数量、小型head、训练步数、增强、随机种子和场景split，release test只运行一次，禁止测试集调参','G1 在PolaRGB 49/10/8场景上比较S0、repeat、matched noise、shuffle(Q,U)、correct和legal rotation；正确偏振必须胜过全部匹配对照、shuffle后回落、场景CI不跨0且clean样本不被明显改坏','G2 按DoLP、饱和、SNR、反射强度和MPFA方法分组，并单独改变noise、exposure和合法角度零点；通过要求潜变量等变、任务输出稳定、q能排序失败风险且回退不劣于强度基线','G3 在许可与split冻结后的UPLight或ZJU上冻结同一个E，只训练同容量head；比较random、RGB/ImageNet、S0、repeat/noise、shuffle和正确偏振，使用10/25/100%标注量与至少三个seed','任一Gate失败都有明确含义：G1失败不能归因偏振，G2失败不能声称物理可靠或安全部署，G3失败只能称源任务网络而不能称共享表示；因此不通过扩大模型、联合多任务或diffusion掩盖失败'],transition:'最后用前置证据、当前未完成状态和下一项最小交付物收束',cue:'先读顶部 fairness lock，再逐列讲 G1、G2、G3 的 PASS 与 FAIL，最后读底部主张边界'},
-  {id:'conclusion',title:'结论与讨论',section:'收束',minutes:0.6,purpose:'收束候选选择反例、物理编码器契约和冻结迁移证据标准',talk:['路线 1 最重要的修正是：Oracle gap 混入候选数量、OCR 不稳定和噪声选择效应，不能当偏振证据','新方案不再逐样本挑一张图，而是用 S0/Q/U/q 学习可重投影、等变、可回退的共享表示','共享编码器尚未训练；下一项证据是 Gate A0 通过后的轻量源任务 pilot，而不是更大的网络','请重点评价 C0–C3 是否足以归因、四类物理约束是否合理、G1–G3 是否真正证明迁移'],transition:'进入提问与讨论',cue:'停顿，指向右侧 NOT TRAINED / NOT STARTED 状态'}
+  {id:'foundation-adaptation-route',title:'通用先验选型与逐层增量路线',section:'共享偏振表征',minutes:1.3,purpose:'明确数据角色、共享底座、外部参照和B-S₀到B-full的增量分解，建立后两页执行导航',talk:['数据角色保持冻结：PolaRGB是反光源任务，合成/PDD/SHDocs只做审计，UPLight与ZJU是许可和split待核查的迁移候选','首轮共享底座只保留MiT-B0轻量工程基线和DINOv3 ConvNeXt-Tiny强预训练候选；InstructIR/NAFNet是恢复先验参照，PolarFree/WindowSeat/ShareCMP是外部任务参照','同一底座按B-S0、B-pol、B-phys、B-full逐层增加信息，分别定义输入增量、物理约束增量和质量增量','repeat、matched noise、shuffle(Q,U)以及Scratch/预训练初始化必须与主模型同接口、同容量和同预算，避免把通道数或初始化优势算作偏振','执行顺序是MiT-B0先闭环，再用小型DINO检验强先验下是否仍有增量；任一Gate失败就缩小主张，而不是直接换更大模型'],transition:'底座与增量层级确定后，下一页展示如何只用一份完整主干承载视觉先验，并以轻量adapter接入偏振和质量',cue:'沿01数据→02底座→03适配阶梯→04证据Gate讲，最后强调首轮不联合多任务、不训练大diffusion'},
+  {id:'hybrid-polarization-encoder',title:'单主干与轻量偏振/质量适配',section:'共享偏振表征',minutes:1.2,purpose:'把原三完整支路设想修正为一份预训练主干加轻量偏振与质量adapter，并明确训练阶段和数据边界',talk:['S0或RGB进入唯一完整预训练主干，候选是DINOv3 ConvNeXt-Tiny与MiT-B0；偏振和质量路径只保留轻量adapter，不复制三份大网络','PolaRGB processed可提供四方向映射和表示输入，但目前没有真实仪器A,b标定，所以页面不再把合成标定矩阵画成已完成实物标定','偏振adapter读取Q/U并以小残差或零初始化注入；质量adapter分开处理q_meas与q_pol，前者表示测量可信度，后者表示方向信息量','训练先冻结主干热身，再由验证集决定是否部分解冻；Scratch仅作关键初始化消融，不能用更小随机网络与预训练网络做不公平比较','B-pol只用task loss；B-phys再增加重投影、层重组和等变；B-full增加稳定性与质量。门控公式不会自动保证等变，必须定义潜变量变换并实测'],transition:'架构已经把通用先验与新增物理模块分开，下一页进一步把外部能力、同底座归因和冻结迁移分三张表报告',cue:'按顶部四原则→中部stem/主干/adapter/head→下部B-pol/B-phys/B-full→数据边界讲'},
+  {id:'capability-attribution-proof',title:'能力与归因分离的预注册验证',section:'共享偏振表征',minutes:1.2,purpose:'将外部强模型能力、同底座机制归因与同一编码器冻结迁移分开，避免跨预算和跨论文误归因',talk:['WindowSeat、PolarFree、ShareCMP和DINOv3-SfP进入外部能力表，但数据、输入和预算不同，只报告任务质量与工程成本，不用于解释本项目机制','核心归因使用同一底座矩阵：B-S0建立强度基线，repeat/noise/shuffle排除容量、扰动和配对关系混杂，B-pol、B-phys、B-full依次测量三个增量','B-phys还要加入同辅助头、同预算的普通一致性正则对照，避免把任何额外监督带来的收益都称为物理约束收益','冻结迁移必须比较原始预训练E、S0源训练E、普通偏振E、物理E与完整质量E；adapter、质量模块和归一化状态都属于冻结编码器','G1失败不能声称偏振或物理增量，G2失败不能声称可靠部署，G3失败不能称共享编码器；任一失败都停止扩大模型并缩小主张'],transition:'最后把强先验、逐层增量和冻结迁移三项研究判断收束到下一步最小pilot',cue:'先读顶部公平锁，再从左到右讲外部能力、机制矩阵和E0–E4迁移，最后读底部PASS/FAIL'},
+  {id:'conclusion',title:'结论与讨论',section:'收束',minutes:0.6,purpose:'收束候选选择反例、强通用先验起点、逐层归因和冻结迁移证据标准',talk:['路线1最重要的修正仍是：Oracle gap混入候选数量、OCR不稳定和噪声选择效应，不能当偏振证据','文献调研进一步修正了模型路线：通用先验不是要绕开的竞争者，而应成为S0强基线和共享主干起点','新方案用一份MiT或DINO主干承载视觉能力，以B-pol、B-phys、B-full分别检验输入、物理和质量增量','共享编码器仍未训练；下一项证据是Gate A0通过后的MiT-B0轻量pilot，再决定是否进入小型DINO强基线','请重点评价底座选型、三个增量对照以及E0–E4冻结迁移阶梯是否足以支撑主张'],transition:'进入提问与讨论',cue:'停顿，指向右侧 NOT TRAINED / NOT STARTED 状态'}
 ];
 window.__SPEAKER_NOTES__=SPEAKER_NOTES;
 </script>
